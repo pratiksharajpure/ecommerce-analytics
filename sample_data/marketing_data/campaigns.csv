@@ -1,0 +1,4 @@
+campaign_id,campaign_name,campaign_type,start_date,end_date,budget,status
+1,Summer Sale,Email,2025-06-01,2025-06-30,5000,Completed
+2,New Year Blast,Social Media,2025-12-25,2026-01-10,10000,Ongoing
+3,Loyalty Drive,Affiliate,2025-09-10,2025-09-30,7000,Completed

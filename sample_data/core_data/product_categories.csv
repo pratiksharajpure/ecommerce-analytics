@@ -1,0 +1,51 @@
+category_id,category_name,description
+CAT-001,Electronics,Products in the Electronics category
+CAT-002,Home & Kitchen,Products in the Home & Kitchen category
+CAT-003,Sports & Outdoors,Products in the Sports & Outdoors category
+CAT-004,Clothing,Products in the Clothing category
+CAT-005,Health & Personal Care,Products in the Health & Personal Care category
+CAT-006,Toys & Games,Products in the Toys & Games category
+CAT-007,Automotive,Products in the Automotive category
+CAT-008,Books,Products in the Books category
+CAT-009,Beauty,Products in the Beauty category
+CAT-010,Office Supplies,Products in the Office Supplies category
+CAT-011,Garden & Outdoors,Products in the Garden & Outdoors category
+CAT-012,Pet Supplies,Products in the Pet Supplies category
+CAT-013,Baby,Products in the Baby category
+CAT-014,Tools & Home Improvement,Products in the Tools & Home Improvement category
+CAT-015,Grocery,Products in the Grocery category
+CAT-016,Jewelry,Products in the Jewelry category
+CAT-017,Shoes,Products in the Shoes category
+CAT-018,Industrial,Products in the Industrial category
+CAT-019,Musical Instruments,Products in the Musical Instruments category
+CAT-020,Video Games,Products in the Video Games category
+CAT-021,Arts & Crafts,Products in the Arts & Crafts category
+CAT-022,Camera & Photo,Products in the Camera & Photo category
+CAT-023,Footwear,Products in the Footwear category
+CAT-024,Luggage,Products in the Luggage category
+CAT-025,Watches,Products in the Watches category
+CAT-026,Software,Products in the Software category
+CAT-027,Outdoors,Products in the Outdoors category
+CAT-028,Furniture,Products in the Furniture category
+CAT-029,Appliances,Products in the Appliances category
+CAT-030,Accessories,Products in the Accessories category
+CAT-031,Stationery,Products in the Stationery category
+CAT-032,Lighting,Products in the Lighting category
+CAT-033,Bedding,Products in the Bedding category
+CAT-034,Storage,Products in the Storage category
+CAT-035,Kitchen Appliances,Products in the Kitchen Appliances category
+CAT-036,Fitness Equipment,Products in the Fitness Equipment category
+CAT-037,Personal Care,Products in the Personal Care category
+CAT-038,Safety,Products in the Safety category
+CAT-039,Party Supplies,Products in the Party Supplies category
+CAT-040,Seasonal,Products in the Seasonal category
+CAT-041,Collectibles,Products in the Collectibles category
+CAT-042,Healthcare,Products in the Healthcare category
+CAT-043,Office Furniture,Products in the Office Furniture category
+CAT-044,Baby Gear,Products in the Baby Gear category
+CAT-045,Travel Accessories,Products in the Travel Accessories category
+CAT-046,Hobby,Products in the Hobby category
+CAT-047,Specialty Foods,Products in the Specialty Foods category
+CAT-048,Cleaning Supplies,Products in the Cleaning Supplies category
+CAT-049,Hardware,Products in the Hardware category
+CAT-050,Medical Supplies,Products in the Medical Supplies category

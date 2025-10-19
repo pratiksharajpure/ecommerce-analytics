@@ -1,0 +1,3 @@
+regulation_id,regulation_type,compliance_level,effective_date,expiry_date,notes
+1,Data Privacy,High,2024-01-01,2026-12-31,GDPR compliance required
+2,Product Safety,Medium,2023-06-01,2025-05-31,Follow ISO standards

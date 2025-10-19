@@ -1,0 +1,3 @@
+referral_id,referrer_customer_id,referred_customer_id,referral_date,reward_amount,status
+601,101,104,2025-03-01,200,Completed
+602,102,105,2025-04-15,150,Pending

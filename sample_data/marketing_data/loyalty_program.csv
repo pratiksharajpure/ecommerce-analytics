@@ -1,0 +1,4 @@
+loyalty_id,customer_id,enrollment_date,loyalty_points,tier,status
+501,101,2024-11-01,1200,Gold,Active
+502,102,2025-01-10,800,Silver,Active
+503,103,2025-02-20,1500,Platinum,Inactive

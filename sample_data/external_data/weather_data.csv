@@ -1,0 +1,3 @@
+weather_id,location,date,temperature,precipitation,wind_speed
+1,New York,2025-09-01,28,2.5,15
+2,California,2025-09-02,34,0.0,10

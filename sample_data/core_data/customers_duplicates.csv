@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,phone,city,state,country,created_at
+CUST-0098,Joseph,Lewis,joseph.lewis8@example.com,(814) 613-6236,El Paso,TX,USA,2023-05-24
+CUST-0615,Donald,Lopez,donald.lopez37@example.com,(988) 248-3430,Jacksonville,FL,USA,2023-10-19
+CUST-0333,Paul,Taylor,paul.taylor16@example.com,(459) 692-5895,San Antonio,TX,USA,2024-01-05
+CUST-0647,Joshua,Harris,joshua.harris22@example.com,(756) 530-6180,El Paso,TX,USA,2025-03-30
+CUST-0714,William,Smith,william.smith34@example.com,(484) 874-3883,Boston,MA,USA,2025-05-22
+CUST-0398,Karen,Taylor,karen.taylor40@example.com,(541) 701-7445,Detroit,MI,USA,2023-06-10
+CUST-0695,Christopher,Garcia,christopher.garcia3@example.com,(751) 533-1612,Charlotte,NC,USA,2024-11-04
+CUST-0947,Mark,Wilson,mark.wilson53@example.com,(576) 709-6194,Dallas,TX,USA,2024-01-27
+CUST-0790,James,Gonzalez,james.gonzalez15@example.com,(213) 375-8817,Charlotte,NC,USA,2024-12-09
+CUST-0711,Charles,Lee,charles.lee21@example.com,(462) 903-4868,Fort Worth,TX,USA,2023-09-02
+CUST-0137,Christopher,Garcia,christopher.garcia15@example.com,(610) 609-8479,Dallas,TX,USA,2025-05-05
+CUST-0341,James,Thompson,james.thompson49@example.com,(566) 941-3207,Dallas,TX,USA,2025-07-09
+CUST-0180,Patricia,Williams,patricia.williams24@example.com,(377) 952-9418,Houston,TX,USA,2024-01-22
+CUST-0651,Steven,Davis,steven.davis25@example.com,(772) 828-9612,Seattle,WA,USA,2024-12-30
+CUST-0780,Mary,Lee,mary.lee68@example.com,(285) 497-8671,Columbus,OH,USA,2023-03-23
+CUST-0906,Joshua,Martin,joshua.martin57@example.com,(982) 297-8314,Denver,CO,USA,2023-05-08
+CUST-0705,Christopher,Miller,christopher.miller54@example.com,(611) 457-9443,Charlotte,NC,USA,2024-11-18
+CUST-0326,Richard,Hernandez,richard.hernandez54@example.com,(519) 710-7084,Charlotte,NC,USA,2024-12-14
+CUST-0872,Karen,Lewis,karen.lewis3@example.com,(475) 767-2663,San Diego,CA,USA,2025-02-20
+CUST-0683,Patricia,Thomas,patricia.thomas63@example.com,(716) 467-9887,Austin,TX,USA,2025-04-08
+CUST-0494,Sarah,Hernandez,sarah.hernandez39@example.com,(783) 895-5989,Columbus,OH,USA,2025-01-05
+CUST-0070,Anthony,Williams,anthony.williams88@example.com,(645) 406-3422,Washington,DC,USA,2023-09-22
+CUST-0344,Mark,Rodriguez,mark.rodriguez77@example.com,(767) 364-2128,Indianapolis,IN,USA,2023-06-08
+CUST-0019,Michael,Sanchez,michael.sanchez18@example.com,(324) 212-2010,Oklahoma City,OK,USA,2025-10-03
+CUST-0624,Michael,White,michael.white62@example.com,(241) 342-2914,San Jose,CA,USA,2023-01-26
+CUST-0934,Anthony,Lewis,anthony.lewis92@example.com,(266) 321-3366,Phoenix,AZ,USA,2025-03-24
+CUST-0600,Matthew,Lopez,matthew.lopez60@example.com,(833) 241-6989,Jacksonville,FL,USA,2023-06-29
+CUST-0460,Joseph,Lopez,joseph.lopez58@example.com,(509) 421-9603,San Jose,CA,USA,2023-06-29
+CUST-0392,Patricia,Taylor,patricia.taylor6@example.com,(461) 374-1984,San Jose,CA,USA,2023-07-25
+CUST-0524,Charles,Thomas,charles.thomas96@example.com,(970) 745-4828,Fort Worth,TX,USA,2024-11-30
+CUST-0656,Jennifer,Davis,jennifer.davis40@example.com,(328) 414-3133,Chicago,IL,USA,2024-03-11
+CUST-0760,Joseph,Garcia,joseph.garcia5@example.com,(681) 466-3679,Nashville,TN,USA,2024-04-23
+CUST-0239,Patricia,Clark,patricia.clark37@example.com,(287) 421-8359,Washington,DC,USA,2024-04-27
+CUST-0516,William,Taylor,william.taylor10@example.com,(484) 458-3171,Washington,DC,USA,2023-10-15
+CUST-0602,Christopher,Davis,christopher.davis70@example.com,(316) 864-8839,Detroit,MI,USA,2025-08-19
+CUST-0722,Jessica,Jackson,jessica.jackson8@example.com,(702) 746-7139,Nashville,TN,USA,2025-08-29
+CUST-0014,Elizabeth,Miller,elizabeth.miller58@example.com,(515) 674-5341,Houston,TX,USA,2023-04-03
+CUST-0968,Steven,Williams,steven.williams59@example.com,(258) 577-9495,New York,NY,USA,2023-06-25
+CUST-0022,Barbara,Jones,barbara.jones12@example.com,(539) 325-1699,Charlotte,NC,USA,2023-02-21
+CUST-0632,David,Sanchez,david.sanchez94@example.com,(634) 946-7786,Phoenix,AZ,USA,2025-05-05
+CUST-0778,David,Wilson,david.wilson81@example.com,(636) 295-1662,Indianapolis,IN,USA,2023-12-16
+CUST-0919,James,Taylor,james.taylor76@example.com,(873) 894-3369,Los Angeles,CA,USA,2023-09-01
+CUST-0128,Joshua,Miller,joshua.miller34@example.com,(735) 406-6864,Nashville,TN,USA,2024-02-24
+CUST-0317,Elizabeth,Wilson,elizabeth.wilson38@example.com,(811) 436-1118,Seattle,WA,USA,2024-01-18
+CUST-0243,Matthew,Jones,matthew.jones14@example.com,(216) 407-9564,Indianapolis,IN,USA,2024-12-01
+CUST-0756,Jessica,Clark,jessica.clark36@example.com,(965) 569-8046,San Jose,CA,USA,2025-07-13
+CUST-0439,Anthony,Garcia,anthony.garcia21@example.com,(888) 491-3906,Charlotte,NC,USA,2025-02-06
+CUST-0776,Susan,Lopez,susan.lopez66@example.com,(404) 701-8298,Fort Worth,TX,USA,2024-05-02
+CUST-0250,Paul,Wilson,paul.wilson33@example.com,(393) 205-1116,Denver,CO,USA,2024-06-19
+CUST-0635,Anthony,Lee,anthony.lee35@example.com,(624) 379-8571,Nashville,TN,USA,2024-08-04
+CUST-0082,Jessica,Lopez,jessica.lopez8@example.com,(727) 362-2075,San Jose,CA,USA,2024-12-27
+CUST-0062,Paul,Gonzalez,paul.gonzalez24@example.com,(579) 590-7052,Philadelphia,PA,USA,2024-04-01
+CUST-0141,Joshua,Smith,joshua.smith88@example.com,(944) 333-8914,San Francisco,CA,USA,2023-04-26
+CUST-0384,Daniel,Miller,daniel.miller42@example.com,(552) 808-1396,Oklahoma City,OK,USA,2023-11-09
+CUST-0511,Joshua,Johnson,joshua.johnson44@example.com,(747) 997-1176,San Francisco,CA,USA,2024-04-09
+CUST-0304,Steven,Anderson,steven.anderson53@example.com,(371) 388-1378,Phoenix,AZ,USA,2025-01-15
+CUST-0207,Sarah,White,sarah.white45@example.com,(416) 622-9397,Phoenix,AZ,USA,2023-06-14
+CUST-0156,Susan,Lee,susan.lee38@example.com,(760) 734-7125,Nashville,TN,USA,2023-04-19
+CUST-0385,David,Lopez,david.lopez79@example.com,(652) 838-3389,Charlotte,NC,USA,2023-02-15
+CUST-0210,Robert,Martinez,robert.martinez86@example.com,(268) 456-2608,San Antonio,TX,USA,2025-01-13
+CUST-0658,John,Miller,john.miller14@example.com,(233) 875-9412,Denver,CO,USA,2023-03-02
+CUST-0039,William,Jackson,william.jackson91@example.com,(345) 992-2817,Indianapolis,IN,USA,2025-05-31
+CUST-0244,Anthony,Clark,anthony.clark20@example.com,(820) 298-3906,San Francisco,CA,USA,2025-07-12
+CUST-0743,Steven,Wilson,steven.wilson99@example.com,(664) 889-9096,Houston,TX,USA,2023-08-18
+CUST-0613,Christopher,Lee,christopher.lee83@example.com,(534) 697-9686,Seattle,WA,USA,2024-03-31
+CUST-0455,Susan,Taylor,susan.taylor39@example.com,(778) 942-6169,Seattle,WA,USA,2024-07-02
+CUST-0757,Sarah,Rodriguez,sarah.rodriguez79@example.com,(979) 470-9470,Austin,TX,USA,2024-03-22
+CUST-0899,Daniel,Taylor,daniel.taylor98@example.com,(244) 938-4678,Los Angeles,CA,USA,2023-10-12
+CUST-0337,William,Lopez,william.lopez99@example.com,(291) 454-3583,San Francisco,CA,USA,2023-04-04
+CUST-0138,Matthew,Thompson,matthew.thompson62@example.com,(631) 864-3732,Houston,TX,USA,2023-05-16
+CUST-0285,Jessica,Perez,jessica.perez23@example.com,(668) 323-9490,Charlotte,NC,USA,2023-11-20
+CUST-0983,Linda,Gonzalez,linda.gonzalez25@example.com,(606) 238-1175,Dallas,TX,USA,2023-04-28
+CUST-0660,Elizabeth,Brown,elizabeth.brown16@example.com,(816) 410-4277,Philadelphia,PA,USA,2024-11-17
+CUST-0806,Andrew,Perez,andrew.perez44@example.com,(816) 932-8675,Phoenix,AZ,USA,2025-06-23
+CUST-0779,Mark,Perez,mark.perez29@example.com,(863) 902-3540,San Francisco,CA,USA,2024-06-23
+CUST-0041,Christopher,Martinez,christopher.martinez42@example.com,(339) 361-8157,Boston,MA,USA,2025-09-10
+CUST-0534,Michael,Thompson,michael.thompson16@example.com,(288) 819-3128,Fort Worth,TX,USA,2024-11-03
+CUST-0811,Sarah,Rodriguez,sarah.rodriguez46@example.com,(893) 362-3862,Indianapolis,IN,USA,2023-02-02
+CUST-0425,Andrew,Lewis,andrew.lewis90@example.com,(759) 338-7440,Columbus,OH,USA,2023-11-28
+CUST-0664,Richard,Martinez,richard.martinez22@example.com,(972) 750-1070,Detroit,MI,USA,2023-04-12
+CUST-0833,Charles,Miller,charles.miller12@example.com,(723) 765-6115,Indianapolis,IN,USA,2023-12-15
+CUST-0296,Christopher,Rodriguez,christopher.rodriguez47@example.com,(568) 773-5222,Jacksonville,FL,USA,2023-01-21
+CUST-0769,James,Hernandez,james.hernandez6@example.com,(871) 837-8423,Austin,TX,USA,2025-08-28
+CUST-0025,Mark,Lewis,mark.lewis20@example.com,(235) 828-5026,Boston,MA,USA,2023-10-30
+CUST-0235,Donald,Miller,donald.miller76@example.com,(365) 862-7732,New York,NY,USA,2023-09-07
+CUST-0868,Christopher,Jones,christopher.jones53@example.com,(531) 464-7152,Houston,TX,USA,2023-02-23
+CUST-0751,Karen,Davis,karen.davis61@example.com,(562) 820-1745,New York,NY,USA,2023-09-17
+CUST-0340,Christopher,Moore,christopher.moore83@example.com,(974) 555-8187,Detroit,MI,USA,2023-07-17
+CUST-0351,Michael,Thomas,michael.thomas25@example.com,(301) 232-7366,El Paso,TX,USA,2024-05-16
+CUST-0249,Thomas,Thomas,thomas.thomas99@example.com,(438) 285-5641,Washington,DC,USA,2025-06-16
+CUST-0211,Andrew,Thomas,andrew.thomas43@example.com,(565) 331-4842,Houston,TX,USA,2023-10-19
+CUST-0553,James,White,james.white76@example.com,(444) 700-7369,Chicago,IL,USA,2025-03-22
+CUST-0056,Christopher,Miller,christopher.miller25@example.com,(619) 913-9849,Dallas,TX,USA,2024-11-07
+CUST-0681,Patricia,Hernandez,patricia.hernandez20@example.com,(510) 836-2578,Oklahoma City,OK,USA,2023-03-20
+CUST-0255,Paul,Moore,paul.moore62@example.com,(459) 514-6641,Oklahoma City,OK,USA,2024-12-23
+CUST-0821,Robert,Rodriguez,robert.rodriguez48@example.com,(932) 972-7799,Jacksonville,FL,USA,2024-10-06
+CUST-0704,Robert,Lee,robert.lee39@example.com,(716) 507-8092,El Paso,TX,USA,2024-07-06
+CUST-0713,Paul,Wilson,paul.wilson55@example.com,(862) 237-4309,Philadelphia,PA,USA,2023-10-07
+CUST-0737,Donald,Ramirez,donald.ramirez95@example.com,(336) 466-3842,El Paso,TX,USA,2024-08-30
+CUST-0228,Mary,Hernandez,mary.hernandez14@example.com,(920) 733-5480,Detroit,MI,USA,2023-09-27

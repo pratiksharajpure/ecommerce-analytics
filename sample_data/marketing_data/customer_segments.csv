@@ -1,0 +1,4 @@
+segment_id,segment_name,criteria_description,created_at
+1,Frequent Buyers,More than 5 purchases,2025-01-10
+2,New Customers,First-time buyers,2025-03-15
+3,Loyal Members,Loyalty tier Gold or above,2025-06-05

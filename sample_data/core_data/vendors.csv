@@ -1,0 +1,101 @@
+vendor_id,vendor_name,contact_person,email,phone,city,state,rating,status,created_at
+VEND-0001,Prime Supplies 591,Susan Brown,contact12@primesupplies591.com,(995) 729-6047,Austin,TX,2.6,inactive,2024-10-27
+VEND-0002,Pioneer Supplies 21,Charles Davis,contact373@pioneersupplies21.com,(621) 970-8018,Los Angeles,CA,3.3,active,2023-08-22
+VEND-0003,Summit Supplies 455,Thomas Wilson,contact607@summitsupplies455.com,(721) 451-4461,New York,NY,3.5,suspended,2024-03-26
+VEND-0004,Summit Supplies 23,Susan Gonzalez,contact483@summitsupplies23.com,(917) 323-9978,Phoenix,AZ,3.0,active,2024-03-06
+VEND-0005,Pioneer Supplies 910,Jessica Thomas,contact934@pioneersupplies910.com,(788) 857-5607,Oklahoma City,OK,2.7,active,2025-02-28
+VEND-0006,Everest Supplies 521,Mary Taylor,contact442@everestsupplies521.com,(536) 423-9231,Oklahoma City,OK,3.3,suspended,2025-04-07
+VEND-0007,Global Supplies 397,Donald Harris,contact211@globalsupplies397.com,(786) 624-4348,San Jose,CA,4.2,active,2024-12-14
+VEND-0008,Everest Supplies 410,James White,contact865@everestsupplies410.com,(522) 852-6286,New York,NY,4.6,suspended,2023-11-06
+VEND-0009,Prime Supplies 143,Susan Brown,contact712@primesupplies143.com,(666) 260-5298,Boston,MA,4.6,inactive,2025-02-22
+VEND-0010,Acme Supplies 559,Jessica Gonzalez,contact700@acmesupplies559.com,(940) 653-1487,Columbus,OH,3.5,active,2025-05-09
+VEND-0011,Global Supplies 781,Robert Gonzalez,contact782@globalsupplies781.com,(366) 791-1242,San Francisco,CA,3.0,suspended,2024-08-18
+VEND-0012,Prime Supplies 786,Susan Taylor,contact860@primesupplies786.com,(830) 282-9790,Philadelphia,PA,3.7,suspended,2023-06-07
+VEND-0013,Pioneer Supplies 720,Christopher Lewis,contact788@pioneersupplies720.com,(408) 991-4823,Charlotte,NC,2.7,suspended,2025-07-25
+VEND-0014,Global Supplies 547,Anthony Clark,contact851@globalsupplies547.com,(515) 825-5299,Philadelphia,PA,3.5,inactive,2023-06-11
+VEND-0015,Global Supplies 212,Jennifer Thompson,contact606@globalsupplies212.com,(748) 903-4840,Chicago,IL,4.2,active,2025-09-07
+VEND-0016,Liberty Supplies 310,Patricia Lee,contact616@libertysupplies310.com,(908) 219-2850,San Jose,CA,3.4,suspended,2024-09-17
+VEND-0017,Pioneer Supplies 461,James Gonzalez,contact614@pioneersupplies461.com,(383) 265-6570,Seattle,WA,3.6,active,2024-01-12
+VEND-0018,Apex Supplies 622,Steven Garcia,contact982@apexsupplies622.com,(478) 437-9398,Detroit,MI,4.4,suspended,2025-03-16
+VEND-0019,Summit Supplies 832,John Thompson,contact151@summitsupplies832.com,(910) 894-2234,Charlotte,NC,4.3,active,2024-02-29
+VEND-0020,Everest Supplies 515,Jessica Smith,contact396@everestsupplies515.com,(849) 585-5441,El Paso,TX,3.1,active,2023-12-18
+VEND-0021,Global Supplies 106,Matthew Lee,contact872@globalsupplies106.com,(458) 990-3325,Boston,MA,3.8,inactive,2023-01-02
+VEND-0022,Summit Supplies 963,Mark Harris,contact48@summitsupplies963.com,(317) 687-1891,Washington,DC,4.9,inactive,2024-10-07
+VEND-0023,Apex Supplies 44,Mark Lewis,contact50@apexsupplies44.com,(408) 231-9407,Boston,MA,3.8,suspended,2024-10-17
+VEND-0024,Acme Supplies 466,David Gonzalez,contact154@acmesupplies466.com,(741) 369-7793,Seattle,WA,2.9,inactive,2025-05-02
+VEND-0025,Apex Supplies 863,Steven Hernandez,contact771@apexsupplies863.com,(230) 876-1315,Charlotte,NC,2.9,suspended,2024-11-06
+VEND-0026,Liberty Supplies 975,Andrew Garcia,contact657@libertysupplies975.com,(862) 678-5515,Chicago,IL,2.7,suspended,2023-01-03
+VEND-0027,Pioneer Supplies 960,Andrew Perez,contact116@pioneersupplies960.com,(936) 814-7305,Houston,TX,2.9,inactive,2024-02-20
+VEND-0028,Pioneer Supplies 136,James Moore,contact34@pioneersupplies136.com,(743) 336-1274,San Diego,CA,4.1,inactive,2023-02-28
+VEND-0029,Prime Supplies 945,Anthony Miller,contact689@primesupplies945.com,(470) 487-5412,San Antonio,TX,3.3,suspended,2024-01-26
+VEND-0030,Prime Supplies 658,Thomas Hernandez,contact535@primesupplies658.com,(896) 696-1096,Chicago,IL,2.9,suspended,2025-02-03
+VEND-0031,Apex Supplies 830,Patricia Perez,contact147@apexsupplies830.com,(505) 366-7126,San Antonio,TX,3.5,active,2024-08-22
+VEND-0032,Acme Supplies 962,Karen Jones,contact980@acmesupplies962.com,(428) 669-6967,San Diego,CA,2.5,suspended,2025-07-20
+VEND-0033,Apex Supplies 584,Mark Gonzalez,contact843@apexsupplies584.com,(921) 260-5094,Washington,DC,3.4,inactive,2023-01-01
+VEND-0034,Prime Supplies 941,Elizabeth Martinez,contact249@primesupplies941.com,(584) 525-3178,Oklahoma City,OK,4.7,inactive,2023-02-13
+VEND-0035,Liberty Supplies 364,Joseph Thompson,contact783@libertysupplies364.com,(635) 461-9212,Oklahoma City,OK,2.7,suspended,2025-04-14
+VEND-0036,Everest Supplies 809,Daniel Harris,contact965@everestsupplies809.com,(485) 895-1266,San Diego,CA,4.7,suspended,2023-10-06
+VEND-0037,Prime Supplies 122,Daniel Ramirez,contact735@primesupplies122.com,(783) 662-9165,San Diego,CA,3.8,inactive,2025-08-19
+VEND-0038,Pioneer Supplies 421,William Miller,contact984@pioneersupplies421.com,(330) 436-8010,Los Angeles,CA,3.5,inactive,2024-09-10
+VEND-0039,Pioneer Supplies 291,Andrew Williams,contact133@pioneersupplies291.com,(581) 795-6085,Denver,CO,4.5,suspended,2025-07-15
+VEND-0040,Prime Supplies 139,Linda Johnson,contact975@primesupplies139.com,(462) 390-9592,Fort Worth,TX,3.0,inactive,2024-07-31
+VEND-0041,Prime Supplies 12,Matthew Wilson,contact408@primesupplies12.com,(274) 664-7687,Philadelphia,PA,3.0,inactive,2024-01-22
+VEND-0042,Prime Supplies 603,Karen White,contact618@primesupplies603.com,(951) 761-5062,San Antonio,TX,3.3,suspended,2025-01-22
+VEND-0043,Everest Supplies 886,Matthew Moore,contact528@everestsupplies886.com,(675) 927-9117,Charlotte,NC,4.0,inactive,2025-07-27
+VEND-0044,Pioneer Supplies 13,Charles Brown,contact253@pioneersupplies13.com,(460) 737-3828,Los Angeles,CA,3.8,inactive,2025-07-05
+VEND-0045,Summit Supplies 98,Christopher Miller,contact618@summitsupplies98.com,(740) 963-4106,Oklahoma City,OK,4.0,active,2023-05-10
+VEND-0046,Pioneer Supplies 11,James Smith,contact919@pioneersupplies11.com,(268) 496-5874,Los Angeles,CA,4.1,suspended,2024-12-16
+VEND-0047,Everest Supplies 953,Matthew Jones,contact861@everestsupplies953.com,(831) 941-2103,San Jose,CA,4.4,suspended,2023-08-21
+VEND-0048,Global Supplies 892,Charles White,contact959@globalsupplies892.com,(777) 272-4567,San Jose,CA,2.8,active,2024-06-12
+VEND-0049,Everest Supplies 330,William Lewis,contact651@everestsupplies330.com,(756) 681-3169,Los Angeles,CA,4.0,suspended,2024-03-21
+VEND-0050,Liberty Supplies 853,Patricia Gonzalez,contact305@libertysupplies853.com,(363) 960-3218,San Jose,CA,4.8,inactive,2024-09-27
+VEND-0051,Prime Supplies 57,Steven Garcia,contact240@primesupplies57.com,(544) 437-1507,Denver,CO,4.8,inactive,2024-03-14
+VEND-0052,Acme Supplies 638,Thomas Moore,contact928@acmesupplies638.com,(835) 610-3049,Denver,CO,4.9,suspended,2025-08-01
+VEND-0053,Global Supplies 665,Jessica Lopez,contact412@globalsupplies665.com,(746) 334-1070,Chicago,IL,3.7,inactive,2023-09-09
+VEND-0054,Global Supplies 460,Joshua Wilson,contact419@globalsupplies460.com,(302) 738-8055,Denver,CO,3.3,inactive,2023-06-06
+VEND-0055,Apex Supplies 870,Jessica Smith,contact318@apexsupplies870.com,(453) 514-9040,Dallas,TX,2.8,active,2023-11-22
+VEND-0056,Summit Supplies 988,Robert Perez,contact199@summitsupplies988.com,(693) 876-6173,Fort Worth,TX,2.7,active,2024-05-23
+VEND-0057,Everest Supplies 508,Richard Lee,contact174@everestsupplies508.com,(275) 708-6728,Los Angeles,CA,3.1,active,2025-02-14
+VEND-0058,Prime Supplies 990,John Jones,contact712@primesupplies990.com,(541) 836-2162,Denver,CO,3.0,inactive,2023-07-18
+VEND-0059,Summit Supplies 471,John Miller,contact306@summitsupplies471.com,(949) 388-5815,San Jose,CA,3.2,inactive,2023-10-21
+VEND-0060,Global Supplies 799,Thomas Thomas,contact442@globalsupplies799.com,(226) 654-9757,Columbus,OH,4.7,active,2023-11-19
+VEND-0061,Acme Supplies 946,Sarah Smith,contact709@acmesupplies946.com,(681) 623-6265,Chicago,IL,4.4,suspended,2023-03-15
+VEND-0062,Everest Supplies 645,John Thompson,contact571@everestsupplies645.com,(999) 565-2471,San Francisco,CA,4.2,suspended,2023-06-20
+VEND-0063,Liberty Supplies 81,Thomas Lopez,contact393@libertysupplies81.com,(397) 461-1606,Washington,DC,4.5,suspended,2025-03-24
+VEND-0064,Liberty Supplies 522,James Lopez,contact355@libertysupplies522.com,(757) 959-2295,Detroit,MI,4.3,active,2023-11-25
+VEND-0065,Everest Supplies 267,Thomas Thompson,contact820@everestsupplies267.com,(834) 601-6992,San Diego,CA,4.0,active,2025-08-01
+VEND-0066,Pioneer Supplies 49,Mary Thomas,contact841@pioneersupplies49.com,(684) 202-1828,San Jose,CA,2.5,active,2025-07-02
+VEND-0067,Global Supplies 735,Charles Hernandez,contact915@globalsupplies735.com,(519) 320-9840,Dallas,TX,5.0,active,2024-09-10
+VEND-0068,Prime Supplies 183,Robert Sanchez,contact553@primesupplies183.com,(224) 897-4424,Denver,CO,3.5,active,2025-02-24
+VEND-0069,Global Supplies 245,Steven Lopez,contact938@globalsupplies245.com,(757) 767-7542,El Paso,TX,4.9,suspended,2025-09-22
+VEND-0070,Global Supplies 676,Mark Moore,contact554@globalsupplies676.com,(212) 355-7418,Austin,TX,2.9,suspended,2023-12-13
+VEND-0071,Acme Supplies 995,Sarah Gonzalez,contact290@acmesupplies995.com,(908) 647-4385,San Antonio,TX,4.3,inactive,2025-01-08
+VEND-0072,Pioneer Supplies 136,Richard Johnson,contact955@pioneersupplies136.com,(394) 819-8674,San Jose,CA,3.2,active,2024-05-30
+VEND-0073,Global Supplies 781,Elizabeth Clark,contact443@globalsupplies781.com,(699) 243-9283,Detroit,MI,4.9,suspended,2024-05-09
+VEND-0074,Global Supplies 611,David Johnson,contact696@globalsupplies611.com,(932) 320-2518,Seattle,WA,4.6,suspended,2024-10-06
+VEND-0075,Apex Supplies 887,Joseph Williams,contact95@apexsupplies887.com,(404) 897-3379,Fort Worth,TX,3.4,active,2023-12-10
+VEND-0076,Apex Supplies 567,Christopher Moore,contact49@apexsupplies567.com,(551) 366-7542,San Diego,CA,3.0,active,2023-04-25
+VEND-0077,Pioneer Supplies 34,Charles Anderson,contact818@pioneersupplies34.com,(900) 888-3603,Phoenix,AZ,2.5,active,2024-09-07
+VEND-0078,Everest Supplies 695,James Thomas,contact489@everestsupplies695.com,(479) 572-5563,San Jose,CA,3.7,suspended,2025-09-08
+VEND-0079,Global Supplies 885,Paul Perez,contact914@globalsupplies885.com,(895) 991-3254,Boston,MA,4.7,active,2024-03-30
+VEND-0080,Acme Supplies 297,Matthew White,contact76@acmesupplies297.com,(832) 786-6553,Detroit,MI,3.1,inactive,2024-03-07
+VEND-0081,Everest Supplies 824,Matthew Wilson,contact136@everestsupplies824.com,(617) 384-5066,Austin,TX,4.3,suspended,2024-01-20
+VEND-0082,Global Supplies 373,Joseph Smith,contact142@globalsupplies373.com,(967) 593-2207,Detroit,MI,3.8,active,2023-05-13
+VEND-0083,Liberty Supplies 498,Susan Moore,contact929@libertysupplies498.com,(659) 206-4540,Fort Worth,TX,3.8,active,2023-12-05
+VEND-0084,Global Supplies 403,Joseph Johnson,contact406@globalsupplies403.com,(605) 444-8110,New York,NY,3.4,active,2025-01-18
+VEND-0085,Acme Supplies 663,Mary Wilson,contact273@acmesupplies663.com,(208) 838-9929,Denver,CO,2.8,active,2024-08-23
+VEND-0086,Global Supplies 607,Michael Garcia,contact61@globalsupplies607.com,(958) 442-1472,Phoenix,AZ,3.4,active,2024-09-14
+VEND-0087,Apex Supplies 348,David Thompson,contact205@apexsupplies348.com,(985) 671-7078,Denver,CO,3.7,suspended,2024-01-11
+VEND-0088,Summit Supplies 879,Michael Jackson,contact665@summitsupplies879.com,(391) 601-1682,Los Angeles,CA,4.1,suspended,2024-03-16
+VEND-0089,Global Supplies 137,Jessica Anderson,contact358@globalsupplies137.com,(704) 502-6270,Dallas,TX,4.5,suspended,2024-08-27
+VEND-0090,Prime Supplies 45,Christopher Martinez,contact766@primesupplies45.com,(770) 819-5612,Nashville,TN,3.2,inactive,2023-08-19
+VEND-0091,Acme Supplies 128,Paul Smith,contact646@acmesupplies128.com,(774) 323-9978,Washington,DC,3.5,suspended,2023-12-25
+VEND-0092,Summit Supplies 291,Sarah Clark,contact866@summitsupplies291.com,(489) 980-6409,Fort Worth,TX,5.0,active,2025-06-06
+VEND-0093,Prime Supplies 612,Barbara Perez,contact380@primesupplies612.com,(352) 326-9082,Washington,DC,3.7,inactive,2024-12-17
+VEND-0094,Pioneer Supplies 390,James Davis,contact993@pioneersupplies390.com,(618) 305-7881,Phoenix,AZ,3.3,inactive,2023-02-01
+VEND-0095,Everest Supplies 11,Charles Anderson,contact885@everestsupplies11.com,(855) 357-7907,Fort Worth,TX,2.5,active,2023-12-28
+VEND-0096,Acme Supplies 375,Steven Lopez,contact28@acmesupplies375.com,(272) 583-4261,El Paso,TX,2.5,inactive,2023-08-24
+VEND-0097,Acme Supplies 434,Donald Sanchez,contact97@acmesupplies434.com,(523) 633-1884,Jacksonville,FL,3.8,suspended,2023-03-05
+VEND-0098,Liberty Supplies 133,David Rodriguez,contact310@libertysupplies133.com,(276) 414-5018,Denver,CO,3.3,inactive,2024-08-03
+VEND-0099,Apex Supplies 58,Jennifer Gonzalez,contact992@apexsupplies58.com,(470) 949-6986,San Antonio,TX,2.7,inactive,2024-12-12
+VEND-0100,Everest Supplies 598,John Hernandez,contact741@everestsupplies598.com,(671) 326-2309,Oklahoma City,OK,4.1,suspended,2024-10-14

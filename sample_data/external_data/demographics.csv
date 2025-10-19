@@ -1,0 +1,3 @@
+customer_id,age_group,gender,income_bracket,segment,purchase_power
+1,18-25,Female,Low,Budget Shopper,Low
+2,26-35,Male,High,Premium Buyer,High
