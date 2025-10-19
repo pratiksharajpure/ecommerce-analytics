@@ -1,5 +1,3 @@
-# ecommerce-analytics
-E-Commerce Revenue Analytics Dashboard with Real-time Monitoring
 # E-Commerce Revenue Analytics Streamlit Dashboard
 
 ## 📋 Executive Summary
