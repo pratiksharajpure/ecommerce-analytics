@@ -305,7 +305,7 @@ with st.sidebar:
     )
     
     rfm_filter = st.selectbox(
-        "🔍 RFM Score Range",
+        "🔢 RFM Score Range",
         ["All Scores", "555 (Best)", "444-554", "333-443", "222-332", "111-221 (Lowest)"],
         index=0
     )
@@ -413,7 +413,7 @@ st.markdown("---")
 
 st.markdown(f"""
 <div class="alert alert-success">
-    <strong>✓ Segmentation Insight:</strong> 8 active segments identified. Champions segment growing by 23%. At-risk customers need immediate attention.
+    <strong>✔ Segmentation Insight:</strong> 8 active segments identified. Champions segment growing by 23%. At-risk customers need immediate attention.
 </div>
 """, unsafe_allow_html=True)
 
@@ -697,8 +697,16 @@ with col2:
     st.markdown("#### Revenue by Segment")
     
     rev_data = seg_df[['segment', 'revenue']].copy()
-    rev_data['revenue_numeric'] = rev_data['revenue'].str.replace(', '').str.replace('M', '').astype(float)
+    rev_data['revenue_numeric'] = rev_data['revenue'].str.replace('$', '').str.replace('M', '').astype(float)
     
+    fig_rev = px.bar(
+        rev_data,
+        x='segment',
+        y='revenue_numeric',
+        color='revenue_numeric',
+        color_continuous_scale='Blues',
+        labels={'revenue_numeric': 'Revenue ($M)', 'segment': 'Segment'}
+    )
     fig_rev.update_layout(height=350, showlegend=False)
     st.plotly_chart(fig_rev, use_container_width=True)
 
@@ -731,18 +739,12 @@ st.markdown("---")
 # EXPORT & ACTIONS
 # ===========================
 
-st.markdown("---")
-
-# ===========================
-# EXPORT & ACTIONS
-# ===========================
-
 col1, col2, col3 = st.columns(3)
 
 with col1:
     if st.button("Refresh Data", use_container_width=True):
         st.cache_data.clear()
-        st.success("✓ Segmentation data refreshed successfully")
+        st.success("✔ Segmentation data refreshed successfully")
         st.rerun()
 
 with col2:
@@ -762,14 +764,12 @@ with col2:
                 'avg_clv': avg_clv
             }
         }
-        st.success("✓ Segmentation data exported to JSON")
+        st.success("✔ Segmentation data exported to JSON")
         st.json(export_data)
 
 with col3:
     if st.button("Generate Report", use_container_width=True):
         st.info("Generating comprehensive segmentation report...")
-
-st.markdown("---")
 
 st.markdown("---")
 
