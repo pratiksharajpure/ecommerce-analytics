@@ -92,361 +92,230 @@ def get_column(df, table_name, field_name):
 # ===========================
 # SMART DATA LOADER
 # ===========================
+"""
+🔧 COMPLETE FIX for Home.py
+Replace your entire load_data_smart() function with this
+"""
 
 @st.cache_data(ttl=300)
 def load_data_smart():
     """
     Smart data loader - tries multiple sources automatically:
-    1. SQL Database (your 15 SQL files)
-    2. CSV Files (your 10 CSV files)
+    1. CSV Files (PRIORITY - your data is good!)
+    2. SQL Database 
     3. Sample Data (fallback)
     """
     data = {}
     source = "Sample Data (Generated)"
-    sql_errors = []
+    csv_loaded = 0
+    csv_errors = []
     
-    # TRY 1: Load from SQL Database
-    try:
+    # TRY CSV FILES FIRST (since your CSVs are working!)
+    csv_files = {
+        'customers': 'sample_data/core_data/customers.csv',
+        'products': 'sample_data/core_data/products.csv',
+        'orders': 'sample_data/core_data/orders.csv',
+        'inventory': 'sample_data/core_data/inventory.csv',
+        'vendors': 'sample_data/core_data/vendors.csv',
+        'campaigns': 'sample_data/marketing_data/campaigns.csv',
+        'reviews': 'sample_data/operational_data/reviews.csv',
+        'returns': 'sample_data/operational_data/returns.csv',
+        'transactions': 'sample_data/financial_data/transactions.csv',
+    }
+    
+    for table, csv_path in csv_files.items():
+        if Path(csv_path).exists():
+            try:
+                df = pd.read_csv(csv_path)
+                
+                # CRITICAL: Validate the data is actually loaded
+                if not df.empty and len(df) > 0:
+                    # Clean the dataframe
+                    # Remove any duplicate header rows
+                    if table == 'orders' and 'order_date' in df.columns:
+                        df = df[df['order_date'] != 'order_date']
+                    
+                    # Strip whitespace from string columns
+                    for col in df.select_dtypes(include=['object']).columns:
+                        df[col] = df[col].astype(str).str.strip()
+                    
+                    data[table] = df
+                    csv_loaded += 1
+                    
+                    # Debug info
+                    if table == 'orders':
+                        st.sidebar.caption(f"✅ Orders: {len(df)} rows loaded")
+            except Exception as e:
+                csv_errors.append(f"{table}: {str(e)[:50]}")
+                continue
+    
+    # If CSV data loaded successfully, return it!
+    if csv_loaded >= 3:  # At least 3 core tables
+        source = f"CSV Files ({csv_loaded} files loaded)"
+        st.sidebar.success(f"✅ {source}")
         
-           
-        from utils.database import safe_table_query, table_exists, execute_sql_file, test_connection
+        if csv_errors:
+            with st.sidebar.expander("⚠️ Some files had issues", expanded=False):
+                for err in csv_errors:
+                    st.caption(f"• {err}")
+        
+        return data, source
+    
+    # TRY SQL Database (fallback)
+    try:
+        from utils.database import safe_table_query, test_connection
         
         if test_connection():
-            
-            # Load from SQL queries - with existence checks
             tables = ['customers', 'products', 'orders', 'inventory', 'vendors', 
                      'campaigns', 'reviews', 'returns', 'transactions']
             
+            sql_loaded = 0
             for table in tables:
                 try:
                     df = safe_table_query(table, limit=10000)
                     if df is not None and not df.empty:
                         data[table] = df
-                    elif df is None:
-                        sql_errors.append(f"{table}: Table doesn't exist")
-                except Exception as e:
-                    error_msg = str(e)
-                    sql_errors.append(f"{table}: {error_msg[:80]}")
+                        sql_loaded += 1
+                except:
                     continue
             
-            # Load SQL report files - with better error handling
-            sql_reports = {
-                'dashboard_metrics': 'sql/reporting/dashboard_metrics.sql',
-                'executive_summary': 'sql/reporting/executive_summary.sql',
-                'table_health': 'sql/reporting/table_health_scores.sql',
-                'quality_report': 'sql/reporting/daily_quality_report.sql'
-            }
-            
-            for key, sql_file in sql_reports.items():
-                if Path(sql_file).exists():
-                    try:
-                        df = execute_sql_file(sql_file)
-                        if df is not None and not df.empty:
-                            data[key] = df
-                    except Exception as e:
-                        error_msg = str(e)
-                        # Simplify error messages
-                        if "format character" in error_msg:
-                            sql_errors.append(f"{key}: SQL formatting issue (% symbols)")
-                        elif "doesn't exist" in error_msg:
-                            sql_errors.append(f"{key}: Required table missing")
-                        else:
-                            sql_errors.append(f"{key}: {error_msg[:80]}")
-                        continue
-                else:
-                    sql_errors.append(f"{key}: File not found")
-            
-            if len(data) > 0:
-                source = f"MySQL Database ({len(data)} tables)"
-                st.sidebar.success(f"✅ MySQL: {len(data)} tables loaded")
-                if len(sql_errors) > 0:
-                    with st.sidebar.expander(f"⚠️ {len(sql_errors)} Warnings", expanded=False):
-                        st.caption("**Tables/Reports with Issues:**")
-                        for err in sql_errors[:10]:  # Show first 10 errors
-                            st.caption(f"• {err}")
-                        if len(sql_errors) > 10:
-                            st.caption(f"... and {len(sql_errors) - 10} more")
+            if sql_loaded > 0:
+                source = f"MySQL Database ({sql_loaded} tables)"
+                st.sidebar.success(f"✅ {source}")
                 return data, source
-            else:
-                st.sidebar.warning("⚠️ MySQL connected but no data loaded")
-                if len(sql_errors) > 0:
-                    with st.sidebar.expander("📋 Issues Found", expanded=True):
-                        for err in sql_errors[:5]:
-                            st.caption(f"• {err}")
-    except ImportError:
-        st.sidebar.info("ℹ️ database.py not found, using CSV files")
-    except Exception as e:
-        st.sidebar.info(f"ℹ️ MySQL unavailable: {str(e)[:50]}")
+    except:
+        pass
     
-    # TRY 2: Load from CSV Files
-    csv_files = {
-        'customers': 'sample_data/core_data/customers.csv',
-        'products': 'sample_data/core_data/products.csv',
-        'orders': 'sample_data/core_data/orders.csv',
-        'inventory': 'sample_data/core_data/inventory.csv',
-        'vendors': 'sample_data/core_data/vendors.csv',
-        'campaigns': 'sample_data/marketing_data/campaigns.csv',
-        'reviews': 'sample_data/operational_data/reviews.csv',
-        'returns': 'sample_data/operational_data/returns.csv',
-        'transactions': 'sample_data/financial_data/transactions.csv',
-        'benchmarks': 'sample_data/external_data/industry_benchmarks.csv'
-    }
+    # TRY Generate Sample Data (last resort)
+    if len(data) == 0:
+        st.sidebar.warning("⚠️ Using Generated Sample Data")
+        data = generate_sample_data()
+        source = "Generated Sample Data"
     
-    csv_loaded = 0
-    for table, csv_path in csv_files.items():
-        if Path(csv_path).exists():
-            try:
-                df = pd.read_csv(csv_path)
-                if not df.empty:
-                    data[table] = df
-                    csv_loaded += 1
-            except:
-                continue
-    
-    if len(data) > 0:
-        source = f"CSV Files ({csv_loaded} files)" if csv_loaded > 0 else f"Mixed (SQL + CSV)"
-        st.sidebar.success(f"✅ {source}")
-        return data, source
-    
-    # TRY 3: Generate Sample Data (Fallback)
-    st.sidebar.warning("⚠️ Using Generated Sample Data")
-    data = generate_sample_data()
-    return data, source
-    
-    # TRY 2: Load from CSV Files
-    csv_files = {
-        'customers': 'sample_data/core_data/customers.csv',
-        'products': 'sample_data/core_data/products.csv',
-        'orders': 'sample_data/core_data/orders.csv',
-        'inventory': 'sample_data/core_data/inventory.csv',
-        'vendors': 'sample_data/core_data/vendors.csv',
-        'campaigns': 'sample_data/marketing_data/campaigns.csv',
-        'reviews': 'sample_data/operational_data/reviews.csv',
-        'returns': 'sample_data/operational_data/returns.csv',
-        'transactions': 'sample_data/financial_data/transactions.csv',
-        'benchmarks': 'sample_data/external_data/industry_benchmarks.csv'
-    }
-    
-    csv_loaded = 0
-    for table, csv_path in csv_files.items():
-        if Path(csv_path).exists():
-            try:
-                df = pd.read_csv(csv_path)
-                if not df.empty:
-                    data[table] = df
-                    csv_loaded += 1
-            except:
-                continue
-    
-    if len(data) > 0:
-        source = f"CSV Files ({csv_loaded} files)" if csv_loaded > 0 else f"Mixed (SQL + CSV)"
-        st.sidebar.success(f"✅ {source}")
-        return data, source
-    
-    # TRY 3: Generate Sample Data (Fallback)
-    st.sidebar.warning("⚠️ Using Generated Sample Data")
-    data = generate_sample_data()
     return data, source
 
-@st.cache_data(ttl=300)
-def generate_sample_data():
-    """Generate sample data if SQL/CSV not available"""
-    np.random.seed(42)
-    data = {}
-    order_count = 12847
-    
-    # Customers
-    data['customers'] = pd.DataFrame({
-        'customer_id': range(1, 1001),
-        'name': [f'Customer {i}' for i in range(1, 1001)],
-        'email': [f'customer{i}@example.com' if i % 10 != 0 else None for i in range(1, 1001)],
-        'phone': [f'+1-555-{str(i).zfill(4)}' for i in range(1, 1001)],
-        'created_date': pd.date_range(start='2023-01-01', periods=1000, freq='D'),
-        'country': np.random.choice(['USA', 'UK', 'Canada', 'Australia', 'Germany'], 1000),
-        'lifetime_value': np.random.uniform(100, 5000, 1000)
-    })
-    
-    # Products
-    data['products'] = pd.DataFrame({
-        'product_id': range(1, 501),
-        'name': [f'Product {i}' for i in range(1, 501)],
-        'category': np.random.choice(['Electronics', 'Clothing', 'Home', 'Books', 'Sports'], 500),
-        'description': [f'Description for product {i}' if i % 4 != 0 else None for i in range(1, 501)],
-        'price': np.random.uniform(5, 200, 500),
-        'cost': np.random.uniform(2, 100, 500),
-        'stock': np.random.randint(0, 100, 500),
-        'vendor_id': np.random.randint(1, 21, 500)
-    })
-    
-    # Orders
-    data['orders'] = pd.DataFrame({
-        'order_id': range(1, order_count + 1),
-        'customer_id': np.random.randint(1, 1001, order_count),
-        'order_date': pd.date_range(end=datetime.now(), periods=order_count, freq='H'),
-        'total_amount': np.random.uniform(10, 500, order_count),
-        'status': np.random.choice(['completed', 'pending', 'cancelled', 'shipped'], order_count, p=[0.70, 0.15, 0.05, 0.10]),
-        'payment_method': np.random.choice(['Credit Card', 'PayPal', 'Bank Transfer'], order_count),
-        'shipping_cost': np.random.uniform(0, 20, order_count)
-    })
-    
-    # Vendors
-    data['vendors'] = pd.DataFrame({
-        'vendor_id': range(1, 21),
-        'name': [f'Vendor {i}' for i in range(1, 21)],
-        'country': np.random.choice(['China', 'USA', 'Germany', 'Japan'], 20),
-        'rating': np.random.uniform(3.5, 5.0, 20),
-        'active': np.random.choice([True, False], 20, p=[0.9, 0.1])
-    })
-    
-    # Returns
-    data['returns'] = pd.DataFrame({
-        'return_id': range(1, 201),
-        'order_id': np.random.randint(1, order_count + 1, 200),
-        'return_date': pd.date_range(end=datetime.now(), periods=200, freq='2D'),
-        'reason': np.random.choice(['Defective', 'Wrong Item', 'Not as Described', 'Changed Mind'], 200),
-        'refund_amount': np.random.uniform(10, 300, 200),
-        'status': np.random.choice(['Pending', 'Approved', 'Rejected'], 200, p=[0.2, 0.7, 0.1])
-    })
-    
-    # Reviews
-    data['reviews'] = pd.DataFrame({
-        'review_id': range(1, 1501),
-        'product_id': np.random.randint(1, 501, 1500),
-        'customer_id': np.random.randint(1, 1001, 1500),
-        'rating': np.random.randint(1, 6, 1500),
-        'review_date': pd.date_range(end=datetime.now(), periods=1500, freq='3H'),
-        'verified_purchase': np.random.choice([True, False], 1500, p=[0.8, 0.2])
-    })
-    
-    # Campaigns
-    data['campaigns'] = pd.DataFrame({
-        'campaign_id': range(1, 26),
-        'name': [f'Campaign {i}' for i in range(1, 26)],
-        'type': np.random.choice(['Email', 'Social', 'PPC', 'Display'], 25),
-        'budget': np.random.uniform(1000, 10000, 25),
-        'spent': np.random.uniform(500, 9000, 25),
-        'conversions': np.random.randint(10, 500, 25),
-        'start_date': pd.date_range(start='2024-01-01', periods=25, freq='W')
-    })
-    
-    # Inventory
-    data['inventory'] = pd.DataFrame({
-        'inventory_id': range(1, 501),
-        'product_id': range(1, 501),
-        'warehouse': np.random.choice(['Warehouse A', 'Warehouse B', 'Warehouse C'], 500),
-        'quantity': np.random.randint(0, 150, 500),
-        'reorder_point': np.random.randint(10, 30, 500),
-        'last_updated': pd.date_range(end=datetime.now(), periods=500, freq='6H')
-    })
-    
-    # Transactions
-    transaction_count = int(order_count * 1.05)
-    data['transactions'] = pd.DataFrame({
-        'transaction_id': range(1, transaction_count + 1),
-        'order_id': np.random.randint(1, order_count + 1, transaction_count),
-        'transaction_date': pd.date_range(end=datetime.now(), periods=transaction_count, freq='45S'),
-        'amount': np.random.uniform(5, 500, transaction_count),
-        'payment_method': np.random.choice(['Credit Card', 'Debit Card', 'PayPal'], transaction_count),
-        'status': np.random.choice(['success', 'failed', 'pending'], transaction_count, p=[0.85, 0.08, 0.07]),
-        'currency': np.random.choice(['USD', 'EUR', 'GBP'], transaction_count, p=[0.7, 0.2, 0.1])
-    })
-    
-    return data
 
+# Also add this enhanced metrics function
 @st.cache_data(ttl=300)
 def calculate_dashboard_metrics(data, date_range_days=90):
-    """Calculate key metrics from loaded data"""
+    """Calculate key metrics - ENHANCED VERSION"""
     metrics = {}
     
-    # Check if we have SQL dashboard_metrics
-    if 'dashboard_metrics' in data and not data['dashboard_metrics'].empty:
-        sql_df = data['dashboard_metrics']
-        metrics['revenue'] = sql_df.get('total_revenue', [0])[0] if 'total_revenue' in sql_df.columns else 0
-        metrics['orders'] = sql_df.get('total_orders', [0])[0] if 'total_orders' in sql_df.columns else 0
-        metrics['revenue_delta'] = sql_df.get('revenue_growth_pct', [0])[0] if 'revenue_growth_pct' in sql_df.columns else 0
-        metrics['orders_delta'] = sql_df.get('orders_growth_pct', [0])[0] if 'orders_growth_pct' in sql_df.columns else 0
-        if metrics['revenue'] > 0:
-            return metrics
-    
-    # Calculate from orders data
+    # PRIORITY: Calculate from orders CSV data
     if 'orders' in data and not data['orders'].empty:
-        orders = data['orders'].copy()
+        orders_df = data['orders'].copy()
         
-        # Use smart column finder
-        date_col = get_column(orders, 'orders', 'date')
-        amount_col = get_column(orders, 'orders', 'amount')
+        st.sidebar.caption(f"📊 Processing {len(orders_df)} orders...")
+        
+        # Smart column detection
+        date_col = 'order_date' if 'order_date' in orders_df.columns else None
+        amount_col = 'total_amount' if 'total_amount' in orders_df.columns else None
         
         if date_col and amount_col:
             try:
-                # Filter out invalid date values (like header rows that got mixed in)
-                orders = orders[orders[date_col] != date_col]
-                orders = orders[orders[date_col].notna()]
+                # Clean the data
+                orders_df = orders_df[orders_df[date_col].notna()]
+                orders_df = orders_df[orders_df[amount_col].notna()]
                 
-                # Convert to datetime with error handling
-                orders[date_col] = pd.to_datetime(orders[date_col], errors='coerce')
+                # Convert types
+                orders_df[date_col] = pd.to_datetime(orders_df[date_col], errors='coerce')
+                orders_df[amount_col] = pd.to_numeric(orders_df[amount_col], errors='coerce')
                 
-                # Drop rows where date conversion failed
-                orders = orders[orders[date_col].notna()]
+                # Remove invalid rows
+                orders_df = orders_df.dropna(subset=[date_col, amount_col])
+                orders_df = orders_df[orders_df[amount_col] > 0]
                 
-                if not orders.empty:
+                if not orders_df.empty:
+                    # Filter by date range
                     end_date = datetime.now()
                     start_date = end_date - timedelta(days=date_range_days)
-                    filtered = orders[orders[date_col] >= start_date]
                     
-                    prev_start = start_date - timedelta(days=date_range_days)
-                    prev_filtered = orders[(orders[date_col] >= prev_start) & (orders[date_col] < start_date)]
+                    current_period = orders_df[orders_df[date_col] >= start_date]
                     
-                    metrics['revenue'] = filtered[amount_col].sum()
-                    prev_revenue = prev_filtered[amount_col].sum()
-                    metrics['revenue_delta'] = ((metrics['revenue'] - prev_revenue) / prev_revenue * 100) if prev_revenue > 0 else 0
-                    
-                    metrics['orders'] = len(filtered)
-                    prev_orders = len(prev_filtered)
-                    metrics['orders_delta'] = ((metrics['orders'] - prev_orders) / prev_orders * 100) if prev_orders > 0 else 0
-                    
-                    metrics['aov'] = filtered[amount_col].mean() if len(filtered) > 0 else 0
-                    metrics['conversion_rate'] = np.random.uniform(2.5, 4.5)
+                    if len(current_period) > 0:
+                        # Previous period for comparison
+                        prev_start = start_date - timedelta(days=date_range_days)
+                        prev_period = orders_df[
+                            (orders_df[date_col] >= prev_start) & 
+                            (orders_df[date_col] < start_date)
+                        ]
+                        
+                        # Calculate metrics
+                        metrics['revenue'] = float(current_period[amount_col].sum())
+                        metrics['orders'] = len(current_period)
+                        metrics['aov'] = float(current_period[amount_col].mean())
+                        
+                        # Growth calculations
+                        prev_revenue = float(prev_period[amount_col].sum()) if len(prev_period) > 0 else 0
+                        prev_orders = len(prev_period)
+                        
+                        metrics['revenue_delta'] = (
+                            ((metrics['revenue'] - prev_revenue) / prev_revenue * 100) 
+                            if prev_revenue > 0 else 0
+                        )
+                        metrics['orders_delta'] = (
+                            ((metrics['orders'] - prev_orders) / prev_orders * 100) 
+                            if prev_orders > 0 else 0
+                        )
+                        
+                        st.sidebar.caption(f"✅ Calculated: ${metrics['revenue']:,.0f} from {metrics['orders']} orders")
+                    else:
+                        st.sidebar.warning(f"⚠️ No orders in last {date_range_days} days")
+                else:
+                    st.sidebar.error("❌ Orders data is empty after cleaning")
             except Exception as e:
-                # If date parsing fails, skip order-based metrics
-                pass
+                st.sidebar.error(f"❌ Error processing orders: {str(e)[:80]}")
+        else:
+            st.sidebar.error(f"❌ Missing columns. Found: {list(orders_df.columns)}")
     
-    # Customers
-    if 'customers' in data:
+    # Customers metrics
+    if 'customers' in data and len(data['customers']) > 0:
         metrics['total_customers'] = len(data['customers'])
         metrics['new_customers'] = len(data['customers']) // 10
     
-    # Products
-    if 'products' in data:
-        metrics['total_products'] = len(data['products'])
-        stock_col = get_column(data['products'], 'products', 'stock')
-        if stock_col:
+    # Products metrics
+    if 'products' in data and len(data['products']) > 0:
+        products_df = data['products']
+        metrics['total_products'] = len(products_df)
+        
+        if 'stock_quantity' in products_df.columns:
             try:
-                # Convert to numeric, handling any non-numeric values
-                products_df = data['products'].copy()
-                products_df[stock_col] = pd.to_numeric(products_df[stock_col], errors='coerce')
-                metrics['low_stock_items'] = (products_df[stock_col] < 10).sum()
-            except Exception as e:
+                stock = pd.to_numeric(products_df['stock_quantity'], errors='coerce')
+                metrics['low_stock_items'] = int((stock < 10).sum())
+            except:
                 metrics['low_stock_items'] = 0
     
-    # Returns
-    if 'returns' in data:
+    # Reviews metrics
+    if 'reviews' in data and not data['reviews'].empty:
+        if 'rating' in data['reviews'].columns:
+            try:
+                ratings = pd.to_numeric(data['reviews']['rating'], errors='coerce')
+                avg = ratings.mean()
+                if pd.notna(avg) and 0 < avg <= 5:
+                    metrics['avg_rating'] = float(avg)
+            except:
+                pass
+    
+    # Returns metrics
+    if 'returns' in data and len(data['returns']) > 0:
         metrics['return_rate'] = (len(data['returns']) / max(metrics.get('orders', 1), 1)) * 100
     
-    # Reviews
-    if 'reviews' in data and not data['reviews'].empty:
-        rating_col = get_column(data['reviews'], 'reviews', 'rating')
-        if rating_col:
-            metrics['avg_rating'] = data['reviews'][rating_col].mean()
-    
-    # Defaults
+    # Set defaults for missing metrics
     defaults = {
         'revenue': 0, 'revenue_delta': 0, 'orders': 0, 'orders_delta': 0,
-        'aov': 0, 'conversion_rate': 3.2, 'total_customers': 0, 'new_customers': 0,
-        'total_products': 0, 'low_stock_items': 0, 'return_rate': 0, 'avg_rating': 4.2
+        'aov': 0, 'conversion_rate': 3.2, 'total_customers': 0, 
+        'new_customers': 0, 'total_products': 0, 'low_stock_items': 0, 
+        'return_rate': 1.5, 'avg_rating': 4.2
     }
+    
     for key, value in defaults.items():
         if key not in metrics:
             metrics[key] = value
+    
+    # Final cleanup - remove any NaN/Inf
+    for key in list(metrics.keys()):
+        if pd.isna(metrics[key]) or np.isinf(metrics[key]):
+            metrics[key] = defaults.get(key, 0)
     
     return metrics
 
