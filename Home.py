@@ -92,10 +92,6 @@ def get_column(df, table_name, field_name):
 # ===========================
 # SMART DATA LOADER
 # ===========================
-"""
-🔧 COMPLETE FIX for Home.py
-Replace your entire load_data_smart() function with this
-"""
 
 @st.cache_data(ttl=300)
 def load_data_smart():
