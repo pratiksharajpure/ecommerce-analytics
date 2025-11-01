@@ -166,3 +166,26 @@ sample_data/**/customer_data_*.csv
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Setup wizard and executor files
+setup_wizard_clean
+setup_wizard_fix
+sql_error_fixer
+sql_executor_fix
+```
+
+Or if these are Python files (`.py` extension), add:
+```
+# Setup wizard and executor files
+setup_wizard_clean.py
+setup_wizard_fix.py
+sql_error_fixer.py
+sql_executor_fix.py
+```
+
+**If you want to hide all files with similar naming pattern:**
+```
+# All setup and executor scripts
+setup_wizard_*
+sql_error_fixer*
+sql_executor_*
