@@ -384,20 +384,20 @@ SELECT
     ) AS 'MoM Change',
     current_grade AS 'Grade',
     CASE 
-        WHEN mom_change > 5 THEN '📈 Significant Improvement'
+        WHEN mom_change > 5 THEN ''TRENDING_UP' Significant Improvement'
         WHEN mom_change > 0 THEN '↗️ Improving'
         WHEN mom_change = 0 THEN '→ Stable'
         WHEN mom_change > -5 THEN '↘️ Declining'
-        ELSE '📉 Needs Attention'
+        ELSE ''TRENDING_DOWN' Needs Attention'
     END AS 'Trend',
     current_record_count AS 'Current Records',
     previous_record_count AS 'Previous Records',
     CASE 
-        WHEN current_grade IN ('A+', 'A') THEN '✅ Excellent'
+        WHEN current_grade IN ('A+', 'A') THEN ''SUCCESS' Excellent'
         WHEN current_grade IN ('B+', 'B') THEN '✓ Good'
-        WHEN current_grade IN ('C+', 'C') THEN '⚠️ Fair'
-        WHEN current_grade = 'D' THEN '⚠️ Poor'
-        ELSE '❌ Critical'
+        WHEN current_grade IN ('C+', 'C') THEN ''WARNING' Fair'
+        WHEN current_grade = 'D' THEN ''WARNING' Poor'
+        ELSE ''ERROR' Critical'
     END AS 'Status'
 FROM quality_scores
 ORDER BY current_score DESC;
@@ -459,7 +459,7 @@ SELECT
     CONCAT(CASE WHEN mom_change > 0 THEN '+' ELSE '' END, mom_change, '%') AS 'MoM Change',
     CASE 
         WHEN current_grade IN ('D', 'F') THEN '🚨 Urgent Action Required'
-        WHEN current_grade IN ('C', 'C+') THEN '⚠️ Improvement Needed'
+        WHEN current_grade IN ('C', 'C+') THEN ''WARNING' Improvement Needed'
         ELSE '✓ Monitor'
     END AS 'Action Required'
 FROM quality_scores
@@ -502,8 +502,8 @@ SELECT
     CONCAT(mom_change, '%') AS 'Decline',
     CASE 
         WHEN mom_change < -10 THEN '🚨 Critical Decline'
-        WHEN mom_change < -5 THEN '⚠️ Significant Decline'
-        ELSE '⚠️ Minor Decline'
+        WHEN mom_change < -5 THEN ''WARNING' Significant Decline'
+        ELSE ''WARNING' Minor Decline'
     END AS 'Severity'
 FROM quality_scores
 WHERE mom_change < 0
@@ -521,10 +521,10 @@ SELECT
     COUNT(*) AS 'Number of Categories',
     CONCAT(ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM quality_scores), 1), '%') AS 'Percentage',
     CASE 
-        WHEN current_grade IN ('A+', 'A') THEN '✅ Excellent Performance'
+        WHEN current_grade IN ('A+', 'A') THEN ''SUCCESS' Excellent Performance'
         WHEN current_grade IN ('B+', 'B') THEN '✓ Good Performance'
-        WHEN current_grade IN ('C+', 'C') THEN '⚠️ Needs Improvement'
-        ELSE '❌ Critical Issues'
+        WHEN current_grade IN ('C+', 'C') THEN ''WARNING' Needs Improvement'
+        ELSE ''ERROR' Critical Issues'
     END AS 'Performance Level'
 FROM quality_scores
 GROUP BY current_grade

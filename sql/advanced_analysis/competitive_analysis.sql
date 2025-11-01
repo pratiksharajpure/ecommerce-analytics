@@ -504,10 +504,10 @@ SELECT
                 WHEN revenue >= (SELECT revenue FROM market_position WHERE company = 'Market Leader') * 0.8 
                     THEN '🥇 Near Leader'
                 WHEN revenue >= (SELECT revenue FROM market_position WHERE company = 'Market Average') * 1.2 
-                    THEN '📈 Above Market'
+                    THEN ''TRENDING_UP' Above Market'
                 WHEN revenue >= (SELECT revenue FROM market_position WHERE company = 'Market Average') * 0.8 
                     THEN '⚖️ At Market'
-                ELSE '📊 Below Market'
+                ELSE ''CHART' Below Market'
             END
         ELSE ''
     END AS competitive_status
@@ -714,21 +714,21 @@ SELECT
     unit_type,
     ROUND((our_metric - market_benchmark) / NULLIF(market_benchmark, 0) * 100, 2) AS variance_pct,
     CASE 
-        WHEN metric_name = 'Market Share' AND our_metric >= 15 THEN '🟢 Strong'
-        WHEN metric_name = 'Market Share' AND our_metric >= 10 THEN '🟡 Growing'
-        WHEN metric_name = 'Market Share' AND our_metric >= 5 THEN '🟡 Established'
-        WHEN metric_name = 'Market Share' THEN '🔴 Emerging'
-        WHEN metric_name = 'Price Position' AND ABS(our_metric) <= 5 THEN '🟢 Competitive'
-        WHEN metric_name = 'Price Position' AND our_metric > 5 THEN '🟡 Premium'
-        WHEN metric_name = 'Price Position' THEN '🟡 Discount'
-        WHEN metric_name = 'Quality Rating' AND our_metric >= 4.5 THEN '🟢 Excellent'
-        WHEN metric_name = 'Quality Rating' AND our_metric >= 4.0 THEN '🟢 Good'
-        WHEN metric_name = 'Quality Rating' AND our_metric >= 3.5 THEN '🟡 Average'
-        WHEN metric_name = 'Quality Rating' THEN '🔴 Below Average'
-        WHEN metric_name = 'Avg Order Value' AND our_metric >= market_benchmark THEN '🟢 Above Market'
-        WHEN metric_name = 'Avg Order Value' THEN '🟡 Below Market'
-        WHEN our_metric >= market_benchmark THEN '🟢 Leading'
-        ELSE '🟡 Following'
+        WHEN metric_name = 'Market Share' AND our_metric >= 15 THEN ''GREEN' Strong'
+        WHEN metric_name = 'Market Share' AND our_metric >= 10 THEN ''YELLOW' Growing'
+        WHEN metric_name = 'Market Share' AND our_metric >= 5 THEN ''YELLOW' Established'
+        WHEN metric_name = 'Market Share' THEN ''RED' Emerging'
+        WHEN metric_name = 'Price Position' AND ABS(our_metric) <= 5 THEN ''GREEN' Competitive'
+        WHEN metric_name = 'Price Position' AND our_metric > 5 THEN ''YELLOW' Premium'
+        WHEN metric_name = 'Price Position' THEN ''YELLOW' Discount'
+        WHEN metric_name = 'Quality Rating' AND our_metric >= 4.5 THEN ''GREEN' Excellent'
+        WHEN metric_name = 'Quality Rating' AND our_metric >= 4.0 THEN ''GREEN' Good'
+        WHEN metric_name = 'Quality Rating' AND our_metric >= 3.5 THEN ''YELLOW' Average'
+        WHEN metric_name = 'Quality Rating' THEN ''RED' Below Average'
+        WHEN metric_name = 'Avg Order Value' AND our_metric >= market_benchmark THEN ''GREEN' Above Market'
+        WHEN metric_name = 'Avg Order Value' THEN ''YELLOW' Below Market'
+        WHEN our_metric >= market_benchmark THEN ''GREEN' Leading'
+        ELSE ''YELLOW' Following'
     END AS status,
     description
 FROM competitive_metrics

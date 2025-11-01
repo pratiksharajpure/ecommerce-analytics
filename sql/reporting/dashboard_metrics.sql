@@ -41,7 +41,7 @@ SELECT
         ELSE 'down'
     END AS trend_direction,
     'primary' AS card_color,
-    '💰' AS icon
+    ''MONEY'' AS icon
 FROM orders
 WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 1 DAY)
 
@@ -169,8 +169,8 @@ SELECT
         WHEN 'pending' THEN '⏳'
         WHEN 'processing' THEN '🔄'
         WHEN 'shipped' THEN '🚚'
-        WHEN 'delivered' THEN '✅'
-        WHEN 'cancelled' THEN '❌'
+        WHEN 'delivered' THEN ''SUCCESS''
+        WHEN 'cancelled' THEN ''ERROR''
         ELSE '❓'
     END AS status_icon,
     CASE status
@@ -208,10 +208,10 @@ SELECT
     -- Velocity (units per hour)
     ROUND(SUM(oi.quantity) / 24.0, 2) AS units_per_hour,
     CASE 
-        WHEN p.stock_quantity = 0 THEN '🔴 Out of Stock'
-        WHEN p.stock_quantity <= 10 THEN '🟡 Low Stock'
+        WHEN p.stock_quantity = 0 THEN ''RED' Out of Stock'
+        WHEN p.stock_quantity <= 10 THEN ''YELLOW' Low Stock'
         WHEN SUM(oi.quantity) / 24.0 > 5 THEN '🔥 Hot Item'
-        ELSE '🟢 Available'
+        ELSE ''GREEN' Available'
     END AS stock_status
 FROM order_items oi
 JOIN orders o ON oi.order_id = o.order_id
@@ -451,10 +451,10 @@ SELECT
     ROUND(COALESCE(SUM(oi.quantity), 0) / 7.0, 2) AS daily_velocity,
     ROUND(p.stock_quantity / NULLIF(COALESCE(SUM(oi.quantity), 0) / 7.0, 0), 1) AS days_until_stockout,
     CASE 
-        WHEN p.stock_quantity = 0 THEN '🔴 OUT OF STOCK'
-        WHEN p.stock_quantity <= i.reorder_level THEN '🟡 REORDER NOW'
+        WHEN p.stock_quantity = 0 THEN ''RED' OUT OF STOCK'
+        WHEN p.stock_quantity <= i.reorder_level THEN ''YELLOW' REORDER NOW'
         WHEN p.stock_quantity / NULLIF(COALESCE(SUM(oi.quantity), 0) / 7.0, 0) <= 7 THEN '🟠 LOW STOCK'
-        ELSE '🟢 ADEQUATE'
+        ELSE ''GREEN' ADEQUATE'
     END AS alert_status,
     CASE 
         WHEN p.stock_quantity = 0 THEN 1
@@ -472,7 +472,7 @@ LEFT JOIN orders o ON oi.order_id = o.order_id
 WHERE p.status = 'active'
 GROUP BY p.product_id, p.product_name, p.sku, pc.category_name, 
          p.stock_quantity, i.reorder_level, i.quantity_reserved, i.quantity_available
-HAVING alert_status != '🟢 ADEQUATE'
+HAVING alert_status != ''GREEN' ADEQUATE'
 ORDER BY priority_order, days_until_stockout;
 
 -- ========================================
@@ -487,9 +487,9 @@ SELECT
     ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS percentage,
     AVG(TIMESTAMPDIFF(MINUTE, created_at, updated_at)) AS avg_processing_minutes,
     CASE payment_status
-        WHEN 'paid' THEN '✅ Successful'
+        WHEN 'paid' THEN ''SUCCESS' Successful'
         WHEN 'pending' THEN '⏳ Processing'
-        WHEN 'failed' THEN '❌ Failed'
+        WHEN 'failed' THEN ''ERROR' Failed'
         WHEN 'refunded' THEN '🔄 Refunded'
         ELSE '❓ Unknown'
     END AS status_label,
@@ -571,8 +571,8 @@ SELECT
                        WHERE p2.category_id = pc.category_id
                        AND DATE(o2.order_date) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)
                        AND o2.payment_status = 'paid'), 0)
-        THEN '📈 Up'
-        ELSE '📉 Down'
+        THEN ''TRENDING_UP' Up'
+        ELSE ''TRENDING_DOWN' Down'
     END AS trend
 FROM product_categories pc
 JOIN products p ON pc.category_id = p.category_id
@@ -599,10 +599,10 @@ SELECT
     AVG(TIMESTAMPDIFF(HOUR, r.created_at, NOW())) AS avg_age_hours,
     CASE r.status
         WHEN 'requested' THEN '📝 Requested'
-        WHEN 'approved' THEN '✅ Approved'
-        WHEN 'rejected' THEN '❌ Rejected'
+        WHEN 'approved' THEN ''SUCCESS' Approved'
+        WHEN 'rejected' THEN ''ERROR' Rejected'
         WHEN 'received' THEN '📦 Received'
-        WHEN 'refunded' THEN '💰 Refunded'
+        WHEN 'refunded' THEN ''MONEY' Refunded'
         ELSE '❓ Unknown'
     END AS status_label,
     CASE r.status
@@ -639,10 +639,10 @@ SELECT
     ROUND(cp.conversions * 100.0 / NULLIF(cp.clicks, 0), 2) AS conversion_rate_pct,
     ROUND((cp.revenue - cp.spend) / NULLIF(cp.spend, 0) * 100, 2) AS roi_pct,
     CASE 
-        WHEN (cp.revenue - cp.spend) / NULLIF(cp.spend, 0) >= 2 THEN '🟢 Excellent'
-        WHEN (cp.revenue - cp.spend) / NULLIF(cp.spend, 0) >= 1 THEN '🟡 Good'
+        WHEN (cp.revenue - cp.spend) / NULLIF(cp.spend, 0) >= 2 THEN ''GREEN' Excellent'
+        WHEN (cp.revenue - cp.spend) / NULLIF(cp.spend, 0) >= 1 THEN ''YELLOW' Good'
         WHEN (cp.revenue - cp.spend) / NULLIF(cp.spend, 0) >= 0 THEN '🟠 Break-even'
-        ELSE '🔴 Loss'
+        ELSE ''RED' Loss'
     END AS performance_status
 FROM campaigns c
 LEFT JOIN campaign_performance cp ON c.campaign_id = cp.campaign_id
@@ -679,7 +679,7 @@ SELECT
     'Approved Today',
     COUNT(*),
     ROUND(AVG(rating), 2),
-    '✅'
+    ''SUCCESS''
 FROM reviews
 WHERE status = 'approved'
     AND DATE(created_at) = CURDATE()
@@ -702,7 +702,7 @@ SELECT
     'Negative Reviews (7d)',
     COUNT(*),
     ROUND(AVG(rating), 2),
-    '⚠️'
+    ''WARNING''
 FROM reviews
 WHERE rating <= 2
     AND created_at >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
@@ -782,11 +782,11 @@ SELECT
     COUNT(oi.order_item_id) AS item_count,
     TIMESTAMPDIFF(MINUTE, o.created_at, NOW()) AS minutes_ago,
     CASE 
-        WHEN o.status = 'delivered' THEN '✅'
+        WHEN o.status = 'delivered' THEN ''SUCCESS''
         WHEN o.status = 'shipped' THEN '🚚'
         WHEN o.status = 'processing' THEN '🔄'
         WHEN o.status = 'pending' THEN '⏳'
-        WHEN o.status = 'cancelled' THEN '❌'
+        WHEN o.status = 'cancelled' THEN ''ERROR''
         ELSE '❓'
     END AS status_icon,
     CASE o.status
@@ -883,7 +883,7 @@ SELECT
     FORMAT(m24.orders, 0) AS current_value,
     FORMAT(mp24.orders, 0) AS previous_value,
     ROUND((m24.orders - mp24.orders) * 100.0 / NULLIF(mp24.orders, 0), 2) AS change_pct,
-    CASE WHEN m24.orders > mp24.orders THEN '📈' ELSE '📉' END AS trend
+    CASE WHEN m24.orders > mp24.orders THEN ''TRENDING_UP'' ELSE ''TRENDING_DOWN'' END AS trend
 FROM metrics_24h m24, metrics_prev_24h mp24
 
 UNION ALL
@@ -893,7 +893,7 @@ SELECT
     CONCAT(', FORMAT(m24.revenue, 2)),
     CONCAT(', FORMAT(mp24.revenue, 2)),
     ROUND((m24.revenue - mp24.revenue) * 100.0 / NULLIF(mp24.revenue, 0), 2),
-    CASE WHEN m24.revenue > mp24.revenue THEN '📈' ELSE '📉' END
+    CASE WHEN m24.revenue > mp24.revenue THEN ''TRENDING_UP'' ELSE ''TRENDING_DOWN'' END
 FROM metrics_24h m24, metrics_prev_24h mp24
 
 UNION ALL
@@ -903,7 +903,7 @@ SELECT
     CONCAT(', FORMAT(m24.avg_order_value, 2)),
     CONCAT(', FORMAT(mp24.avg_order_value, 2)),
     ROUND((m24.avg_order_value - mp24.avg_order_value) * 100.0 / NULLIF(mp24.avg_order_value, 0), 2),
-    CASE WHEN m24.avg_order_value > mp24.avg_order_value THEN '📈' ELSE '📉' END
+    CASE WHEN m24.avg_order_value > mp24.avg_order_value THEN ''TRENDING_UP'' ELSE ''TRENDING_DOWN'' END
 FROM metrics_24h m24, metrics_prev_24h mp24
 
 UNION ALL
@@ -913,7 +913,7 @@ SELECT
     FORMAT(m24.customers, 0),
     FORMAT(mp24.customers, 0),
     ROUND((m24.customers - mp24.customers) * 100.0 / NULLIF(mp24.customers, 0), 2),
-    CASE WHEN m24.customers > mp24.customers THEN '📈' ELSE '📉' END
+    CASE WHEN m24.customers > mp24.customers THEN ''TRENDING_UP'' ELSE ''TRENDING_DOWN'' END
 FROM metrics_24h m24, metrics_prev_24h mp24
 
 UNION ALL
@@ -943,7 +943,7 @@ SELECT
     CONCAT(ROUND(m24.cancelled * 100.0 / NULLIF(m24.orders, 0), 2), '%'),
     '-',
     NULL,
-    '❌'
+    ''ERROR''
 FROM metrics_24h m24
 
 UNION ALL
@@ -1015,10 +1015,10 @@ SELECT
     ROUND(orders_paid * 100.0 / NULLIF(orders_created, 0), 2) AS conversion_rate_pct,
     ROUND(orders_cancelled * 100.0 / NULLIF(orders_created, 0), 2) AS abandonment_rate_pct,
     CASE 
-        WHEN orders_paid * 100.0 / NULLIF(orders_created, 0) >= 80 THEN '🟢 Excellent'
-        WHEN orders_paid * 100.0 / NULLIF(orders_created, 0) >= 60 THEN '🟡 Good'
+        WHEN orders_paid * 100.0 / NULLIF(orders_created, 0) >= 80 THEN ''GREEN' Excellent'
+        WHEN orders_paid * 100.0 / NULLIF(orders_created, 0) >= 60 THEN ''YELLOW' Good'
         WHEN orders_paid * 100.0 / NULLIF(orders_created, 0) >= 40 THEN '🟠 Fair'
-        ELSE '🔴 Poor'
+        ELSE ''RED' Poor'
     END AS conversion_health
 FROM hourly_traffic
 ORDER BY hour DESC;
@@ -1043,7 +1043,7 @@ SELECT
         WHEN 'debit_card' THEN '💳'
         WHEN 'paypal' THEN '🅿️'
         WHEN 'bank_transfer' THEN '🏦'
-        ELSE '💰'
+        ELSE ''MONEY''
     END AS payment_icon
 FROM orders o
 JOIN payment_methods pm ON o.customer_id = pm.customer_id AND pm.is_default = TRUE
@@ -1070,9 +1070,9 @@ SELECT
     COUNT(DISTINCT vc.contract_id) AS active_contracts,
     CASE 
         WHEN v.rating >= 4.5 THEN '⭐ Excellent'
-        WHEN v.rating >= 4.0 THEN '🟢 Good'
-        WHEN v.rating >= 3.5 THEN '🟡 Fair'
-        ELSE '🔴 Poor'
+        WHEN v.rating >= 4.0 THEN ''GREEN' Good'
+        WHEN v.rating >= 3.5 THEN ''YELLOW' Fair'
+        ELSE ''RED' Poor'
     END AS performance_rating
 FROM vendors v
 LEFT JOIN vendor_contracts vc ON v.vendor_id = vc.vendor_id AND vc.status = 'active'
@@ -1114,10 +1114,10 @@ SELECT
     ROUND(da.revenue_actual * 100.0 / dt.revenue_target, 2) AS progress_pct,
     CONCAT(', FORMAT(dt.revenue_target - da.revenue_actual, 2)) AS remaining,
     CASE 
-        WHEN da.revenue_actual >= dt.revenue_target THEN '✅ Target Met'
-        WHEN da.revenue_actual >= dt.revenue_target * 0.8 THEN '🟡 On Track'
+        WHEN da.revenue_actual >= dt.revenue_target THEN ''SUCCESS' Target Met'
+        WHEN da.revenue_actual >= dt.revenue_target * 0.8 THEN ''YELLOW' On Track'
         WHEN da.revenue_actual >= dt.revenue_target * 0.5 THEN '🟠 Behind'
-        ELSE '🔴 Critical'
+        ELSE ''RED' Critical'
     END AS status
 FROM daily_targets dt, daily_actual da
 
@@ -1130,10 +1130,10 @@ SELECT
     ROUND(da.orders_actual * 100.0 / dt.orders_target, 2),
     FORMAT(dt.orders_target - da.orders_actual, 0),
     CASE 
-        WHEN da.orders_actual >= dt.orders_target THEN '✅ Target Met'
-        WHEN da.orders_actual >= dt.orders_target * 0.8 THEN '🟡 On Track'
+        WHEN da.orders_actual >= dt.orders_target THEN ''SUCCESS' Target Met'
+        WHEN da.orders_actual >= dt.orders_target * 0.8 THEN ''YELLOW' On Track'
         WHEN da.orders_actual >= dt.orders_target * 0.5 THEN '🟠 Behind'
-        ELSE '🔴 Critical'
+        ELSE ''RED' Critical'
     END
 FROM daily_targets dt, daily_actual da
 
@@ -1146,10 +1146,10 @@ SELECT
     ROUND(da.new_customers_actual * 100.0 / dt.new_customers_target, 2),
     FORMAT(dt.new_customers_target - da.new_customers_actual, 0),
     CASE 
-        WHEN da.new_customers_actual >= dt.new_customers_target THEN '✅ Target Met'
-        WHEN da.new_customers_actual >= dt.new_customers_target * 0.8 THEN '🟡 On Track'
+        WHEN da.new_customers_actual >= dt.new_customers_target THEN ''SUCCESS' Target Met'
+        WHEN da.new_customers_actual >= dt.new_customers_target * 0.8 THEN ''YELLOW' On Track'
         WHEN da.new_customers_actual >= dt.new_customers_target * 0.5 THEN '🟠 Behind'
-        ELSE '🔴 Critical'
+        ELSE ''RED' Critical'
     END
 FROM daily_targets dt, daily_actual da
 
@@ -1162,10 +1162,10 @@ SELECT
     ROUND(da.avg_order_value_actual * 100.0 / dt.avg_order_value_target, 2),
     CONCAT(', FORMAT(dt.avg_order_value_target - da.avg_order_value_actual, 2)),
     CASE 
-        WHEN da.avg_order_value_actual >= dt.avg_order_value_target THEN '✅ Target Met'
-        WHEN da.avg_order_value_actual >= dt.avg_order_value_target * 0.9 THEN '🟡 On Track'
+        WHEN da.avg_order_value_actual >= dt.avg_order_value_target THEN ''SUCCESS' Target Met'
+        WHEN da.avg_order_value_actual >= dt.avg_order_value_target * 0.9 THEN ''YELLOW' On Track'
         WHEN da.avg_order_value_actual >= dt.avg_order_value_target * 0.8 THEN '🟠 Behind'
-        ELSE '🔴 Critical'
+        ELSE ''RED' Critical'
     END
 FROM daily_targets dt, daily_actual da;
 
@@ -1174,7 +1174,7 @@ FROM daily_targets dt, daily_actual da;
 -- ========================================
 
 SELECT 
-    '✅ Dashboard Metrics Generated Successfully' AS status,
+    ''SUCCESS' Dashboard Metrics Generated Successfully' AS status,
     CONCAT('Snapshot Time: ', DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s')) AS timestamp,
     'Real-time data ready for display' AS message,
     CONCAT('Active Users: ', (SELECT COUNT(DISTINCT customer_id) 

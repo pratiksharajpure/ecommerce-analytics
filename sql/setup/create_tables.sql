@@ -1,18 +1,39 @@
 -- ========================================
--- CREATE ALL CORE TABLES
+-- FIXED SCHEMA - STRING IDs TO MATCH CSV FILES
 -- E-commerce Revenue Analytics Engine
--- 15+ Tables with proper relationships
+-- Updated to accept VARCHAR IDs like 'CUST-0001', 'PROD-0001', etc.
 -- ========================================
 
 USE ecommerce_analytics;
 
+-- Disable foreign key checks to allow dropping tables
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Drop existing tables (in reverse dependency order)
+DROP TABLE IF EXISTS loyalty_program;
+DROP TABLE IF EXISTS returns;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS campaign_performance;
+DROP TABLE IF EXISTS campaigns;
+DROP TABLE IF EXISTS payment_methods;
+DROP TABLE IF EXISTS shipping_addresses;
+DROP TABLE IF EXISTS vendor_contracts;
+DROP TABLE IF EXISTS vendors;
+DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS product_categories;
+DROP TABLE IF EXISTS customers;
+
 -- ========================================
--- 1. CUSTOMERS TABLE
+-- 1. CUSTOMERS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE customers (
-    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
     first_name VARCHAR(50),
     last_name VARCHAR(50),
+    customer_name VARCHAR(100),  -- Added this field
     email VARCHAR(100),
     phone VARCHAR(20),
     address_line1 VARCHAR(200),
@@ -30,12 +51,12 @@ CREATE TABLE customers (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 2. PRODUCT CATEGORIES TABLE
+-- 2. PRODUCT CATEGORIES TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE product_categories (
-    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
     category_name VARCHAR(100) NOT NULL,
-    parent_id INT NULL,
+    parent_id VARCHAR(20) NULL,
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (parent_id) REFERENCES product_categories(category_id) ON DELETE SET NULL,
@@ -44,14 +65,14 @@ CREATE TABLE product_categories (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 3. PRODUCTS TABLE
+-- 3. PRODUCTS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE products (
-    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
     sku VARCHAR(50) UNIQUE,
     product_name VARCHAR(200) NOT NULL,
     description TEXT,
-    category_id INT,
+    category_id VARCHAR(20),  -- Changed from INT
     price DECIMAL(10,2),
     cost DECIMAL(10,2),
     stock_quantity INT DEFAULT 0,
@@ -67,11 +88,12 @@ CREATE TABLE products (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 4. ORDERS TABLE
+-- 4. ORDERS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE orders (
-    order_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT,
+    order_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
+    customer_id VARCHAR(20),  -- Changed from INT
+    shipping_address_id VARCHAR(20),  -- Added this field
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     total_amount DECIMAL(10,2),
     status ENUM('pending', 'processing', 'shipped', 'delivered', 'cancelled') DEFAULT 'pending',
@@ -88,12 +110,12 @@ CREATE TABLE orders (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 5. ORDER ITEMS TABLE
+-- 5. ORDER ITEMS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE order_items (
     order_item_id INT PRIMARY KEY AUTO_INCREMENT,
-    order_id INT NOT NULL,
-    product_id INT,
+    order_id VARCHAR(20) NOT NULL,  -- Changed from INT
+    product_id VARCHAR(20),  -- Changed from INT
     quantity INT NOT NULL,
     unit_price DECIMAL(10,2) NOT NULL,
     discount DECIMAL(10,2) DEFAULT 0.00,
@@ -106,15 +128,16 @@ CREATE TABLE order_items (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 6. INVENTORY TABLE
+-- 6. INVENTORY TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE inventory (
     inventory_id INT PRIMARY KEY AUTO_INCREMENT,
-    product_id INT NOT NULL,
+    product_id VARCHAR(20) NOT NULL,  -- Changed from INT
     warehouse_id INT,
     quantity_on_hand INT DEFAULT 0,
     quantity_reserved INT DEFAULT 0,
     quantity_available INT AS (quantity_on_hand - quantity_reserved) STORED,
+    stock_quantity INT DEFAULT 0,  -- Added this field
     reorder_level INT DEFAULT 10,
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE,
@@ -124,10 +147,10 @@ CREATE TABLE inventory (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 7. VENDORS TABLE
+-- 7. VENDORS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE vendors (
-    vendor_id INT PRIMARY KEY AUTO_INCREMENT,
+    vendor_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
     vendor_name VARCHAR(200) NOT NULL,
     contact_person VARCHAR(100),
     email VARCHAR(100),
@@ -147,12 +170,12 @@ CREATE TABLE vendors (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 8. VENDOR CONTRACTS TABLE
+-- 8. VENDOR CONTRACTS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE vendor_contracts (
     contract_id INT PRIMARY KEY AUTO_INCREMENT,
-    vendor_id INT NOT NULL,
-    product_id INT NOT NULL,
+    vendor_id VARCHAR(20) NOT NULL,  -- Changed from INT
+    product_id VARCHAR(20) NOT NULL,  -- Changed from INT
     cost_per_unit DECIMAL(10,2) NOT NULL,
     minimum_order_quantity INT DEFAULT 1,
     lead_time_days INT,
@@ -170,11 +193,11 @@ CREATE TABLE vendor_contracts (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 9. SHIPPING ADDRESSES TABLE
+-- 9. SHIPPING ADDRESSES TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE shipping_addresses (
-    address_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT NOT NULL,
+    address_id VARCHAR(20) PRIMARY KEY,  -- Changed from INT AUTO_INCREMENT
+    customer_id VARCHAR(20) NOT NULL,  -- Changed from INT
     address_label VARCHAR(50),
     address_line1 VARCHAR(200) NOT NULL,
     address_line2 VARCHAR(200),
@@ -190,14 +213,14 @@ CREATE TABLE shipping_addresses (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 10. PAYMENT METHODS TABLE
+-- 10. PAYMENT METHODS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE payment_methods (
     payment_method_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT NOT NULL,
+    customer_id VARCHAR(20) NOT NULL,  -- Changed from INT
     payment_type ENUM('credit_card', 'debit_card', 'paypal', 'bank_transfer') NOT NULL,
     card_last_four VARCHAR(4),
-    card_brand VARCHAR(20),
+    card_type VARCHAR(20),  -- Changed from card_brand
     expiry_month INT,
     expiry_year INT,
     is_default BOOLEAN DEFAULT FALSE,
@@ -246,12 +269,12 @@ CREATE TABLE campaign_performance (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 13. REVIEWS TABLE
+-- 13. REVIEWS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE reviews (
     review_id INT PRIMARY KEY AUTO_INCREMENT,
-    product_id INT NOT NULL,
-    customer_id INT,
+    product_id VARCHAR(20) NOT NULL,  -- Changed from INT
+    customer_id VARCHAR(20),  -- Changed from INT
     rating INT CHECK (rating BETWEEN 1 AND 5),
     review_title VARCHAR(200),
     review_comment TEXT,
@@ -269,11 +292,11 @@ CREATE TABLE reviews (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 14. RETURNS TABLE
+-- 14. RETURNS TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE returns (
     return_id INT PRIMARY KEY AUTO_INCREMENT,
-    order_id INT NOT NULL,
+    order_id VARCHAR(20) NOT NULL,  -- Changed from INT
     order_item_id INT,
     reason ENUM('defective', 'wrong_item', 'not_as_described', 'changed_mind', 'other') NOT NULL,
     reason_details TEXT,
@@ -290,11 +313,11 @@ CREATE TABLE returns (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- 15. LOYALTY PROGRAM TABLE
+-- 15. LOYALTY PROGRAM TABLE - Changed to VARCHAR
 -- ========================================
 CREATE TABLE loyalty_program (
     loyalty_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT NOT NULL UNIQUE,
+    customer_id VARCHAR(20) NOT NULL UNIQUE,  -- Changed from INT
     points_balance INT DEFAULT 0,
     points_earned_lifetime INT DEFAULT 0,
     points_redeemed_lifetime INT DEFAULT 0,
@@ -309,4 +332,4 @@ CREATE TABLE loyalty_program (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Display confirmation
-SELECT 'All 15 core tables created successfully' AS Status;
+SELECT 'All 15 core tables created successfully with VARCHAR IDs' AS Status;

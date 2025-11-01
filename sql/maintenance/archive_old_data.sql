@@ -164,7 +164,7 @@ CREATE PROCEDURE sp_archive_orders_by_date(
     IN delete_after_archive BOOLEAN
 )
 BEGIN
-    DECLARE v_records_archived INT DEFAULT 0;
+DECLARE v_records_archived INT DEFAULT 0;
     DECLARE v_archive_log_id INT;
     DECLARE v_start_time DATETIME;
     
@@ -172,7 +172,22 @@ BEGIN
     BEGIN
         ROLLBACK;
         UPDATE archive_log 
-        SET status = 'failed', 
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET status = 'failed', 
             error_message = 'Archive failed due to SQL exception',
             completed_at = NOW()
         WHERE archive_id = v_archive_log_id;
@@ -252,7 +267,7 @@ CREATE PROCEDURE sp_archive_campaign_performance(
     IN delete_after_archive BOOLEAN
 )
 BEGIN
-    DECLARE v_records_archived INT DEFAULT 0;
+DECLARE v_records_archived INT DEFAULT 0;
     DECLARE v_archive_log_id INT;
     DECLARE v_cutoff_date DATE;
     
@@ -260,7 +275,22 @@ BEGIN
     BEGIN
         ROLLBACK;
         UPDATE archive_log 
-        SET status = 'failed', 
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET status = 'failed', 
             error_message = 'Archive failed',
             completed_at = NOW()
         WHERE archive_id = v_archive_log_id;
@@ -316,11 +346,26 @@ CREATE PROCEDURE sp_archive_old_reviews(
     IN delete_after_archive BOOLEAN
 )
 BEGIN
-    DECLARE v_records_archived INT DEFAULT 0;
+DECLARE v_records_archived INT DEFAULT 0;
     DECLARE v_archive_log_id INT;
     DECLARE v_cutoff_date DATE;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
     
     INSERT INTO archive_log (table_name, archive_type, archive_date_to, status)
     VALUES ('reviews', 'partial', v_cutoff_date, 'in_progress');
@@ -370,11 +415,26 @@ CREATE PROCEDURE sp_archive_old_returns(
     IN delete_after_archive BOOLEAN
 )
 BEGIN
-    DECLARE v_records_archived INT DEFAULT 0;
+DECLARE v_records_archived INT DEFAULT 0;
     DECLARE v_archive_log_id INT;
     DECLARE v_cutoff_date DATE;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
     
     INSERT INTO archive_log (table_name, archive_type, archive_date_to, status)
     VALUES ('returns', 'partial', v_cutoff_date, 'in_progress');
@@ -421,7 +481,7 @@ DELIMITER //
 
 CREATE PROCEDURE sp_auto_archive_by_policy()
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
+DECLARE done INT DEFAULT FALSE;
     DECLARE v_table_name VARCHAR(100);
     DECLARE v_retention_days INT;
     DECLARE v_delete_after BOOLEAN;
@@ -434,7 +494,22 @@ BEGIN
         AND archive_enabled = TRUE
         AND (next_archive_date IS NULL OR next_archive_date <= CURDATE());
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     SELECT 'Starting automatic archive based on retention policies...' AS Status;
     
@@ -491,8 +566,23 @@ CREATE PROCEDURE sp_generate_archive_report(
     IN days_back INT
 )
 BEGIN
-    DECLARE v_report_date DATE;
-    SET v_report_date = DATE_SUB(CURDATE(), INTERVAL days_back DAY);
+DECLARE v_report_date DATE;
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_report_date = DATE_SUB(CURDATE(), INTERVAL days_back DAY);
     
     SELECT '=== ARCHIVE REPORT ===' AS Report;
     
@@ -575,10 +665,25 @@ CREATE PROCEDURE sp_restore_from_archive(
     IN restore_to_date DATE
 )
 BEGIN
-    DECLARE v_records_restored INT DEFAULT 0;
+DECLARE v_records_restored INT DEFAULT 0;
     DECLARE v_archive_table VARCHAR(100);
     
-    SET v_archive_table = CONCAT(source_table, '_archive');
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_archive_table = CONCAT(source_table, '_archive');
     
     SELECT CONCAT('Restoring data from ', v_archive_table, ' to ', source_table) AS Status;
     
@@ -630,10 +735,25 @@ CREATE PROCEDURE sp_purge_old_archives(
     IN days_to_keep INT
 )
 BEGIN
-    DECLARE v_records_deleted INT DEFAULT 0;
+DECLARE v_records_deleted INT DEFAULT 0;
     DECLARE v_cutoff_date DATE;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL days_to_keep DAY);
     
     START TRANSACTION;
     

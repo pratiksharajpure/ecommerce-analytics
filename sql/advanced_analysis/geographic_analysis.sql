@@ -903,14 +903,14 @@ SELECT
     -- Status indicator
     CASE 
         WHEN (revenue_last_30d - revenue_prev_30d) / NULLIF(revenue_prev_30d, 0) > 0.20 
-            THEN '🟢 High Growth'
+            THEN ''GREEN' High Growth'
         WHEN (revenue_last_30d - revenue_prev_30d) / NULLIF(revenue_prev_30d, 0) > 0.05 
-            THEN '🟢 Growing'
+            THEN ''GREEN' Growing'
         WHEN (revenue_last_30d - revenue_prev_30d) / NULLIF(revenue_prev_30d, 0) > -0.05 
-            THEN '🟡 Stable'
+            THEN ''YELLOW' Stable'
         WHEN (revenue_last_30d - revenue_prev_30d) / NULLIF(revenue_prev_30d, 0) > -0.20 
-            THEN '🟡 Declining'
-        ELSE '🔴 Contracting'
+            THEN ''YELLOW' Declining'
+        ELSE ''RED' Contracting'
     END AS growth_status,
     -- Strategic priority
     CASE 

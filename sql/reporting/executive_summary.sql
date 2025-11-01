@@ -61,10 +61,10 @@ SELECT
     ROUND((cp.revenue - pp.revenue) / pp.revenue * 100, 2) AS mom_change_pct,
     CASE 
         WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= 10 THEN '🚀 Strong Growth'
-        WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= 5 THEN '📈 Growing'
+        WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= 5 THEN ''TRENDING_UP' Growing'
         WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= 0 THEN '➡️ Stable'
-        WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.revenue - pp.revenue) / pp.revenue * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END AS status
 FROM current_period cp, previous_period pp, ytd_metrics ym
 
@@ -78,10 +78,10 @@ SELECT
     ROUND((cp.orders - pp.orders) / pp.orders * 100, 2),
     CASE 
         WHEN (cp.orders - pp.orders) / pp.orders * 100 >= 10 THEN '🚀 Strong Growth'
-        WHEN (cp.orders - pp.orders) / pp.orders * 100 >= 5 THEN '📈 Growing'
+        WHEN (cp.orders - pp.orders) / pp.orders * 100 >= 5 THEN ''TRENDING_UP' Growing'
         WHEN (cp.orders - pp.orders) / pp.orders * 100 >= 0 THEN '➡️ Stable'
-        WHEN (cp.orders - pp.orders) / pp.orders * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.orders - pp.orders) / pp.orders * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END
 FROM current_period cp, previous_period pp, ytd_metrics ym
 
@@ -95,10 +95,10 @@ SELECT
     ROUND((cp.customers - pp.customers) / pp.customers * 100, 2),
     CASE 
         WHEN (cp.customers - pp.customers) / pp.customers * 100 >= 10 THEN '🚀 Strong Growth'
-        WHEN (cp.customers - pp.customers) / pp.customers * 100 >= 5 THEN '📈 Growing'
+        WHEN (cp.customers - pp.customers) / pp.customers * 100 >= 5 THEN ''TRENDING_UP' Growing'
         WHEN (cp.customers - pp.customers) / pp.customers * 100 >= 0 THEN '➡️ Stable'
-        WHEN (cp.customers - pp.customers) / pp.customers * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.customers - pp.customers) / pp.customers * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END
 FROM current_period cp, previous_period pp, ytd_metrics ym
 
@@ -112,10 +112,10 @@ SELECT
     ROUND((cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100, 2),
     CASE 
         WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= 5 THEN '🚀 Strong Growth'
-        WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= 2 THEN '📈 Growing'
+        WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= 2 THEN ''TRENDING_UP' Growing'
         WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= -2 THEN '➡️ Stable'
-        WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.avg_order_value - pp.avg_order_value) / pp.avg_order_value * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END
 FROM current_period cp, previous_period pp, ytd_metrics ym
 
@@ -129,10 +129,10 @@ SELECT
     ROUND((cp.units_sold - pp.units_sold) / pp.units_sold * 100, 2),
     CASE 
         WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= 10 THEN '🚀 Strong Growth'
-        WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= 5 THEN '📈 Growing'
+        WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= 5 THEN ''TRENDING_UP' Growing'
         WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= 0 THEN '➡️ Stable'
-        WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.units_sold - pp.units_sold) / pp.units_sold * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END
 FROM current_period cp, previous_period pp, ytd_metrics ym
 
@@ -146,10 +146,10 @@ SELECT
     ROUND((cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100, 2),
     CASE 
         WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= 5 THEN '🚀 Strong Growth'
-        WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= 2 THEN '📈 Growing'
+        WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= 2 THEN ''TRENDING_UP' Growing'
         WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= -2 THEN '➡️ Stable'
-        WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= -5 THEN '⚠️ Declining'
-        ELSE '🔴 Alert'
+        WHEN (cp.revenue_per_customer - pp.revenue_per_customer) / pp.revenue_per_customer * 100 >= -5 THEN ''WARNING' Declining'
+        ELSE ''RED' Alert'
     END
 FROM current_period cp, previous_period pp, ytd_metrics ym;
 
@@ -189,10 +189,10 @@ SELECT
     CASE 
         WHEN revenue > LAG(revenue, 1) OVER (ORDER BY month) 
             AND LAG(revenue, 1) OVER (ORDER BY month) > LAG(revenue, 2) OVER (ORDER BY month)
-            THEN '📈 Upward Trend'
+            THEN ''TRENDING_UP' Upward Trend'
         WHEN revenue < LAG(revenue, 1) OVER (ORDER BY month) 
             AND LAG(revenue, 1) OVER (ORDER BY month) < LAG(revenue, 2) OVER (ORDER BY month)
-            THEN '📉 Downward Trend'
+            THEN ''TRENDING_DOWN' Downward Trend'
         WHEN revenue > LAG(revenue) OVER (ORDER BY month)
             THEN '↗️ Growing'
         WHEN revenue < LAG(revenue) OVER (ORDER BY month)
@@ -305,9 +305,9 @@ SELECT
     ROUND(SUM(total_revenue) * 100.0 / 
         (SELECT SUM(total_revenue) FROM segment_classification), 2) AS revenue_share_pct,
     CASE 
-        WHEN segment LIKE '%VIP%' THEN '🔴 High Priority'
-        WHEN segment LIKE '%At Risk%' THEN '🟡 Medium Priority'
-        WHEN segment = 'New' THEN '🟢 Nurture'
+        WHEN segment LIKE '%VIP%' THEN ''RED' High Priority'
+        WHEN segment LIKE '%At Risk%' THEN ''YELLOW' Medium Priority'
+        WHEN segment = 'New' THEN ''GREEN' Nurture'
         ELSE '🔵 Monitor'
     END AS action_priority
 FROM segment_classification
@@ -377,9 +377,9 @@ UNION ALL
         ROUND(avg_rating, 2),
         stock_quantity,
         CASE 
-            WHEN revenue IS NULL OR revenue = 0 THEN '🔴 No sales - Review pricing/visibility'
-            WHEN units_sold < 5 THEN '⚠️ Low sales - Needs promotion'
-            WHEN avg_rating < 3.5 THEN '⚠️ Poor rating - Quality review'
+            WHEN revenue IS NULL OR revenue = 0 THEN ''RED' No sales - Review pricing/visibility'
+            WHEN units_sold < 5 THEN ''WARNING' Low sales - Needs promotion'
+            WHEN avg_rating < 3.5 THEN ''WARNING' Poor rating - Quality review'
             ELSE '○ Monitor performance'
         END
     FROM product_performance
@@ -419,9 +419,9 @@ SELECT
     'Order Fulfillment Rate' AS metric_name,
     CONCAT(ROUND(delivered_orders * 100.0 / total_orders, 2), '%') AS value,
     CASE 
-        WHEN delivered_orders * 100.0 / total_orders >= 95 THEN '🟢 Excellent'
-        WHEN delivered_orders * 100.0 / total_orders >= 90 THEN '🟡 Good'
-        ELSE '🔴 Needs Improvement'
+        WHEN delivered_orders * 100.0 / total_orders >= 95 THEN ''GREEN' Excellent'
+        WHEN delivered_orders * 100.0 / total_orders >= 90 THEN ''YELLOW' Good'
+        ELSE ''RED' Needs Improvement'
     END AS status,
     'Target: 95%+' AS benchmark
 FROM operational_metrics
@@ -432,9 +432,9 @@ SELECT
     'Orders In Processing',
     FORMAT(processing_orders, 0),
     CASE 
-        WHEN processing_orders * 100.0 / total_orders <= 10 THEN '🟢 Normal'
-        WHEN processing_orders * 100.0 / total_orders <= 20 THEN '🟡 Monitor'
-        ELSE '🔴 Backlog'
+        WHEN processing_orders * 100.0 / total_orders <= 10 THEN ''GREEN' Normal'
+        WHEN processing_orders * 100.0 / total_orders <= 20 THEN ''YELLOW' Monitor'
+        ELSE ''RED' Backlog'
     END,
     'Target: <10%'
 FROM operational_metrics
@@ -445,10 +445,10 @@ SELECT
     'Avg Delivery Time',
     CONCAT(ROUND(avg_delivery_days, 1), ' days'),
     CASE 
-        WHEN avg_delivery_days <= 3 THEN '🟢 Excellent'
-        WHEN avg_delivery_days <= 5 THEN '🟡 Good'
-        WHEN avg_delivery_days <= 7 THEN '🟡 Average'
-        ELSE '🔴 Slow'
+        WHEN avg_delivery_days <= 3 THEN ''GREEN' Excellent'
+        WHEN avg_delivery_days <= 5 THEN ''YELLOW' Good'
+        WHEN avg_delivery_days <= 7 THEN ''YELLOW' Average'
+        ELSE ''RED' Slow'
     END,
     'Target: <5 days'
 FROM operational_metrics
@@ -459,10 +459,10 @@ SELECT
     'Return Rate',
     CONCAT(ROUND(total_returns * 100.0 / total_orders, 2), '%'),
     CASE 
-        WHEN total_returns * 100.0 / total_orders <= 5 THEN '🟢 Excellent'
-        WHEN total_returns * 100.0 / total_orders <= 10 THEN '🟡 Acceptable'
-        WHEN total_returns * 100.0 / total_orders <= 15 THEN '🟡 High'
-        ELSE '🔴 Critical'
+        WHEN total_returns * 100.0 / total_orders <= 5 THEN ''GREEN' Excellent'
+        WHEN total_returns * 100.0 / total_orders <= 10 THEN ''YELLOW' Acceptable'
+        WHEN total_returns * 100.0 / total_orders <= 15 THEN ''YELLOW' High'
+        ELSE ''RED' Critical'
     END,
     'Target: <10%'
 FROM operational_metrics
@@ -473,9 +473,9 @@ SELECT
     'Cancellation Rate',
     CONCAT(ROUND(cancelled_orders * 100.0 / total_orders, 2), '%'),
     CASE 
-        WHEN cancelled_orders * 100.0 / total_orders <= 2 THEN '🟢 Excellent'
-        WHEN cancelled_orders * 100.0 / total_orders <= 5 THEN '🟡 Acceptable'
-        ELSE '🔴 High'
+        WHEN cancelled_orders * 100.0 / total_orders <= 2 THEN ''GREEN' Excellent'
+        WHEN cancelled_orders * 100.0 / total_orders <= 5 THEN ''YELLOW' Acceptable'
+        ELSE ''RED' High'
     END,
     'Target: <2%'
 FROM operational_metrics
@@ -486,10 +486,10 @@ SELECT
     'Customer Satisfaction',
     CONCAT(ROUND(avg_rating, 2), '/5'),
     CASE 
-        WHEN avg_rating >= 4.5 THEN '🟢 Excellent'
-        WHEN avg_rating >= 4.0 THEN '🟢 Good'
-        WHEN avg_rating >= 3.5 THEN '🟡 Average'
-        ELSE '🔴 Poor'
+        WHEN avg_rating >= 4.5 THEN ''GREEN' Excellent'
+        WHEN avg_rating >= 4.0 THEN ''GREEN' Good'
+        WHEN avg_rating >= 3.5 THEN ''YELLOW' Average'
+        ELSE ''RED' Poor'
     END,
     'Target: 4.0+'
 FROM operational_metrics
@@ -500,9 +500,9 @@ SELECT
     'Positive Review Rate',
     CONCAT(ROUND(positive_reviews * 100.0 / NULLIF(total_reviews, 0), 2), '%'),
     CASE 
-        WHEN positive_reviews * 100.0 / NULLIF(total_reviews, 0) >= 80 THEN '🟢 Excellent'
-        WHEN positive_reviews * 100.0 / NULLIF(total_reviews, 0) >= 70 THEN '🟡 Good'
-        ELSE '🔴 Needs Improvement'
+        WHEN positive_reviews * 100.0 / NULLIF(total_reviews, 0) >= 80 THEN ''GREEN' Excellent'
+        WHEN positive_reviews * 100.0 / NULLIF(total_reviews, 0) >= 70 THEN ''YELLOW' Good'
+        ELSE ''RED' Needs Improvement'
     END,
     'Target: 80%+'
 FROM operational_metrics;
@@ -531,7 +531,7 @@ SELECT
     'Total Revenue' AS metric,
     CONCAT('$', FORMAT(total_revenue, 2)) AS value,
     '100%' AS percentage,
-    '📊 Revenue Stream' AS category
+    ''CHART' Revenue Stream' AS category
 FROM financial_data
 
 UNION ALL
@@ -540,7 +540,7 @@ SELECT
     'Cost of Goods Sold',
     CONCAT('$', FORMAT(total_cogs, 2)),
     CONCAT(ROUND(total_cogs * 100.0 / total_revenue, 2), '%'),
-    '💰 Costs'
+    ''MONEY' Costs'
 FROM financial_data
 
 UNION ALL
@@ -567,7 +567,7 @@ SELECT
     'Net Revenue (After Refunds)',
     CONCAT('$', FORMAT(total_revenue - total_refunds, 2)),
     CONCAT(ROUND((total_revenue - total_refunds) * 100.0 / total_revenue, 2), '%'),
-    '📈 Net Performance'
+    ''TRENDING_UP' Net Performance'
 FROM financial_data
 
 UNION ALL
@@ -576,7 +576,7 @@ SELECT
     'Avg Order Value',
     CONCAT('$', FORMAT(avg_order_value, 2)),
     '-',
-    '📊 Order Metrics'
+    ''CHART' Order Metrics'
 FROM financial_data;
 
 -- ========================================
@@ -616,18 +616,18 @@ WITH alert_metrics AS (
 SELECT 
     CASE 
         WHEN (revenue_7d - revenue_prev_7d) / NULLIF(revenue_prev_7d, 0) < -0.15 
-        THEN '🔴 CRITICAL'
+        THEN ''RED' CRITICAL'
         WHEN out_of_stock_products > 20 
-        THEN '🔴 CRITICAL'
+        THEN ''RED' CRITICAL'
         WHEN low_stock_products > 50 
-        THEN '🟡 WARNING'
+        THEN ''YELLOW' WARNING'
         WHEN delayed_orders > 10 
-        THEN '🟡 WARNING'
+        THEN ''YELLOW' WARNING'
         WHEN pending_returns_7d > 20 
-        THEN '🟡 WARNING'
+        THEN ''YELLOW' WARNING'
         WHEN avg_rating_30d < 3.5 
-        THEN '🔴 CRITICAL'
-        ELSE '🟢 NORMAL'
+        THEN ''RED' CRITICAL'
+        ELSE ''GREEN' NORMAL'
     END AS alert_level,
     'Revenue Trend' AS alert_category,
     CONCAT('Week-over-week revenue change: ',
@@ -645,9 +645,9 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN out_of_stock_products > 20 THEN '🔴 CRITICAL'
-        WHEN out_of_stock_products > 10 THEN '🟡 WARNING'
-        ELSE '🟢 NORMAL'
+        WHEN out_of_stock_products > 20 THEN ''RED' CRITICAL'
+        WHEN out_of_stock_products > 10 THEN ''YELLOW' WARNING'
+        ELSE ''GREEN' NORMAL'
     END,
     'Inventory - Out of Stock',
     CONCAT(out_of_stock_products, ' active products are out of stock'),
@@ -662,9 +662,9 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN low_stock_products > 50 THEN '🟡 WARNING'
-        WHEN low_stock_products > 100 THEN '🔴 CRITICAL'
-        ELSE '🟢 NORMAL'
+        WHEN low_stock_products > 50 THEN ''YELLOW' WARNING'
+        WHEN low_stock_products > 100 THEN ''RED' CRITICAL'
+        ELSE ''GREEN' NORMAL'
     END,
     'Inventory - Low Stock',
     CONCAT(low_stock_products, ' products below reorder level'),
@@ -678,9 +678,9 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN delayed_orders > 10 THEN '🟡 WARNING'
-        WHEN delayed_orders > 25 THEN '🔴 CRITICAL'
-        ELSE '🟢 NORMAL'
+        WHEN delayed_orders > 10 THEN ''YELLOW' WARNING'
+        WHEN delayed_orders > 25 THEN ''RED' CRITICAL'
+        ELSE ''GREEN' NORMAL'
     END,
     'Operations - Delayed Orders',
     CONCAT(delayed_orders, ' orders in processing for 3+ days'),
@@ -695,9 +695,9 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN pending_returns_7d > 20 THEN '🟡 WARNING'
-        WHEN pending_returns_7d > 50 THEN '🔴 CRITICAL'
-        ELSE '🟢 NORMAL'
+        WHEN pending_returns_7d > 20 THEN ''YELLOW' WARNING'
+        WHEN pending_returns_7d > 50 THEN ''RED' CRITICAL'
+        ELSE ''GREEN' NORMAL'
     END,
     'Customer Service - Returns',
     CONCAT(pending_returns_7d, ' pending return requests this week'),
@@ -712,9 +712,9 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN avg_rating_30d < 3.5 THEN '🔴 CRITICAL'
-        WHEN avg_rating_30d < 4.0 THEN '🟡 WARNING'
-        ELSE '🟢 NORMAL'
+        WHEN avg_rating_30d < 3.5 THEN ''RED' CRITICAL'
+        WHEN avg_rating_30d < 4.0 THEN ''YELLOW' WARNING'
+        ELSE ''GREEN' NORMAL'
     END,
     'Quality - Customer Satisfaction',
     CONCAT('30-day average rating: ', ROUND(avg_rating_30d, 2), '/5.0'),
@@ -729,8 +729,8 @@ UNION ALL
 
 SELECT 
     CASE 
-        WHEN pending_reviews > 100 THEN '🟡 WARNING'
-        ELSE '🟢 NORMAL'
+        WHEN pending_reviews > 100 THEN ''YELLOW' WARNING'
+        ELSE ''GREEN' NORMAL'
     END,
     'Content Moderation',
     CONCAT(pending_reviews, ' reviews awaiting moderation'),
@@ -751,7 +751,7 @@ WITH growth_analysis AS (
         COUNT(DISTINCT o.customer_id) AS affected_customers,
         CONCAT(', FORMAT(AVG(o.total_amount) * 1.25, 2)) AS potential_value,
         'Customers buying from single category' AS description,
-        '📈 High' AS priority
+        ''TRENDING_UP' High' AS priority
     FROM orders o
     JOIN order_items oi ON o.order_id = oi.order_id
     JOIN products p ON oi.product_id = p.product_id
@@ -767,7 +767,7 @@ WITH growth_analysis AS (
         COUNT(DISTINCT customer_id),
         CONCAT(', FORMAT(SUM(total_amount), 2)),
         'Pending orders older than 24 hours',
-        '🔴 Critical'
+        ''RED' Critical'
     FROM orders
     WHERE status = 'pending'
         AND created_at < DATE_SUB(NOW(), INTERVAL 1 DAY)
@@ -782,7 +782,7 @@ WITH growth_analysis AS (
          AND customer_id NOT IN (SELECT customer_id FROM loyalty_program)),
         CONCAT(', FORMAT(AVG(total_spent) * 1.3, 2)),
         'Active customers not in loyalty program',
-        '📈 High'
+        ''TRENDING_UP' High'
     FROM (
         SELECT customer_id, SUM(total_amount) AS total_spent
         FROM orders
@@ -798,7 +798,7 @@ WITH growth_analysis AS (
         COUNT(DISTINCT customer_id),
         CONCAT(', FORMAT(AVG(historical_value), 2)),
         'Customers inactive for 90+ days',
-        '🟡 Medium'
+        ''YELLOW' Medium'
     FROM (
         SELECT 
             o.customer_id,
@@ -814,9 +814,9 @@ WITH growth_analysis AS (
 SELECT * FROM growth_analysis
 ORDER BY 
     CASE priority
-        WHEN '🔴 Critical' THEN 1
-        WHEN '📈 High' THEN 2
-        WHEN '🟡 Medium' THEN 3
+        WHEN ''RED' Critical' THEN 1
+        WHEN ''TRENDING_UP' High' THEN 2
+        WHEN ''YELLOW' Medium' THEN 3
         ELSE 4
     END;
 
@@ -861,10 +861,10 @@ SELECT
     CONCAT(ROUND((orders - prev_orders) / NULLIF(prev_orders, 0) * 100, 1), '%') AS orders_wow,
     CASE 
         WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= 0.10 THEN '🚀 Accelerating'
-        WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= 0.05 THEN '📈 Growing'
+        WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= 0.05 THEN ''TRENDING_UP' Growing'
         WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= 0 THEN '➡️ Stable'
-        WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= -0.05 THEN '⚠️ Slowing'
-        ELSE '🔴 Declining'
+        WHEN (revenue - prev_revenue) / NULLIF(prev_revenue, 0) >= -0.05 THEN ''WARNING' Slowing'
+        ELSE ''RED' Declining'
     END AS trend
 FROM weekly_comparison
 ORDER BY year_week DESC
@@ -948,10 +948,10 @@ SELECT
     'Customer Acquisition Cost (CAC)' AS metric,
     CONCAT(', FORMAT(ms.total_spend / NULLIF(nc.new_customer_count, 0), 2)) AS value,
     CASE 
-        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 50 THEN '🟢 Excellent'
-        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 100 THEN '🟡 Good'
-        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 150 THEN '🟡 Acceptable'
-        ELSE '🔴 High'
+        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 50 THEN ''GREEN' Excellent'
+        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 100 THEN ''YELLOW' Good'
+        WHEN ms.total_spend / NULLIF(nc.new_customer_count, 0) < 150 THEN ''YELLOW' Acceptable'
+        ELSE ''RED' High'
     END AS assessment,
     'Target: <$50' AS benchmark
 FROM marketing_spend ms
@@ -963,9 +963,9 @@ SELECT
     'New Customers Acquired',
     FORMAT(nc.new_customer_count, 0),
     CASE 
-        WHEN nc.new_customer_count >= 100 THEN '🟢 Strong'
-        WHEN nc.new_customer_count >= 50 THEN '🟡 Moderate'
-        ELSE '🔴 Low'
+        WHEN nc.new_customer_count >= 100 THEN ''GREEN' Strong'
+        WHEN nc.new_customer_count >= 50 THEN ''YELLOW' Moderate'
+        ELSE ''RED' Low'
     END,
     'Target: 100+/month'
 FROM new_customers nc
@@ -980,10 +980,10 @@ SELECT
     ),
     CASE 
         WHEN (ms.total_spend / NULLIF(nc.new_customer_count, 0)) / 
-             NULLIF((nc.new_customer_revenue / NULLIF(nc.new_customer_count, 0)), 0) < 3 THEN '🟢 Fast'
+             NULLIF((nc.new_customer_revenue / NULLIF(nc.new_customer_count, 0)), 0) < 3 THEN ''GREEN' Fast'
         WHEN (ms.total_spend / NULLIF(nc.new_customer_count, 0)) / 
-             NULLIF((nc.new_customer_revenue / NULLIF(nc.new_customer_count, 0)), 0) < 6 THEN '🟡 Moderate'
-        ELSE '🔴 Slow'
+             NULLIF((nc.new_customer_revenue / NULLIF(nc.new_customer_count, 0)), 0) < 6 THEN ''YELLOW' Moderate'
+        ELSE ''RED' Slow'
     END,
     'Target: <3 months'
 FROM marketing_spend ms
@@ -997,10 +997,10 @@ SELECT
         (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) * 100, 2
     ), '%'),
     CASE 
-        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 2 THEN '🟢 Excellent'
-        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 1 THEN '🟡 Good'
-        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 0 THEN '🟡 Break-even'
-        ELSE '🔴 Negative'
+        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 2 THEN ''GREEN' Excellent'
+        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 1 THEN ''YELLOW' Good'
+        WHEN (nc.new_customer_revenue - ms.total_spend) / NULLIF(ms.total_spend, 0) >= 0 THEN ''YELLOW' Break-even'
+        ELSE ''RED' Negative'
     END,
     'Target: 200%+'
 FROM marketing_spend ms
@@ -1020,7 +1020,7 @@ SELECT
 UNION ALL
 
 SELECT 
-    '📊 FINANCIAL PERFORMANCE', '', '', ''
+    ''CHART' FINANCIAL PERFORMANCE', '', '', ''
 FROM (
     SELECT 
         CONCAT('Revenue (MTD): , FORMAT(SUM(total_amount), 2)) AS metric1,
@@ -1081,6 +1081,6 @@ FROM (
 -- ========================================
 
 SELECT 
-    '✅ Executive Summary Generated Successfully' AS status,
+    ''SUCCESS' Executive Summary Generated Successfully' AS status,
     CONCAT('Report Date: ', DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s')) AS timestamp,
     'All metrics calculated for management review' AS message;

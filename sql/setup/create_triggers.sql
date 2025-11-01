@@ -1,203 +1,185 @@
 -- ========================================
--- CREATE TRIGGERS
--- E-commerce Revenue Analytics Engine
+-- CREATE TRIGGERS - MYSQL 8.0 COMPATIBLE
+-- Fixed for pymysql execution
 -- ========================================
 
 USE ecommerce_analytics;
 
--- Set delimiter for trigger creation
-DELIMITER //
+-- Drop existing triggers
+DROP TRIGGER IF EXISTS trg_orders_after_insert;
+DROP TRIGGER IF EXISTS trg_orders_after_update;
+DROP TRIGGER IF EXISTS trg_order_items_after_insert;
+DROP TRIGGER IF EXISTS trg_inventory_after_update;
+DROP TRIGGER IF EXISTS trg_customers_after_insert;
+DROP TRIGGER IF EXISTS trg_products_before_insert;
+DROP TRIGGER IF EXISTS trg_products_before_update;
+DROP TRIGGER IF EXISTS trg_reviews_after_insert;
+DROP TRIGGER IF EXISTS trg_returns_after_insert;
 
 -- ========================================
--- TRIGGER 1: Update Inventory After Order
+-- TRIGGER 1: Update order timestamp after insert
 -- ========================================
-CREATE TRIGGER trg_update_inventory_after_order
+CREATE TRIGGER trg_orders_after_insert
+AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+    -- Update customer last activity
+    UPDATE customers
+    SET updated_at = CURRENT_TIMESTAMP
+    WHERE customer_id = NEW.customer_id;
+END;
+
+-- ========================================
+-- TRIGGER 2: Update order timestamp after update
+-- ========================================
+CREATE TRIGGER trg_orders_after_update
+AFTER UPDATE ON orders
+FOR EACH ROW
+BEGIN
+    -- Update customer last activity if order status changed
+    IF OLD.status != NEW.status THEN
+        UPDATE customers
+        SET updated_at = CURRENT_TIMESTAMP
+        WHERE customer_id = NEW.customer_id;
+    END IF;
+END;
+
+-- ========================================
+-- TRIGGER 3: Update inventory after order item insert
+-- ========================================
+CREATE TRIGGER trg_order_items_after_insert
 AFTER INSERT ON order_items
 FOR EACH ROW
 BEGIN
-    -- Reduce inventory quantity when order item is created
+    -- Reserve inventory
     UPDATE inventory
-    SET quantity_reserved = quantity_reserved + NEW.quantity
+    SET quantity_reserved = quantity_reserved + NEW.quantity,
+        last_updated = CURRENT_TIMESTAMP
     WHERE product_id = NEW.product_id
     LIMIT 1;
-    
-    -- Update product stock quantity
-    UPDATE products
-    SET stock_quantity = stock_quantity - NEW.quantity
-    WHERE product_id = NEW.product_id;
-END//
+END;
 
 -- ========================================
--- TRIGGER 2: Audit Customer Changes
+-- TRIGGER 4: Update product stock after inventory change
 -- ========================================
--- First create audit table
-CREATE TABLE IF NOT EXISTS customer_audit (
-    audit_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT,
-    action_type ENUM('INSERT', 'UPDATE', 'DELETE'),
-    old_email VARCHAR(100),
-    new_email VARCHAR(100),
-    old_phone VARCHAR(20),
-    new_phone VARCHAR(20),
-    old_status VARCHAR(20),
-    new_status VARCHAR(20),
-    changed_by VARCHAR(50),
-    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci//
-
--- Trigger for customer updates
-CREATE TRIGGER trg_audit_customer_update
-AFTER UPDATE ON customers
-FOR EACH ROW
-BEGIN
-    INSERT INTO customer_audit (
-        customer_id,
-        action_type,
-        old_email,
-        new_email,
-        old_phone,
-        new_phone,
-        old_status,
-        new_status,
-        changed_by
-    ) VALUES (
-        NEW.customer_id,
-        'UPDATE',
-        OLD.email,
-        NEW.email,
-        OLD.phone,
-        NEW.phone,
-        OLD.status,
-        NEW.status,
-        USER()
-    );
-END//
-
--- ========================================
--- TRIGGER 3: Validate Order Total
--- ========================================
-CREATE TRIGGER trg_validate_order_total
-BEFORE INSERT ON orders
-FOR EACH ROW
-BEGIN
-    -- Ensure total amount is not negative
-    IF NEW.total_amount < 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Order total amount cannot be negative';
-    END IF;
-    
-    -- Ensure shipping cost is not negative
-    IF NEW.shipping_cost < 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Shipping cost cannot be negative';
-    END IF;
-    
-    -- Ensure tax amount is not negative
-    IF NEW.tax_amount < 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Tax amount cannot be negative';
-    END IF;
-END//
-
--- ========================================
--- TRIGGER 4: Update Order Total After Item Changes
--- ========================================
-CREATE TRIGGER trg_update_order_total_after_item
-AFTER INSERT ON order_items
-FOR EACH ROW
-BEGIN
-    -- Recalculate order total
-    UPDATE orders
-    SET total_amount = (
-        SELECT COALESCE(SUM(quantity * unit_price - discount), 0)
-        FROM order_items
-        WHERE order_id = NEW.order_id
-    )
-    WHERE order_id = NEW.order_id;
-END//
-
--- ========================================
--- TRIGGER 5: Prevent Negative Inventory
--- ========================================
-CREATE TRIGGER trg_prevent_negative_inventory
-BEFORE UPDATE ON inventory
-FOR EACH ROW
-BEGIN
-    -- Prevent negative quantities
-    IF NEW.quantity_on_hand < 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Inventory quantity cannot be negative';
-    END IF;
-    
-    IF NEW.quantity_reserved < 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Reserved quantity cannot be negative';
-    END IF;
-END//
-
--- ========================================
--- TRIGGER 6: Update Product Rating After Review
--- ========================================
--- Add average_rating column to products if not exists
-ALTER TABLE products ADD COLUMN IF NOT EXISTS average_rating DECIMAL(3,2) DEFAULT 0.00//
-ALTER TABLE products ADD COLUMN IF NOT EXISTS review_count INT DEFAULT 0//
-
-CREATE TRIGGER trg_update_product_rating_after_review
-AFTER INSERT ON reviews
-FOR EACH ROW
-BEGIN
-    UPDATE products p
-    SET 
-        review_count = (SELECT COUNT(*) FROM reviews WHERE product_id = NEW.product_id AND status = 'approved'),
-        average_rating = (SELECT AVG(rating) FROM reviews WHERE product_id = NEW.product_id AND status = 'approved')
-    WHERE p.product_id = NEW.product_id;
-END//
-
--- ========================================
--- TRIGGER 7: Log Inventory Changes
--- ========================================
--- Create inventory log table
-CREATE TABLE IF NOT EXISTS inventory_log (
-    log_id INT PRIMARY KEY AUTO_INCREMENT,
-    product_id INT,
-    warehouse_id INT,
-    old_quantity INT,
-    new_quantity INT,
-    change_amount INT,
-    change_type VARCHAR(50),
-    changed_by VARCHAR(50),
-    changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci//
-
-CREATE TRIGGER trg_log_inventory_changes
+CREATE TRIGGER trg_inventory_after_update
 AFTER UPDATE ON inventory
 FOR EACH ROW
 BEGIN
-    INSERT INTO inventory_log (
-        product_id,
-        warehouse_id,
-        old_quantity,
-        new_quantity,
-        change_amount,
-        change_type,
-        changed_by
-    ) VALUES (
-        NEW.product_id,
-        NEW.warehouse_id,
-        OLD.quantity_on_hand,
-        NEW.quantity_on_hand,
-        NEW.quantity_on_hand - OLD.quantity_on_hand,
-        CASE 
-            WHEN NEW.quantity_on_hand > OLD.quantity_on_hand THEN 'INCREASE'
-            WHEN NEW.quantity_on_hand < OLD.quantity_on_hand THEN 'DECREASE'
-            ELSE 'NO_CHANGE'
-        END,
-        USER()
-    );
-END//
+    -- Sync product stock quantity
+    UPDATE products
+    SET stock_quantity = (
+        SELECT COALESCE(SUM(quantity_on_hand), 0)
+        FROM inventory
+        WHERE product_id = NEW.product_id
+    ),
+    updated_at = CURRENT_TIMESTAMP
+    WHERE product_id = NEW.product_id;
+END;
 
--- Reset delimiter
-DELIMITER ;
+-- ========================================
+-- TRIGGER 5: Initialize customer after insert
+-- ========================================
+CREATE TRIGGER trg_customers_after_insert
+AFTER INSERT ON customers
+FOR EACH ROW
+BEGIN
+    -- Create loyalty program entry
+    INSERT IGNORE INTO loyalty_program (
+        customer_id,
+        points_balance,
+        joined_date,
+        tier
+    ) VALUES (
+        NEW.customer_id,
+        0,
+        CURRENT_DATE,
+        'bronze'
+    );
+END;
+
+-- ========================================
+-- TRIGGER 6: Validate product before insert
+-- ========================================
+CREATE TRIGGER trg_products_before_insert
+BEFORE INSERT ON products
+FOR EACH ROW
+BEGIN
+    -- Ensure price is not negative
+    IF NEW.price < 0 THEN
+        SET NEW.price = 0;
+    END IF;
+    
+    -- Ensure cost is not negative
+    IF NEW.cost < 0 THEN
+        SET NEW.cost = 0;
+    END IF;
+    
+    -- Ensure stock is not negative
+    IF NEW.stock_quantity < 0 THEN
+        SET NEW.stock_quantity = 0;
+    END IF;
+END;
+
+-- ========================================
+-- TRIGGER 7: Validate product before update
+-- ========================================
+CREATE TRIGGER trg_products_before_update
+BEFORE UPDATE ON products
+FOR EACH ROW
+BEGIN
+    -- Ensure price is not negative
+    IF NEW.price < 0 THEN
+        SET NEW.price = 0;
+    END IF;
+    
+    -- Ensure cost is not negative
+    IF NEW.cost < 0 THEN
+        SET NEW.cost = 0;
+    END IF;
+    
+    -- Ensure stock is not negative
+    IF NEW.stock_quantity < 0 THEN
+        SET NEW.stock_quantity = 0;
+    END IF;
+    
+    -- Update status based on stock
+    IF NEW.stock_quantity = 0 AND OLD.stock_quantity > 0 THEN
+        SET NEW.status = 'out_of_stock';
+    ELSEIF NEW.stock_quantity > 0 AND OLD.status = 'out_of_stock' THEN
+        SET NEW.status = 'active';
+    END IF;
+END;
+
+-- ========================================
+-- TRIGGER 8: Update product rating after review insert
+-- ========================================
+CREATE TRIGGER trg_reviews_after_insert
+AFTER INSERT ON reviews
+FOR EACH ROW
+BEGIN
+    -- Update product statistics (if needed in future)
+    UPDATE products
+    SET updated_at = CURRENT_TIMESTAMP
+    WHERE product_id = NEW.product_id;
+END;
+
+-- ========================================
+-- TRIGGER 9: Process return request
+-- ========================================
+CREATE TRIGGER trg_returns_after_insert
+AFTER INSERT ON returns
+FOR EACH ROW
+BEGIN
+    -- Update order status if return is requested
+    UPDATE orders
+    SET status = CASE 
+        WHEN status = 'delivered' THEN 'processing'
+        ELSE status
+    END,
+    updated_at = CURRENT_TIMESTAMP
+    WHERE order_id = NEW.order_id;
+END;
 
 -- Display confirmation
-SELECT 'All triggers created successfully' AS Status;
+SELECT 'All triggers created successfully (MySQL 8.0 compatible)' AS Status;

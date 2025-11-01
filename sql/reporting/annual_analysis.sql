@@ -93,9 +93,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -109,8 +109,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -124,8 +124,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -282,10 +282,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -400,7 +400,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -431,13 +431,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -480,7 +480,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -517,10 +517,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -581,9 +581,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -597,8 +597,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -612,8 +612,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -770,10 +770,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -888,7 +888,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -919,13 +919,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -968,7 +968,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -1005,10 +1005,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -1034,10 +1034,10 @@ SELECT
     CONCAT('$', FORMAT(, FORMAT(avg_refund, 2)) AS 'Avg Refund Amount',
     CONCAT(FORMAT(return_rate, 2), '%') AS 'Return Rate',
     CASE
-        WHEN return_rate <= 5 THEN '✅ Excellent'
+        WHEN return_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN return_rate <= 10 THEN '✓ Good'
-        WHEN return_rate <= 15 THEN '⚠️ Fair'
-        ELSE '❌ High'
+        WHEN return_rate <= 15 THEN ''WARNING' Fair'
+        ELSE ''ERROR' High'
     END AS 'Return Performance'
 FROM returns_annual
 ORDER BY year;
@@ -1105,9 +1105,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -1121,8 +1121,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -1136,8 +1136,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -1294,10 +1294,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -1412,7 +1412,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -1443,13 +1443,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -1492,7 +1492,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -1529,10 +1529,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -1562,10 +1562,10 @@ SELECT
     FORMAT(below_reorder_count, 0) AS 'Below Reorder',
     FORMAT(overbooked_count, 0) AS 'Overbooked',
     CASE
-        WHEN (out_of_stock_count * 100.0 / total_skus) <= 5 THEN '✅ Excellent'
+        WHEN (out_of_stock_count * 100.0 / total_skus) <= 5 THEN ''SUCCESS' Excellent'
         WHEN (out_of_stock_count * 100.0 / total_skus) <= 10 THEN '✓ Good'
-        WHEN (out_of_stock_count * 100.0 / total_skus) <= 15 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (out_of_stock_count * 100.0 / total_skus) <= 15 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Inventory Health'
 FROM inventory_snapshots
 ORDER BY year;
@@ -1634,9 +1634,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -1650,8 +1650,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -1665,8 +1665,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -1823,10 +1823,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -1941,7 +1941,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -1972,13 +1972,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -2021,7 +2021,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -2058,10 +2058,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -2089,8 +2089,8 @@ SELECT
     CASE
         WHEN avg_rating >= 4.5 THEN '⭐ Excellent'
         WHEN avg_rating >= 4.0 THEN '✓ Good'
-        WHEN avg_rating >= 3.5 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN avg_rating >= 3.5 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Vendor Quality'
 FROM vendor_annual
 ORDER BY year;
@@ -2163,9 +2163,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -2179,8 +2179,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -2194,8 +2194,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -2352,10 +2352,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -2470,7 +2470,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -2501,13 +2501,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -2550,7 +2550,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -2587,10 +2587,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -2616,9 +2616,9 @@ SELECT
     CONCAT('$', FORMAT(, FORMAT(MAX(CASE WHEN year = @current_year THEN total_revenue END), 2)) AS 'Current Year Revenue',
     CASE
         WHEN MAX(CASE WHEN year = @current_year THEN customer_count END) > 
-             MAX(CASE WHEN year = @previous_year THEN customer_count END) THEN '📈 Growing'
+             MAX(CASE WHEN year = @previous_year THEN customer_count END) THEN ''TRENDING_UP' Growing'
         WHEN MAX(CASE WHEN year = @current_year THEN customer_count END) < 
-             MAX(CASE WHEN year = @previous_year THEN customer_count END) THEN '📉 Declining'
+             MAX(CASE WHEN year = @previous_year THEN customer_count END) THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM geographic_trends
@@ -2704,9 +2704,9 @@ SELECT
     ) AS 'YoY Change',
     CASE
         WHEN MAX(CASE WHEN year = @current_year THEN quality_score END) > 
-             MAX(CASE WHEN year = @previous_year THEN quality_score END) THEN '📈 Improving'
+             MAX(CASE WHEN year = @previous_year THEN quality_score END) THEN ''TRENDING_UP' Improving'
         WHEN MAX(CASE WHEN year = @current_year THEN quality_score END) < 
-             MAX(CASE WHEN year = @previous_year THEN quality_score END) THEN '📉 Declining'
+             MAX(CASE WHEN year = @previous_year THEN quality_score END) THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM quality_trends
@@ -2773,9 +2773,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -2789,8 +2789,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -2804,8 +2804,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -2962,10 +2962,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -3080,7 +3080,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -3111,13 +3111,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -3160,7 +3160,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -3197,10 +3197,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -3261,9 +3261,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -3277,8 +3277,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -3292,8 +3292,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -3450,10 +3450,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -3568,7 +3568,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -3599,13 +3599,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -3648,7 +3648,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -3685,10 +3685,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -3717,10 +3717,10 @@ SELECT
     ), '%') AS 'CAGR',
     CASE
         WHEN (POWER(ending_revenue / NULLIF(starting_revenue, 0), 1.0/2) - 1) * 100 >= 30 THEN '🚀 Hyper Growth'
-        WHEN (POWER(ending_revenue / NULLIF(starting_revenue, 0), 1.0/2) - 1) * 100 >= 20 THEN '📈 High Growth'
+        WHEN (POWER(ending_revenue / NULLIF(starting_revenue, 0), 1.0/2) - 1) * 100 >= 20 THEN ''TRENDING_UP' High Growth'
         WHEN (POWER(ending_revenue / NULLIF(starting_revenue, 0), 1.0/2) - 1) * 100 >= 10 THEN '✓ Steady Growth'
         WHEN (POWER(ending_revenue / NULLIF(starting_revenue, 0), 1.0/2) - 1) * 100 >= 0 THEN '→ Slow Growth'
-        ELSE '📉 Declining'
+        ELSE ''TRENDING_DOWN' Declining'
     END AS 'Growth Category'
 FROM cagr_metrics
 
@@ -3735,10 +3735,10 @@ SELECT
     ), '%'),
     CASE
         WHEN (POWER(ending_customers / NULLIF(starting_customers, 0), 1.0/2) - 1) * 100 >= 25 THEN '🚀 Hyper Growth'
-        WHEN (POWER(ending_customers / NULLIF(starting_customers, 0), 1.0/2) - 1) * 100 >= 15 THEN '📈 High Growth'
+        WHEN (POWER(ending_customers / NULLIF(starting_customers, 0), 1.0/2) - 1) * 100 >= 15 THEN ''TRENDING_UP' High Growth'
         WHEN (POWER(ending_customers / NULLIF(starting_customers, 0), 1.0/2) - 1) * 100 >= 5 THEN '✓ Steady Growth'
         WHEN (POWER(ending_customers / NULLIF(starting_customers, 0), 1.0/2) - 1) * 100 >= 0 THEN '→ Slow Growth'
-        ELSE '📉 Declining'
+        ELSE ''TRENDING_DOWN' Declining'
     END
 FROM cagr_metrics
 
@@ -3783,9 +3783,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -3799,8 +3799,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -3814,8 +3814,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -3972,10 +3972,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -4090,7 +4090,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -4121,13 +4121,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -4170,7 +4170,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -4207,10 +4207,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -4271,9 +4271,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -4287,8 +4287,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -4302,8 +4302,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -4460,10 +4460,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -4578,7 +4578,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -4609,13 +4609,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -4658,7 +4658,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -4695,10 +4695,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -4727,10 +4727,10 @@ SELECT
     ), '%'),
     CASE
         WHEN (POWER(ending_aov / NULLIF(starting_aov, 0), 1.0/2) - 1) * 100 >= 15 THEN '🚀 Hyper Growth'
-        WHEN (POWER(ending_aov / NULLIF(starting_aov, 0), 1.0/2) - 1) * 100 >= 10 THEN '📈 High Growth'
+        WHEN (POWER(ending_aov / NULLIF(starting_aov, 0), 1.0/2) - 1) * 100 >= 10 THEN ''TRENDING_UP' High Growth'
         WHEN (POWER(ending_aov / NULLIF(starting_aov, 0), 1.0/2) - 1) * 100 >= 5 THEN '✓ Steady Growth'
         WHEN (POWER(ending_aov / NULLIF(starting_aov, 0), 1.0/2) - 1) * 100 >= 0 THEN '→ Slow Growth'
-        ELSE '📉 Declining'
+        ELSE ''TRENDING_DOWN' Declining'
     END
 FROM cagr_metrics;
 
@@ -4908,9 +4908,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -4924,8 +4924,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -4939,8 +4939,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -5097,10 +5097,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -5215,7 +5215,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -5246,13 +5246,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -5295,7 +5295,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -5332,10 +5332,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -5413,9 +5413,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -5429,8 +5429,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -5444,8 +5444,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -5602,10 +5602,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -5720,7 +5720,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -5751,13 +5751,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -5800,7 +5800,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -5837,10 +5837,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -5887,7 +5887,7 @@ SELECT
               WHERE YEAR(order_date) = @current_year AND payment_status = 'paid') >
              (SELECT SUM(total_amount) FROM orders 
               WHERE YEAR(order_date) = @previous_year AND payment_status = 'paid')
-        THEN '📈 Positive Growth'
+        THEN ''TRENDING_UP' Positive Growth'
         ELSE '→ Stable/Flat'
     END AS 'Business Health';
 
@@ -5937,9 +5937,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -5953,8 +5953,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -5968,8 +5968,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -6126,10 +6126,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -6244,7 +6244,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -6275,13 +6275,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -6324,7 +6324,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -6361,10 +6361,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -6393,7 +6393,7 @@ SELECT
     )) AS 'Milestone',
     @current_year AS 'Year',
     'Revenue' AS 'Category',
-    '✅' AS 'Status'
+    ''SUCCESS'' AS 'Status'
 
 UNION ALL
 
@@ -6404,7 +6404,7 @@ SELECT
     ), ' total customers'),
     @current_year,
     'Customer Growth',
-    '✅'
+    ''SUCCESS''
 
 UNION ALL
 
@@ -6415,7 +6415,7 @@ SELECT
     ), ' active products'),
     @current_year,
     'Product Portfolio',
-    '✅'
+    ''SUCCESS''
 
 UNION ALL
 
@@ -6431,8 +6431,8 @@ SELECT
     'Operations',
     CASE
         WHEN (SELECT AVG(CASE WHEN status = 'delivered' THEN 100.0 ELSE 0 END) 
-              FROM orders WHERE YEAR(order_date) = @current_year) >= 90 THEN '✅'
-        ELSE '⚠️'
+              FROM orders WHERE YEAR(order_date) = @current_year) >= 90 THEN ''SUCCESS''
+        ELSE ''WARNING''
     END
 
 UNION ALL
@@ -6444,7 +6444,7 @@ SELECT
     ), ' orders in ', @current_year),
     @current_year,
     'Order Volume',
-    '✅'
+    ''SUCCESS''
 
 UNION ALL
 
@@ -6456,7 +6456,7 @@ SELECT
     ), ' new SKUs'),
     @current_year,
     'Product Expansion',
-    '✅';
+    ''SUCCESS'';
 
 -- ========================================
 -- 18. STRATEGIC RECOMMENDATIONS
@@ -6596,9 +6596,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -6612,8 +6612,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -6627,8 +6627,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -6785,10 +6785,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -6903,7 +6903,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -6934,13 +6934,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -6983,7 +6983,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -7020,10 +7020,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -7282,9 +7282,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -7298,8 +7298,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -7313,8 +7313,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -7471,10 +7471,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -7589,7 +7589,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -7620,13 +7620,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -7669,7 +7669,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -7706,10 +7706,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -7774,9 +7774,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -7790,8 +7790,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -7805,8 +7805,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -7963,10 +7963,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -8081,7 +8081,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -8112,13 +8112,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -8161,7 +8161,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -8198,10 +8198,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -8266,9 +8266,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -8282,8 +8282,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -8297,8 +8297,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -8455,10 +8455,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -8573,7 +8573,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -8604,13 +8604,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -8653,7 +8653,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -8690,10 +8690,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -8723,13 +8723,13 @@ SELECT
     CONCAT(FORMAT(((curr_value - prev_value) / NULLIF(prev_value, 0) * 100), 1), '%') AS 'Percent Change',
     CASE
         WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > 20 THEN '🚀 Exceptional'
-        WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > 10 THEN '📈 Strong Growth'
+        WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > 10 THEN ''TRENDING_UP' Strong Growth'
         WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > 5 THEN '✓ Good Growth'
         WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > 0 THEN '→ Slight Growth'
         WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) = 0 THEN '→ Flat'
         WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > -5 THEN '↘️ Slight Decline'
-        WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > -10 THEN '📉 Declining'
-        ELSE '❌ Significant Decline'
+        WHEN ((curr_value - prev_value) / NULLIF(prev_value, 0) * 100) > -10 THEN ''TRENDING_DOWN' Declining'
+        ELSE ''ERROR' Significant Decline'
     END AS 'Status'
 FROM yoy_summary;
 
@@ -8902,10 +8902,10 @@ SELECT
     END AS 'Overall Grade',
     CONCAT(FORMAT(AVG(grade_value), 1), '%') AS 'Weighted Score',
     CASE
-        WHEN AVG(grade_value) >= 90 THEN '✅ Excellent - Continue current trajectory'
+        WHEN AVG(grade_value) >= 90 THEN ''SUCCESS' Excellent - Continue current trajectory'
         WHEN AVG(grade_value) >= 80 THEN '✓ Good - Minor improvements needed'
-        WHEN AVG(grade_value) >= 70 THEN '⚠️ Fair - Strategic changes required'
-        ELSE '❌ Poor - Immediate action needed'
+        WHEN AVG(grade_value) >= 70 THEN ''WARNING' Fair - Strategic changes required'
+        ELSE ''ERROR' Poor - Immediate action needed'
     END AS 'Assessment'
 FROM (
     SELECT
@@ -8983,9 +8983,9 @@ SELECT
     CONCAT(FORMAT(((previous_revenue - two_years_revenue) / two_years_revenue * 100), 1), '%') AS 'Previous YoY',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) > 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📈 Accelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_UP' Accelerating'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) < 
-             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN '📉 Decelerating'
+             ((previous_revenue - two_years_revenue) / two_years_revenue * 100) THEN ''TRENDING_DOWN' Decelerating'
         ELSE '→ Stable'
     END AS 'Trend'
 FROM yoy_comparison
@@ -8999,8 +8999,8 @@ SELECT
     CONCAT(FORMAT(((current_orders - previous_orders) / previous_orders * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_orders > previous_orders THEN '📈 Growing'
-        WHEN current_orders < previous_orders THEN '📉 Declining'
+        WHEN current_orders > previous_orders THEN ''TRENDING_UP' Growing'
+        WHEN current_orders < previous_orders THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison
@@ -9014,8 +9014,8 @@ SELECT
     CONCAT(FORMAT(((current_new_customers - previous_new_customers) / previous_new_customers * 100), 1), '%'),
     'N/A',
     CASE
-        WHEN current_new_customers > previous_new_customers THEN '📈 Growing'
-        WHEN current_new_customers < previous_new_customers THEN '📉 Declining'
+        WHEN current_new_customers > previous_new_customers THEN ''TRENDING_UP' Growing'
+        WHEN current_new_customers < previous_new_customers THEN ''TRENDING_DOWN' Declining'
         ELSE '→ Flat'
     END
 FROM yoy_comparison;
@@ -9172,10 +9172,10 @@ SELECT
     FORMAT(retained_year2, 0) AS 'Retained Year 2',
     CONCAT(FORMAT((retained_year2 * 100.0 / total_customers), 1), '%') AS 'Year 2 Retention',
     CASE
-        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN '✅ Excellent'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 60 THEN ''SUCCESS' Excellent'
         WHEN (retained_year1 * 100.0 / total_customers) >= 40 THEN '✓ Good'
-        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (retained_year1 * 100.0 / total_customers) >= 25 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Retention Health'
 FROM cohort_retention
 ORDER BY cohort_year;
@@ -9290,7 +9290,7 @@ SELECT
     CONCAT('$', FORMAT(revenue_volatility, 2)) AS 'Revenue Volatility',
     CASE
         WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.2 FROM seasonal_patterns) THEN '🔥 Peak Season'
-        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN '📈 High Season'
+        WHEN avg_monthly_revenue > (SELECT AVG(avg_monthly_revenue) * 1.1 FROM seasonal_patterns) THEN ''TRENDING_UP' High Season'
         WHEN avg_monthly_revenue < (SELECT AVG(avg_monthly_revenue) * 0.8 FROM seasonal_patterns) THEN '❄️ Low Season'
         ELSE '→ Normal'
     END AS 'Season Type',
@@ -9321,13 +9321,13 @@ SELECT
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📈 High Traffic'
+        ) daily_avg) THEN ''TRENDING_UP' High Traffic'
         WHEN COUNT(*) < (SELECT AVG(order_count) * 0.85 FROM (
             SELECT COUNT(*) AS order_count FROM orders 
             WHERE YEAR(order_date) IN (@two_years_ago, @previous_year, @current_year)
             AND payment_status = 'paid'
             GROUP BY DAYOFWEEK(order_date)
-        ) daily_avg) THEN '📉 Low Traffic'
+        ) daily_avg) THEN ''TRENDING_DOWN' Low Traffic'
         ELSE '→ Average'
     END AS 'Traffic Pattern'
 FROM orders
@@ -9370,7 +9370,7 @@ SELECT
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 200 THEN '🏆 Excellent'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 100 THEN '⭐ Good'
         WHEN MAX(CASE WHEN year = @current_year THEN avg_roi END) >= 50 THEN '✓ Fair'
-        ELSE '⚠️ Poor'
+        ELSE ''WARNING' Poor'
     END AS 'Performance'
 FROM channel_annual
 GROUP BY channel
@@ -9407,10 +9407,10 @@ SELECT
     CONCAT('$', FORMAT(avg_shipping_cost, 2)) AS 'Avg Shipping Cost',
     CONCAT('$', FORMAT(total_shipping_cost, 2)) AS 'Total Shipping Cost',
     CASE
-        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN '✅ Excellent'
+        WHEN delivery_rate >= 95 AND cancellation_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN delivery_rate >= 90 AND cancellation_rate <= 8 THEN '✓ Good'
-        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN '⚠️ Fair'
-        ELSE '❌ Needs Improvement'
+        WHEN delivery_rate >= 85 AND cancellation_rate <= 12 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Needs Improvement'
     END AS 'Operational Health'
 FROM operational_annual
 ORDER BY year;
@@ -9436,10 +9436,10 @@ SELECT
     CONCAT('$', FORMAT(avg_refund, 2)) AS 'Avg Refund Amount',
     CONCAT(FORMAT(return_rate, 2), '%') AS 'Return Rate',
     CASE
-        WHEN return_rate <= 5 THEN '✅ Excellent'
+        WHEN return_rate <= 5 THEN ''SUCCESS' Excellent'
         WHEN return_rate <= 10 THEN '✓ Good'
-        WHEN return_rate <= 15 THEN '⚠️ Fair'
-        ELSE '❌ High'
+        WHEN return_rate <= 15 THEN ''WARNING' Fair'
+        ELSE ''ERROR' High'
     END AS 'Return Performance'
 FROM returns_annual
 ORDER BY year;
@@ -9477,10 +9477,10 @@ SELECT
     FORMAT(below_reorder_count, 0) AS 'Below Reorder',
     FORMAT(overbooked_count, 0) AS 'Overbooked',
     CASE
-        WHEN (out_of_stock_count * 100.0 / total_skus) <= 5 THEN '✅ Excellent'
+        WHEN (out_of_stock_count * 100.0 / total_skus) <= 5 THEN ''SUCCESS' Excellent'
         WHEN (out_of_stock_count * 100.0 / total_skus) <= 10 THEN '✓ Good'
-        WHEN (out_of_stock_count * 100.0 / total_skus) <= 15 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN (out_of_stock_count * 100.0 / total_skus) <= 15 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Inventory Health'
 FROM inventory_snapshots
 ORDER BY year;

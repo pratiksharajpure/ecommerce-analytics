@@ -32,6 +32,9 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS sp_analyze_table_sizes$$
 CREATE PROCEDURE sp_analyze_table_sizes()
 BEGIN
+DECLARE v_cutoff_date DATE;
+    
+
     SELECT 
         TABLE_NAME,
         TABLE_ROWS AS estimated_rows,
@@ -155,8 +158,20 @@ CREATE PROCEDURE sp_analyze_slow_queries(
     IN p_days_back INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_back DAY);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_back DAY);
     
     SELECT 
         query_name,
@@ -184,6 +199,20 @@ END$$
 DROP PROCEDURE IF EXISTS sp_analyze_fragmentation$$
 CREATE PROCEDURE sp_analyze_fragmentation()
 BEGIN
+DECLARE done INT DEFAULT FALSE;
+    DECLARE v_table_name VARCHAR(100);
+    DECLARE v_fragmentation DECIMAL(10,2);
+    
+    DECLARE table_cursor CURSOR FOR
+        SELECT TABLE_NAME, ROUND(DATA_FREE / DATA_LENGTH * 100, 2) AS frag_pct
+        FROM information_schema.TABLES
+        WHERE TABLE_SCHEMA = 'ecommerce_analytics'
+        AND DATA_LENGTH > 0
+        AND (DATA_FREE / DATA_LENGTH * 100) > 10
+        AND TABLE_TYPE = 'BASE TABLE';
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
     SELECT 
         TABLE_NAME,
         ROUND(DATA_LENGTH / 1024 / 1024, 2) AS data_size_mb,
@@ -207,19 +236,20 @@ END$$
 DROP PROCEDURE IF EXISTS sp_optimize_hot_tables$$
 CREATE PROCEDURE sp_optimize_hot_tables()
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE v_table_name VARCHAR(100);
-    DECLARE v_fragmentation DECIMAL(10,2);
     
-    DECLARE table_cursor CURSOR FOR
-        SELECT TABLE_NAME, ROUND(DATA_FREE / DATA_LENGTH * 100, 2) AS frag_pct
-        FROM information_schema.TABLES
-        WHERE TABLE_SCHEMA = 'ecommerce_analytics'
-        AND DATA_LENGTH > 0
-        AND (DATA_FREE / DATA_LENGTH * 100) > 10
-        AND TABLE_TYPE = 'BASE TABLE';
-    
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     OPEN table_cursor;
     

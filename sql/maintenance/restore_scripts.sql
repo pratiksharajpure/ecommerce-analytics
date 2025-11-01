@@ -14,7 +14,7 @@ CREATE PROCEDURE sp_restore_full_database(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
         SELECT 'ERROR: Full restore failed' AS Status;
@@ -23,7 +23,22 @@ BEGIN
     START TRANSACTION;
     
     -- Drop existing database if exists
-    SET @drop_db = CONCAT('DROP DATABASE IF EXISTS ', target_database);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET @drop_db = CONCAT('DROP DATABASE IF EXISTS ', target_database);
     PREPARE stmt FROM @drop_db;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
@@ -64,7 +79,7 @@ CREATE PROCEDURE sp_point_in_time_recovery(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
         SELECT 'ERROR: Point-in-time recovery failed' AS Status;
@@ -112,7 +127,22 @@ BEGIN
         ) n
         WHERE n.n <= 1 + (LENGTH(table_list) - LENGTH(REPLACE(table_list, ',', '')));
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
@@ -174,7 +204,7 @@ CREATE PROCEDURE sp_restore_with_validation(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE row_count_customers INT;
+DECLARE row_count_customers INT;
     DECLARE row_count_orders INT;
     DECLARE row_count_products INT;
     
@@ -190,7 +220,22 @@ BEGIN
     CALL sp_restore_full_database(backup_file_path, target_database);
     
     -- Validate critical tables
-    SET @count_stmt = CONCAT('SELECT COUNT(*) INTO @row_count_customers FROM ', target_database, '.customers');
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET @count_stmt = CONCAT('SELECT COUNT(*) INTO @row_count_customers FROM ', target_database, '.customers');
     PREPARE stmt FROM @count_stmt;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
@@ -232,7 +277,7 @@ CREATE PROCEDURE sp_restore_incremental(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
         SELECT 'ERROR: Incremental restore failed' AS Status;
@@ -244,7 +289,22 @@ BEGIN
     CALL sp_restore_full_database(full_backup_path, target_database);
     
     -- Step 2: Apply incremental backup
-    SET @use_db = CONCAT('USE ', target_database);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET @use_db = CONCAT('USE ', target_database);
     PREPARE stmt FROM @use_db;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
@@ -272,7 +332,7 @@ CREATE PROCEDURE sp_restore_date_range(
     IN end_date DATE
 )
 BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK;
         SELECT 'ERROR: Date range restore failed' AS Status;
@@ -281,7 +341,22 @@ BEGIN
     START TRANSACTION;
     
     -- Restore orders within date range
-    SET @drop_stmt = CONCAT('DROP TABLE IF EXISTS ', target_database, '.orders');
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET @drop_stmt = CONCAT('DROP TABLE IF EXISTS ', target_database, '.orders');
     PREPARE stmt FROM @drop_stmt;
     EXECUTE stmt;
     DEALLOCATE PREPARE stmt;

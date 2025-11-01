@@ -55,12 +55,27 @@ CREATE PROCEDURE sp_full_database_backup(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_total_rows INT DEFAULT 0;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('full_backup_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     -- Log backup start
@@ -129,13 +144,28 @@ CREATE PROCEDURE sp_incremental_backup_orders(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_last_backup_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_row_count INT DEFAULT 0;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('incremental_orders_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     -- Get last backup time
@@ -192,13 +222,28 @@ CREATE PROCEDURE sp_incremental_backup_customers(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_last_backup_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_row_count INT DEFAULT 0;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('incremental_customers_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     SELECT COALESCE(last_backup_time, '1900-01-01') INTO v_last_backup_time
@@ -250,13 +295,28 @@ CREATE PROCEDURE sp_table_backup(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_row_count INT DEFAULT 0;
     DECLARE v_sql_query TEXT;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('table_', p_table_name, '_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     INSERT INTO backup_log (backup_type, backup_name, backup_path, start_time, status, created_by, tables_backed_up)
@@ -303,12 +363,27 @@ CREATE PROCEDURE sp_backup_critical_tables(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_total_rows INT DEFAULT 0;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('critical_tables_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     INSERT INTO backup_log (backup_type, backup_name, backup_path, start_time, status, created_by)
@@ -364,13 +439,28 @@ CREATE PROCEDURE sp_differential_backup(
     IN p_created_by VARCHAR(100)
 )
 BEGIN
-    DECLARE v_backup_id INT;
+DECLARE v_backup_id INT;
     DECLARE v_start_time DATETIME;
     DECLARE v_last_full_backup_time DATETIME;
     DECLARE v_backup_name VARCHAR(200);
     DECLARE v_row_count INT DEFAULT 0;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     SET v_backup_name = CONCAT('differential_', DATE_FORMAT(v_start_time, '%Y%m%d_%H%i%s'));
     
     -- Get last full backup time
@@ -435,8 +525,23 @@ CREATE PROCEDURE sp_backup_status_report(
     IN p_days_back INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_back DAY);
+DECLARE v_cutoff_date DATE;
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_back DAY);
     
     SELECT 
         backup_id,
@@ -463,10 +568,25 @@ CREATE PROCEDURE sp_cleanup_old_backups(
     IN p_days_to_keep INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_deleted_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_to_keep DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_to_keep DAY);
     
     -- Delete old backup logs
     DELETE FROM backup_log

@@ -122,10 +122,10 @@ SELECT
     CONCAT(FORMAT(((current_revenue - yoy_revenue) / yoy_revenue * 100), 1), '%') AS 'YoY Growth',
     CASE
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) >= 20 THEN '🚀 Exceptional'
-        WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) >= 10 THEN '📈 Strong'
+        WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) >= 10 THEN ''TRENDING_UP' Strong'
         WHEN ((current_revenue - previous_revenue) / previous_quarter * 100) >= 5 THEN '✓ Good'
         WHEN ((current_revenue - previous_revenue) / previous_revenue * 100) >= 0 THEN '→ Stable'
-        ELSE '⚠️ Declining'
+        ELSE ''WARNING' Declining'
     END AS 'Performance Status'
 FROM revenue_comparison;
 
@@ -440,10 +440,10 @@ SELECT
     FORMAT(turnover_ratio, 2) AS 'Turnover Ratio',
     CONCAT(FORMAT(days_to_sell, 0), ' days') AS 'Days to Sell',
     CASE
-        WHEN turnover_ratio >= 4 THEN '✅ Excellent'
+        WHEN turnover_ratio >= 4 THEN ''SUCCESS' Excellent'
         WHEN turnover_ratio >= 2 THEN '✓ Good'
-        WHEN turnover_ratio >= 1 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN turnover_ratio >= 1 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Performance'
 FROM inventory_turnover
 ORDER BY turnover_ratio DESC;
@@ -465,8 +465,8 @@ SELECT
     CASE
         WHEN v.rating >= 4.5 THEN '⭐ Excellent'
         WHEN v.rating >= 4.0 THEN '✓ Good'
-        WHEN v.rating >= 3.0 THEN '⚠️ Fair'
-        ELSE '❌ Poor'
+        WHEN v.rating >= 3.0 THEN ''WARNING' Fair'
+        ELSE ''ERROR' Poor'
     END AS 'Performance'
 FROM vendors v
 LEFT JOIN vendor_contracts vc ON v.vendor_id = vc.vendor_id
@@ -525,13 +525,13 @@ SELECT
     FORMAT(missing_critical_fields, 0) AS 'Quality Issues',
     CONCAT(quality_score, '%') AS 'Quality Score',
     CASE
-        WHEN quality_score >= 95 THEN 'A+ ✅'
-        WHEN quality_score >= 90 THEN 'A ✅'
+        WHEN quality_score >= 95 THEN 'A+ 'SUCCESS''
+        WHEN quality_score >= 90 THEN 'A 'SUCCESS''
         WHEN quality_score >= 85 THEN 'B+ ✓'
         WHEN quality_score >= 80 THEN 'B ✓'
-        WHEN quality_score >= 75 THEN 'C+ ⚠️'
-        WHEN quality_score >= 70 THEN 'C ⚠️'
-        ELSE 'F ❌'
+        WHEN quality_score >= 75 THEN 'C+ 'WARNING''
+        WHEN quality_score >= 70 THEN 'C 'WARNING''
+        ELSE 'F 'ERROR''
     END AS 'Grade'
 FROM data_quality
 ORDER BY quality_score DESC;
@@ -659,10 +659,10 @@ SELECT
     END AS 'Actual',
     CONCAT(FORMAT((actual_value / target_value * 100), 1), '%') AS 'Achievement',
     CASE
-        WHEN actual_value >= target_value THEN '✅ Achieved'
+        WHEN actual_value >= target_value THEN ''SUCCESS' Achieved'
         WHEN actual_value >= target_value * 0.9 THEN '↗️ Nearly There'
-        WHEN actual_value >= target_value * 0.75 THEN '⚠️ Below Target'
-        ELSE '❌ Missed'
+        WHEN actual_value >= target_value * 0.75 THEN ''WARNING' Below Target'
+        ELSE ''ERROR' Missed'
     END AS 'Status',
     CASE
         WHEN actual_value >= target_value * 1.2 THEN '🏆 Exceptional'
@@ -759,7 +759,7 @@ SELECT 'RISKS & OPPORTUNITIES' AS 'Section';
 SELECT '══════════════════════════════════════════════════════════' AS Separator;
 
 SELECT
-    '⚠️ High Cancellation Rate' AS 'Risk/Opportunity',
+    ''WARNING' High Cancellation Rate' AS 'Risk/Opportunity',
     'Risk' AS 'Type',
     'Medium' AS 'Priority',
     CONCAT(
@@ -773,7 +773,7 @@ SELECT
 UNION ALL
 
 SELECT
-    '📈 Growing Product Categories',
+    ''TRENDING_UP' Growing Product Categories',
     'Opportunity',
     'High',
     CONCAT(
@@ -801,7 +801,7 @@ SELECT
 UNION ALL
 
 SELECT
-    '⚠️ Inventory Overstock',
+    ''WARNING' Inventory Overstock',
     'Risk',
     'Medium',
     CONCAT(
@@ -816,7 +816,7 @@ SELECT
 UNION ALL
 
 SELECT
-    '📊 Data Quality Improvements',
+    ''CHART' Data Quality Improvements',
     'Opportunity',
     'High',
     CONCAT(
@@ -832,7 +832,7 @@ SELECT
 UNION ALL
 
 SELECT
-    '💰 Upselling Opportunities',
+    ''MONEY' Upselling Opportunities',
     'Opportunity',
     'Medium',
     CONCAT(',
@@ -895,8 +895,8 @@ SELECT
         WHEN segment = 'Loyal Customers' THEN '⭐ High Priority - Nurture & Upsell'
         WHEN segment = 'Potential Loyalists' THEN '✓ Medium Priority - Convert to Loyal'
         WHEN segment = 'New Customers' THEN '🆕 Medium Priority - Engage & Convert'
-        WHEN segment = 'At Risk' THEN '⚠️ High Priority - Re-engage Campaign'
-        WHEN segment = 'Churned' THEN '❌ Low Priority - Win-back if High Value'
+        WHEN segment = 'At Risk' THEN ''WARNING' High Priority - Re-engage Campaign'
+        WHEN segment = 'Churned' THEN ''ERROR' Low Priority - Win-back if High Value'
         ELSE '→ Medium Priority - Regular Engagement'
     END AS 'Strategy'
 FROM rfm_segments

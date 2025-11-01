@@ -16,10 +16,25 @@ CREATE PROCEDURE sp_archive_old_orders(
     IN p_months_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_archived_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
     
     -- Create archive table if not exists
     CREATE TABLE IF NOT EXISTS orders_archive LIKE orders;
@@ -48,10 +63,25 @@ CREATE PROCEDURE sp_archive_old_order_items(
     IN p_months_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_archived_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
     
     -- Create archive table if not exists
     CREATE TABLE IF NOT EXISTS order_items_archive LIKE order_items;
@@ -79,10 +109,25 @@ CREATE PROCEDURE sp_cleanup_old_campaign_data(
     IN p_months_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_deleted_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
     
     -- Create archive table if not exists
     CREATE TABLE IF NOT EXISTS campaign_performance_archive LIKE campaign_performance;
@@ -107,13 +152,28 @@ END$$
 DROP PROCEDURE IF EXISTS sp_delete_orphaned_records$$
 CREATE PROCEDURE sp_delete_orphaned_records()
 BEGIN
-    DECLARE v_deleted_count INT DEFAULT 0;
+DECLARE v_deleted_count INT DEFAULT 0;
     DECLARE v_total_deleted INT DEFAULT 0;
     
     -- Delete order items with no parent order
     DELETE FROM order_items
     WHERE order_id NOT IN (SELECT order_id FROM orders);
-    SET v_deleted_count = ROW_COUNT();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_deleted_count = ROW_COUNT();
     SET v_total_deleted = v_total_deleted + v_deleted_count;
     
     -- Delete inventory records for deleted products
@@ -158,10 +218,25 @@ CREATE PROCEDURE sp_purge_rejected_reviews(
     IN p_days_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_deleted_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_old DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_old DAY);
     
     DELETE FROM reviews
     WHERE status = 'rejected'
@@ -180,10 +255,25 @@ CREATE PROCEDURE sp_cleanup_inactive_customers(
     IN p_years_inactive INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_updated_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_years_inactive YEAR);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_years_inactive YEAR);
     
     -- Mark customers as inactive if no orders in specified period
     UPDATE customers c
@@ -209,10 +299,25 @@ CREATE PROCEDURE sp_delete_old_cancelled_orders(
     IN p_days_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_deleted_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_old DAY);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_days_old DAY);
     
     -- Delete cancelled orders older than specified days
     DELETE FROM orders
@@ -232,10 +337,25 @@ CREATE PROCEDURE sp_archive_completed_returns(
     IN p_months_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_archived_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_months_old MONTH);
     
     -- Create archive table if not exists
     CREATE TABLE IF NOT EXISTS returns_archive LIKE returns;
@@ -264,10 +384,25 @@ CREATE PROCEDURE sp_cleanup_expired_contracts(
     IN p_years_old INT
 )
 BEGIN
-    DECLARE v_cutoff_date DATE;
+DECLARE v_cutoff_date DATE;
     DECLARE v_deleted_count INT DEFAULT 0;
     
-    SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_years_old YEAR);
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(CURDATE(), INTERVAL p_years_old YEAR);
     
     -- Create archive table if not exists
     CREATE TABLE IF NOT EXISTS vendor_contracts_archive LIKE vendor_contracts;
@@ -294,8 +429,23 @@ END$$
 DROP PROCEDURE IF EXISTS sp_master_cleanup$$
 CREATE PROCEDURE sp_master_cleanup()
 BEGIN
-    DECLARE v_start_time DATETIME;
-    SET v_start_time = NOW();
+DECLARE v_start_time DATETIME;
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     
     SELECT 'Starting comprehensive cleanup process...' AS Status;
     

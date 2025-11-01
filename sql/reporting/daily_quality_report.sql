@@ -94,7 +94,7 @@ SELECT
             (pq.total_products * 7)) +
             (100 - (oq.orphaned_orders + oq.invalid_amounts + oq.missing_dates + oq.future_dates + oq.invalid_status) * 100.0 / 
             (oq.total_orders * 5))
-        ) / 3, 2) >= 95 THEN '🟢 Excellent'
+        ) / 3, 2) >= 95 THEN ''GREEN' Excellent'
         WHEN ROUND((
             (100 - (qm.invalid_emails + qm.missing_phones + qm.missing_first_names + qm.missing_last_names + 
              qm.missing_addresses + qm.missing_cities + qm.missing_states + qm.missing_zip_codes) * 100.0 / 
@@ -104,7 +104,7 @@ SELECT
             (pq.total_products * 7)) +
             (100 - (oq.orphaned_orders + oq.invalid_amounts + oq.missing_dates + oq.future_dates + oq.invalid_status) * 100.0 / 
             (oq.total_orders * 5))
-        ) / 3, 2) >= 85 THEN '🟡 Good'
+        ) / 3, 2) >= 85 THEN ''YELLOW' Good'
         WHEN ROUND((
             (100 - (qm.invalid_emails + qm.missing_phones + qm.missing_first_names + qm.missing_last_names + 
              qm.missing_addresses + qm.missing_cities + qm.missing_states + qm.missing_zip_codes) * 100.0 / 
@@ -115,7 +115,7 @@ SELECT
             (100 - (oq.orphaned_orders + oq.invalid_amounts + oq.missing_dates + oq.future_dates + oq.invalid_status) * 100.0 / 
             (oq.total_orders * 5))
         ) / 3, 2) >= 70 THEN '🟠 Fair'
-        ELSE '🔴 Poor'
+        ELSE ''RED' Poor'
     END AS quality_grade
 FROM quality_metrics qm, product_quality pq, order_quality oq;
 
@@ -125,7 +125,7 @@ FROM quality_metrics qm, product_quality pq, order_quality oq;
 -- ========================================
 
 SELECT 
-    '🔍 CUSTOMER DATA QUALITY ISSUES' AS section,
+    ''SEARCH' CUSTOMER DATA QUALITY ISSUES' AS section,
     '' AS spacer;
 
 -- Invalid Email Addresses
@@ -134,7 +134,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customers), 2) AS percentage,
     'High' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Validate and update email formats' AS recommended_action
 FROM customers
 WHERE email IS NULL OR email = '' OR email NOT LIKE '%@%.%'
@@ -148,7 +148,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customers), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Request phone numbers for customer records'
 FROM customers
 WHERE phone IS NULL OR phone = ''
@@ -162,7 +162,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customers), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Update customer profile information'
 FROM customers
 WHERE first_name IS NULL OR first_name = '' OR last_name IS NULL OR last_name = ''
@@ -176,7 +176,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customers), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Validate shipping addresses before orders'
 FROM customers
 WHERE address_line1 IS NULL OR address_line1 = '' 
@@ -193,7 +193,7 @@ SELECT
     COUNT(*) - COUNT(DISTINCT email),
     ROUND((COUNT(*) - COUNT(DISTINCT email)) * 100.0 / COUNT(*), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Merge or deactivate duplicate customer records'
 FROM customers
 WHERE email IS NOT NULL AND email != ''
@@ -207,7 +207,7 @@ SELECT
     COUNT(DISTINCT c.customer_id),
     ROUND(COUNT(DISTINCT c.customer_id) * 100.0 / (SELECT COUNT(*) FROM customers), 2),
     'Low',
-    '🟢',
+    ''GREEN'',
     'Update customer status to active'
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
@@ -230,7 +230,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2) AS percentage,
     'Critical' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Add product names immediately' AS recommended_action
 FROM products
 WHERE product_name IS NULL OR product_name = ''
@@ -244,7 +244,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Add detailed product descriptions for SEO'
 FROM products
 WHERE description IS NULL OR description = ''
@@ -258,7 +258,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Update pricing immediately - products unsellable'
 FROM products
 WHERE price IS NULL OR price <= 0
@@ -272,7 +272,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Update cost data for margin calculations'
 FROM products
 WHERE cost IS NULL OR cost < 0
@@ -286,7 +286,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Review pricing strategy - negative margins'
 FROM products
 WHERE price < cost AND price > 0 AND cost > 0
@@ -300,7 +300,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Assign products to appropriate categories'
 FROM products
 WHERE category_id IS NULL
@@ -314,7 +314,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Generate unique SKU codes for tracking'
 FROM products
 WHERE sku IS NULL OR sku = ''
@@ -328,7 +328,7 @@ SELECT
     COUNT(*) - COUNT(DISTINCT sku),
     ROUND((COUNT(*) - COUNT(DISTINCT sku)) * 100.0 / COUNT(*), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Resolve SKU conflicts immediately'
 FROM products
 WHERE sku IS NOT NULL AND sku != ''
@@ -342,7 +342,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Correct inventory discrepancies'
 FROM products
 WHERE stock_quantity < 0
@@ -356,7 +356,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products WHERE status = 'active'), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Restock or change status to out_of_stock'
 FROM products
 WHERE status = 'active' AND stock_quantity = 0
@@ -377,7 +377,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2) AS percentage,
     'Critical' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Link orders to customer records' AS recommended_action
 FROM orders
 WHERE customer_id IS NULL 
@@ -392,7 +392,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Recalculate order totals'
 FROM orders
 WHERE total_amount IS NULL OR total_amount <= 0
@@ -406,7 +406,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Add order date timestamps'
 FROM orders
 WHERE order_date IS NULL
@@ -420,7 +420,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Correct order date timestamps'
 FROM orders
 WHERE order_date > NOW()
@@ -434,7 +434,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Add order items or cancel orders'
 FROM orders o
 WHERE NOT EXISTS (SELECT 1 FROM order_items oi WHERE oi.order_id = o.order_id)
@@ -448,7 +448,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders WHERE payment_status = 'paid'), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Update order status to processing'
 FROM orders
 WHERE payment_status = 'paid' 
@@ -464,7 +464,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders WHERE status = 'processing'), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Investigate fulfillment delays'
 FROM orders
 WHERE status = 'processing'
@@ -479,7 +479,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Recalculate and update order totals'
 FROM orders o
 JOIN (
@@ -496,7 +496,7 @@ HAVING COUNT(*) > 0;
 -- ========================================
 
 SELECT 
-    '📊 INVENTORY DATA QUALITY ISSUES' AS section,
+    ''CHART' INVENTORY DATA QUALITY ISSUES' AS section,
     '' AS spacer;
 
 -- Products without Inventory Records
@@ -505,7 +505,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products WHERE status = 'active'), 2) AS percentage,
     'High' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Create inventory records for all active products' AS recommended_action
 FROM products p
 WHERE p.status = 'active'
@@ -520,7 +520,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM products p JOIN inventory i ON p.product_id = i.product_id), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Reconcile stock quantities between tables'
 FROM products p
 JOIN inventory i ON p.product_id = i.product_id
@@ -535,7 +535,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM inventory), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Audit and correct reserved quantities'
 FROM inventory
 WHERE quantity_reserved > quantity_on_hand
@@ -549,7 +549,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM inventory), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Generate purchase orders for low stock items'
 FROM inventory
 WHERE quantity_available < reorder_level
@@ -570,7 +570,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM vendors), 2) AS percentage,
     'Medium' AS severity,
-    '🟡' AS priority,
+    ''YELLOW'' AS priority,
     'Update vendor contact details' AS recommended_action
 FROM vendors
 WHERE (email IS NULL OR email = '') 
@@ -586,7 +586,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM vendors), 2),
     'Low',
-    '🟢',
+    ''GREEN'',
     'Validate rating values (0-5 scale)'
 FROM vendors
 WHERE rating IS NOT NULL AND (rating < 0 OR rating > 5)
@@ -600,7 +600,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM vendors WHERE status = 'active'), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Review vendor relationships and create contracts'
 FROM vendors v
 WHERE v.status = 'active'
@@ -618,7 +618,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM vendor_contracts), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Update expired contracts or create new ones'
 FROM vendor_contracts
 WHERE end_date < CURDATE() AND status = 'active'
@@ -639,7 +639,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews), 2) AS percentage,
     'High' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Add rating scores to reviews' AS recommended_action
 FROM reviews
 WHERE rating IS NULL
@@ -653,7 +653,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Correct rating values to 1-5 scale'
 FROM reviews
 WHERE rating IS NOT NULL AND (rating < 1 OR rating > 5)
@@ -667,7 +667,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews WHERE status = 'pending'), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Expedite review moderation process'
 FROM reviews
 WHERE status = 'pending'
@@ -682,7 +682,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Archive or delete orphaned reviews'
 FROM reviews r
 WHERE NOT EXISTS (SELECT 1 FROM products p WHERE p.product_id = r.product_id)
@@ -703,7 +703,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM campaigns), 2) AS percentage,
     'Medium' AS severity,
-    '🟡' AS priority,
+    ''YELLOW'' AS priority,
     'Assign budget to active campaigns' AS recommended_action
 FROM campaigns
 WHERE budget IS NULL OR budget <= 0
@@ -717,7 +717,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM campaigns WHERE status = 'active'), 2),
     'Medium',
-    '🟡',
+    ''YELLOW'',
     'Update campaign status to completed'
 FROM campaigns
 WHERE status = 'active' AND end_date < CURDATE()
@@ -731,7 +731,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM campaigns WHERE status = 'active'), 2),
     'Low',
-    '🟢',
+    ''GREEN'',
     'Track and record campaign performance'
 FROM campaigns c
 WHERE c.status = 'active'
@@ -757,7 +757,7 @@ SELECT
     COUNT(*) AS issue_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM returns WHERE status = 'approved'), 2) AS percentage,
     'High' AS severity,
-    '🔴' AS priority,
+    ''RED'' AS priority,
     'Calculate and add refund amounts' AS recommended_action
 FROM returns
 WHERE status IN ('approved', 'refunded') 
@@ -772,7 +772,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM returns WHERE status = 'requested'), 2),
     'High',
-    '🔴',
+    ''RED'',
     'Process pending return requests'
 FROM returns
 WHERE status = 'requested'
@@ -787,7 +787,7 @@ SELECT
     COUNT(*),
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM returns), 2),
     'Critical',
-    '🔴',
+    ''RED'',
     'Clean up orphaned return records'
 FROM returns r
 WHERE NOT EXISTS (SELECT 1 FROM orders o WHERE o.order_id = r.order_id)
@@ -799,7 +799,7 @@ HAVING COUNT(*) > 0;
 -- ========================================
 
 SELECT 
-    '📈 QUALITY TRENDS (7-Day Comparison)' AS section,
+    ''TRENDING_UP' QUALITY TRENDS (7-Day Comparison)' AS section,
     '' AS spacer;
 
 WITH today_quality AS (
@@ -836,14 +836,14 @@ SELECT
     wq.invalid_emails_7d AS week_ago_count,
     tq.invalid_emails_today - wq.invalid_emails_7d AS change,
     CASE 
-        WHEN tq.invalid_emails_today < wq.invalid_emails_7d THEN '📉 Improving'
-        WHEN tq.invalid_emails_today > wq.invalid_emails_7d THEN '📈 Degrading'
+        WHEN tq.invalid_emails_today < wq.invalid_emails_7d THEN ''TRENDING_DOWN' Improving'
+        WHEN tq.invalid_emails_today > wq.invalid_emails_7d THEN ''TRENDING_UP' Degrading'
         ELSE '➡️ Stable'
     END AS trend,
     CASE 
-        WHEN tq.invalid_emails_today < wq.invalid_emails_7d THEN '🟢'
-        WHEN tq.invalid_emails_today > wq.invalid_emails_7d THEN '🔴'
-        ELSE '🟡'
+        WHEN tq.invalid_emails_today < wq.invalid_emails_7d THEN ''GREEN''
+        WHEN tq.invalid_emails_today > wq.invalid_emails_7d THEN ''RED''
+        ELSE ''YELLOW''
     END AS status_icon
 FROM today_quality tq, week_ago_quality wq
 
@@ -855,14 +855,14 @@ SELECT
     wq.invalid_prices_7d,
     tq.invalid_prices_today - wq.invalid_prices_7d,
     CASE 
-        WHEN tq.invalid_prices_today < wq.invalid_prices_7d THEN '📉 Improving'
-        WHEN tq.invalid_prices_today > wq.invalid_prices_7d THEN '📈 Degrading'
+        WHEN tq.invalid_prices_today < wq.invalid_prices_7d THEN ''TRENDING_DOWN' Improving'
+        WHEN tq.invalid_prices_today > wq.invalid_prices_7d THEN ''TRENDING_UP' Degrading'
         ELSE '➡️ Stable'
     END,
     CASE 
-        WHEN tq.invalid_prices_today < wq.invalid_prices_7d THEN '🟢'
-        WHEN tq.invalid_prices_today > wq.invalid_prices_7d THEN '🔴'
-        ELSE '🟡'
+        WHEN tq.invalid_prices_today < wq.invalid_prices_7d THEN ''GREEN''
+        WHEN tq.invalid_prices_today > wq.invalid_prices_7d THEN ''RED''
+        ELSE ''YELLOW''
     END
 FROM today_quality tq, week_ago_quality wq
 
@@ -874,14 +874,14 @@ SELECT
     wq.orphaned_orders_7d,
     tq.orphaned_orders_today - wq.orphaned_orders_7d,
     CASE 
-        WHEN tq.orphaned_orders_today < wq.orphaned_orders_7d THEN '📉 Improving'
-        WHEN tq.orphaned_orders_today > wq.orphaned_orders_7d THEN '📈 Degrading'
+        WHEN tq.orphaned_orders_today < wq.orphaned_orders_7d THEN ''TRENDING_DOWN' Improving'
+        WHEN tq.orphaned_orders_today > wq.orphaned_orders_7d THEN ''TRENDING_UP' Degrading'
         ELSE '➡️ Stable'
     END,
     CASE 
-        WHEN tq.orphaned_orders_today < wq.orphaned_orders_7d THEN '🟢'
-        WHEN tq.orphaned_orders_today > wq.orphaned_orders_7d THEN '🔴'
-        ELSE '🟡'
+        WHEN tq.orphaned_orders_today < wq.orphaned_orders_7d THEN ''GREEN''
+        WHEN tq.orphaned_orders_today > wq.orphaned_orders_7d THEN ''RED''
+        ELSE ''YELLOW''
     END
 FROM today_quality tq, week_ago_quality wq
 
@@ -893,14 +893,14 @@ SELECT
     wq.out_of_stock_7d,
     tq.out_of_stock_today - wq.out_of_stock_7d,
     CASE 
-        WHEN tq.out_of_stock_today < wq.out_of_stock_7d THEN '📉 Improving'
-        WHEN tq.out_of_stock_today > wq.out_of_stock_7d THEN '📈 Degrading'
+        WHEN tq.out_of_stock_today < wq.out_of_stock_7d THEN ''TRENDING_DOWN' Improving'
+        WHEN tq.out_of_stock_today > wq.out_of_stock_7d THEN ''TRENDING_UP' Degrading'
         ELSE '➡️ Stable'
     END,
     CASE 
-        WHEN tq.out_of_stock_today < wq.out_of_stock_7d THEN '🟢'
-        WHEN tq.out_of_stock_today > wq.out_of_stock_7d THEN '🔴'
-        ELSE '🟡'
+        WHEN tq.out_of_stock_today < wq.out_of_stock_7d THEN ''GREEN''
+        WHEN tq.out_of_stock_today > wq.out_of_stock_7d THEN ''RED''
+        ELSE ''YELLOW''
     END
 FROM today_quality tq, week_ago_quality wq;
 
@@ -1020,10 +1020,10 @@ SELECT
     category,
     severity,
     CASE severity
-        WHEN 'Critical' THEN '🔴'
+        WHEN 'Critical' THEN ''RED''
         WHEN 'High' THEN '🟠'
-        WHEN 'Medium' THEN '🟡'
-        ELSE '🟢'
+        WHEN 'Medium' THEN ''YELLOW''
+        ELSE ''GREEN''
     END AS severity_icon,
     CASE 
         WHEN count = 0 THEN 'No Action Needed'
@@ -1054,10 +1054,10 @@ SELECT
     COUNT(*) - COUNT(email) AS missing_records,
     ROUND(COUNT(email) * 100.0 / COUNT(*), 2) AS completeness_pct,
     CASE 
-        WHEN ROUND(COUNT(email) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-        WHEN ROUND(COUNT(email) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+        WHEN ROUND(COUNT(email) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+        WHEN ROUND(COUNT(email) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
         WHEN ROUND(COUNT(email) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-        ELSE '🔴 Poor'
+        ELSE ''RED' Poor'
     END AS grade
 FROM customers
 
@@ -1067,10 +1067,10 @@ SELECT 'Customers', 'Phone',
        COUNT(*), COUNT(phone), COUNT(*) - COUNT(phone),
        ROUND(COUNT(phone) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(phone) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(phone) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(phone) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(phone) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(phone) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM customers
 
@@ -1080,10 +1080,10 @@ SELECT 'Customers', 'Address',
        COUNT(*), COUNT(address_line1), COUNT(*) - COUNT(address_line1),
        ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(address_line1) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM customers
 
@@ -1093,10 +1093,10 @@ SELECT 'Products', 'Description',
        COUNT(*), COUNT(description), COUNT(*) - COUNT(description),
        ROUND(COUNT(description) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(description) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(description) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(description) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(description) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(description) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM products
 
@@ -1106,10 +1106,10 @@ SELECT 'Products', 'Price',
        COUNT(*), COUNT(price), COUNT(*) - COUNT(price),
        ROUND(COUNT(price) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(price) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(price) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(price) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(price) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(price) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM products
 
@@ -1119,10 +1119,10 @@ SELECT 'Products', 'Category',
        COUNT(*), COUNT(category_id), COUNT(*) - COUNT(category_id),
        ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(category_id) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM products
 
@@ -1132,10 +1132,10 @@ SELECT 'Products', 'SKU',
        COUNT(*), COUNT(sku), COUNT(*) - COUNT(sku),
        ROUND(COUNT(sku) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(sku) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(sku) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(sku) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(sku) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(sku) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM products
 
@@ -1145,10 +1145,10 @@ SELECT 'Orders', 'Customer ID',
        COUNT(*), COUNT(customer_id), COUNT(*) - COUNT(customer_id),
        ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(customer_id) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM orders
 
@@ -1158,10 +1158,10 @@ SELECT 'Orders', 'Order Date',
        COUNT(*), COUNT(order_date), COUNT(*) - COUNT(order_date),
        ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2),
        CASE 
-           WHEN ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2) >= 95 THEN '🟢 Excellent'
-           WHEN ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2) >= 80 THEN '🟡 Good'
+           WHEN ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2) >= 95 THEN ''GREEN' Excellent'
+           WHEN ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2) >= 80 THEN ''YELLOW' Good'
            WHEN ROUND(COUNT(order_date) * 100.0 / COUNT(*), 2) >= 60 THEN '🟠 Fair'
-           ELSE '🔴 Poor'
+           ELSE ''RED' Poor'
        END
 FROM orders;
 
@@ -1171,7 +1171,7 @@ FROM orders;
 -- ========================================
 
 SELECT 
-    '✅ DATA VALIDATION SUMMARY' AS section,
+    ''SUCCESS' DATA VALIDATION SUMMARY' AS section,
     '' AS spacer;
 
 SELECT 
@@ -1181,9 +1181,9 @@ SELECT
     COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END) AS violations,
     ROUND((COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END)) * 100.0 / COUNT(*), 2) AS violation_rate,
     CASE 
-        WHEN COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END) = 0 THEN '✅ Pass'
-        WHEN COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END) < 10 THEN '⚠️ Warning'
-        ELSE '❌ Fail'
+        WHEN COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        WHEN COUNT(*) - COUNT(CASE WHEN price > 0 THEN 1 END) < 10 THEN ''WARNING' Warning'
+        ELSE ''ERROR' Fail'
     END AS validation_status
 FROM products
 
@@ -1196,9 +1196,9 @@ SELECT
     COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END),
     ROUND(COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END) * 100.0 / COUNT(*), 2),
     CASE 
-        WHEN COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END) = 0 THEN '✅ Pass'
-        WHEN COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END) < 5 THEN '⚠️ Warning'
-        ELSE '❌ Fail'
+        WHEN COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        WHEN COUNT(CASE WHEN price > 0 AND cost > 0 AND price < cost THEN 1 END) < 5 THEN ''WARNING' Warning'
+        ELSE ''ERROR' Fail'
     END
 FROM products
 
@@ -1211,9 +1211,9 @@ SELECT
     COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END),
     ROUND(COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END) * 100.0 / COUNT(*), 2),
     CASE 
-        WHEN COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END) = 0 THEN '✅ Pass'
-        WHEN COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END) < 20 THEN '⚠️ Warning'
-        ELSE '❌ Fail'
+        WHEN COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        WHEN COUNT(CASE WHEN email IS NOT NULL AND email NOT LIKE '%@%.%' THEN 1 END) < 20 THEN ''WARNING' Warning'
+        ELSE ''ERROR' Fail'
     END
 FROM customers
 
@@ -1226,9 +1226,9 @@ SELECT
     COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END),
     ROUND(COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END) * 100.0 / COUNT(DISTINCT o.order_id), 2),
     CASE 
-        WHEN COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END) = 0 THEN '✅ Pass'
-        WHEN COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END) < 5 THEN '⚠️ Warning'
-        ELSE '❌ Fail'
+        WHEN COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END) = 0 THEN ''SUCCESS' Pass'
+        WHEN COUNT(DISTINCT CASE WHEN ABS(o.total_amount - COALESCE(oi.total, 0)) > 0.01 THEN o.order_id END) < 5 THEN ''WARNING' Warning'
+        ELSE ''ERROR' Fail'
     END
 FROM orders o
 LEFT JOIN (
@@ -1246,9 +1246,9 @@ SELECT
     COUNT(CASE WHEN stock_quantity < 0 THEN 1 END),
     ROUND(COUNT(CASE WHEN stock_quantity < 0 THEN 1 END) * 100.0 / COUNT(*), 2),
     CASE 
-        WHEN COUNT(CASE WHEN stock_quantity < 0 THEN 1 END) = 0 THEN '✅ Pass'
-        WHEN COUNT(CASE WHEN stock_quantity < 0 THEN 1 END) < 5 THEN '⚠️ Warning'
-        ELSE '❌ Fail'
+        WHEN COUNT(CASE WHEN stock_quantity < 0 THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        WHEN COUNT(CASE WHEN stock_quantity < 0 THEN 1 END) < 5 THEN ''WARNING' Warning'
+        ELSE ''ERROR' Fail'
     END
 FROM products
 
@@ -1261,8 +1261,8 @@ SELECT
     COUNT(CASE WHEN order_date > NOW() THEN 1 END),
     ROUND(COUNT(CASE WHEN order_date > NOW() THEN 1 END) * 100.0 / COUNT(*), 2),
     CASE 
-        WHEN COUNT(CASE WHEN order_date > NOW() THEN 1 END) = 0 THEN '✅ Pass'
-        ELSE '❌ Fail'
+        WHEN COUNT(CASE WHEN order_date > NOW() THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        ELSE ''ERROR' Fail'
     END
 FROM orders
 
@@ -1275,8 +1275,8 @@ SELECT
     COUNT(CASE WHEN rating IS NOT NULL AND (rating < 1 OR rating > 5) THEN 1 END),
     ROUND(COUNT(CASE WHEN rating IS NOT NULL AND (rating < 1 OR rating > 5) THEN 1 END) * 100.0 / COUNT(*), 2),
     CASE 
-        WHEN COUNT(CASE WHEN rating IS NOT NULL AND (rating < 1 OR rating > 5) THEN 1 END) = 0 THEN '✅ Pass'
-        ELSE '❌ Fail'
+        WHEN COUNT(CASE WHEN rating IS NOT NULL AND (rating < 1 OR rating > 5) THEN 1 END) = 0 THEN ''SUCCESS' Pass'
+        ELSE ''ERROR' Fail'
     END
 FROM reviews;
 
@@ -1302,7 +1302,7 @@ WITH issue_summary AS (
 )
 SELECT 
     1 AS priority,
-    '🔴 CRITICAL' AS urgency,
+    ''RED' CRITICAL' AS urgency,
     'Fix Invalid Product Prices' AS action,
     CONCAT(invalid_prices, ' products') AS scope,
     'Products cannot be sold without valid pricing' AS impact,
@@ -1312,7 +1312,7 @@ WHERE invalid_prices > 0
 
 UNION ALL
 
-SELECT 2, '🔴 CRITICAL', 'Correct Negative Stock Quantities',
+SELECT 2, ''RED' CRITICAL', 'Correct Negative Stock Quantities',
        CONCAT(negative_stock, ' products'), 
        'Inventory tracking is unreliable',
        'Audit and correct stock levels'
@@ -1321,7 +1321,7 @@ WHERE negative_stock > 0
 
 UNION ALL
 
-SELECT 3, '🔴 CRITICAL', 'Link Orphaned Orders to Customers',
+SELECT 3, ''RED' CRITICAL', 'Link Orphaned Orders to Customers',
        CONCAT(orphaned_orders, ' orders'),
        'Revenue tracking and customer analytics affected',
        'Match orders to customer records'
@@ -1348,7 +1348,7 @@ WHERE stuck_orders > 0
 
 UNION ALL
 
-SELECT 6, '🟡 MEDIUM', 'Restock Out-of-Stock Products',
+SELECT 6, ''YELLOW' MEDIUM', 'Restock Out-of-Stock Products',
        CONCAT(out_of_stock, ' products'),
        'Lost sales opportunities',
        'Generate purchase orders or update status'
@@ -1357,7 +1357,7 @@ WHERE out_of_stock > 0
 
 UNION ALL
 
-SELECT 7, '🟡 MEDIUM', 'Moderate Pending Reviews',
+SELECT 7, ''YELLOW' MEDIUM', 'Moderate Pending Reviews',
        CONCAT(old_pending_reviews, ' reviews'),
        'Customer feedback not visible',
        'Expedite review moderation queue'
@@ -1366,7 +1366,7 @@ WHERE old_pending_reviews > 0
 
 UNION ALL
 
-SELECT 8, '🟡 MEDIUM', 'Process Pending Returns',
+SELECT 8, ''YELLOW' MEDIUM', 'Process Pending Returns',
        CONCAT(old_pending_returns, ' returns'),
        'Poor customer service experience',
        'Review and process return requests'
@@ -1390,4 +1390,4 @@ SELECT
            ) AS all_issues)
     ) AS summary,
     CONCAT('Report Generated: ', DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s')) AS timestamp,
-    '✅ Daily Data Quality Report Complete' AS status;
+    ''SUCCESS' Daily Data Quality Report Complete' AS status;

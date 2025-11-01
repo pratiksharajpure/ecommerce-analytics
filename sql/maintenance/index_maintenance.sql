@@ -33,7 +33,7 @@ CREATE PROCEDURE sp_analyze_index_fragmentation(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
+DECLARE done INT DEFAULT FALSE;
     DECLARE v_table_name VARCHAR(100);
     DECLARE v_data_length BIGINT;
     DECLARE v_index_length BIGINT;
@@ -46,7 +46,22 @@ BEGIN
         WHERE table_schema = target_database
         AND table_type = 'BASE TABLE';
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     -- Create temporary results table
     DROP TEMPORARY TABLE IF EXISTS tmp_fragmentation_report;
@@ -112,7 +127,7 @@ CREATE PROCEDURE sp_rebuild_fragmented_indexes(
     IN fragmentation_threshold DECIMAL(5,2)
 )
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
+DECLARE done INT DEFAULT FALSE;
     DECLARE v_table_name VARCHAR(100);
     DECLARE v_data_free BIGINT;
     DECLARE v_data_length BIGINT;
@@ -125,7 +140,22 @@ BEGIN
         WHERE table_schema = target_database
         AND table_type = 'BASE TABLE';
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
@@ -181,7 +211,7 @@ CREATE PROCEDURE sp_update_statistics(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
+DECLARE done INT DEFAULT FALSE;
     DECLARE v_table_name VARCHAR(100);
     DECLARE v_analyze_count INT DEFAULT 0;
     
@@ -191,7 +221,22 @@ BEGIN
         WHERE table_schema = target_database
         AND table_type = 'BASE TABLE';
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     SELECT 'Starting statistics update for all tables...' AS Status;
     
@@ -230,6 +275,23 @@ CREATE PROCEDURE sp_identify_unused_indexes(
     IN days_threshold INT
 )
 BEGIN
+DECLARE done INT DEFAULT FALSE;
+    DECLARE v_table_name VARCHAR(100);
+    DECLARE v_index_name VARCHAR(100);
+    DECLARE v_cardinality BIGINT;
+    DECLARE v_is_unique INT;
+    DECLARE v_drop_count INT DEFAULT 0;
+    
+    DECLARE index_cursor CURSOR FOR
+        SELECT table_name, index_name, cardinality, non_unique
+        FROM information_schema.statistics
+        WHERE table_schema = target_database
+        AND index_name != 'PRIMARY'
+        AND (cardinality IS NULL OR cardinality < cardinality_threshold)
+        GROUP BY table_name, index_name, cardinality, non_unique;
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
     -- Note: This requires enabling performance_schema
     -- SET GLOBAL performance_schema = ON;
     
@@ -298,22 +360,20 @@ CREATE PROCEDURE sp_remove_unused_indexes(
     IN dry_run BOOLEAN
 )
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE v_table_name VARCHAR(100);
-    DECLARE v_index_name VARCHAR(100);
-    DECLARE v_cardinality BIGINT;
-    DECLARE v_is_unique INT;
-    DECLARE v_drop_count INT DEFAULT 0;
     
-    DECLARE index_cursor CURSOR FOR
-        SELECT table_name, index_name, cardinality, non_unique
-        FROM information_schema.statistics
-        WHERE table_schema = target_database
-        AND index_name != 'PRIMARY'
-        AND (cardinality IS NULL OR cardinality < cardinality_threshold)
-        GROUP BY table_name, index_name, cardinality, non_unique;
-    
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     IF dry_run THEN
         SELECT 'DRY RUN MODE - No indexes will be dropped' AS Status;
@@ -363,6 +423,11 @@ CREATE PROCEDURE sp_index_health_check(
     IN target_database VARCHAR(100)
 )
 BEGIN
+DECLARE v_start_time DATETIME;
+    DECLARE v_end_time DATETIME;
+    
+    
+
     SELECT '=== INDEX HEALTH CHECK REPORT ===' AS Report;
     
     -- 1. Total indexes count
@@ -439,10 +504,20 @@ CREATE PROCEDURE sp_auto_index_maintenance(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE v_start_time DATETIME;
-    DECLARE v_end_time DATETIME;
     
-    SET v_start_time = NOW();
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     
     SELECT CONCAT('Starting automatic index maintenance at ', v_start_time) AS Status;
     

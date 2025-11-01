@@ -67,7 +67,7 @@ CREATE PROCEDURE sp_update_table_statistics(
     IN specific_table VARCHAR(100)
 )
 BEGIN
-    DECLARE done INT DEFAULT FALSE;
+DECLARE done INT DEFAULT FALSE;
     DECLARE v_table_name VARCHAR(100);
     DECLARE v_rows_before BIGINT;
     DECLARE v_rows_after BIGINT;
@@ -86,7 +86,22 @@ BEGIN
         AND table_type = 'BASE TABLE'
         AND (specific_table IS NULL OR table_name = specific_table);
     
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET done = TRUE;
     
     SELECT CONCAT('Starting statistics update for database: ', target_database) AS Status;
     
@@ -157,7 +172,7 @@ CREATE PROCEDURE sp_analyze_query_plan(
     IN query_text TEXT
 )
 BEGIN
-    DECLARE v_plan_json JSON;
+DECLARE v_plan_json JSON;
     DECLARE v_execution_time DECIMAL(10,2);
     DECLARE v_start_time DATETIME;
     DECLARE v_using_index BOOLEAN DEFAULT FALSE;
@@ -165,7 +180,22 @@ BEGIN
     DECLARE v_using_temporary BOOLEAN DEFAULT FALSE;
     DECLARE v_recommendations TEXT DEFAULT '';
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     
     -- Get execution plan
     SET @explain_stmt = CONCAT('EXPLAIN FORMAT=JSON ', query_text);
@@ -224,6 +254,17 @@ CREATE PROCEDURE sp_batch_analyze_critical_queries(
     IN target_database VARCHAR(100)
 )
 BEGIN
+DECLARE v_refresh_count INT DEFAULT 0;
+    
+    SELECT 'Starting metadata refresh...' AS Status;
+    
+    -- Refresh table statistics
+    INSERT INTO metadata_refresh_log (metadata_type, object_name, status, message)
+    VALUES ('table_statistics', target_database, 'success', 'Refreshing table statistics');
+    
+    CALL sp_update_table_statistics(target_database, NULL);
+    
+
     SELECT 'Analyzing critical e-commerce queries...' AS Status;
     
     -- Query 1: Customer order history
@@ -287,16 +328,20 @@ CREATE PROCEDURE sp_refresh_metadata(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE v_refresh_count INT DEFAULT 0;
     
-    SELECT 'Starting metadata refresh...' AS Status;
-    
-    -- Refresh table statistics
-    INSERT INTO metadata_refresh_log (metadata_type, object_name, status, message)
-    VALUES ('table_statistics', target_database, 'success', 'Refreshing table statistics');
-    
-    CALL sp_update_table_statistics(target_database, NULL);
-    SET v_refresh_count = v_refresh_count + 1;
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_refresh_count = v_refresh_count + 1;
     
     -- Refresh information_schema cache
     SELECT COUNT(*) INTO @dummy FROM information_schema.tables WHERE table_schema = target_database;
@@ -331,8 +376,23 @@ CREATE PROCEDURE sp_generate_statistics_report(
     IN days_back INT
 )
 BEGIN
-    DECLARE v_report_date DATE;
-    SET v_report_date = DATE_SUB(CURDATE(), INTERVAL days_back DAY);
+DECLARE v_report_date DATE;
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_report_date = DATE_SUB(CURDATE(), INTERVAL days_back DAY);
     
     SELECT '=== DATABASE STATISTICS REPORT ===' AS Report;
     
@@ -410,10 +470,25 @@ CREATE PROCEDURE sp_auto_statistics_maintenance(
     IN target_database VARCHAR(100)
 )
 BEGIN
-    DECLARE v_start_time DATETIME;
+DECLARE v_start_time DATETIME;
     DECLARE v_end_time DATETIME;
     
-    SET v_start_time = NOW();
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET v_start_time = NOW();
     
     SELECT CONCAT('Starting automatic statistics maintenance at ', v_start_time) AS Status;
     

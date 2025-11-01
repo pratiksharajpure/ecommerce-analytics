@@ -78,9 +78,9 @@ SELECT
             THEN '🚀 Accelerating'
         WHEN revenue < LAG(revenue, 1) OVER (ORDER BY year_week) 
             AND LAG(revenue, 1) OVER (ORDER BY year_week) < LAG(revenue, 2) OVER (ORDER BY year_week)
-            THEN '📉 Declining'
+            THEN ''TRENDING_DOWN' Declining'
         WHEN revenue > LAG(revenue) OVER (ORDER BY year_week)
-            THEN '📈 Growing'
+            THEN ''TRENDING_UP' Growing'
         WHEN revenue < LAG(revenue) OVER (ORDER BY year_week)
             THEN '↘️ Slowing'
         ELSE '➡️ Stable'
@@ -165,8 +165,8 @@ SELECT
     -- Repeat buyer rate
     ROUND(wo.repeat_buyers * 100.0 / NULLIF(wo.first_time_buyers + wo.repeat_buyers, 0), 2) AS repeat_rate_pct,
     CASE 
-        WHEN wc.new_customers > LAG(wc.new_customers) OVER (ORDER BY wc.year_week) THEN '📈 Growing'
-        WHEN wc.new_customers < LAG(wc.new_customers) OVER (ORDER BY wc.year_week) THEN '📉 Declining'
+        WHEN wc.new_customers > LAG(wc.new_customers) OVER (ORDER BY wc.year_week) THEN ''TRENDING_UP' Growing'
+        WHEN wc.new_customers < LAG(wc.new_customers) OVER (ORDER BY wc.year_week) THEN ''TRENDING_DOWN' Declining'
         ELSE '➡️ Stable'
     END AS trend
 FROM weekly_customers wc
@@ -215,8 +215,8 @@ SELECT
     ) AS wow_change,
     -- Trend indicator
     CASE 
-        WHEN revenue > LAG(revenue) OVER (PARTITION BY category_name ORDER BY year_week) THEN '📈'
-        WHEN revenue < LAG(revenue) OVER (PARTITION BY category_name ORDER BY year_week) THEN '📉'
+        WHEN revenue > LAG(revenue) OVER (PARTITION BY category_name ORDER BY year_week) THEN ''TRENDING_UP''
+        WHEN revenue < LAG(revenue) OVER (PARTITION BY category_name ORDER BY year_week) THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END AS trend
 FROM weekly_category_sales
@@ -340,7 +340,7 @@ SELECT
         FORMAT(ROUND((current_week_revenue - previous_week_revenue) / 
                NULLIF(previous_week_revenue, 0) * 100, 2), 2), '%'
     ) AS revenue_change,
-    '⚠️' AS alert,
+    ''WARNING'' AS alert,
     CASE 
         WHEN (current_week_revenue - previous_week_revenue) / NULLIF(previous_week_revenue, 0) <= -0.50 THEN 'Critical - Review immediately'
         WHEN (current_week_revenue - previous_week_revenue) / NULLIF(previous_week_revenue, 0) <= -0.30 THEN 'High - Investigate decline'
@@ -393,9 +393,9 @@ SELECT
                NULLIF(LAG(total_orders) OVER (ORDER BY year_week), 0) * 100, 2), 2), '%'
     ) AS orders_wow,
     CASE 
-        WHEN delivered * 100.0 / NULLIF(total_orders, 0) >= 90 THEN '🟢 Excellent'
-        WHEN delivered * 100.0 / NULLIF(total_orders, 0) >= 80 THEN '🟡 Good'
-        ELSE '🔴 Needs Improvement'
+        WHEN delivered * 100.0 / NULLIF(total_orders, 0) >= 90 THEN ''GREEN' Excellent'
+        WHEN delivered * 100.0 / NULLIF(total_orders, 0) >= 80 THEN ''YELLOW' Good'
+        ELSE ''RED' Needs Improvement'
     END AS performance_grade
 FROM weekly_orders
 ORDER BY year_week DESC;
@@ -445,8 +445,8 @@ SELECT
                NULLIF(LAG(revenue) OVER (PARTITION BY state ORDER BY year_week), 0) * 100, 2), 2), '%'
     ) AS wow_change,
     CASE 
-        WHEN revenue > LAG(revenue) OVER (PARTITION BY state ORDER BY year_week) THEN '📈'
-        WHEN revenue < LAG(revenue) OVER (PARTITION BY state ORDER BY year_week) THEN '📉'
+        WHEN revenue > LAG(revenue) OVER (PARTITION BY state ORDER BY year_week) THEN ''TRENDING_UP''
+        WHEN revenue < LAG(revenue) OVER (PARTITION BY state ORDER BY year_week) THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END AS trend
 FROM ranked_states
@@ -490,10 +490,10 @@ SELECT
     CONCAT('$', FORMAT(total_revenue, 2)) AS revenue,
     ROUND((total_revenue - total_spend) / NULLIF(total_spend, 0) * 100, 2) AS roi_pct,
     CASE 
-        WHEN (total_revenue - total_spend) / NULLIF(total_spend, 0) >= 2 THEN '🟢 Excellent'
-        WHEN (total_revenue - total_spend) / NULLIF(total_spend, 0) >= 1 THEN '🟡 Good'
+        WHEN (total_revenue - total_spend) / NULLIF(total_spend, 0) >= 2 THEN ''GREEN' Excellent'
+        WHEN (total_revenue - total_spend) / NULLIF(total_spend, 0) >= 1 THEN ''YELLOW' Good'
         WHEN (total_revenue - total_spend) / NULLIF(total_spend, 0) >= 0 THEN '🟠 Break-even'
-        ELSE '🔴 Loss'
+        ELSE ''RED' Loss'
     END AS performance
 FROM weekly_campaigns
 ORDER BY year_week DESC, total_revenue DESC;
@@ -553,9 +553,9 @@ SELECT
     FORMAT(daily_velocity, 1),
     FORMAT(days_of_stock, 1),
     CASE 
-        WHEN days_of_stock <= 3 THEN '🔴 Critical'
+        WHEN days_of_stock <= 3 THEN ''RED' Critical'
         WHEN days_of_stock <= 7 THEN '🟠 Warning'
-        ELSE '🟢 Adequate'
+        ELSE ''GREEN' Adequate'
     END,
     ''
 FROM product_velocity
@@ -619,10 +619,10 @@ SELECT
     FORMAT(week_8_retained, 0) AS retained_week_8,
     ROUND(week_8_retained * 100.0 / cohort_size, 2) AS retention_week_8_pct,
     CASE 
-        WHEN week_1_retained * 100.0 / cohort_size >= 30 THEN '🟢 Strong'
-        WHEN week_1_retained * 100.0 / cohort_size >= 20 THEN '🟡 Moderate'
+        WHEN week_1_retained * 100.0 / cohort_size >= 30 THEN ''GREEN' Strong'
+        WHEN week_1_retained * 100.0 / cohort_size >= 20 THEN ''YELLOW' Moderate'
         WHEN week_1_retained * 100.0 / cohort_size >= 10 THEN '🟠 Weak'
-        ELSE '🔴 Poor'
+        ELSE ''RED' Poor'
     END AS retention_health
 FROM retention_data
 WHERE cohort_size >= 10
@@ -671,10 +671,10 @@ SELECT
                NULLIF(LAG(wr.return_count) OVER (ORDER BY wr.year_week), 0) * 100, 2), 2), '%'
     ) AS wow_change,
     CASE 
-        WHEN wr.return_count * 100.0 / NULLIF(wo.total_orders, 0) <= 5 THEN '🟢 Excellent'
-        WHEN wr.return_count * 100.0 / NULLIF(wo.total_orders, 0) <= 10 THEN '🟡 Acceptable'
+        WHEN wr.return_count * 100.0 / NULLIF(wo.total_orders, 0) <= 5 THEN ''GREEN' Excellent'
+        WHEN wr.return_count * 100.0 / NULLIF(wo.total_orders, 0) <= 10 THEN ''YELLOW' Acceptable'
         WHEN wr.return_count * 100.0 / NULLIF(wo.total_orders, 0) <= 15 THEN '🟠 High'
-        ELSE '🔴 Critical'
+        ELSE ''RED' Critical'
     END AS status
 FROM (
     SELECT 
@@ -729,14 +729,14 @@ SELECT
         FORMAT(ROUND((avg_rating - LAG(avg_rating) OVER (ORDER BY year_week)), 2), 2)
     ) AS rating_change,
     CASE 
-        WHEN avg_rating >= 4.5 THEN '🟢 Excellent'
-        WHEN avg_rating >= 4.0 THEN '🟡 Good'
+        WHEN avg_rating >= 4.5 THEN ''GREEN' Excellent'
+        WHEN avg_rating >= 4.0 THEN ''YELLOW' Good'
         WHEN avg_rating >= 3.5 THEN '🟠 Fair'
-        ELSE '🔴 Poor'
+        ELSE ''RED' Poor'
     END AS satisfaction_level,
     CASE 
-        WHEN avg_rating > LAG(avg_rating) OVER (ORDER BY year_week) THEN '📈 Improving'
-        WHEN avg_rating < LAG(avg_rating) OVER (ORDER BY year_week) THEN '📉 Declining'
+        WHEN avg_rating > LAG(avg_rating) OVER (ORDER BY year_week) THEN ''TRENDING_UP' Improving'
+        WHEN avg_rating < LAG(avg_rating) OVER (ORDER BY year_week) THEN ''TRENDING_DOWN' Declining'
         ELSE '➡️ Stable'
     END AS trend
 FROM weekly_reviews
@@ -777,7 +777,7 @@ SELECT
         WHEN 'debit_card' THEN '💳'
         WHEN 'paypal' THEN '🅿️'
         WHEN 'bank_transfer' THEN '🏦'
-        ELSE '💰'
+        ELSE ''MONEY''
     END AS icon
 FROM weekly_payments
 ORDER BY year_week DESC, successful_amount DESC;
@@ -816,10 +816,10 @@ SELECT
     ROUND(avg_delivery_time, 1) AS avg_delivery_days,
     CONCAT(', FORMAT(total_shipping_revenue, 2)) AS shipping_revenue,
     CASE 
-        WHEN avg_delivery_time <= 3 THEN '🟢 Excellent'
-        WHEN avg_delivery_time <= 5 THEN '🟡 Good'
+        WHEN avg_delivery_time <= 3 THEN ''GREEN' Excellent'
+        WHEN avg_delivery_time <= 5 THEN ''YELLOW' Good'
         WHEN avg_delivery_time <= 7 THEN '🟠 Acceptable'
-        ELSE '🔴 Slow'
+        ELSE ''RED' Slow'
     END AS delivery_performance,
     CONCAT(
         FORMAT(ROUND((avg_delivery_time - LAG(avg_delivery_time) OVER (ORDER BY year_week)), 1), 1), ' days'
@@ -851,7 +851,7 @@ previous_week_metrics AS (
     WHERE YEARWEEK(order_date, 1) = YEARWEEK(DATE_SUB(CURDATE(), INTERVAL 1 WEEK), 1)
 )
 SELECT 
-    '📊 WEEK-OVER-WEEK SUMMARY' AS metric_category,
+    ''CHART' WEEK-OVER-WEEK SUMMARY' AS metric_category,
     '' AS current_week,
     '' AS previous_week,
     '' AS change,
@@ -866,15 +866,15 @@ SELECT
     CONCAT(', FORMAT(pw.revenue, 2)),
     CONCAT(FORMAT(ROUND((cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) * 100, 2), 2), '%'),
     CASE 
-        WHEN cw.revenue > pw.revenue THEN '📈'
-        WHEN cw.revenue < pw.revenue THEN '📉'
+        WHEN cw.revenue > pw.revenue THEN ''TRENDING_UP''
+        WHEN cw.revenue < pw.revenue THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END,
     CASE 
-        WHEN (cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) >= 0.10 THEN '🟢 Strong Growth'
-        WHEN (cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) >= 0 THEN '🟡 Growing'
+        WHEN (cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) >= 0.10 THEN ''GREEN' Strong Growth'
+        WHEN (cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) >= 0 THEN ''YELLOW' Growing'
         WHEN (cw.revenue - pw.revenue) / NULLIF(pw.revenue, 0) >= -0.05 THEN '🟠 Slight Decline'
-        ELSE '🔴 Significant Decline'
+        ELSE ''RED' Significant Decline'
     END
 FROM current_week_metrics cw, previous_week_metrics pw
 
@@ -886,15 +886,15 @@ SELECT
     FORMAT(pw.orders, 0),
     CONCAT(FORMAT(ROUND((cw.orders - pw.orders) / NULLIF(pw.orders, 0) * 100, 2), 2), '%'),
     CASE 
-        WHEN cw.orders > pw.orders THEN '📈'
-        WHEN cw.orders < pw.orders THEN '📉'
+        WHEN cw.orders > pw.orders THEN ''TRENDING_UP''
+        WHEN cw.orders < pw.orders THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END,
     CASE 
-        WHEN (cw.orders - pw.orders) / NULLIF(pw.orders, 0) >= 0.10 THEN '🟢 Strong Growth'
-        WHEN (cw.orders - pw.orders) / NULLIF(pw.orders, 0) >= 0 THEN '🟡 Growing'
+        WHEN (cw.orders - pw.orders) / NULLIF(pw.orders, 0) >= 0.10 THEN ''GREEN' Strong Growth'
+        WHEN (cw.orders - pw.orders) / NULLIF(pw.orders, 0) >= 0 THEN ''YELLOW' Growing'
         WHEN (cw.orders - pw.orders) / NULLIF(pw.orders, 0) >= -0.05 THEN '🟠 Slight Decline'
-        ELSE '🔴 Significant Decline'
+        ELSE ''RED' Significant Decline'
     END
 FROM current_week_metrics cw, previous_week_metrics pw
 
@@ -906,15 +906,15 @@ SELECT
     FORMAT(pw.customers, 0),
     CONCAT(FORMAT(ROUND((cw.customers - pw.customers) / NULLIF(pw.customers, 0) * 100, 2), 2), '%'),
     CASE 
-        WHEN cw.customers > pw.customers THEN '📈'
-        WHEN cw.customers < pw.customers THEN '📉'
+        WHEN cw.customers > pw.customers THEN ''TRENDING_UP''
+        WHEN cw.customers < pw.customers THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END,
     CASE 
-        WHEN (cw.customers - pw.customers) / NULLIF(pw.customers, 0) >= 0.10 THEN '🟢 Strong Growth'
-        WHEN (cw.customers - pw.customers) / NULLIF(pw.customers, 0) >= 0 THEN '🟡 Growing'
+        WHEN (cw.customers - pw.customers) / NULLIF(pw.customers, 0) >= 0.10 THEN ''GREEN' Strong Growth'
+        WHEN (cw.customers - pw.customers) / NULLIF(pw.customers, 0) >= 0 THEN ''YELLOW' Growing'
         WHEN (cw.customers - pw.customers) / NULLIF(pw.customers, 0) >= -0.05 THEN '🟠 Slight Decline'
-        ELSE '🔴 Significant Decline'
+        ELSE ''RED' Significant Decline'
     END
 FROM current_week_metrics cw, previous_week_metrics pw
 
@@ -926,15 +926,15 @@ SELECT
     CONCAT(', FORMAT(pw.aov, 2)),
     CONCAT(FORMAT(ROUND((cw.aov - pw.aov) / NULLIF(pw.aov, 0) * 100, 2), 2), '%'),
     CASE 
-        WHEN cw.aov > pw.aov THEN '📈'
-        WHEN cw.aov < pw.aov THEN '📉'
+        WHEN cw.aov > pw.aov THEN ''TRENDING_UP''
+        WHEN cw.aov < pw.aov THEN ''TRENDING_DOWN''
         ELSE '➡️'
     END,
     CASE 
-        WHEN (cw.aov - pw.aov) / NULLIF(pw.aov, 0) >= 0.05 THEN '🟢 Improving'
-        WHEN (cw.aov - pw.aov) / NULLIF(pw.aov, 0) >= 0 THEN '🟡 Stable'
+        WHEN (cw.aov - pw.aov) / NULLIF(pw.aov, 0) >= 0.05 THEN ''GREEN' Improving'
+        WHEN (cw.aov - pw.aov) / NULLIF(pw.aov, 0) >= 0 THEN ''YELLOW' Stable'
         WHEN (cw.aov - pw.aov) / NULLIF(pw.aov, 0) >= -0.05 THEN '🟠 Slight Decline'
-        ELSE '🔴 Declining'
+        ELSE ''RED' Declining'
     END
 FROM current_week_metrics cw, previous_week_metrics pw;
 
@@ -1018,4 +1018,4 @@ SELECT
            DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 12 WEEK), '%b %d'), ' - ',
            DATE_FORMAT(CURDATE(), '%b %d, %Y'), ')') AS period,
     CONCAT('Report Generated: ', DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s')) AS timestamp,
-    '✅ Weekly Trends Analysis Complete' AS status;
+    ''SUCCESS' Weekly Trends Analysis Complete' AS status;

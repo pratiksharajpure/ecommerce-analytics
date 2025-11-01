@@ -6,8 +6,8 @@ app:
 database:
   type: "mysql"
   host: "localhost"
-  port: 3306
-  name: "ecommerce_db"
+  port: 3307
+  name: "ecommerce_analytics"
   charset: "utf8mb4"
 
 paths:

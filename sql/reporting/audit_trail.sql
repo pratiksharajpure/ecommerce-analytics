@@ -181,6 +181,10 @@ CREATE TRIGGER IF NOT EXISTS trg_customers_audit_insert
 AFTER INSERT ON customers
 FOR EACH ROW
 BEGIN
+DECLARE changed_cols JSON;
+    
+    
+
     INSERT INTO audit_data_changes (
         table_name, operation_type, record_id, changed_by, 
         new_values, changed_columns, ip_address
@@ -206,9 +210,20 @@ CREATE TRIGGER IF NOT EXISTS trg_customers_audit_update
 AFTER UPDATE ON customers
 FOR EACH ROW
 BEGIN
-    DECLARE changed_cols JSON;
     
-    SET changed_cols = JSON_ARRAY();
+
+
+
+
+
+
+
+
+
+
+
+
+SET changed_cols = JSON_ARRAY();
     
     IF OLD.first_name != NEW.first_name OR (OLD.first_name IS NULL AND NEW.first_name IS NOT NULL) OR (OLD.first_name IS NOT NULL AND NEW.first_name IS NULL) THEN
         SET changed_cols = JSON_ARRAY_APPEND(changed_cols, '$', 'first_name');
@@ -401,6 +416,151 @@ CREATE PROCEDURE IF NOT EXISTS sp_get_record_audit_trail(
     IN p_record_id VARCHAR(100)
 )
 BEGIN
+DECLARE v_record_state JSON;
+    
+    -- Get the latest state before the specified date
+    SELECT new_values INTO v_record_state
+    FROM audit_data_changes
+    WHERE table_name = p_table_name
+        AND record_id = p_record_id
+        AND changed_at <= p_as_of_date
+        AND operation_type != 'DELETE'
+    ORDER BY changed_at DESC
+    LIMIT 1;
+    
+    SELECT 
+        p_table_name AS table_name,
+        p_record_id AS record_id,
+        p_as_of_date AS as_of_date,
+        v_record_state AS record_state,
+        CASE 
+            WHEN v_record_state IS NULL THEN 'Record did not exist at this time'
+            ELSE 'Record state reconstructed'
+        END AS status;
+END//
+
+-- 6.2 Track Field-Level Changes Over Time
+CREATE PROCEDURE IF NOT EXISTS sp_track_field_changes(
+    IN p_table_name VARCHAR(100),
+    IN p_record_id VARCHAR(100),
+    IN p_field_name VARCHAR(100)
+)
+BEGIN
+    SELECT 
+        audit_id,
+        changed_at,
+        changed_by,
+        JSON_UNQUOTE(JSON_EXTRACT(old_values, CONCAT('$.', p_field_name))) AS old_value,
+        JSON_UNQUOTE(JSON_EXTRACT(new_values, CONCAT('$.', p_field_name))) AS new_value,
+        ip_address
+    FROM audit_data_changes
+    WHERE table_name = p_table_name
+        AND record_id = p_record_id
+        AND JSON_CONTAINS(changed_columns, JSON_QUOTE(p_field_name))
+    ORDER BY changed_at;
+END//
+
+-- 6.3 Identify Anomalous User Behavior
+CREATE PROCEDURE IF NOT EXISTS sp_detect_anomalous_behavior(
+    IN p_username VARCHAR(100)
+)
+BEGIN
+    -- Calculate user's baseline behavior
+    WITH user_baseline AS (
+        SELECT 
+            AVG(hourly_changes) AS avg_changes_per_hour,
+            STDDEV(hourly_changes) AS stddev_changes
+        FROM (
+            SELECT 
+                DATE(changed_at) AS change_date,
+                HOUR(changed_at) AS hour_of_day,
+                COUNT(*) AS hourly_changes
+            FROM audit_data_changes
+            WHERE changed_by = p_username
+                AND changed_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+            GROUP BY DATE(changed_at), HOUR(changed_at)
+        ) hourly_stats
+    ),
+    recent_activity AS (
+        SELECT 
+            DATE(changed_at) AS change_date,
+            HOUR(changed_at) AS hour_of_day,
+            COUNT(*) AS hourly_changes
+        FROM audit_data_changes
+        WHERE changed_by = p_username
+            AND changed_at >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
+        GROUP BY DATE(changed_at), HOUR(changed_at)
+    )
+    SELECT 
+        ra.change_date,
+        ra.hour_of_day,
+        ra.hourly_changes,
+        ub.avg_changes_per_hour,
+        ROUND((ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0), 2) AS z_score,
+        CASE 
+            WHEN (ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0) > 3 THEN 'CRITICAL ANOMALY'
+            WHEN (ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0) > 2 THEN 'WARNING'
+            ELSE 'NORMAL'
+        END AS anomaly_status
+    FROM recent_activity ra
+    CROSS JOIN user_baseline ub
+    ORDER BY z_score DESC;
+END//
+
+-- 6.4 Compare Before/After States
+CREATE PROCEDURE IF NOT EXISTS sp_compare_record_states(
+    IN p_audit_id BIGINT
+)
+BEGIN
+    SELECT 
+        audit_id,
+        table_name,
+        record_id,
+        operation_type,
+        changed_by,
+        changed_at,
+        JSON_KEYS(old_values) AS changed_fields,
+        old_values AS before_state,
+        new_values AS after_state,
+        changed_columns
+    FROM audit_data_changes
+    WHERE audit_id = p_audit_id;
+    
+    -- Show field-by-field comparison
+    SELECT 
+        field_name,
+        JSON_UNQUOTE(JSON_EXTRACT(old_values, CONCAT('$.', field_name))) AS old_value,
+        JSON_UNQUOTE(JSON_EXTRACT(new_values, CONCAT('$.', field_name))) AS new_value
+    FROM (
+        SELECT JSON_KEYS(old_values) AS fields
+        FROM audit_data_changes
+        WHERE audit_id = p_audit_id
+    ) AS field_list
+    CROSS JOIN JSON_TABLE(
+        field_list.fields,
+        '$[*]' COLUMNS (field_name VARCHAR(100) PATH ')
+    ) AS jt
+    CROSS JOIN audit_data_changes adc
+    WHERE adc.audit_id = p_audit_id;
+END//
+
+DELIMITER ;
+
+-- ========================================
+-- SECTION 7: AUTOMATED AUDIT MAINTENANCE
+-- ========================================
+
+-- 7.1 Archive Old Audit Records
+DELIMITER //
+CREATE PROCEDURE IF NOT EXISTS sp_archive_old_audit_records(
+    IN p_retention_days INT
+)
+BEGIN
+    DECLARE v_cutoff_date DATETIME;
+    DECLARE v_archived_count INT DEFAULT 0;
+    
+    
+
     SELECT 
         audit_id,
         operation_type,
@@ -751,150 +911,20 @@ CREATE PROCEDURE IF NOT EXISTS sp_reconstruct_record_state(
     IN p_as_of_date DATETIME
 )
 BEGIN
-    DECLARE v_record_state JSON;
     
-    -- Get the latest state before the specified date
-    SELECT new_values INTO v_record_state
-    FROM audit_data_changes
-    WHERE table_name = p_table_name
-        AND record_id = p_record_id
-        AND changed_at <= p_as_of_date
-        AND operation_type != 'DELETE'
-    ORDER BY changed_at DESC
-    LIMIT 1;
-    
-    SELECT 
-        p_table_name AS table_name,
-        p_record_id AS record_id,
-        p_as_of_date AS as_of_date,
-        v_record_state AS record_state,
-        CASE 
-            WHEN v_record_state IS NULL THEN 'Record did not exist at this time'
-            ELSE 'Record state reconstructed'
-        END AS status;
-END//
 
--- 6.2 Track Field-Level Changes Over Time
-CREATE PROCEDURE IF NOT EXISTS sp_track_field_changes(
-    IN p_table_name VARCHAR(100),
-    IN p_record_id VARCHAR(100),
-    IN p_field_name VARCHAR(100)
-)
-BEGIN
-    SELECT 
-        audit_id,
-        changed_at,
-        changed_by,
-        JSON_UNQUOTE(JSON_EXTRACT(old_values, CONCAT('$.', p_field_name))) AS old_value,
-        JSON_UNQUOTE(JSON_EXTRACT(new_values, CONCAT('$.', p_field_name))) AS new_value,
-        ip_address
-    FROM audit_data_changes
-    WHERE table_name = p_table_name
-        AND record_id = p_record_id
-        AND JSON_CONTAINS(changed_columns, JSON_QUOTE(p_field_name))
-    ORDER BY changed_at;
-END//
 
--- 6.3 Identify Anomalous User Behavior
-CREATE PROCEDURE IF NOT EXISTS sp_detect_anomalous_behavior(
-    IN p_username VARCHAR(100)
-)
-BEGIN
-    -- Calculate user's baseline behavior
-    WITH user_baseline AS (
-        SELECT 
-            AVG(hourly_changes) AS avg_changes_per_hour,
-            STDDEV(hourly_changes) AS stddev_changes
-        FROM (
-            SELECT 
-                DATE(changed_at) AS change_date,
-                HOUR(changed_at) AS hour_of_day,
-                COUNT(*) AS hourly_changes
-            FROM audit_data_changes
-            WHERE changed_by = p_username
-                AND changed_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
-            GROUP BY DATE(changed_at), HOUR(changed_at)
-        ) hourly_stats
-    ),
-    recent_activity AS (
-        SELECT 
-            DATE(changed_at) AS change_date,
-            HOUR(changed_at) AS hour_of_day,
-            COUNT(*) AS hourly_changes
-        FROM audit_data_changes
-        WHERE changed_by = p_username
-            AND changed_at >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
-        GROUP BY DATE(changed_at), HOUR(changed_at)
-    )
-    SELECT 
-        ra.change_date,
-        ra.hour_of_day,
-        ra.hourly_changes,
-        ub.avg_changes_per_hour,
-        ROUND((ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0), 2) AS z_score,
-        CASE 
-            WHEN (ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0) > 3 THEN 'CRITICAL ANOMALY'
-            WHEN (ra.hourly_changes - ub.avg_changes_per_hour) / NULLIF(ub.stddev_changes, 0) > 2 THEN 'WARNING'
-            ELSE 'NORMAL'
-        END AS anomaly_status
-    FROM recent_activity ra
-    CROSS JOIN user_baseline ub
-    ORDER BY z_score DESC;
-END//
 
--- 6.4 Compare Before/After States
-CREATE PROCEDURE IF NOT EXISTS sp_compare_record_states(
-    IN p_audit_id BIGINT
-)
-BEGIN
-    SELECT 
-        audit_id,
-        table_name,
-        record_id,
-        operation_type,
-        changed_by,
-        changed_at,
-        JSON_KEYS(old_values) AS changed_fields,
-        old_values AS before_state,
-        new_values AS after_state,
-        changed_columns
-    FROM audit_data_changes
-    WHERE audit_id = p_audit_id;
-    
-    -- Show field-by-field comparison
-    SELECT 
-        field_name,
-        JSON_UNQUOTE(JSON_EXTRACT(old_values, CONCAT('$.', field_name))) AS old_value,
-        JSON_UNQUOTE(JSON_EXTRACT(new_values, CONCAT('$.', field_name))) AS new_value
-    FROM (
-        SELECT JSON_KEYS(old_values) AS fields
-        FROM audit_data_changes
-        WHERE audit_id = p_audit_id
-    ) AS field_list
-    CROSS JOIN JSON_TABLE(
-        field_list.fields,
-        '$[*]' COLUMNS (field_name VARCHAR(100) PATH ')
-    ) AS jt
-    CROSS JOIN audit_data_changes adc
-    WHERE adc.audit_id = p_audit_id;
-END//
 
-DELIMITER ;
 
--- ========================================
--- SECTION 7: AUTOMATED AUDIT MAINTENANCE
--- ========================================
 
--- 7.1 Archive Old Audit Records
-DELIMITER //
-CREATE PROCEDURE IF NOT EXISTS sp_archive_old_audit_records(
-    IN p_retention_days INT
-)
-BEGIN
-    DECLARE v_cutoff_date DATETIME;
-    DECLARE v_archived_count INT DEFAULT 0;
-    
-    SET v_cutoff_date = DATE_SUB(NOW(), INTERVAL p_retention_days DAY);
+
+
+
+
+
+
+SET v_cutoff_date = DATE_SUB(NOW(), INTERVAL p_retention_days DAY);
     
     -- Archive audit_data_changes
     INSERT INTO audit_data_retention (
@@ -930,11 +960,26 @@ END//
 -- 7.2 Clean Up Old Sessions
 CREATE PROCEDURE IF NOT EXISTS sp_cleanup_expired_sessions()
 BEGIN
-    DECLARE v_cleaned_count INT;
+DECLARE v_cleaned_count INT;
     
     -- Update active sessions that have been inactive for > 24 hours
     UPDATE user_sessions
-    SET session_status = 'expired',
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+SET session_status = 'expired',
         logout_time = DATE_ADD(login_time, INTERVAL 24 HOUR)
     WHERE session_status = 'active'
         AND login_time < DATE_SUB(NOW(), INTERVAL 24 HOUR)
