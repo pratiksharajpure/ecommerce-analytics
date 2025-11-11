@@ -1,0 +1,121 @@
+return_id,order_id,customer_id,return_date,reason,status,refund_amount,condition,notes
+1,878,84,2025-10-30,Size Issue,completed,288.72,Used,Return due to size issue issue.
+2,1060,740,2025-10-01,Wrong Item,rejected,202.85,Used,Return due to wrong item issue.
+3,1171,133,2025-05-16,Not as Described,pending,119.29,Damaged,Return due to not as described issue.
+4,228,352,2025-08-26,Changed Mind,completed,100.85,Damaged,Return due to changed mind issue.
+5,1481,665,2025-07-09,Changed Mind,completed,258.32,Damaged,Return due to changed mind issue.
+6,1505,921,2025-09-30,Defective,processing,140.61,Used,Return due to defective issue.
+7,847,741,2025-06-08,Not as Described,approved,84.98,Damaged,Return due to not as described issue.
+8,62,490,2025-06-22,Changed Mind,processing,85.76,New,Return due to changed mind issue.
+9,1194,229,2025-07-28,Wrong Item,completed,185.37,New,Return due to wrong item issue.
+10,439,48,2025-06-10,Defective,completed,21.78,Used,Return due to defective issue.
+11,181,520,2025-07-20,Quality,completed,157.87,New,Return due to quality issue.
+12,392,481,2025-07-29,Quality,rejected,272.72,Damaged,Return due to quality issue.
+13,27,310,2025-06-11,Not as Described,processing,68.12,Damaged,Return due to not as described issue.
+14,1465,774,2025-06-03,Size Issue,completed,43.78,New,Return due to size issue issue.
+15,696,99,2025-07-09,Changed Mind,completed,233.47,Used,Return due to changed mind issue.
+16,1433,235,2025-06-12,Size Issue,approved,89.79,Damaged,Return due to size issue issue.
+17,1144,106,2025-09-07,Wrong Item,approved,37.99,New,Return due to wrong item issue.
+18,502,246,2025-08-09,Size Issue,approved,145.5,Used,Return due to size issue issue.
+19,639,569,2025-08-31,Defective,pending,150.59,New,Return due to defective issue.
+20,131,726,2025-10-21,Quality,approved,131.63,New,Return due to quality issue.
+21,277,17,2025-09-15,Not as Described,completed,19.84,Damaged,Return due to not as described issue.
+22,1537,946,2025-06-26,Wrong Item,pending,45.96,Used,Return due to wrong item issue.
+23,679,215,2025-05-21,Defective,approved,106.32,Used,Return due to defective issue.
+24,555,235,2025-05-21,Changed Mind,approved,124.57,Damaged,Return due to changed mind issue.
+25,968,614,2025-07-25,Defective,pending,58.06,Used,Return due to defective issue.
+26,214,484,2025-08-17,Changed Mind,pending,66.29,New,Return due to changed mind issue.
+27,121,637,2025-05-15,Wrong Item,approved,283.81,New,Return due to wrong item issue.
+28,343,74,2025-05-24,Size Issue,completed,281.27,Used,Return due to size issue issue.
+29,1488,613,2025-05-18,Changed Mind,completed,153.91,Damaged,Return due to changed mind issue.
+30,571,723,2025-05-21,Changed Mind,rejected,153.3,New,Return due to changed mind issue.
+31,1294,445,2025-08-08,Quality,rejected,295.11,Damaged,Return due to quality issue.
+32,515,251,2025-05-30,Changed Mind,pending,76.69,New,Return due to changed mind issue.
+33,1417,875,2025-05-13,Changed Mind,pending,173.98,Used,Return due to changed mind issue.
+34,1395,546,2025-10-26,Defective,approved,237.63,Damaged,Return due to defective issue.
+35,391,10,2025-07-28,Wrong Item,completed,106.0,New,Return due to wrong item issue.
+36,723,710,2025-09-12,Not as Described,rejected,181.68,Used,Return due to not as described issue.
+37,353,539,2025-07-07,Wrong Item,completed,288.9,Damaged,Return due to wrong item issue.
+38,429,225,2025-09-28,Wrong Item,approved,184.8,Damaged,Return due to wrong item issue.
+39,1148,269,2025-11-05,Size Issue,processing,232.46,New,Return due to size issue issue.
+40,271,321,2025-09-17,Size Issue,approved,113.58,New,Return due to size issue issue.
+41,594,765,2025-08-14,Quality,approved,88.21,Damaged,Return due to quality issue.
+42,1421,464,2025-07-05,Wrong Item,completed,110.62,Damaged,Return due to wrong item issue.
+43,1417,331,2025-10-14,Quality,processing,16.04,Damaged,Return due to quality issue.
+44,921,309,2025-10-21,Changed Mind,approved,94.75,Damaged,Return due to changed mind issue.
+45,180,420,2025-06-06,Defective,completed,102.46,Used,Return due to defective issue.
+46,856,489,2025-08-28,Defective,completed,119.19,New,Return due to defective issue.
+47,133,690,2025-06-03,Size Issue,pending,153.24,Used,Return due to size issue issue.
+48,1466,636,2025-10-31,Changed Mind,completed,83.03,Used,Return due to changed mind issue.
+49,1262,816,2025-09-07,Not as Described,completed,168.73,Used,Return due to not as described issue.
+50,425,425,2025-07-01,Not as Described,completed,298.06,Used,Return due to not as described issue.
+51,730,156,2025-06-12,Wrong Item,pending,16.26,Used,Return due to wrong item issue.
+52,621,426,2025-10-10,Not as Described,pending,22.72,Used,Return due to not as described issue.
+53,1257,601,2025-08-03,Not as Described,completed,161.09,Used,Return due to not as described issue.
+54,294,244,2025-07-05,Size Issue,pending,154.67,Used,Return due to size issue issue.
+55,76,96,2025-06-12,Changed Mind,completed,277.85,Damaged,Return due to changed mind issue.
+56,1448,680,2025-06-24,Changed Mind,completed,285.12,New,Return due to changed mind issue.
+57,600,328,2025-10-29,Wrong Item,processing,136.25,New,Return due to wrong item issue.
+58,1298,129,2025-08-03,Changed Mind,completed,35.64,New,Return due to changed mind issue.
+59,98,767,2025-06-12,Changed Mind,approved,180.69,Used,Return due to changed mind issue.
+60,413,493,2025-07-07,Defective,completed,174.71,New,Return due to defective issue.
+61,257,73,2025-08-10,Changed Mind,completed,106.25,Used,Return due to changed mind issue.
+62,99,878,2025-10-24,Changed Mind,completed,96.22,New,Return due to changed mind issue.
+63,845,813,2025-05-26,Changed Mind,rejected,143.35,New,Return due to changed mind issue.
+64,96,309,2025-11-02,Changed Mind,completed,296.8,New,Return due to changed mind issue.
+65,168,841,2025-06-16,Not as Described,completed,239.54,Used,Return due to not as described issue.
+66,446,312,2025-05-27,Changed Mind,completed,34.41,Damaged,Return due to changed mind issue.
+67,1135,38,2025-05-18,Defective,completed,207.76,New,Return due to defective issue.
+68,241,62,2025-08-10,Defective,completed,148.35,New,Return due to defective issue.
+69,888,442,2025-07-16,Size Issue,completed,250.03,New,Return due to size issue issue.
+70,1241,727,2025-06-25,Wrong Item,completed,198.28,Used,Return due to wrong item issue.
+71,901,808,2025-09-23,Not as Described,approved,53.52,Used,Return due to not as described issue.
+72,1302,203,2025-08-22,Changed Mind,completed,202.72,Used,Return due to changed mind issue.
+73,187,891,2025-09-03,Wrong Item,rejected,293.62,Damaged,Return due to wrong item issue.
+74,907,868,2025-08-12,Not as Described,approved,232.0,Damaged,Return due to not as described issue.
+75,1274,134,2025-08-19,Size Issue,completed,99.87,New,Return due to size issue issue.
+76,141,388,2025-07-08,Not as Described,rejected,294.24,New,Return due to not as described issue.
+77,818,759,2025-10-06,Quality,approved,221.77,New,Return due to quality issue.
+78,814,723,2025-10-29,Changed Mind,completed,17.2,Damaged,Return due to changed mind issue.
+79,580,231,2025-11-06,Quality,rejected,145.29,Used,Return due to quality issue.
+80,1098,850,2025-08-05,Size Issue,rejected,137.73,New,Return due to size issue issue.
+81,307,656,2025-09-20,Not as Described,completed,40.63,Damaged,Return due to not as described issue.
+82,34,842,2025-07-08,Changed Mind,completed,151.06,Damaged,Return due to changed mind issue.
+83,1084,163,2025-07-14,Not as Described,completed,37.93,Damaged,Return due to not as described issue.
+84,92,45,2025-10-18,Defective,approved,186.39,New,Return due to defective issue.
+85,559,545,2025-07-02,Quality,processing,147.16,New,Return due to quality issue.
+86,888,309,2025-08-21,Size Issue,rejected,51.41,New,Return due to size issue issue.
+87,182,60,2025-10-27,Not as Described,processing,84.43,New,Return due to not as described issue.
+88,210,818,2025-09-02,Changed Mind,completed,36.61,New,Return due to changed mind issue.
+89,683,880,2025-09-23,Wrong Item,pending,32.08,Used,Return due to wrong item issue.
+90,466,518,2025-10-03,Wrong Item,pending,19.16,Damaged,Return due to wrong item issue.
+91,420,31,2025-05-28,Quality,approved,167.91,Damaged,Return due to quality issue.
+92,409,462,2025-10-10,Size Issue,pending,145.33,New,Return due to size issue issue.
+93,157,586,2025-07-27,Changed Mind,processing,190.29,Used,Return due to changed mind issue.
+94,795,886,2025-10-21,Quality,processing,124.49,Damaged,Return due to quality issue.
+95,820,859,2025-09-03,Quality,completed,203.25,Used,Return due to quality issue.
+96,500,343,2025-06-20,Not as Described,approved,108.41,New,Return due to not as described issue.
+97,325,734,2025-06-03,Size Issue,completed,165.78,Damaged,Return due to size issue issue.
+98,1152,781,2025-07-21,Not as Described,approved,297.93,New,Return due to not as described issue.
+99,483,261,2025-08-29,Quality,completed,132.48,Damaged,Return due to quality issue.
+100,899,456,2025-10-30,Not as Described,completed,111.17,New,Return due to not as described issue.
+101,322,554,2025-09-13,Not as Described,completed,88.83,New,Return due to not as described issue.
+102,1138,185,2025-08-13,Wrong Item,rejected,24.64,New,Return due to wrong item issue.
+103,743,628,2025-05-27,Defective,completed,195.35,Used,Return due to defective issue.
+104,986,225,2025-09-18,Not as Described,completed,63.89,New,Return due to not as described issue.
+105,978,348,2025-11-01,Wrong Item,approved,45.59,New,Return due to wrong item issue.
+106,1283,225,2025-06-15,Not as Described,approved,141.94,Used,Return due to not as described issue.
+107,1240,222,2025-09-02,Size Issue,completed,243.63,New,Return due to size issue issue.
+108,954,558,2025-09-13,Wrong Item,completed,77.39,New,Return due to wrong item issue.
+109,699,541,2025-07-24,Wrong Item,pending,225.93,Used,Return due to wrong item issue.
+110,657,70,2025-08-29,Changed Mind,completed,225.12,Used,Return due to changed mind issue.
+111,1061,895,2025-06-13,Wrong Item,pending,109.85,New,Return due to wrong item issue.
+112,1542,909,2025-05-29,Quality,completed,48.01,Used,Return due to quality issue.
+113,42,278,2025-10-24,Not as Described,completed,267.21,New,Return due to not as described issue.
+114,1429,592,2025-06-12,Quality,completed,224.09,Used,Return due to quality issue.
+115,955,517,2025-06-03,Size Issue,completed,245.11,New,Return due to size issue issue.
+116,261,514,2025-06-15,Changed Mind,approved,271.85,Damaged,Return due to changed mind issue.
+117,513,868,2025-08-17,Not as Described,pending,263.52,New,Return due to not as described issue.
+118,354,752,2025-10-13,Quality,processing,233.41,Used,Return due to quality issue.
+119,1518,938,2025-09-03,Wrong Item,processing,279.11,Used,Return due to wrong item issue.
+120,287,443,2025-08-21,Size Issue,pending,216.46,New,Return due to size issue issue.

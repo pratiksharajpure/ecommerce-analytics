@@ -1,0 +1,191 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.env.local
+.env.*.local
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm / IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# Ruff
+.ruff_cache/
+
+# Streamlit specific
+.streamlit/secrets.toml
+.streamlit/
+
+# Config
+config/secrets.toml
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Sample data with real information
+sample_data/**/private_*.csv
+sample_data/**/customer_data_*.csv
+
+# Cache
+.cache/
+
+# Abstra
+.abstra/
+
+# Cursor
+.cursorignore
+.cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Setup wizard and executor files
+setup_wizard_clean
+setup_wizard_fix
+sql_error_fixer
+sql_executor_fix
+```
+
+Or if these are Python files (`.py` extension), add:
+```
+# Setup wizard and executor files
+setup_wizard_clean.py
+setup_wizard_fix.py
+sql_error_fixer.py
+sql_executor_fix.py
+```
+
+**If you want to hide all files with similar naming pattern:**
+```
+# All setup and executor scripts
+setup_wizard_*
+sql_error_fixer*
+sql_executor_*

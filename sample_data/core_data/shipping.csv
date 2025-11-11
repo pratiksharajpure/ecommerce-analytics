@@ -1,0 +1,969 @@
+shipment_id,order_id,carrier,tracking_number,shipped_date,delivered_date,destination,shipping_address,shipping_cost,weight,status,address_validated
+1,1,DHL,3d5d9a21-51da-4a04-a,2025-10-29,2025-10-31,San Diego,"123 Pine Rd, San Antonio, TX 41147",20.09,2.84,delivered,TRUE
+2,2,DHL,9fc6de91-a572-4e40-9,2025-10-19,,New York,"807 Main St, San Antonio, TX 83339",34.38,6.37,in-transit,TRUE
+3,3,DHL,20ce49bd-9d14-40cb-b,2025-09-14,,San Jose,"279 Market St, New York, NY 70956",29.7,4.22,in-transit,TRUE
+4,5,DHL,b9666aba-6116-4cf6-b,2025-09-29,2025-10-05,Chicago,"691 Broadway, Houston, TX 32983",9.72,7.29,delivered,TRUE
+5,6,DHL,dd27aba6-8064-4ec4-b,2025-06-12,,Phoenix,"142 Random Rd, Phoenix",31.35,2.12,in-transit,TRUE
+6,7,FedEx,f2c4ad00-c3f5-4ffa-a,2025-08-19,,New York,"943 Oak Ave, San Diego, CA 94852",10.43,8.86,in-transit,TRUE
+7,12,UPS,dbe0e57b-4f8b-4cba-b,2025-06-29,2025-07-05,San Antonio,"276 Oak Ave, San Antonio, TX 49789",19.03,6.76,delivered,TRUE
+8,15,USPS,ffb6b123-7729-4790-b,2025-10-08,2025-10-13,San Antonio,"925 Broadway, Dallas, TX 71879",16.86,1.01,delivered,TRUE
+9,16,FedEx,dfbf4b23-265f-4d6c-b,2025-08-13,,Phoenix,"733 Market St, San Diego, CA 83272",27.02,8.7,in-transit,TRUE
+10,17,UPS,334ddfa6-dd58-4764-8,2025-09-19,2025-09-23,San Diego,"501 Pine Rd, Philadelphia, PA 83464",19.86,2.21,delivered,TRUE
+11,18,FedEx,91ed4f91-6836-449d-8,2025-07-27,,Chicago,"987 Main St, San Diego, CA 12187",47.72,8.21,in-transit,TRUE
+12,19,USPS,7f023dac-f9f3-4b29-b,2025-05-08,,San Antonio,"59 Market St, New York, NY 67438",39.72,9.83,in-transit,TRUE
+13,21,USPS,4b33cdb5-4237-4325-8,2025-07-17,,Phoenix,"935 Oak Ave, Dallas, TX 70762",44.25,1.03,in-transit,TRUE
+14,24,USPS,5f7a6fd6-b8b0-4661-8,2025-09-20,,San Antonio,"585 Market St, Philadelphia, PA 86389",38.87,7.37,in-transit,TRUE
+15,25,DHL,c39ea849-eed0-4313-a,2025-10-08,2025-10-14,San Antonio,"570 Broadway, Phoenix, AZ 59006",32.23,7.65,delivered,TRUE
+16,26,USPS,c3a6832b-445e-48d5-8,2025-09-29,,Dallas,"722 Market St, San Diego, CA 92802",10.13,3.61,in-transit,TRUE
+17,28,UPS,a692d279-dded-4fdb-a,2025-10-12,2025-10-16,Chicago,"69 Main St, San Jose, CA 84890",23.24,3.05,delivered,TRUE
+18,29,FedEx,f70cb079-708d-43d1-a,2025-06-09,,Chicago,"417 Pine Rd, Phoenix, AZ 48557",46.58,2.62,in-transit,TRUE
+19,30,DHL,7978d1f5-57ba-4219-b,2025-06-26,2025-06-30,Philadelphia,"194 Broadway, Los Angeles, CA 81618",48.5,4.02,delivered,TRUE
+20,32,FedEx,8576e760-33de-46b8-9,2025-10-31,,San Diego,"892 Pine Rd, Philadelphia, PA 55268",12.19,2.73,in-transit,TRUE
+21,34,FedEx,2c9e4598-8803-4bff-a,2025-09-26,,Dallas,"565 Main St, Philadelphia, PA 67850",24.62,0.34,in-transit,TRUE
+22,37,UPS,07576d6a-d71c-4ea8-a,2025-06-27,2025-06-29,Phoenix,"732 Market St, San Diego, CA 60604",28.12,7.38,delivered,TRUE
+23,40,FedEx,d11aeed4-1dce-4115-9,2025-06-15,,Dallas,"188 Broadway, Dallas, TX 30989",22.66,6.43,in-transit,TRUE
+24,41,DHL,1691828f-5501-449f-8,2025-10-12,2025-10-17,Chicago,"820 Main St, Dallas, TX 26492",23.66,4.18,delivered,TRUE
+25,42,DHL,0f00db9e-44d8-44cf-9,2025-07-22,2025-07-27,New York,"882 Pine Rd, New York, NY 57214",31.5,4.29,delivered,TRUE
+26,43,FedEx,83308906-d72d-4f95-9,2025-10-16,2025-10-17,Chicago,"746 Broadway, Dallas, TX 25431",26.8,3.77,delivered,TRUE
+27,46,USPS,ab023a83-9575-4382-8,2025-08-14,2025-08-18,New York,"86 Oak Ave, Houston, TX 27840",26.17,0.26,delivered,TRUE
+28,50,DHL,991f63fd-7481-49e5-b,2025-07-21,2025-07-23,Houston,"996 Broadway, San Jose, CA 93563",41.08,2.8,delivered,TRUE
+29,51,USPS,b5b3b72b-eddf-4ae9-b,2025-07-22,2025-07-29,San Diego,"791 Market St, Phoenix, AZ 94108",25.23,1.93,delivered,TRUE
+30,53,FedEx,137cb45d-03e0-43dd-9,2025-10-23,2025-10-28,Chicago,"656 Random Rd, Chicago",35.84,9.9,delivered,TRUE
+31,54,USPS,8146c93b-0b75-4658-a,2025-08-30,2025-09-02,San Jose,"873 Broadway, Phoenix, AZ 51144",16.7,5.09,delivered,TRUE
+32,55,FedEx,a1ce97fc-082a-4ec7-9,2025-06-21,2025-06-23,San Jose,"262 Random Rd, San Jose",47.29,7.36,delivered,TRUE
+33,57,FedEx,12a28340-6504-45e5-b,2025-07-21,,Houston,"529 Main St, Philadelphia, PA 50685",38.84,0.49,in-transit,TRUE
+34,58,UPS,b3f2d437-6659-485f-9,2025-07-19,,Dallas,"440 Market St, Houston, TX 98777",40.19,6.25,in-transit,TRUE
+35,59,UPS,1e3bc25b-b78f-4f86-b,2025-09-12,2025-09-13,San Antonio,"952 Random Rd, San Antonio",34.92,0.45,delivered,TRUE
+36,60,UPS,71823691-4e0e-472b-a,2025-06-28,2025-07-05,New York,"820 Market St, San Antonio, TX 95089",16.82,6.32,delivered,TRUE
+37,63,FedEx,cbb68f2d-b362-47a5-a,2025-05-13,2025-05-15,San Diego,"403 Market St, Houston, TX 23979",49.79,7.82,delivered,TRUE
+38,65,USPS,5f921d48-54c8-4b61-b,2025-08-08,2025-08-10,San Diego,"247 Pine Rd, New York, NY 47056",32.1,1.53,delivered,TRUE
+39,66,DHL,5da9ec0b-9b06-46eb-b,2025-07-24,,Chicago,"710 Main St, Phoenix, AZ 73142",13.08,8.98,in-transit,TRUE
+40,67,USPS,189bbd09-1bc4-4800-8,2025-05-27,2025-05-30,Houston,"159 Random Rd, Houston",7.26,1.14,delivered,TRUE
+41,68,FedEx,eadf9e55-cc77-4320-a,2025-06-14,,Houston,"418 Pine Rd, Phoenix, AZ 67422",30.5,9.09,in-transit,TRUE
+42,72,USPS,5983ac85-5eca-459e-9,2025-05-30,2025-05-31,San Antonio,"803 Pine Rd, Phoenix, AZ 68493",41.67,9.89,delivered,TRUE
+43,73,DHL,531203b4-c3d2-4e75-a,2025-08-26,2025-08-27,Dallas,"479 Broadway, New York, NY 83792",12.81,9.6,delivered,TRUE
+44,74,FedEx,97ff24f3-3470-4abe-a,2025-08-17,2025-08-20,Los Angeles,"324 Broadway, Phoenix, AZ 55135",13.97,4.37,delivered,TRUE
+45,75,DHL,88ebd4b5-a5e4-48cd-a,2025-05-06,2025-05-12,Philadelphia,"842 Broadway, New York, NY 85877",19.57,1.66,delivered,TRUE
+46,77,DHL,c38ff266-7995-49f9-8,2025-08-18,,Phoenix,"938 Random Rd, Phoenix",7.96,6.87,in-transit,TRUE
+47,78,DHL,707bfaf5-87f2-481e-b,2025-09-13,2025-09-15,New York,"640 Main St, San Diego, CA 20384",11.98,7.42,delivered,TRUE
+48,81,USPS,ade4866c-201e-4ff6-8,2025-09-13,2025-09-14,Dallas,"553 Pine Rd, Dallas, TX 65771",48.8,3.43,delivered,TRUE
+49,85,FedEx,e30aa9d8-30b5-4d03-b,2025-10-06,,San Antonio,"733 Market St, San Diego, CA 83272",24.47,7.01,in-transit,TRUE
+50,87,DHL,b0f6b88c-61a0-44fd-a,2025-09-09,2025-09-16,Los Angeles,"905 Main St, Phoenix, AZ 68947",25.62,7.43,delivered,TRUE
+51,88,UPS,adf917f9-96b9-4b95-b,2025-10-27,2025-10-30,Philadelphia,"762 Pine Rd, San Antonio, TX 89129",47.37,6.05,delivered,TRUE
+52,89,DHL,5bc5a75e-310c-4665-a,2025-07-21,2025-07-26,San Diego,"804 Oak Ave, Phoenix, AZ 89569",7.76,2.0,delivered,TRUE
+53,90,USPS,12ee101b-81a4-43be-a,2025-08-30,,Phoenix,"18 Broadway, San Jose, CA 95199",35.88,8.51,in-transit,TRUE
+54,91,FedEx,6056795c-f74b-4891-a,2025-08-25,2025-08-26,Phoenix,"121 Broadway, New York, NY 66959",44.93,2.67,delivered,TRUE
+55,92,FedEx,8a53e32c-90a9-4ed4-9,2025-06-14,2025-06-15,San Antonio,"270 Main St, Phoenix, AZ 50340",24.34,1.37,delivered,TRUE
+56,94,FedEx,66515361-75a1-49ba-b,2025-06-30,2025-07-03,Phoenix,"463 Market St, Phoenix, AZ 73656",13.15,1.17,delivered,TRUE
+57,97,UPS,23a1a454-b31c-44e1-b,2025-06-12,,Chicago,"869 Broadway, Chicago, IL 90335",41.45,7.98,in-transit,TRUE
+58,99,UPS,2b878dd6-7ec5-49cb-a,2025-07-06,,Dallas,"104 Random Rd, Dallas",46.25,2.72,in-transit,TRUE
+59,100,UPS,51af47cf-8a21-4f72-9,2025-09-27,2025-09-30,Los Angeles,"212 Oak Ave, Phoenix, AZ 88957",34.77,5.99,delivered,TRUE
+60,101,USPS,fdc08ec6-e644-4e10-b,2025-09-29,2025-10-05,Dallas,"174 Broadway, Chicago, IL 43425",5.66,7.41,delivered,TRUE
+61,105,USPS,81fa2a10-e592-4a5e-b,2025-10-01,2025-10-02,New York,"103 Main St, Los Angeles, CA 68903",19.13,7.41,delivered,TRUE
+62,108,DHL,a60b0f18-b3de-423d-b,2025-10-22,2025-10-24,Philadelphia,"529 Pine Rd, Phoenix, AZ 97410",37.93,9.85,delivered,TRUE
+63,109,DHL,8b10fed4-255e-421a-9,2025-06-09,,Los Angeles,"155 Broadway, San Diego, CA 92890",48.34,6.13,in-transit,TRUE
+64,111,FedEx,6fd2652a-53ed-488b-a,2025-07-08,2025-07-09,San Antonio,"640 Broadway, Dallas, TX 42275",46.84,2.12,delivered,TRUE
+65,112,USPS,c7a5b69a-a844-4fab-a,2025-11-04,2025-11-10,Los Angeles,"523 Pine Rd, Houston, TX 18127",44.22,8.68,delivered,TRUE
+66,114,FedEx,58ba077b-b95f-4626-9,2025-08-09,2025-08-15,Dallas,"732 Pine Rd, Dallas, TX 64459",19.56,1.26,delivered,TRUE
+67,116,FedEx,ae3db471-35d2-4a0a-8,2025-08-01,,San Jose,"163 Oak Ave, Houston, TX 30625",36.02,1.64,in-transit,TRUE
+68,117,USPS,e9155f8c-60e6-4673-9,2025-07-28,2025-07-30,San Jose,"224 Pine Rd, Philadelphia, PA 99593",20.34,5.6,delivered,FALSE
+69,118,USPS,24ddbdd6-6ba6-430c-a,2025-06-29,2025-07-04,Phoenix,"146 Market St, Dallas, TX 19808",25.74,6.81,delivered,TRUE
+70,119,UPS,133c62a6-b4be-4d99-a,2025-11-01,2025-11-07,Los Angeles,"525 Pine Rd, Chicago, IL 40692",24.22,1.92,delivered,TRUE
+71,120,FedEx,b6e9907a-8269-423d-9,2025-09-14,,San Jose,"405 Main St, San Diego, CA 41599",9.81,3.16,in-transit,TRUE
+72,122,UPS,a6d54809-9003-41e3-9,2025-07-24,,Philadelphia,"423 Main St, Houston, TX 84668",14.01,9.22,in-transit,TRUE
+73,126,DHL,0ac92ae2-61e0-47e2-a,2025-10-08,2025-10-15,Houston,"434 Random Rd, Houston",36.15,8.52,delivered,TRUE
+74,128,UPS,a859bf5e-8fb2-4afd-9,2025-07-30,,San Antonio,"545 Main St, New York, NY 13312",19.34,2.56,in-transit,TRUE
+75,130,DHL,75aba440-6b18-4595-b,2025-10-02,2025-10-06,Houston,"19 Pine Rd, New York, NY 84443",26.13,1.45,delivered,TRUE
+76,131,DHL,066c8af3-28d8-4737-a,2025-06-16,,New York,"433 Main St, San Diego, CA 34586",32.25,9.16,in-transit,TRUE
+77,132,FedEx,2cf52ec0-6334-4a9a-9,2025-09-03,2025-09-10,Los Angeles,"513 Oak Ave, San Jose, CA 52027",9.86,7.94,delivered,TRUE
+78,133,DHL,87774773-ec2b-43fe-b,2025-06-23,2025-06-26,New York,"225 Pine Rd, San Jose, CA 36685",32.98,4.62,delivered,TRUE
+79,134,UPS,ad256962-e01d-475b-8,2025-06-06,,San Diego,"154 Random Rd, San Diego",17.28,5.64,in-transit,TRUE
+80,135,UPS,4130704c-f43b-479a-b,2025-07-20,,Los Angeles,"183 Pine Rd, Phoenix, AZ 90769",34.02,8.91,in-transit,TRUE
+81,136,DHL,2cf84189-cec8-4b56-9,2025-07-16,,San Diego,"331 Random Rd, San Diego",36.06,5.02,in-transit,TRUE
+82,137,FedEx,5956ec25-feb1-4872-8,2025-07-09,2025-07-16,Los Angeles,"586 Oak Ave, New York, NY 29126",33.72,3.58,delivered,TRUE
+83,138,UPS,e7d333f3-ac77-4549-9,2025-06-26,2025-06-29,Philadelphia,"797 Pine Rd, San Diego, CA 60052",16.72,8.41,delivered,TRUE
+84,140,USPS,0e61e805-e95e-497b-8,2025-05-27,,Houston,"995 Oak Ave, Chicago, IL 77350",7.2,6.11,in-transit,TRUE
+85,141,USPS,7a05d4b6-3bf7-4749-b,2025-06-02,2025-06-06,San Diego,"870 Main St, Phoenix, AZ 54453",17.66,4.51,delivered,TRUE
+86,142,USPS,2fbe173d-82a6-4769-a,2025-07-13,,New York,"177 Market St, New York, NY 55443",9.01,1.47,in-transit,TRUE
+87,144,USPS,15ef2506-3232-4137-b,2025-07-24,2025-07-25,San Jose,"236 Main St, San Jose, CA 93283",22.65,4.21,delivered,TRUE
+88,145,USPS,8b5361a4-1a9c-44c8-a,2025-05-31,2025-06-05,Philadelphia,"632 Market St, New York, NY 51012",12.22,7.61,delivered,TRUE
+89,146,FedEx,ce595027-1be4-474a-8,2025-09-21,,Houston,"723 Pine Rd, Los Angeles, CA 99687",32.8,9.92,in-transit,TRUE
+90,147,FedEx,50fde295-44d5-4636-a,2025-07-13,2025-07-20,Phoenix,"754 Pine Rd, New York, NY 90589",47.01,5.45,delivered,TRUE
+91,148,UPS,a2be6f7c-06f3-47f4-8,2025-05-17,2025-05-22,San Jose,"183 Main St, San Jose, CA 57151",44.22,4.74,delivered,TRUE
+92,149,USPS,d9767035-ce69-4d5c-a,2025-07-15,,Houston,"377 Pine Rd, Phoenix, AZ 66450",28.03,4.04,in-transit,TRUE
+93,150,FedEx,732a5edd-8c59-46a3-a,2025-08-11,,Chicago,"823 Pine Rd, Chicago, IL 83149",20.03,6.54,in-transit,TRUE
+94,151,FedEx,e908e3fe-95d0-4a1f-a,2025-09-01,2025-09-05,San Antonio,"400 Pine Rd, San Jose, CA 24201",23.94,1.93,delivered,TRUE
+95,155,DHL,a7e0854e-f6a5-4d3b-8,2025-06-11,2025-06-15,Los Angeles,"667 Pine Rd, Phoenix, AZ 73300",21.69,2.28,delivered,TRUE
+96,158,USPS,c7750c11-4b53-439b-9,2025-08-21,2025-08-28,Philadelphia,"895 Main St, Philadelphia, PA 12500",48.98,6.13,delivered,TRUE
+97,159,USPS,aebd2fea-d069-4f40-a,2025-06-06,2025-06-07,San Antonio,"529 Pine Rd, Phoenix, AZ 97410",27.61,6.64,delivered,TRUE
+98,160,UPS,a5f6bcf9-0312-4b98-9,2025-10-16,2025-10-20,Houston,"105 Oak Ave, New York, NY 40495",32.3,7.36,delivered,TRUE
+99,161,USPS,1219ebac-0fca-4b7e-a,2025-09-04,,Philadelphia,"302 Oak Ave, Dallas, TX 14405",36.25,2.91,in-transit,TRUE
+100,163,USPS,ee40727b-1d8e-4a07-b,2025-10-14,,San Jose,"487 Main St, San Diego, CA 71537",46.06,1.03,in-transit,TRUE
+101,165,FedEx,15eb88f6-ba2c-4f31-9,2025-09-14,2025-09-15,Phoenix,"214 Pine Rd, Houston, TX 30446",45.98,3.69,delivered,TRUE
+102,166,DHL,d1ba675d-06df-4109-b,2025-10-17,,New York,"525 Pine Rd, Chicago, IL 40692",25.82,4.02,in-transit,TRUE
+103,168,DHL,7a15a714-63f8-45f4-9,2025-07-17,2025-07-22,Philadelphia,"575 Main St, Chicago, IL 30517",16.78,3.23,delivered,TRUE
+104,169,DHL,30bf08b6-89b8-4aac-8,2025-06-13,2025-06-15,San Diego,"569 Broadway, San Jose, CA 35751",49.63,7.94,delivered,TRUE
+105,170,FedEx,2fb00d07-fbdc-4c16-b,2025-09-10,2025-09-14,San Antonio,"399 Random Rd, San Antonio",7.25,4.64,delivered,TRUE
+106,171,DHL,ae68886a-5402-442a-a,2025-10-17,,San Diego,"640 Main St, San Diego, CA 20384",19.42,6.74,in-transit,FALSE
+107,172,UPS,b5bf57e0-b5e1-42eb-8,2025-07-28,2025-08-01,Philadelphia,"794 Random Rd, Philadelphia",32.97,2.97,delivered,TRUE
+108,174,USPS,0bea20b6-9b2c-47d6-a,2025-07-25,2025-08-01,Houston,"620 Main St, San Antonio, TX 60432",47.78,4.2,delivered,TRUE
+109,175,UPS,82709597-06e1-4f62-a,2025-05-15,2025-05-18,Los Angeles,"553 Pine Rd, Dallas, TX 65771",27.46,5.23,delivered,TRUE
+110,176,FedEx,9a02bfff-856c-4dc5-9,2025-08-31,2025-09-01,San Jose,"244 Main St, New York, NY 51347",42.03,1.06,delivered,TRUE
+111,179,USPS,b07e4755-6626-49e0-a,2025-06-09,2025-06-10,New York,"193 Random Rd, New York",7.01,7.87,delivered,TRUE
+112,180,UPS,222736ab-5e6a-4a33-b,2025-08-22,2025-08-25,San Diego,"190 Random Rd, San Diego",36.87,9.99,delivered,TRUE
+113,181,FedEx,f6ecef79-eaff-4a95-a,2025-07-04,2025-07-08,Dallas,"981 Oak Ave, Chicago, IL 37772",36.24,0.47,delivered,TRUE
+114,182,USPS,63ef053e-e205-40c0-9,2025-05-16,2025-05-20,Philadelphia,"501 Random Rd, Philadelphia",19.1,9.3,delivered,TRUE
+115,184,FedEx,c0b4d04d-ef1e-4760-8,2025-06-19,2025-06-26,San Antonio,"166 Oak Ave, Phoenix, AZ 53236",13.8,8.27,delivered,TRUE
+116,185,USPS,e8c35d3a-f3f9-4405-9,2025-07-15,2025-07-22,Dallas,"323 Pine Rd, Phoenix, AZ 40217",44.79,8.69,delivered,TRUE
+117,186,USPS,eee702e5-e332-4afe-b,2025-06-08,2025-06-09,Houston,"224 Broadway, Houston, TX 55957",30.27,7.96,delivered,TRUE
+118,187,UPS,1e2c39b7-230c-4748-a,2025-07-29,2025-07-30,Houston,"577 Main St, Philadelphia, PA 88240",10.29,7.99,delivered,TRUE
+119,188,USPS,2fafd793-557d-496e-8,2025-07-17,2025-07-24,Phoenix,"832 Broadway, Dallas, TX 68400",41.2,0.6,delivered,TRUE
+120,191,USPS,2d5cc088-8b17-495d-8,2025-10-16,2025-10-21,Houston,"387 Market St, Phoenix, AZ 76207",46.73,1.36,delivered,TRUE
+121,192,FedEx,d980ce40-a6ff-4b3b-8,2025-06-06,2025-06-12,Houston,"833 Main St, Philadelphia, PA 71385",17.81,6.94,delivered,TRUE
+122,193,DHL,ffe288b7-e9ce-4288-8,2025-07-18,2025-07-24,New York,"406 Broadway, Los Angeles, CA 89450",10.0,7.25,delivered,TRUE
+123,196,UPS,b709e1e8-fe4a-430c-9,2025-10-18,2025-10-19,Dallas,"173 Random Rd, Dallas",41.04,6.77,delivered,TRUE
+124,198,FedEx,4a8b1054-f031-4366-9,2025-07-19,2025-07-21,San Jose,"29 Main St, San Diego, CA 57576",48.27,0.86,delivered,TRUE
+125,199,UPS,afd0ad70-d6bc-4f9a-8,2025-06-04,2025-06-10,Dallas,"126 Random Rd, Dallas",34.76,8.28,delivered,TRUE
+126,200,FedEx,6584dc6d-62df-4d9d-a,2025-07-08,,New York,"371 Market St, San Antonio, TX 63143",46.64,2.51,in-transit,TRUE
+127,201,DHL,b1ecc0df-fe92-44ed-8,2025-06-24,2025-06-28,San Jose,"35 Main St, Chicago, IL 42092",45.94,7.75,delivered,TRUE
+128,203,DHL,cb555540-04c2-4d29-b,2025-07-22,2025-07-28,Philadelphia,"636 Oak Ave, Dallas, TX 59634",32.37,3.3,delivered,TRUE
+129,205,UPS,d7404095-bddc-4863-8,2025-05-24,2025-05-27,Phoenix,"712 Oak Ave, San Jose, CA 23090",45.66,6.14,delivered,TRUE
+130,207,DHL,12b26e78-6b70-4792-8,2025-08-07,,Phoenix,"893 Oak Ave, Philadelphia, PA 20592",36.23,5.33,in-transit,TRUE
+131,208,FedEx,732f7e18-ac64-49f0-b,2025-07-07,2025-07-12,San Antonio,"511 Market St, Philadelphia, PA 30578",18.78,0.36,delivered,TRUE
+132,209,FedEx,55087ac1-aff9-40fb-a,2025-08-15,2025-08-21,Phoenix,"647 Random Rd, Phoenix",7.59,0.89,delivered,TRUE
+133,210,USPS,8a31e0b3-3715-47d0-b,2025-10-27,,Los Angeles,"462 Main St, Dallas, TX 99167",19.43,6.15,in-transit,TRUE
+134,212,USPS,c75ea660-2865-48c2-9,2025-08-15,,Houston,"102 Pine Rd, Chicago, IL 52823",39.52,1.56,in-transit,TRUE
+135,213,USPS,10791757-fc85-4dfc-a,2025-09-07,2025-09-09,San Jose,"301 Main St, Los Angeles, CA 31012",15.6,9.52,delivered,TRUE
+136,214,UPS,5fec2894-ef71-44c8-8,2025-09-06,2025-09-13,Los Angeles,"869 Broadway, Chicago, IL 90335",22.23,7.24,delivered,TRUE
+137,215,FedEx,8170e6eb-4b7a-4f02-8,2025-09-09,,Dallas,"532 Oak Ave, Dallas, TX 55793",25.01,9.71,in-transit,TRUE
+138,216,UPS,d78dc1ee-e713-404b-a,2025-09-10,,Phoenix,"563 Random Rd, Phoenix",43.66,6.98,in-transit,TRUE
+139,218,FedEx,582547d0-d4e8-4d3e-b,2025-08-22,2025-08-27,San Jose,"598 Random Rd, San Jose",15.6,5.66,delivered,TRUE
+140,221,UPS,0a7152d8-24af-4d2a-a,2025-05-19,2025-05-22,Chicago,"568 Oak Ave, San Jose, CA 99353",8.3,6.86,delivered,TRUE
+141,223,USPS,b48094f0-dd6c-43ee-9,2025-10-03,,Philadelphia,"400 Pine Rd, San Jose, CA 24201",18.62,3.22,in-transit,TRUE
+142,224,FedEx,9a599a64-7d98-4cce-b,2025-07-12,,San Jose,"823 Pine Rd, Chicago, IL 83149",5.18,2.86,in-transit,TRUE
+143,226,DHL,eed04010-7d82-4e3a-a,2025-07-06,2025-07-12,Dallas,"886 Random Rd, Dallas",5.63,2.05,delivered,TRUE
+144,230,DHL,9893dac4-27c5-4253-a,2025-07-11,2025-07-17,San Diego,"943 Oak Ave, San Diego, CA 94852",19.77,6.2,delivered,TRUE
+145,231,FedEx,0f988db1-4a1b-4cd4-8,2025-07-25,2025-07-28,San Jose,"548 Broadway, San Diego, CA 87371",30.84,0.46,delivered,TRUE
+146,233,UPS,5189398a-cf1d-4789-b,2025-10-03,2025-10-04,Phoenix,"65 Broadway, New York, NY 48290",37.54,2.45,delivered,TRUE
+147,234,UPS,e227eca6-10e7-4563-b,2025-07-09,2025-07-16,Los Angeles,"306 Main St, San Antonio, TX 63088",49.43,9.11,delivered,TRUE
+148,235,USPS,27d1708a-1738-4747-a,2025-07-18,,Chicago,"48 Pine Rd, Dallas, TX 91006",41.79,4.59,in-transit,TRUE
+149,236,FedEx,c19c8098-1a7c-4c57-9,2025-06-30,,Los Angeles,"920 Oak Ave, San Diego, CA 75598",24.41,4.74,in-transit,TRUE
+150,240,DHL,90b88484-e371-4ecf-b,2025-08-15,,San Jose,"558 Main St, Dallas, TX 37297",39.66,9.33,in-transit,TRUE
+151,242,FedEx,8d30b21b-4a96-4794-b,2025-10-20,2025-10-26,New York,"306 Pine Rd, Phoenix, AZ 25726",12.13,1.21,delivered,TRUE
+152,243,FedEx,f22fc273-fdfe-4e6e-b,2025-06-21,,Dallas,"60 Main St, Los Angeles, CA 64651",10.31,1.81,in-transit,TRUE
+153,245,FedEx,ccf09119-30ff-4d28-a,2025-09-26,2025-09-27,Houston,"820 Market St, San Antonio, TX 95089",18.63,5.86,delivered,TRUE
+154,246,USPS,28d4213d-cad9-44a4-9,2025-07-26,2025-07-28,San Jose,"979 Random Rd, San Jose",48.29,9.38,delivered,TRUE
+155,247,USPS,b77b876e-4c3a-4ffc-a,2025-08-09,2025-08-14,Chicago,"570 Broadway, Phoenix, AZ 59006",43.02,0.52,delivered,TRUE
+156,250,USPS,61c5bc76-853e-4854-8,2025-05-22,,Phoenix,"996 Broadway, San Jose, CA 93563",8.38,3.13,in-transit,TRUE
+157,251,DHL,0591e126-d984-45f0-a,2025-10-23,2025-10-30,San Diego,"802 Pine Rd, San Diego, CA 45313",43.07,7.6,delivered,TRUE
+158,252,USPS,302b2efa-2d4c-41c0-8,2025-06-15,2025-06-21,Chicago,"585 Market St, New York, NY 64592",48.26,9.36,delivered,TRUE
+159,254,USPS,7df69977-4f9e-48cd-b,2025-10-29,2025-11-03,San Antonio,"462 Market St, San Diego, CA 98555",49.78,4.48,delivered,TRUE
+160,256,DHL,655bf005-787a-488b-8,2025-08-13,,Philadelphia,"29 Market St, San Antonio, TX 20205",26.87,0.24,in-transit,TRUE
+161,258,UPS,0990269d-d31a-404f-b,2025-06-16,2025-06-23,Philadelphia,"181 Oak Ave, San Antonio, TX 13027",22.83,6.07,delivered,TRUE
+162,260,USPS,c9471d7a-cde5-4f82-9,2025-10-30,,Phoenix,"832 Broadway, Dallas, TX 68400",8.0,3.87,in-transit,TRUE
+163,262,USPS,a41f810f-8bd1-41ec-a,2025-10-17,2025-10-22,Chicago,"895 Main St, Philadelphia, PA 12500",23.58,4.67,delivered,TRUE
+164,263,DHL,265a983e-79d8-4638-8,2025-05-14,2025-05-18,Phoenix,"640 Main St, San Diego, CA 20384",48.08,5.1,delivered,TRUE
+165,264,UPS,defadd9f-ff4b-464f-9,2025-10-09,2025-10-15,Dallas,"684 Broadway, Chicago, IL 89316",40.33,3.13,delivered,TRUE
+166,266,FedEx,8540c02a-ae65-4477-b,2025-07-09,2025-07-10,San Antonio,"653 Main St, Chicago, IL 92242",27.82,7.87,delivered,TRUE
+167,267,UPS,494da0b1-ff0c-4219-9,2025-08-06,,Philadelphia,"576 Broadway, Houston, TX 88644",37.22,1.2,in-transit,TRUE
+168,271,FedEx,edcc69a2-84b5-4a64-b,2025-11-04,2025-11-07,New York,"218 Pine Rd, New York, NY 81987",6.24,6.22,delivered,TRUE
+169,272,FedEx,f6fe7950-8216-4255-8,2025-09-04,,Los Angeles,"821 Market St, Philadelphia, PA 32662",39.47,8.17,in-transit,TRUE
+170,273,USPS,0d4e9871-4dd8-452b-8,2025-09-07,,San Jose,"683 Broadway, San Antonio, TX 84085",16.95,8.24,in-transit,TRUE
+171,274,DHL,a776cd63-b039-4977-a,2025-06-21,2025-06-28,Chicago,"371 Market St, San Antonio, TX 63143",22.01,3.38,delivered,TRUE
+172,275,DHL,dbb217a8-abfd-4241-9,2025-10-25,,Phoenix,"996 Market St, Philadelphia, PA 51222",16.86,8.56,in-transit,TRUE
+173,277,FedEx,0c0695cf-54c4-4d32-8,2025-07-20,2025-07-26,Los Angeles,"768 Main St, Houston, TX 62725",35.28,9.49,delivered,TRUE
+174,278,FedEx,b0f4fb27-ac6a-4cde-8,2025-07-09,,Dallas,"280 Main St, San Jose, CA 70217",37.86,5.55,in-transit,TRUE
+175,279,USPS,182e09e1-bd5c-4c26-b,2025-05-16,2025-05-23,Houston,"349 Random Rd, Houston",30.67,6.35,delivered,TRUE
+176,281,DHL,cbdf6f71-d9bf-4b20-9,2025-08-01,2025-08-08,Los Angeles,"792 Oak Ave, New York, NY 85457",31.57,2.38,delivered,TRUE
+177,282,USPS,baa3d987-41a1-412a-a,2025-07-26,2025-08-01,San Jose,"739 Random Rd, San Jose",11.44,5.59,delivered,TRUE
+178,284,FedEx,d4adc7f9-f1ff-471b-9,2025-06-24,2025-06-27,Los Angeles,"553 Broadway, Philadelphia, PA 45720",49.61,5.8,delivered,FALSE
+179,285,DHL,94fb4736-e944-4269-8,2025-08-29,,Los Angeles,"166 Main St, Houston, TX 98294",35.03,7.59,in-transit,TRUE
+180,286,UPS,065f535a-ad0d-4140-b,2025-06-11,2025-06-12,Los Angeles,"575 Main St, Chicago, IL 30517",17.92,6.15,delivered,TRUE
+181,288,UPS,14fadd43-9e64-481a-a,2025-11-03,2025-11-10,New York,"699 Main St, New York, NY 17944",46.82,0.73,delivered,TRUE
+182,290,DHL,09edb518-20b6-46de-9,2025-10-29,2025-11-04,Philadelphia,"26 Oak Ave, Los Angeles, CA 78512",33.58,1.2,delivered,TRUE
+183,291,UPS,251a5a60-bec8-4ec8-a,2025-10-08,2025-10-14,Phoenix,"348 Main St, Houston, TX 68954",6.26,7.11,delivered,TRUE
+184,292,FedEx,fa76398f-6034-441f-a,2025-09-07,2025-09-14,Dallas,"115 Main St, San Antonio, TX 18361",16.78,6.79,delivered,TRUE
+185,294,FedEx,86a058f6-4505-45e7-9,2025-05-28,2025-06-03,Phoenix,"177 Market St, New York, NY 55443",9.01,7.22,delivered,TRUE
+186,295,UPS,98c11af5-7a74-469e-8,2025-07-25,2025-07-30,Phoenix,"244 Main St, New York, NY 14117",44.44,2.03,delivered,TRUE
+187,296,USPS,085efa6a-1da2-4d08-a,2025-09-10,2025-09-14,Philadelphia,"898 Broadway, Phoenix, AZ 55071",30.66,8.36,delivered,TRUE
+188,297,USPS,ead6856a-4e96-4e89-8,2025-09-07,,Philadelphia,"838 Oak Ave, San Jose, CA 67366",6.57,3.86,in-transit,TRUE
+189,299,UPS,9dab88a3-3aa5-4332-a,2025-07-18,,Los Angeles,"812 Market St, San Jose, CA 88146",30.82,4.69,in-transit,TRUE
+190,301,DHL,7847d6a1-8d89-417f-9,2025-08-23,2025-08-27,New York,"683 Market St, San Jose, CA 19120",42.28,5.88,delivered,TRUE
+191,302,DHL,5b19a864-5a79-4cf6-8,2025-06-03,2025-06-04,San Antonio,"104 Random Rd, San Antonio",31.41,1.3,delivered,TRUE
+192,304,USPS,6b38eb8b-444a-4c6a-a,2025-05-29,2025-05-30,Chicago,"882 Market St, Chicago, IL 74414",40.47,5.65,delivered,TRUE
+193,307,USPS,abbba4f7-3ceb-4f8a-b,2025-07-09,2025-07-12,Philadelphia,"377 Market St, New York, NY 23432",29.21,1.77,delivered,TRUE
+194,309,FedEx,db1cf418-d883-4d1a-b,2025-07-20,,San Antonio,"540 Broadway, Houston, TX 76784",44.88,4.28,in-transit,TRUE
+195,310,DHL,ed96d847-f1a9-43a4-8,2025-10-13,2025-10-20,Philadelphia,"281 Market St, Houston, TX 27154",30.35,6.78,delivered,TRUE
+196,311,UPS,b1eaad9b-af27-4124-9,2025-08-28,,San Antonio,"917 Random Rd, San Antonio",43.29,6.52,in-transit,TRUE
+197,312,FedEx,a4f65f36-6dc0-4bf7-b,2025-07-14,,New York,"21 Random Rd, New York",37.02,3.67,in-transit,TRUE
+198,313,USPS,a6afc279-370f-4f6a-8,2025-07-29,2025-07-30,San Jose,"795 Pine Rd, Phoenix, AZ 31992",21.44,5.95,delivered,TRUE
+199,314,DHL,b0d112a1-373d-4d52-9,2025-07-21,2025-07-22,Philadelphia,"32 Market St, Phoenix, AZ 45976",14.25,2.76,delivered,TRUE
+200,315,DHL,a2949ce4-7106-4c98-8,2025-09-18,2025-09-23,Philadelphia,"453 Broadway, Chicago, IL 17263",14.02,4.87,delivered,TRUE
+201,316,UPS,ec3553cb-b157-4ed8-a,2025-10-31,2025-11-06,Phoenix,"372 Oak Ave, Chicago, IL 34530",15.92,5.5,delivered,TRUE
+202,317,UPS,6a72a0ba-bc6b-453d-8,2025-08-21,2025-08-26,San Diego,"946 Oak Ave, San Diego, CA 89220",10.08,5.26,delivered,TRUE
+203,319,UPS,1d415dc8-483a-4e9f-a,2025-07-11,2025-07-17,Los Angeles,"931 Broadway, San Antonio, TX 34914",37.44,2.49,delivered,TRUE
+204,320,FedEx,542473bc-bbbe-4e95-9,2025-05-17,2025-05-23,Chicago,"653 Main St, Chicago, IL 92242",14.09,2.81,delivered,TRUE
+205,323,UPS,820124f4-462e-41e5-a,2025-07-01,2025-07-07,San Diego,"569 Market St, Philadelphia, PA 23294",35.11,8.81,delivered,TRUE
+206,325,DHL,dea5be25-36a2-4e51-8,2025-08-06,2025-08-10,Dallas,"981 Oak Ave, Chicago, IL 37772",39.73,4.28,delivered,TRUE
+207,329,UPS,0b2469de-2e81-47ac-a,2025-05-29,2025-06-02,San Jose,"681 Market St, Houston, TX 61856",42.88,7.3,delivered,TRUE
+208,331,FedEx,6369b6b9-7bd0-42f4-a,2025-09-29,,Chicago,"933 Broadway, Chicago, IL 80685",38.14,8.34,in-transit,TRUE
+209,332,USPS,63c1b73f-3ebd-4c79-a,2025-06-27,2025-06-28,Phoenix,"298 Random Rd, Phoenix",34.65,7.22,delivered,TRUE
+210,334,UPS,2f9b312c-82f9-4ccd-a,2025-11-02,2025-11-07,San Diego,"482 Pine Rd, Houston, TX 70236",23.69,2.7,delivered,TRUE
+211,337,USPS,88472427-1fbe-4edf-a,2025-06-30,2025-07-07,New York,"873 Broadway, Phoenix, AZ 51144",48.76,6.75,delivered,TRUE
+212,338,UPS,b4713747-2736-4fc1-8,2025-10-06,2025-10-11,New York,"540 Broadway, Houston, TX 76784",36.65,8.68,delivered,TRUE
+213,340,USPS,d02a6fd7-a139-4def-9,2025-08-12,2025-08-14,Chicago,"777 Broadway, San Diego, CA 57210",39.42,5.09,delivered,TRUE
+214,341,UPS,cd936cca-0585-4aea-8,2025-06-15,,Houston,"573 Broadway, Los Angeles, CA 48058",15.74,5.02,in-transit,TRUE
+215,342,UPS,453c53ba-1d0a-40a2-b,2025-08-15,2025-08-16,Houston,"420 Broadway, San Jose, CA 76402",42.78,7.44,delivered,TRUE
+216,343,UPS,e06b36ca-a743-4ffb-a,2025-06-06,,Philadelphia,"236 Main St, San Jose, CA 93283",27.41,2.39,in-transit,TRUE
+217,344,FedEx,67b537d7-2c7f-4978-a,2025-07-23,,Los Angeles,"697 Oak Ave, Chicago, IL 23113",23.38,1.8,in-transit,TRUE
+218,345,FedEx,4b734947-07e1-496c-9,2025-06-12,2025-06-18,Philadelphia,"532 Oak Ave, Dallas, TX 55793",32.59,9.29,delivered,TRUE
+219,346,USPS,5aac3f3a-1de9-4b0c-8,2025-09-11,2025-09-16,Philadelphia,"732 Pine Rd, Dallas, TX 64459",23.18,1.0,delivered,TRUE
+220,347,UPS,959084ad-09b3-4cb5-8,2025-05-12,,New York,"281 Market St, San Antonio, TX 47388",23.77,0.63,in-transit,TRUE
+221,348,USPS,cb9b4b55-126b-4042-a,2025-08-03,,Chicago,"183 Main St, San Jose, CA 57151",5.44,8.43,in-transit,TRUE
+222,349,FedEx,1b7bde0a-6437-49d1-8,2025-06-19,2025-06-22,Philadelphia,"943 Oak Ave, San Diego, CA 94852",22.5,8.32,delivered,TRUE
+223,350,USPS,ab26fcb4-b933-49ea-a,2025-08-04,2025-08-10,Houston,"931 Broadway, San Antonio, TX 34914",6.97,8.57,delivered,TRUE
+224,351,USPS,680cf143-409d-4e44-a,2025-06-14,2025-06-17,San Jose,"396 Random Rd, San Jose",6.22,1.5,delivered,TRUE
+225,352,USPS,de11cb8e-c9b5-42d9-8,2025-09-06,,Dallas,"302 Random Rd, Dallas",21.02,6.75,in-transit,TRUE
+226,353,DHL,9455ed7a-3d8c-45af-9,2025-06-25,2025-07-01,San Jose,"863 Main St, Dallas, TX 49829",11.34,3.09,delivered,TRUE
+227,354,DHL,4171dcc1-1690-41b9-9,2025-07-01,2025-07-08,New York,"305 Random Rd, New York",16.28,8.38,delivered,TRUE
+228,357,USPS,8881b175-1913-41eb-b,2025-10-10,2025-10-11,San Diego,"303 Main St, Dallas, TX 75826",23.54,5.78,delivered,TRUE
+229,358,USPS,cad2b2ab-57ed-4997-8,2025-10-01,2025-10-04,San Antonio,"823 Pine Rd, Chicago, IL 83149",9.54,2.98,delivered,TRUE
+230,360,DHL,1149e3f0-d9a5-4c4c-9,2025-05-22,2025-05-28,Philadelphia,"746 Broadway, Dallas, TX 25431",18.93,0.87,delivered,TRUE
+231,361,USPS,3cddb091-9482-4bd9-a,2025-09-14,,Chicago,"356 Main St, Los Angeles, CA 87110",11.06,8.9,in-transit,TRUE
+232,362,USPS,5bd327db-1a3d-4493-9,2025-10-27,2025-11-02,San Antonio,"244 Main St, New York, NY 51347",22.05,8.67,delivered,TRUE
+233,363,USPS,7b955c5d-c55f-43f5-9,2025-08-31,2025-09-02,New York,"19 Pine Rd, New York, NY 84443",15.72,1.01,delivered,TRUE
+234,364,FedEx,9973b85d-53d5-4ebb-a,2025-10-14,2025-10-16,Los Angeles,"105 Market St, New York, NY 59710",47.26,1.16,delivered,TRUE
+235,365,DHL,09972764-4174-4260-9,2025-08-16,2025-08-21,San Jose,"247 Pine Rd, New York, NY 47056",20.31,5.36,delivered,TRUE
+236,366,DHL,821dd353-5784-48f4-9,2025-08-05,,San Diego,"811 Oak Ave, San Diego, CA 23143",45.3,1.5,in-transit,TRUE
+237,367,USPS,cffcdd19-b282-4eaf-9,2025-06-27,,Los Angeles,"540 Broadway, Houston, TX 76784",16.31,1.69,in-transit,TRUE
+238,370,FedEx,2a089af6-fbab-4ebe-8,2025-10-20,2025-10-23,New York,"500 Market St, New York, NY 65872",43.33,6.84,delivered,TRUE
+239,372,USPS,142f9b4d-8eb6-4cae-9,2025-06-13,,Chicago,"585 Market St, New York, NY 64592",26.37,1.97,in-transit,TRUE
+240,373,FedEx,717ddc3e-869a-43c9-9,2025-08-25,,San Diego,"939 Oak Ave, San Antonio, TX 77681",6.96,3.12,in-transit,TRUE
+241,374,DHL,5e16dae6-a4af-42bc-8,2025-07-16,2025-07-19,Houston,"343 Pine Rd, Dallas, TX 78116",7.22,6.81,delivered,TRUE
+242,375,DHL,6c0bcfe8-30bf-4ecf-a,2025-07-06,2025-07-08,Houston,"620 Random Rd, Houston",47.21,2.26,delivered,TRUE
+243,377,USPS,431cf49b-3380-475d-b,2025-07-02,2025-07-03,New York,"400 Main St, Philadelphia, PA 60577",46.22,2.05,delivered,TRUE
+244,379,FedEx,ff6e4038-d107-4493-b,2025-06-09,2025-06-12,Dallas,"975 Pine Rd, New York, NY 49139",48.62,9.45,delivered,TRUE
+245,380,USPS,124bec0f-e7f2-46d6-a,2025-08-03,2025-08-08,San Jose,"515 Oak Ave, New York, NY 54815",41.0,7.76,delivered,TRUE
+246,381,USPS,2c914050-9a09-4fc9-8,2025-07-05,2025-07-11,New York,"580 Random Rd, New York",39.43,5.73,delivered,TRUE
+247,382,UPS,90c7db79-a2ed-40ec-9,2025-06-27,2025-07-03,Los Angeles,"153 Broadway, Chicago, IL 74004",46.04,8.03,delivered,TRUE
+248,384,UPS,14c33660-a883-4db0-a,2025-09-27,2025-09-29,Dallas,"296 Broadway, Philadelphia, PA 46211",27.36,8.91,delivered,TRUE
+249,385,UPS,c08e9ea2-62e1-4be0-b,2025-08-08,,Chicago,"270 Main St, Phoenix, AZ 50340",23.53,2.06,in-transit,TRUE
+250,386,USPS,24f030b1-c99e-456e-8,2025-07-26,2025-08-01,Philadelphia,"807 Main St, San Antonio, TX 83339",13.46,3.23,delivered,TRUE
+251,387,UPS,30d4c388-5e05-4516-b,2025-08-27,,San Diego,"384 Pine Rd, Chicago, IL 35830",39.59,4.56,in-transit,TRUE
+252,389,FedEx,1b5615ed-7e56-44f0-a,2025-07-05,2025-07-06,San Jose,"285 Market St, Houston, TX 90358",13.34,1.65,delivered,TRUE
+253,390,UPS,afe9c0d0-b246-444c-a,2025-08-25,2025-08-31,New York,"764 Main St, San Antonio, TX 86418",32.58,0.99,delivered,TRUE
+254,392,FedEx,93f74abf-35ea-4a99-a,2025-08-09,,San Diego,"881 Main St, Los Angeles, CA 11267",10.02,2.09,in-transit,TRUE
+255,394,DHL,43812d74-16af-4d93-a,2025-10-10,2025-10-12,New York,"54 Oak Ave, Los Angeles, CA 78125",39.42,1.87,delivered,TRUE
+256,396,UPS,bd732cad-2f13-46d5-a,2025-06-03,,Houston,"284 Main St, San Jose, CA 58840",46.53,1.36,in-transit,TRUE
+257,397,DHL,57002240-1f90-465e-8,2025-08-09,2025-08-11,Philadelphia,"319 Oak Ave, Houston, TX 96535",32.87,5.49,delivered,TRUE
+258,398,UPS,d640763e-bcda-4be6-9,2025-06-01,2025-06-06,Los Angeles,"105 Market St, New York, NY 59710",11.59,8.54,delivered,TRUE
+259,399,DHL,9d81ef1f-f1e7-4a65-a,2025-10-24,2025-10-31,Chicago,"327 Pine Rd, Dallas, TX 73131",39.44,9.96,delivered,TRUE
+260,400,UPS,587e1c1f-28e7-4052-b,2025-09-23,2025-09-26,Chicago,"16 Broadway, San Jose, CA 15539",24.83,5.79,delivered,TRUE
+261,401,FedEx,4f9ad593-3a94-449c-a,2025-06-02,2025-06-05,Chicago,"935 Pine Rd, Los Angeles, CA 73525",8.84,9.35,delivered,TRUE
+262,402,USPS,49ec76c6-a233-4cc7-a,2025-09-08,2025-09-13,San Jose,"885 Oak Ave, Los Angeles, CA 23238",9.8,4.18,delivered,TRUE
+263,403,UPS,9e057f0b-f44d-48fd-b,2025-09-17,2025-09-18,Dallas,"59 Random Rd, Dallas",21.76,3.11,delivered,FALSE
+264,404,DHL,6111cfd4-4255-46f0-a,2025-08-16,2025-08-20,San Diego,"218 Pine Rd, New York, NY 81987",7.66,6.72,delivered,TRUE
+265,405,USPS,3f88f25b-90fe-420f-b,2025-08-01,,San Antonio,"150 Random Rd, San Antonio",42.96,3.81,in-transit,FALSE
+266,406,DHL,a90b92a0-6bd9-4aab-9,2025-08-08,2025-08-09,Houston,"408 Main St, Chicago, IL 21939",43.71,7.55,delivered,TRUE
+267,407,FedEx,e0fc1daf-3723-4580-b,2025-09-21,,Phoenix,"355 Oak Ave, Dallas, TX 79979",31.35,9.33,in-transit,TRUE
+268,408,USPS,4082679b-5f6b-4aa3-9,2025-09-10,2025-09-12,Dallas,"915 Pine Rd, San Antonio, TX 47475",43.59,4.62,delivered,TRUE
+269,410,USPS,3c8e7e48-4ee9-4f46-a,2025-09-17,2025-09-18,Dallas,"174 Broadway, Chicago, IL 43425",41.09,3.79,delivered,TRUE
+270,411,UPS,c913a7ec-5817-41ba-8,2025-07-23,,Houston,"732 Pine Rd, Dallas, TX 64459",46.66,1.25,in-transit,TRUE
+271,412,FedEx,606f17e2-084b-4174-a,2025-06-04,2025-06-09,Chicago,"85 Market St, Chicago, IL 55293",23.32,9.83,delivered,TRUE
+272,413,FedEx,b5c68a95-eb84-4be6-b,2025-08-28,2025-08-31,Los Angeles,"105 Random Rd, Los Angeles",31.81,5.31,delivered,FALSE
+273,414,UPS,94a5f053-435e-4cc7-a,2025-09-09,,Houston,"987 Random Rd, Houston",7.37,3.93,in-transit,TRUE
+274,416,UPS,e8845ceb-489d-4e79-8,2025-08-11,,Philadelphia,"674 Pine Rd, New York, NY 23529",22.26,4.65,in-transit,TRUE
+275,419,USPS,9f21641d-a430-4ef5-8,2025-07-08,,Chicago,"702 Random Rd, Chicago",12.2,9.96,in-transit,TRUE
+276,420,DHL,68e1f6b2-95f0-441e-a,2025-07-20,,Phoenix,"838 Oak Ave, San Jose, CA 67366",20.15,8.21,in-transit,TRUE
+277,422,UPS,03ba1139-b8b1-480c-a,2025-08-28,2025-09-01,San Antonio,"237 Random Rd, San Antonio",24.46,1.1,delivered,TRUE
+278,424,UPS,579df8da-69f9-4ac8-9,2025-09-20,,San Jose,"354 Broadway, San Jose, CA 76809",14.28,3.52,in-transit,TRUE
+279,425,FedEx,d88a2642-80e9-43a9-8,2025-05-31,2025-06-07,Phoenix,"956 Broadway, Chicago, IL 66774",42.49,2.2,delivered,TRUE
+280,426,DHL,c213467b-bcbf-4424-9,2025-11-07,2025-11-10,San Antonio,"444 Random Rd, San Antonio",44.01,7.5,delivered,TRUE
+281,428,DHL,a58af78d-260a-46da-b,2025-11-04,2025-11-10,San Diego,"919 Oak Ave, San Antonio, TX 54922",8.32,3.18,delivered,TRUE
+282,430,USPS,ca993851-e17b-4f6d-a,2025-07-01,2025-07-04,Philadelphia,"306 Main St, San Antonio, TX 63088",47.29,7.61,delivered,TRUE
+283,431,USPS,105eb1a3-494a-4337-b,2025-10-15,2025-10-17,New York,"204 Main St, San Antonio, TX 22704",31.88,4.38,delivered,TRUE
+284,432,DHL,7c2c1225-62fb-4036-b,2025-05-26,2025-05-29,Phoenix,"628 Random Rd, Phoenix",28.96,3.88,delivered,TRUE
+285,435,UPS,fb75d32e-98fa-42ce-a,2025-10-15,2025-10-20,San Antonio,"382 Main St, Philadelphia, PA 39218",36.26,2.05,delivered,TRUE
+286,437,DHL,e2fc6951-eb2e-408f-9,2025-07-23,2025-07-28,San Jose,"833 Main St, Philadelphia, PA 71385",46.06,2.38,delivered,TRUE
+287,438,DHL,49529bfb-0576-41e4-8,2025-05-26,2025-05-27,Philadelphia,"529 Pine Rd, Phoenix, AZ 97410",43.06,2.5,delivered,TRUE
+288,439,UPS,68fae357-0e4e-4377-a,2025-05-14,2025-05-17,Chicago,"392 Market St, Los Angeles, CA 70161",9.31,7.47,delivered,TRUE
+289,442,USPS,726b5737-f131-456d-b,2025-07-10,,Philadelphia,"408 Main St, Chicago, IL 21939",41.53,2.7,in-transit,TRUE
+290,443,FedEx,69474734-8316-4030-b,2025-08-27,,Phoenix,"394 Main St, San Antonio, TX 99486",42.83,4.76,in-transit,TRUE
+291,444,DHL,f991fd63-6488-4f7f-a,2025-07-11,,Dallas,"224 Broadway, Houston, TX 55957",42.7,0.46,in-transit,TRUE
+292,445,USPS,d836fec6-a038-4bb6-8,2025-06-04,2025-06-07,Dallas,"711 Market St, San Antonio, TX 64477",45.16,9.86,delivered,TRUE
+293,446,USPS,3461facd-0fba-470d-b,2025-11-05,2025-11-07,San Antonio,"795 Pine Rd, Phoenix, AZ 31992",19.43,6.41,delivered,TRUE
+294,449,DHL,796bd34f-d99a-4b27-8,2025-06-05,2025-06-10,San Diego,"218 Pine Rd, New York, NY 81987",16.7,3.62,delivered,TRUE
+295,451,UPS,e7560eca-2251-4a07-8,2025-05-11,2025-05-17,San Jose,"673 Random Rd, San Jose",37.9,8.51,delivered,TRUE
+296,453,DHL,a1194038-0953-436d-b,2025-08-25,,Chicago,"826 Random Rd, Chicago",19.7,5.25,in-transit,TRUE
+297,456,USPS,9d133b5d-6f7f-412e-b,2025-08-02,2025-08-08,Dallas,"993 Main St, San Jose, CA 37235",7.78,6.99,delivered,TRUE
+298,459,DHL,7d74c25d-1ad7-41c1-b,2025-08-02,2025-08-09,San Antonio,"670 Market St, San Jose, CA 53463",46.69,7.68,delivered,TRUE
+299,460,USPS,1b3d9981-1391-4e11-a,2025-10-31,2025-11-05,Los Angeles,"400 Pine Rd, San Jose, CA 24201",28.85,5.52,delivered,TRUE
+300,461,USPS,e611e090-2fb9-40d1-a,2025-09-13,2025-09-18,San Jose,"118 Market St, San Diego, CA 57472",21.79,1.25,delivered,TRUE
+301,462,FedEx,824d86e9-7a07-4879-b,2025-06-19,,Houston,"981 Market St, New York, NY 76402",41.16,4.24,in-transit,TRUE
+302,465,FedEx,ab2f7bd0-f571-4af7-8,2025-08-16,2025-08-22,San Jose,"641 Random Rd, San Jose",25.89,1.88,delivered,TRUE
+303,466,FedEx,ae04cd06-f8ea-4490-9,2025-08-09,2025-08-10,New York,"231 Oak Ave, San Jose, CA 53064",37.77,6.3,delivered,TRUE
+304,467,FedEx,d11ac1fd-f918-45dd-a,2025-06-25,2025-06-30,San Antonio,"596 Pine Rd, Dallas, TX 71263",19.32,8.06,delivered,TRUE
+305,468,UPS,66f8d399-0659-4bc7-9,2025-05-16,2025-05-19,San Diego,"641 Pine Rd, San Jose, CA 89377",21.48,8.18,delivered,FALSE
+306,469,DHL,19bb5b81-3f1f-4ca5-b,2025-05-14,,Houston,"319 Oak Ave, Houston, TX 96535",8.43,6.9,in-transit,FALSE
+307,470,UPS,3eddf43e-3cf1-42e3-9,2025-07-05,2025-07-08,San Antonio,"290 Random Rd, San Antonio",32.98,4.93,delivered,TRUE
+308,471,UPS,4e18891d-aca2-42d5-a,2025-08-15,2025-08-21,Phoenix,"956 Broadway, Chicago, IL 66774",34.6,2.27,delivered,TRUE
+309,472,DHL,c905eb14-2aa9-42fc-9,2025-06-18,,New York,"943 Oak Ave, San Diego, CA 94852",30.57,7.26,in-transit,TRUE
+310,473,USPS,a5c7488a-e6df-401f-8,2025-07-09,2025-07-16,Dallas,"330 Pine Rd, Los Angeles, CA 49223",6.79,9.61,delivered,TRUE
+311,474,FedEx,88440908-2389-4115-8,2025-10-05,2025-10-07,New York,"797 Oak Ave, Chicago, IL 94085",47.73,4.95,delivered,TRUE
+312,476,USPS,fb8d687d-7454-4721-a,2025-07-30,,Dallas,"516 Market St, San Antonio, TX 41979",23.54,4.7,in-transit,TRUE
+313,478,FedEx,8ff64582-341e-4a1d-9,2025-08-07,,San Diego,"727 Pine Rd, San Antonio, TX 57851",26.41,9.72,in-transit,TRUE
+314,479,FedEx,e9ee7eb5-8537-4ca7-a,2025-06-09,,San Jose,"480 Broadway, Chicago, IL 54869",25.13,6.17,in-transit,TRUE
+315,481,UPS,122daccf-ae2c-4bc1-8,2025-07-05,2025-07-06,Los Angeles,"225 Pine Rd, San Jose, CA 36685",5.73,4.12,delivered,TRUE
+316,483,USPS,59602b42-4bcd-4fc8-a,2025-05-12,2025-05-19,San Diego,"491 Random Rd, San Diego",7.32,6.03,delivered,TRUE
+317,484,FedEx,529e7d75-f6d2-45e2-b,2025-10-18,2025-10-23,Houston,"29 Main St, San Diego, CA 57576",21.67,6.82,delivered,TRUE
+318,485,UPS,e36325dc-bb17-4298-a,2025-05-15,,Los Angeles,"994 Market St, Philadelphia, PA 99337",22.01,0.23,in-transit,TRUE
+319,486,UPS,a6e83458-f7f1-48dc-a,2025-08-31,2025-09-02,San Diego,"904 Main St, Chicago, IL 36486",5.29,0.81,delivered,FALSE
+320,487,FedEx,a8e15d76-e155-443a-b,2025-07-31,2025-08-02,Chicago,"284 Market St, New York, NY 98299",37.62,1.86,delivered,TRUE
+321,488,USPS,3b3e537b-69e2-4f97-b,2025-06-05,2025-06-07,San Jose,"52 Random Rd, San Jose",9.31,7.5,delivered,TRUE
+322,489,UPS,33d82ab6-d250-4b93-a,2025-05-21,2025-05-28,Los Angeles,"225 Pine Rd, San Jose, CA 36685",38.03,5.75,delivered,TRUE
+323,490,UPS,f5934162-2718-48d2-8,2025-10-25,,San Jose,"568 Main St, Chicago, IL 58393",5.23,3.94,in-transit,TRUE
+324,492,DHL,aef7ba22-c70e-4c30-b,2025-10-21,,Dallas,"811 Market St, Philadelphia, PA 97806",42.94,0.59,in-transit,TRUE
+325,493,UPS,31901450-708f-414e-b,2025-05-29,2025-06-03,Phoenix,"998 Broadway, Dallas, TX 53515",8.67,8.07,delivered,TRUE
+326,494,FedEx,89ce1042-f478-4042-9,2025-06-17,2025-06-19,Chicago,"582 Random Rd, Chicago",38.47,3.76,delivered,TRUE
+327,495,USPS,760a1060-a5e3-4398-9,2025-07-29,2025-08-05,Chicago,"402 Market St, San Jose, CA 34347",27.81,3.98,delivered,TRUE
+328,496,UPS,49a29d95-2d94-4ba3-b,2025-07-11,,Los Angeles,"146 Market St, Dallas, TX 19808",45.42,4.95,in-transit,TRUE
+329,497,USPS,cd80f776-c1f5-4c69-b,2025-09-05,2025-09-12,Philadelphia,"811 Market St, Philadelphia, PA 97806",43.42,7.91,delivered,TRUE
+330,500,UPS,fcdbc656-1c5e-44a1-9,2025-06-19,,Philadelphia,"683 Broadway, San Antonio, TX 84085",48.74,7.12,in-transit,TRUE
+331,502,FedEx,7ffe1b8a-55dc-4a42-9,2025-08-25,,Los Angeles,"790 Oak Ave, Chicago, IL 73035",46.22,8.37,in-transit,TRUE
+332,506,USPS,101be4d6-7b9f-40ab-9,2025-06-23,,New York,"46 Broadway, Dallas, TX 18968",36.29,9.49,in-transit,TRUE
+333,507,UPS,0059c055-e24c-4fb3-b,2025-10-01,,Philadelphia,"576 Broadway, Houston, TX 88644",49.23,1.87,in-transit,TRUE
+334,508,DHL,df179063-bb64-4883-a,2025-11-01,,Chicago,"366 Pine Rd, Dallas, TX 71393",14.69,9.66,in-transit,TRUE
+335,510,USPS,10312c48-2404-4ba4-8,2025-10-04,,San Diego,"479 Market St, New York, NY 75358",17.94,4.54,in-transit,TRUE
+336,511,FedEx,98005fdf-c86c-4172-8,2025-10-13,2025-10-19,Houston,"377 Pine Rd, Phoenix, AZ 66450",5.11,0.36,delivered,TRUE
+337,512,UPS,c1cfa57d-516d-4ff2-a,2025-08-13,2025-08-18,Chicago,"697 Market St, Los Angeles, CA 65514",15.58,7.83,delivered,TRUE
+338,513,USPS,873b3375-c7ef-4868-9,2025-10-30,2025-11-06,San Diego,"474 Main St, Chicago, IL 44522",18.83,8.87,delivered,TRUE
+339,515,UPS,6a8cb2ea-6598-40bd-8,2025-10-26,2025-10-30,Dallas,"204 Main St, San Antonio, TX 22704",27.45,2.11,delivered,TRUE
+340,517,DHL,e1fd87cd-13ec-4375-9,2025-06-05,,Phoenix,"956 Market St, Philadelphia, PA 95979",15.37,7.04,in-transit,TRUE
+341,518,DHL,192c6b5d-e0ef-4634-9,2025-07-13,2025-07-17,San Diego,"355 Oak Ave, Dallas, TX 79979",12.86,3.91,delivered,TRUE
+342,521,DHL,0c8e1e58-85a7-46c4-b,2025-10-01,2025-10-08,San Jose,"539 Broadway, Houston, TX 99737",47.55,3.26,delivered,TRUE
+343,522,USPS,e8914aae-8750-4b38-8,2025-05-23,2025-05-29,New York,"515 Oak Ave, New York, NY 54815",40.64,5.03,delivered,TRUE
+344,523,USPS,6555711e-57eb-4d6f-b,2025-09-11,,San Jose,"109 Market St, Phoenix, AZ 26769",43.92,9.88,in-transit,TRUE
+345,526,USPS,4d1140f0-535a-4522-9,2025-07-04,2025-07-09,Phoenix,"241 Oak Ave, Houston, TX 30308",45.92,3.57,delivered,TRUE
+346,529,DHL,63332ce8-2380-447b-b,2025-07-07,2025-07-08,Houston,"977 Market St, Los Angeles, CA 76249",10.01,2.14,delivered,TRUE
+347,530,FedEx,fd00ba54-d21d-4163-9,2025-11-03,2025-11-09,San Jose,"871 Main St, Houston, TX 70482",33.6,1.91,delivered,TRUE
+348,531,FedEx,2cdc4dc7-c187-4bfa-8,2025-07-02,2025-07-09,Houston,"572 Pine Rd, Los Angeles, CA 83284",47.18,7.81,delivered,TRUE
+349,533,DHL,20560b3e-4954-4edc-9,2025-05-12,,San Antonio,"469 Oak Ave, Dallas, TX 65296",48.24,2.72,in-transit,TRUE
+350,534,FedEx,f2cdd5a8-1f63-439a-a,2025-08-29,,Phoenix,"485 Broadway, Chicago, IL 76900",27.48,3.19,in-transit,TRUE
+351,535,USPS,84e8ebc0-6293-4a95-9,2025-07-07,2025-07-10,San Antonio,"482 Pine Rd, Houston, TX 70236",20.42,2.9,delivered,TRUE
+352,536,UPS,20beeea4-4ae9-4638-9,2025-08-15,2025-08-21,New York,"231 Oak Ave, San Jose, CA 53064",11.99,1.18,delivered,TRUE
+353,537,USPS,1fa4b078-9707-4c55-b,2025-05-31,,San Antonio,"978 Market St, Phoenix, AZ 90658",39.06,8.95,in-transit,TRUE
+354,538,FedEx,3c0d70c2-f5d1-44d7-b,2025-06-08,,Houston,"136 Broadway, San Antonio, TX 43126",49.25,2.31,in-transit,TRUE
+355,540,FedEx,931b2738-2e2c-4703-b,2025-07-31,2025-08-07,Philadelphia,"485 Broadway, Chicago, IL 76900",14.83,4.0,delivered,TRUE
+356,542,DHL,4e494e24-7081-4547-b,2025-06-24,2025-06-26,Dallas,"892 Pine Rd, Philadelphia, PA 55268",41.72,7.75,delivered,TRUE
+357,543,UPS,cd3fde25-824d-41dc-a,2025-08-07,2025-08-12,Chicago,"820 Oak Ave, Philadelphia, PA 28035",48.79,9.78,delivered,TRUE
+358,544,UPS,cadf6532-b23e-4d97-9,2025-06-04,2025-06-09,New York,"301 Market St, San Jose, CA 72746",14.08,8.13,delivered,TRUE
+359,545,UPS,6383ff78-265a-46ba-8,2025-05-09,,Los Angeles,"821 Random Rd, Los Angeles",45.51,6.79,in-transit,TRUE
+360,546,UPS,5c432434-1052-4fb8-b,2025-09-21,2025-09-22,Phoenix,"907 Random Rd, Phoenix",10.18,0.97,delivered,TRUE
+361,548,FedEx,c8565883-5f23-4857-a,2025-09-14,2025-09-15,San Antonio,"354 Broadway, San Jose, CA 76809",14.53,3.67,delivered,TRUE
+362,549,UPS,4be47072-22cc-4813-9,2025-08-09,,Dallas,"335 Pine Rd, San Jose, CA 87537",10.09,5.54,in-transit,TRUE
+363,550,UPS,6388b5f8-e255-4788-8,2025-08-13,2025-08-17,Philadelphia,"998 Broadway, Dallas, TX 53515",30.96,0.83,delivered,TRUE
+364,551,USPS,3dfbe5e0-f075-4a4b-8,2025-07-30,,San Diego,"636 Oak Ave, Dallas, TX 59634",6.02,8.89,in-transit,TRUE
+365,552,UPS,62f1feb3-6489-44ee-8,2025-08-08,2025-08-15,Chicago,"890 Market St, Los Angeles, CA 27324",44.23,3.83,delivered,FALSE
+366,553,UPS,4d6b9855-76be-4058-a,2025-10-09,,San Jose,"533 Pine Rd, Houston, TX 97096",7.8,6.52,in-transit,TRUE
+367,554,UPS,ba904889-e27d-4542-8,2025-05-13,2025-05-15,New York,"650 Pine Rd, Chicago, IL 90534",11.26,4.98,delivered,TRUE
+368,556,USPS,76bcb06b-4385-4483-9,2025-07-21,,San Antonio,"750 Main St, Phoenix, AZ 61897",22.86,3.03,in-transit,TRUE
+369,558,UPS,8873bc30-c480-43d8-b,2025-08-03,,Houston,"782 Broadway, San Diego, CA 85952",42.54,5.36,in-transit,TRUE
+370,560,DHL,b52153ab-14ac-466a-8,2025-09-24,2025-09-26,San Antonio,"839 Random Rd, San Antonio",23.77,2.42,delivered,TRUE
+371,561,FedEx,d5df630e-350a-4cde-8,2025-10-31,,Phoenix,"630 Oak Ave, Houston, TX 69606",8.56,0.8,in-transit,TRUE
+372,562,DHL,8421a638-cd20-477b-b,2025-08-20,2025-08-25,Dallas,"718 Market St, San Diego, CA 58148",49.66,2.91,delivered,TRUE
+373,564,USPS,4c8df5ea-0e98-4917-8,2025-07-31,2025-08-02,San Antonio,"515 Oak Ave, Dallas, TX 76088",11.03,2.36,delivered,TRUE
+374,565,DHL,fb9337c5-5336-42ef-b,2025-10-21,2025-10-28,Phoenix,"939 Oak Ave, San Antonio, TX 77681",44.99,2.96,delivered,TRUE
+375,566,UPS,e573db96-e9f9-4063-9,2025-10-11,,Houston,"863 Random Rd, Houston",23.59,3.14,in-transit,TRUE
+376,568,USPS,f3e3e5c4-752e-429e-a,2025-10-15,,Dallas,"978 Main St, New York, NY 49893",45.87,8.75,in-transit,TRUE
+377,569,USPS,e8283ff7-d7aa-4e0a-9,2025-10-22,2025-10-28,San Diego,"655 Market St, San Diego, CA 66757",16.08,7.95,delivered,TRUE
+378,570,DHL,ca3e4ce5-5bc4-4a92-a,2025-05-15,2025-05-18,Chicago,"394 Oak Ave, New York, NY 51405",41.05,1.79,delivered,TRUE
+379,572,FedEx,ad8dc7c4-b91d-4e8a-9,2025-10-25,2025-10-30,San Diego,"328 Broadway, Los Angeles, CA 62872",13.42,8.02,delivered,TRUE
+380,573,USPS,851bbc28-4228-45b9-a,2025-07-08,2025-07-11,New York,"103 Market St, San Diego, CA 55607",11.81,0.41,delivered,TRUE
+381,574,DHL,540f67b8-8d42-407c-9,2025-08-30,,San Jose,"867 Pine Rd, Chicago, IL 21847",10.33,7.66,in-transit,TRUE
+382,575,USPS,5413f990-4d92-4f84-a,2025-08-26,2025-08-31,Philadelphia,"625 Oak Ave, San Antonio, TX 86368",21.73,5.75,delivered,TRUE
+383,576,DHL,a6cc3fde-30ea-484e-a,2025-05-10,,Philadelphia,"116 Oak Ave, Phoenix, AZ 79443",36.66,5.55,in-transit,TRUE
+384,577,FedEx,ed82b1fe-137b-40b8-b,2025-08-03,2025-08-09,San Antonio,"699 Main St, New York, NY 17944",43.23,2.31,delivered,TRUE
+385,578,UPS,cae9e75c-6eee-4754-a,2025-08-06,,Houston,"958 Random Rd, Houston",6.46,6.78,in-transit,TRUE
+386,580,USPS,99c29345-906e-4898-8,2025-10-25,,Philadelphia,"553 Pine Rd, Dallas, TX 65771",47.4,6.03,in-transit,TRUE
+387,581,DHL,2798d002-a06e-4932-9,2025-10-17,,Philadelphia,"285 Market St, Houston, TX 90358",36.19,4.65,in-transit,TRUE
+388,582,UPS,2e5a55ee-5e5f-4b1b-8,2025-10-06,,Houston,"268 Oak Ave, Houston, TX 65460",12.91,3.72,in-transit,TRUE
+389,583,UPS,98907e57-9c37-4e42-a,2025-05-16,2025-05-22,San Diego,"25 Oak Ave, Philadelphia, PA 46188",10.54,10.0,delivered,TRUE
+390,585,USPS,510222b7-4f7d-4fe6-a,2025-08-12,2025-08-13,San Diego,"165 Market St, San Antonio, TX 36724",10.49,2.53,delivered,TRUE
+391,587,FedEx,8cdde634-9c01-4812-8,2025-09-22,2025-09-24,San Antonio,"620 Main St, San Antonio, TX 60432",45.12,8.36,delivered,TRUE
+392,588,USPS,5810fcf2-0248-4a4a-8,2025-06-08,2025-06-11,Los Angeles,"749 Oak Ave, New York, NY 63736",24.29,3.23,delivered,TRUE
+393,589,UPS,f29247d1-608e-4261-9,2025-08-13,2025-08-18,San Diego,"674 Pine Rd, New York, NY 23529",25.59,0.87,delivered,TRUE
+394,590,USPS,fbdb1856-aea6-4870-8,2025-07-30,,San Jose,"230 Random Rd, San Jose",45.32,6.76,in-transit,TRUE
+395,594,USPS,b73a8d45-d9b6-4a7a-8,2025-08-06,,New York,"309 Main St, Houston, TX 46025",40.26,2.93,in-transit,TRUE
+396,596,DHL,af6ed141-0ac9-4372-a,2025-07-31,2025-08-02,Philadelphia,"694 Market St, Philadelphia, PA 31632",12.16,9.1,delivered,TRUE
+397,598,FedEx,154c1479-b3d6-4056-a,2025-05-27,2025-06-03,Phoenix,"92 Oak Ave, Philadelphia, PA 17345",35.3,2.18,delivered,TRUE
+398,600,UPS,b68c323c-338e-4490-9,2025-06-29,2025-07-06,Chicago,"867 Main St, Houston, TX 42701",33.99,6.24,delivered,TRUE
+399,602,DHL,855d2009-f8b2-4751-9,2025-09-14,2025-09-20,Dallas,"683 Market St, San Jose, CA 19120",30.13,1.7,delivered,TRUE
+400,603,USPS,2c38e45e-5f9f-46db-b,2025-07-02,2025-07-05,Los Angeles,"268 Pine Rd, Philadelphia, PA 25194",15.0,6.64,delivered,TRUE
+401,605,USPS,65e2bbd8-a0ae-457d-8,2025-09-01,2025-09-07,San Jose,"460 Random Rd, San Jose",6.63,3.96,delivered,TRUE
+402,606,USPS,317def33-9169-4e21-9,2025-06-16,2025-06-22,Chicago,"760 Random Rd, Chicago",48.46,7.43,delivered,TRUE
+403,608,USPS,477a78a8-23ad-4b72-a,2025-07-11,2025-07-18,Phoenix,"440 Market St, Houston, TX 98777",8.54,3.0,delivered,TRUE
+404,613,UPS,a4a356f5-334e-478a-b,2025-08-01,,Los Angeles,"635 Market St, Chicago, IL 66059",8.92,3.94,in-transit,TRUE
+405,614,USPS,e5079712-0e87-411d-b,2025-10-31,,Philadelphia,"241 Oak Ave, Houston, TX 30308",48.39,1.87,in-transit,TRUE
+406,615,UPS,2a4efaf8-e887-40cf-8,2025-10-20,,Los Angeles,"89 Oak Ave, San Diego, CA 87814",22.69,6.99,in-transit,TRUE
+407,617,FedEx,cc30391d-2821-461c-b,2025-10-03,2025-10-05,San Antonio,"633 Main St, San Jose, CA 50539",12.64,6.91,delivered,TRUE
+408,618,FedEx,8b33dc0e-87ba-4f57-9,2025-08-31,2025-09-03,Chicago,"986 Market St, New York, NY 19034",31.76,1.07,delivered,TRUE
+409,619,UPS,99ec114f-ceda-4e1d-8,2025-11-03,2025-11-04,Houston,"281 Market St, Houston, TX 27154",42.64,7.4,delivered,TRUE
+410,620,DHL,40fe9d40-1aa0-4919-9,2025-08-11,,Dallas,"987 Random Rd, Dallas",8.53,6.77,in-transit,TRUE
+411,623,USPS,085bd741-be08-4877-b,2025-06-13,,Philadelphia,"198 Pine Rd, Los Angeles, CA 29073",18.86,8.72,in-transit,FALSE
+412,624,USPS,6c89e119-a806-411e-8,2025-05-16,,Phoenix,"811 Random Rd, Phoenix",41.67,7.68,in-transit,TRUE
+413,626,DHL,3acdf73a-0f2b-4c6d-9,2025-05-21,,San Diego,"288 Pine Rd, Houston, TX 51904",46.41,1.39,in-transit,TRUE
+414,627,UPS,43eae8bb-6cbf-404f-b,2025-07-04,2025-07-08,Philadelphia,"29 Main St, San Diego, CA 57576",27.56,1.15,delivered,TRUE
+415,628,FedEx,e9363616-9c87-4f13-a,2025-10-22,2025-10-24,Philadelphia,"670 Main St, Los Angeles, CA 90610",43.67,9.53,delivered,TRUE
+416,629,UPS,93becf2f-7072-4876-b,2025-09-26,,Houston,"651 Oak Ave, Phoenix, AZ 25408",19.96,7.4,in-transit,TRUE
+417,630,UPS,9877b7ee-a8ce-46b6-8,2025-09-16,2025-09-23,San Antonio,"423 Random Rd, San Antonio",25.39,0.77,delivered,TRUE
+418,632,DHL,1820a6c1-7bde-4f65-8,2025-09-06,2025-09-09,New York,"184 Pine Rd, Houston, TX 20739",37.36,3.94,delivered,TRUE
+419,633,USPS,6ccb2a22-1b85-46f1-b,2025-07-11,2025-07-15,San Jose,"377 Pine Rd, Phoenix, AZ 66450",5.87,9.38,delivered,TRUE
+420,636,DHL,07078511-2f76-4696-9,2025-10-04,2025-10-05,New York,"440 Random Rd, New York",21.76,8.62,delivered,TRUE
+421,638,DHL,82734be8-4127-4229-8,2025-10-29,2025-11-02,Phoenix,"474 Pine Rd, San Antonio, TX 97881",17.2,1.25,delivered,TRUE
+422,639,UPS,253bae7e-865f-4ca8-9,2025-09-20,2025-09-22,Phoenix,"126 Main St, Dallas, TX 72422",35.35,8.41,delivered,TRUE
+423,640,FedEx,64e8fa4c-e188-4c8c-8,2025-06-22,2025-06-27,Phoenix,"450 Broadway, Los Angeles, CA 33652",19.33,7.92,delivered,TRUE
+424,642,FedEx,5543ff0a-9cbd-4757-8,2025-07-16,2025-07-17,Los Angeles,"971 Pine Rd, San Diego, CA 15297",5.35,5.23,delivered,TRUE
+425,643,UPS,739f6165-ea4c-406c-8,2025-09-20,2025-09-22,Dallas,"918 Random Rd, Dallas",31.66,7.17,delivered,TRUE
+426,645,UPS,f1dd1ced-7977-4acb-b,2025-10-12,2025-10-14,San Diego,"823 Pine Rd, Chicago, IL 83149",30.49,5.16,delivered,TRUE
+427,647,DHL,a910c002-fe97-4cae-8,2025-05-13,2025-05-18,Los Angeles,"640 Broadway, Dallas, TX 42275",44.39,1.46,delivered,TRUE
+428,649,UPS,624898d1-3efa-49ba-9,2025-10-28,2025-10-29,Dallas,"828 Oak Ave, San Jose, CA 30758",25.94,3.75,delivered,TRUE
+429,650,UPS,65d84169-ddb2-4791-b,2025-06-06,,Los Angeles,"341 Pine Rd, Chicago, IL 47923",48.43,4.42,in-transit,TRUE
+430,651,FedEx,dd0b33ab-4958-439e-b,2025-06-16,,Philadelphia,"541 Broadway, Philadelphia, PA 91033",10.68,1.49,in-transit,TRUE
+431,653,FedEx,f3c25264-1f1a-4f99-9,2025-08-06,2025-08-09,Chicago,"54 Oak Ave, Los Angeles, CA 78125",12.56,1.25,delivered,TRUE
+432,654,DHL,d4280810-1679-40aa-a,2025-09-20,,San Antonio,"601 Oak Ave, San Jose, CA 16731",20.16,7.54,in-transit,TRUE
+433,655,UPS,5a299731-a88f-42a6-a,2025-05-30,,Houston,"525 Pine Rd, Chicago, IL 40692",14.28,8.49,in-transit,TRUE
+434,656,FedEx,d468d14a-3e13-4e87-b,2025-09-01,2025-09-04,San Jose,"782 Broadway, San Diego, CA 85952",10.21,3.4,delivered,TRUE
+435,658,DHL,1ceacb73-7485-43e2-a,2025-09-17,2025-09-23,San Diego,"462 Market St, San Diego, CA 98555",41.0,7.88,delivered,TRUE
+436,660,DHL,cd6a527f-25f7-4184-8,2025-08-07,2025-08-09,San Diego,"323 Market St, Phoenix, AZ 88986",34.67,0.81,delivered,TRUE
+437,661,DHL,fdfb4e00-3642-4f77-b,2025-07-10,2025-07-12,Philadelphia,"807 Pine Rd, Houston, TX 57467",38.91,4.35,delivered,TRUE
+438,663,UPS,ff7c8713-d963-4a81-8,2025-06-07,2025-06-11,Houston,"183 Main St, San Jose, CA 57151",25.51,4.79,delivered,TRUE
+439,664,FedEx,b7742c86-afe3-4325-a,2025-11-01,,Dallas,"719 Random Rd, Dallas",23.6,5.44,in-transit,TRUE
+440,665,UPS,9136419d-5ab5-4839-a,2025-07-26,2025-07-28,Phoenix,"680 Main St, San Antonio, TX 74139",15.54,3.47,delivered,TRUE
+441,666,DHL,56400dd0-a04e-4b2e-9,2025-10-29,2025-11-02,New York,"945 Market St, Houston, TX 73499",19.0,6.01,delivered,TRUE
+442,667,USPS,3e382e3b-4a2e-4a10-b,2025-05-26,2025-05-31,San Diego,"557 Main St, San Diego, CA 74478",25.06,6.53,delivered,TRUE
+443,670,USPS,ff9b0186-51a7-46f0-8,2025-08-15,2025-08-18,Phoenix,"735 Random Rd, Phoenix",29.25,1.33,delivered,TRUE
+444,671,FedEx,fa7a1770-4416-4c26-a,2025-07-16,,San Diego,"328 Broadway, Los Angeles, CA 62872",32.67,5.67,in-transit,TRUE
+445,673,USPS,e2b5aabb-b495-4ef6-9,2025-06-14,2025-06-16,Philadelphia,"508 Broadway, Phoenix, AZ 24264",27.95,9.41,delivered,TRUE
+446,674,USPS,2c7a555f-343c-4a48-a,2025-10-11,2025-10-18,New York,"431 Market St, Philadelphia, PA 47777",7.61,7.74,delivered,TRUE
+447,675,USPS,c3454b29-f932-4b6c-8,2025-10-10,2025-10-13,San Antonio,"819 Market St, Los Angeles, CA 11824",7.42,7.11,delivered,TRUE
+448,676,DHL,31c6ce2e-6949-4a25-9,2025-09-20,,San Antonio,"644 Random Rd, San Antonio",36.04,2.35,in-transit,TRUE
+449,677,DHL,21277ad3-4992-49f9-b,2025-07-25,,Phoenix,"152 Pine Rd, Chicago, IL 49469",44.81,0.97,in-transit,TRUE
+450,679,FedEx,cd35238f-d244-4631-a,2025-09-22,2025-09-25,Houston,"171 Pine Rd, Philadelphia, PA 23487",16.86,8.35,delivered,FALSE
+451,682,FedEx,9a91393d-d82d-4451-9,2025-09-27,,San Diego,"116 Market St, Chicago, IL 87430",32.49,7.3,in-transit,TRUE
+452,683,DHL,51992838-c75f-414d-8,2025-10-27,,San Diego,"382 Market St, Houston, TX 19171",42.75,3.79,in-transit,TRUE
+453,684,DHL,8f9636e5-e455-4a6e-9,2025-06-30,,New York,"40 Pine Rd, Philadelphia, PA 69054",41.81,6.39,in-transit,TRUE
+454,685,FedEx,a1787053-d040-47fe-9,2025-08-25,2025-08-30,Houston,"981 Market St, New York, NY 76402",49.05,4.52,delivered,TRUE
+455,686,UPS,6f3c2a21-8c85-45a8-a,2025-07-11,2025-07-14,Phoenix,"877 Random Rd, Phoenix",6.51,7.41,delivered,TRUE
+456,689,FedEx,d3a1af92-1c81-442d-9,2025-07-15,,Phoenix,"695 Broadway, New York, NY 39579",31.34,9.04,in-transit,TRUE
+457,690,FedEx,e05be806-d1c2-40e1-a,2025-08-29,,Los Angeles,"542 Random Rd, Los Angeles",49.38,0.74,in-transit,FALSE
+458,693,FedEx,a44f23ab-9668-4039-8,2025-10-03,2025-10-06,New York,"244 Main St, New York, NY 14117",20.09,7.6,delivered,TRUE
+459,695,DHL,c8a559c3-f469-49d4-8,2025-06-02,2025-06-08,Los Angeles,"152 Pine Rd, Chicago, IL 49469",13.91,7.35,delivered,TRUE
+460,696,UPS,37048ada-f023-4167-9,2025-10-25,2025-10-26,Houston,"931 Broadway, San Antonio, TX 34914",34.89,4.48,delivered,TRUE
+461,698,USPS,53c31bc7-6db1-46e3-a,2025-07-04,,San Antonio,"366 Pine Rd, Dallas, TX 71393",9.34,9.47,in-transit,TRUE
+462,699,DHL,bbb1511d-57a9-48c5-a,2025-09-18,2025-09-23,Dallas,"204 Market St, Houston, TX 82628",37.23,6.5,delivered,TRUE
+463,700,USPS,fc02c1f9-4c98-40f9-b,2025-09-14,2025-09-19,Phoenix,"284 Main St, San Jose, CA 58840",43.41,6.33,delivered,TRUE
+464,701,DHL,2056f6bd-ff39-48df-9,2025-07-11,2025-07-17,Philadelphia,"759 Market St, Los Angeles, CA 19071",36.53,4.88,delivered,TRUE
+465,704,DHL,e15d5733-2581-4ab0-8,2025-05-14,2025-05-19,Los Angeles,"89 Oak Ave, San Diego, CA 87814",46.28,6.1,delivered,TRUE
+466,706,DHL,79d06ee0-1840-4736-b,2025-07-21,2025-07-27,San Jose,"65 Random Rd, San Jose",31.5,9.1,delivered,TRUE
+467,707,USPS,bb44783e-7bf0-4ddd-a,2025-09-07,,San Jose,"415 Pine Rd, New York, NY 40689",9.34,5.48,in-transit,TRUE
+468,708,FedEx,8ab3aa64-3f5b-47cb-9,2025-07-22,2025-07-28,Houston,"532 Broadway, Houston, TX 83137",39.29,6.77,delivered,TRUE
+469,709,USPS,2aff9545-cfbd-48b8-8,2025-05-14,2025-05-19,San Antonio,"782 Broadway, San Diego, CA 85952",11.57,0.4,delivered,TRUE
+470,710,UPS,4de39049-dc61-4d79-8,2025-07-31,,Philadelphia,"229 Broadway, San Diego, CA 27342",33.87,9.96,in-transit,TRUE
+471,712,USPS,d383840d-a491-4a1e-8,2025-06-06,,Chicago,"804 Oak Ave, Phoenix, AZ 89569",9.22,2.87,in-transit,TRUE
+472,713,USPS,cd267484-41df-4f5d-9,2025-06-20,2025-06-24,San Antonio,"241 Oak Ave, Houston, TX 30308",42.98,9.98,delivered,TRUE
+473,714,USPS,aafaa0f7-6a14-4b15-b,2025-08-23,,Chicago,"869 Random Rd, Chicago",32.01,4.87,in-transit,TRUE
+474,715,DHL,b92c06e8-984c-47af-b,2025-07-03,2025-07-09,San Jose,"790 Oak Ave, Chicago, IL 73035",43.83,0.89,delivered,FALSE
+475,717,FedEx,56e66d6f-828a-420f-9,2025-10-21,,San Jose,"116 Market St, Chicago, IL 87430",38.98,5.99,in-transit,TRUE
+476,718,DHL,167aa094-c158-4f84-8,2025-06-10,2025-06-13,Houston,"230 Pine Rd, Chicago, IL 23396",29.42,4.1,delivered,TRUE
+477,719,DHL,a5cfd0a6-55d1-42ad-8,2025-10-06,,San Jose,"870 Main St, Phoenix, AZ 54453",23.5,3.89,in-transit,TRUE
+478,725,USPS,c3741d87-e627-4587-8,2025-10-25,2025-11-01,Houston,"306 Main St, San Antonio, TX 63088",18.5,3.34,delivered,TRUE
+479,726,UPS,bfd222ff-c991-4424-b,2025-06-11,,Houston,"450 Broadway, Los Angeles, CA 33652",20.5,2.13,in-transit,TRUE
+480,727,USPS,93ab481d-0366-49b8-8,2025-05-22,2025-05-28,Houston,"881 Main St, Los Angeles, CA 11267",30.13,8.38,delivered,TRUE
+481,728,FedEx,4ca5af20-d52d-478c-b,2025-08-04,2025-08-10,Philadelphia,"881 Main St, Los Angeles, CA 11267",49.09,0.85,delivered,TRUE
+482,731,UPS,b12cafb6-6b50-43db-a,2025-08-11,,New York,"343 Pine Rd, Dallas, TX 78116",28.39,3.45,in-transit,TRUE
+483,733,UPS,b1d40a56-7cda-49cc-a,2025-08-01,,New York,"860 Broadway, San Antonio, TX 68446",44.04,2.94,in-transit,TRUE
+484,738,DHL,dad61b5b-d626-42a7-8,2025-06-29,2025-06-30,Houston,"36 Pine Rd, San Jose, CA 85470",37.24,2.0,delivered,TRUE
+485,739,FedEx,707e6d6c-3310-4150-8,2025-10-02,2025-10-08,Houston,"882 Market St, San Jose, CA 55054",8.49,3.13,delivered,TRUE
+486,740,USPS,af087190-30ba-462e-9,2025-07-11,,Los Angeles,"727 Pine Rd, San Antonio, TX 57851",44.8,4.51,in-transit,TRUE
+487,741,FedEx,b91069c4-542b-41e7-a,2025-10-04,2025-10-08,San Antonio,"162 Oak Ave, Dallas, TX 35156",43.03,7.64,delivered,TRUE
+488,742,USPS,3607ca72-08b8-40f0-b,2025-08-26,,San Jose,"980 Oak Ave, San Jose, CA 72784",37.74,9.63,in-transit,TRUE
+489,746,UPS,fb61cb21-fdda-4677-9,2025-08-29,2025-08-30,New York,"703 Pine Rd, Phoenix, AZ 11461",27.28,5.06,delivered,TRUE
+490,747,UPS,de7c2990-1525-49e8-8,2025-07-28,,Chicago,"940 Broadway, San Diego, CA 95437",36.88,8.96,in-transit,TRUE
+491,749,UPS,8f754d4b-6826-4aac-8,2025-10-26,,Philadelphia,"674 Pine Rd, New York, NY 23529",37.94,5.01,in-transit,TRUE
+492,750,FedEx,11f494e5-2b6f-45de-a,2025-10-29,,Los Angeles,"240 Random Rd, Los Angeles",17.32,0.79,in-transit,TRUE
+493,751,DHL,c58e0c83-904e-4ec5-b,2025-06-24,2025-06-27,San Jose,"239 Main St, San Diego, CA 55890",41.74,6.3,delivered,TRUE
+494,752,UPS,383722c4-fd15-44dc-a,2025-09-13,2025-09-19,Philadelphia,"669 Oak Ave, Phoenix, AZ 69867",32.46,4.04,delivered,TRUE
+495,753,UPS,2199d8b0-a3df-49c9-a,2025-10-31,2025-11-03,San Diego,"53 Oak Ave, Houston, TX 77880",49.51,3.3,delivered,TRUE
+496,755,DHL,4ff5e80b-693e-4663-9,2025-08-18,2025-08-24,San Antonio,"954 Market St, Philadelphia, PA 88188",12.33,7.75,delivered,TRUE
+497,756,DHL,d4388e54-97a5-45b4-a,2025-10-25,2025-10-30,Philadelphia,"35 Main St, Chicago, IL 42092",25.81,6.83,delivered,TRUE
+498,757,FedEx,46950b57-024a-4502-9,2025-06-24,2025-06-26,Los Angeles,"151 Pine Rd, San Jose, CA 16839",43.44,6.63,delivered,TRUE
+499,758,DHL,db850e9f-f8bc-42a8-a,2025-10-20,2025-10-24,San Antonio,"861 Broadway, Phoenix, AZ 36433",5.05,8.65,delivered,TRUE
+500,760,FedEx,15369cbe-6f68-493a-8,2025-11-02,2025-11-03,New York,"140 Random Rd, New York",34.1,5.86,delivered,TRUE
+501,763,USPS,aeb0af1f-d27b-4ee9-9,2025-08-07,2025-08-13,Phoenix,"539 Broadway, Houston, TX 99737",20.16,4.54,delivered,TRUE
+502,765,UPS,2df66e6e-69c6-430d-a,2025-09-25,,Houston,"722 Market St, San Diego, CA 92802",36.47,0.3,in-transit,TRUE
+503,767,USPS,af385bb7-5ca2-442f-8,2025-09-03,2025-09-08,New York,"440 Random Rd, New York",24.06,9.52,delivered,TRUE
+504,768,DHL,0398d0c6-876f-4b43-9,2025-08-16,2025-08-22,San Jose,"99 Random Rd, San Jose",29.43,7.38,delivered,TRUE
+505,769,DHL,7edda556-98ca-4740-9,2025-06-27,2025-07-03,Dallas,"866 Broadway, Houston, TX 56665",36.36,6.1,delivered,TRUE
+506,770,FedEx,7d4d1dc7-5295-436a-a,2025-08-01,2025-08-02,Houston,"797 Pine Rd, San Diego, CA 60052",12.51,5.62,delivered,TRUE
+507,772,FedEx,99d03a30-286a-4631-b,2025-09-17,2025-09-21,New York,"901 Oak Ave, New York, NY 28004",26.17,3.85,delivered,TRUE
+508,773,USPS,913163fb-c294-4eef-a,2025-10-18,2025-10-22,Dallas,"386 Random Rd, Dallas",19.75,7.11,delivered,TRUE
+509,774,FedEx,ce3c53c6-e023-453f-9,2025-07-10,,Philadelphia,"140 Broadway, New York, NY 87640",5.19,1.6,in-transit,TRUE
+510,775,UPS,6c526ef6-28fd-4923-9,2025-09-04,2025-09-07,Houston,"620 Main St, San Jose, CA 16895",46.0,1.29,delivered,TRUE
+511,776,DHL,cf5f7de1-0343-42ac-a,2025-10-03,,Philadelphia,"235 Market St, New York, NY 88554",21.68,2.74,in-transit,TRUE
+512,779,FedEx,32a4c9a8-c95b-47d8-b,2025-07-20,2025-07-24,Phoenix,"405 Main St, San Diego, CA 41599",36.15,3.86,delivered,TRUE
+513,780,USPS,8319732b-2309-4e0d-a,2025-08-05,2025-08-08,Philadelphia,"565 Pine Rd, San Diego, CA 33010",48.55,6.54,delivered,TRUE
+514,781,FedEx,cf659a2d-26e7-4ace-9,2025-10-02,,Phoenix,"798 Random Rd, Phoenix",34.68,4.35,in-transit,TRUE
+515,782,DHL,6abb9cd2-8905-48f3-a,2025-10-14,2025-10-20,Phoenix,"585 Market St, New York, NY 64592",24.73,0.22,delivered,TRUE
+516,783,UPS,902a93f7-51e3-45ae-b,2025-09-21,2025-09-28,Dallas,"706 Broadway, Houston, TX 20730",26.66,0.89,delivered,FALSE
+517,784,DHL,66ed93e6-fe14-441c-8,2025-05-12,2025-05-15,Dallas,"712 Main St, Philadelphia, PA 86326",17.28,6.36,delivered,TRUE
+518,785,DHL,35cfbb4a-9b5b-411c-8,2025-09-28,2025-10-03,San Jose,"432 Market St, Philadelphia, PA 52395",32.57,6.11,delivered,TRUE
+519,786,FedEx,e401e4e8-e8f4-4986-b,2025-05-31,2025-06-07,Houston,"783 Random Rd, Houston",16.06,2.12,delivered,TRUE
+520,787,FedEx,9cab73b8-cf62-4875-8,2025-08-08,2025-08-15,San Antonio,"577 Random Rd, San Antonio",29.83,8.01,delivered,TRUE
+521,788,USPS,f97ca9e6-874a-490a-9,2025-06-28,2025-07-03,Chicago,"557 Main St, San Diego, CA 74478",28.07,9.6,delivered,TRUE
+522,790,UPS,6e1f524d-9df1-4340-b,2025-06-02,,San Antonio,"36 Pine Rd, San Jose, CA 85470",46.0,3.91,in-transit,TRUE
+523,791,UPS,5095d2dd-9e59-4112-9,2025-10-14,2025-10-16,Philadelphia,"539 Broadway, Houston, TX 99737",27.1,8.31,delivered,TRUE
+524,792,DHL,bf3f9ee1-75ce-40be-8,2025-08-27,2025-09-02,San Jose,"251 Random Rd, San Jose",29.45,5.01,delivered,TRUE
+525,795,UPS,67646762-a906-44c4-9,2025-10-21,,Chicago,"639 Market St, Chicago, IL 93032",31.09,5.32,in-transit,TRUE
+526,796,DHL,8c625270-48ce-42ac-9,2025-06-14,2025-06-17,San Jose,"882 Pine Rd, New York, NY 57214",6.37,2.13,delivered,TRUE
+527,798,USPS,cd2fa1e2-b7fe-446a-9,2025-06-04,2025-06-06,San Jose,"387 Market St, Phoenix, AZ 76207",7.59,4.07,delivered,TRUE
+528,799,DHL,9f26bf3c-758a-40db-9,2025-10-12,2025-10-14,San Antonio,"860 Broadway, San Antonio, TX 68446",13.33,1.06,delivered,TRUE
+529,800,DHL,746725d1-5415-4c9c-b,2025-07-20,2025-07-24,San Diego,"423 Main St, Houston, TX 84668",41.29,5.48,delivered,TRUE
+530,802,DHL,bd8cbda1-3740-4021-a,2025-09-28,2025-10-04,Houston,"19 Pine Rd, Dallas, TX 42539",8.39,9.96,delivered,TRUE
+531,805,DHL,1d01b288-32fd-4bc9-a,2025-10-12,2025-10-15,San Jose,"194 Pine Rd, New York, NY 50499",16.91,4.42,delivered,TRUE
+532,807,FedEx,f4353b27-e09f-43c6-8,2025-10-29,2025-11-03,Houston,"961 Pine Rd, Chicago, IL 12052",6.49,2.31,delivered,TRUE
+533,808,USPS,bc4295e0-d8f0-4da2-9,2025-10-14,,San Antonio,"171 Random Rd, San Antonio",11.31,1.35,in-transit,TRUE
+534,809,DHL,55486294-2f81-47d1-8,2025-06-06,2025-06-08,Phoenix,"327 Pine Rd, Dallas, TX 73131",27.41,4.02,delivered,TRUE
+535,810,UPS,e98e0037-5107-4790-9,2025-08-21,,Phoenix,"323 Market St, Phoenix, AZ 88986",32.64,8.27,in-transit,TRUE
+536,811,FedEx,7cc104d6-b51a-4ea2-a,2025-11-02,,Houston,"91 Oak Ave, Los Angeles, CA 55039",31.11,0.41,in-transit,TRUE
+537,812,USPS,00050034-34e3-4a52-9,2025-06-17,2025-06-21,Chicago,"469 Oak Ave, Dallas, TX 65296",26.02,8.52,delivered,TRUE
+538,813,DHL,3b28a8af-a33d-4f4a-8,2025-10-06,2025-10-10,Chicago,"61 Pine Rd, Chicago, IL 59689",34.72,5.33,delivered,FALSE
+539,815,USPS,ec7341c9-c250-4dad-9,2025-06-23,2025-06-25,Dallas,"837 Broadway, San Diego, CA 22833",42.96,5.18,delivered,TRUE
+540,816,UPS,3a05dd3d-052e-4dfd-8,2025-06-01,,Dallas,"803 Random Rd, Dallas",6.22,6.29,in-transit,TRUE
+541,817,FedEx,34e123ce-1c12-48f7-a,2025-07-22,2025-07-26,San Antonio,"410 Broadway, San Jose, CA 14244",40.29,9.76,delivered,TRUE
+542,818,USPS,cf111504-9963-4ff0-9,2025-09-03,2025-09-06,New York,"689 Oak Ave, San Jose, CA 55851",7.92,2.82,delivered,FALSE
+543,821,FedEx,272e1ee6-2aa1-4305-a,2025-05-27,,San Diego,"775 Broadway, San Diego, CA 58971",20.51,6.15,in-transit,TRUE
+544,822,USPS,1b323126-5498-47ed-8,2025-05-11,2025-05-18,Phoenix,"633 Market St, San Jose, CA 14910",15.57,3.94,delivered,TRUE
+545,823,UPS,428486de-9b6e-4d67-b,2025-07-17,,San Antonio,"975 Pine Rd, New York, NY 49139",37.21,4.98,in-transit,TRUE
+546,824,DHL,8d8b031c-d4bd-4243-9,2025-07-07,2025-07-12,San Diego,"323 Pine Rd, Phoenix, AZ 40217",11.41,1.77,delivered,TRUE
+547,825,UPS,450e85d6-8a66-4008-a,2025-10-25,,San Antonio,"757 Random Rd, San Antonio",39.03,3.37,in-transit,TRUE
+548,826,DHL,9c3e4091-eaed-4697-8,2025-11-02,2025-11-03,New York,"161 Random Rd, New York",5.5,4.71,delivered,TRUE
+549,827,DHL,ea021b5b-724c-4ff8-9,2025-08-24,2025-08-31,San Diego,"463 Market St, Phoenix, AZ 73656",41.22,9.84,delivered,TRUE
+550,828,FedEx,1b82a3eb-680e-41b1-a,2025-10-06,2025-10-12,San Antonio,"720 Random Rd, San Antonio",43.54,6.98,delivered,TRUE
+551,829,USPS,df7445ca-ab18-4639-a,2025-07-03,,Phoenix,"235 Market St, New York, NY 88554",15.81,5.63,in-transit,TRUE
+552,830,DHL,c35507f2-d683-4a06-8,2025-08-19,2025-08-20,Los Angeles,"66 Pine Rd, Chicago, IL 14813",28.21,8.75,delivered,TRUE
+553,831,UPS,f639d2b0-7a37-439d-8,2025-10-12,2025-10-13,San Diego,"360 Random Rd, San Diego",7.46,4.14,delivered,TRUE
+554,832,UPS,276144f3-7875-49e7-b,2025-09-10,,San Jose,"444 Broadway, Dallas, TX 59712",47.79,3.79,in-transit,TRUE
+555,833,FedEx,fa9b3750-bab6-4578-a,2025-10-07,2025-10-12,Houston,"529 Oak Ave, New York, NY 82154",43.92,8.69,delivered,TRUE
+556,834,FedEx,28adf59e-2ba2-4ef1-b,2025-11-02,,San Antonio,"356 Random Rd, San Antonio",14.55,1.45,in-transit,TRUE
+557,836,USPS,e61a4639-e2f8-4d05-9,2025-11-02,2025-11-07,San Jose,"929 Oak Ave, San Jose, CA 73993",17.58,1.02,delivered,TRUE
+558,837,USPS,d657cdac-3e3f-4a95-9,2025-08-09,,San Jose,"497 Broadway, Chicago, IL 88618",34.52,9.12,in-transit,TRUE
+559,839,UPS,07a57de6-1681-404a-b,2025-06-04,2025-06-06,Houston,"55 Main St, New York, NY 42053",15.73,0.98,delivered,TRUE
+560,840,DHL,90f5e586-403f-466f-8,2025-09-24,2025-09-29,New York,"556 Pine Rd, Dallas, TX 73782",5.6,7.43,delivered,TRUE
+561,841,UPS,5175c238-80a6-4f35-b,2025-08-17,2025-08-22,Philadelphia,"632 Oak Ave, Philadelphia, PA 18609",5.59,4.43,delivered,TRUE
+562,842,FedEx,5afc11a8-91e5-4264-9,2025-09-30,2025-10-01,Los Angeles,"791 Market St, Phoenix, AZ 94108",28.35,4.95,delivered,FALSE
+563,843,UPS,c877d48f-7946-4d3f-9,2025-06-28,2025-07-03,Los Angeles,"194 Broadway, Los Angeles, CA 81618",25.4,2.07,delivered,FALSE
+564,845,FedEx,5f490247-c683-45b1-9,2025-10-03,2025-10-08,San Jose,"146 Market St, Dallas, TX 19808",42.48,1.62,delivered,TRUE
+565,846,DHL,1e2fe887-417e-471f-8,2025-09-27,2025-10-02,San Diego,"372 Oak Ave, Chicago, IL 34530",11.07,5.85,delivered,TRUE
+566,847,USPS,a3d16500-4e4d-4e93-8,2025-06-10,2025-06-17,Chicago,"281 Market St, Houston, TX 27154",7.54,1.62,delivered,TRUE
+567,848,DHL,b9ebd8b1-eaef-4f4c-b,2025-06-07,,Philadelphia,"717 Oak Ave, Los Angeles, CA 17869",43.9,5.68,in-transit,TRUE
+568,852,FedEx,cd72caee-700c-4e1b-9,2025-06-25,2025-06-30,Los Angeles,"377 Market St, New York, NY 23432",34.37,0.72,delivered,TRUE
+569,853,DHL,37248403-3653-4b68-b,2025-09-15,2025-09-18,Dallas,"882 Market St, San Jose, CA 55054",19.67,6.21,delivered,TRUE
+570,854,USPS,400669e9-78ec-4a40-9,2025-05-22,,Phoenix,"469 Oak Ave, Dallas, TX 65296",48.26,6.02,in-transit,TRUE
+571,855,USPS,d32a1627-ea52-4b99-8,2025-05-30,2025-06-06,San Antonio,"900 Oak Ave, Philadelphia, PA 41300",49.55,4.7,delivered,TRUE
+572,856,USPS,5c5105eb-3f67-4656-8,2025-06-01,2025-06-05,New York,"707 Oak Ave, Philadelphia, PA 13336",16.41,4.68,delivered,TRUE
+573,857,DHL,74acfc48-64d0-4744-8,2025-10-22,,Philadelphia,"127 Oak Ave, Houston, TX 97946",22.13,2.41,in-transit,TRUE
+574,861,USPS,ba058fec-c4e5-499b-b,2025-06-13,,New York,"348 Pine Rd, Houston, TX 98142",22.66,0.27,in-transit,TRUE
+575,863,UPS,4d274f85-d7ef-40a8-9,2025-07-29,2025-08-01,San Antonio,"467 Main St, Philadelphia, PA 44761",21.23,8.62,delivered,TRUE
+576,864,USPS,6370c0d2-4d64-4a4d-8,2025-08-01,,Houston,"815 Pine Rd, New York, NY 41925",7.37,4.07,in-transit,TRUE
+577,865,USPS,c704d8e4-3268-4a3a-a,2025-05-08,2025-05-12,New York,"994 Market St, Philadelphia, PA 99337",6.31,3.62,delivered,FALSE
+578,867,USPS,82cf9007-6b38-4f7e-a,2025-06-05,2025-06-12,Philadelphia,"29 Market St, San Antonio, TX 20205",36.33,4.4,delivered,TRUE
+579,868,DHL,7f80ed79-8e0f-40bf-a,2025-07-26,2025-07-31,Houston,"792 Oak Ave, New York, NY 85457",30.78,9.68,delivered,TRUE
+580,869,DHL,778d26b6-09c8-4b18-b,2025-10-21,2025-10-26,Phoenix,"284 Market St, New York, NY 98299",16.99,4.72,delivered,TRUE
+581,873,FedEx,f0dcb448-7be0-4ebd-9,2025-08-11,2025-08-16,New York,"94 Pine Rd, Los Angeles, CA 30214",19.65,1.69,delivered,TRUE
+582,875,DHL,38f6627a-2c48-431f-b,2025-10-28,2025-11-04,San Jose,"769 Market St, Chicago, IL 82309",41.36,0.38,delivered,TRUE
+583,877,USPS,594e0641-039e-456a-8,2025-10-01,2025-10-05,San Antonio,"433 Main St, San Diego, CA 34586",27.37,9.11,delivered,TRUE
+584,878,USPS,7a3920c4-2f1e-4f33-8,2025-09-01,,Chicago,"651 Oak Ave, Phoenix, AZ 25408",35.4,2.43,in-transit,TRUE
+585,879,UPS,fd7e4061-136e-46d7-b,2025-07-27,2025-08-03,San Jose,"487 Main St, San Diego, CA 71537",10.88,6.55,delivered,TRUE
+586,880,DHL,2a76e4ff-b955-498b-b,2025-10-29,2025-10-31,San Diego,"506 Oak Ave, New York, NY 35575",13.65,6.4,delivered,TRUE
+587,881,FedEx,065276be-13c9-463f-9,2025-07-19,2025-07-21,Houston,"17 Random Rd, Houston",9.4,2.78,delivered,TRUE
+588,886,UPS,40e44193-25f0-4837-b,2025-05-26,2025-05-30,Dallas,"295 Broadway, Houston, TX 49124",14.33,3.98,delivered,TRUE
+589,889,DHL,d5bd44c8-8e61-4f3f-8,2025-05-18,,Chicago,"237 Market St, Los Angeles, CA 47982",16.89,1.7,in-transit,TRUE
+590,890,DHL,2c0678ac-c3fc-45bc-b,2025-09-15,2025-09-19,Dallas,"249 Broadway, San Diego, CA 41348",23.63,5.41,delivered,TRUE
+591,891,UPS,f3adf8b8-f665-4e96-9,2025-05-31,2025-06-03,Dallas,"281 Market St, San Antonio, TX 47388",6.41,7.21,delivered,TRUE
+592,893,FedEx,5a8e962c-6a7f-40b2-9,2025-07-12,,Philadelphia,"24 Pine Rd, Phoenix, AZ 24585",29.5,3.41,in-transit,TRUE
+593,895,USPS,51f06298-9d63-430c-9,2025-10-05,2025-10-06,Los Angeles,"459 Broadway, San Diego, CA 78517",17.13,6.91,delivered,TRUE
+594,896,DHL,b2f21c56-ce5a-4209-b,2025-07-14,,Philadelphia,"792 Broadway, San Diego, CA 46663",29.32,5.69,in-transit,FALSE
+595,898,USPS,e115955f-8a6b-4cf1-b,2025-09-10,2025-09-14,San Jose,"535 Oak Ave, Philadelphia, PA 14081",32.87,7.3,delivered,TRUE
+596,899,UPS,28faaa2f-fa28-439e-9,2025-07-15,2025-07-20,Dallas,"177 Market St, New York, NY 55443",20.64,7.63,delivered,TRUE
+597,900,USPS,7904f9af-9ea9-49ef-9,2025-07-12,2025-07-19,Los Angeles,"244 Oak Ave, Phoenix, AZ 47247",17.2,4.18,delivered,TRUE
+598,904,USPS,6b688e4f-384d-4991-b,2025-08-21,,San Jose,"372 Oak Ave, Chicago, IL 34530",16.36,4.65,in-transit,FALSE
+599,906,USPS,33d93844-b8d6-4310-b,2025-10-19,2025-10-26,San Antonio,"620 Main St, San Jose, CA 16895",23.68,1.59,delivered,TRUE
+600,907,USPS,24e66f1f-3bd6-4de8-a,2025-05-14,,Dallas,"171 Market St, New York, NY 64476",18.07,7.88,in-transit,TRUE
+601,909,FedEx,f0f96fe3-a963-493a-b,2025-06-24,2025-07-01,San Antonio,"873 Broadway, Phoenix, AZ 51144",27.39,8.07,delivered,TRUE
+602,911,USPS,04ebbf68-35db-492d-9,2025-08-29,,San Jose,"214 Broadway, San Antonio, TX 42656",32.82,0.65,in-transit,TRUE
+603,912,FedEx,d8f331dc-77d8-4779-8,2025-10-11,2025-10-14,Chicago,"171 Pine Rd, Philadelphia, PA 23487",45.23,5.7,delivered,TRUE
+604,915,DHL,e64936dc-a17b-48c3-a,2025-09-22,,Chicago,"828 Oak Ave, San Jose, CA 30758",24.31,2.84,in-transit,TRUE
+605,917,DHL,6e8aced5-a85a-4800-b,2025-08-08,2025-08-14,Los Angeles,"863 Main St, Dallas, TX 49829",9.35,3.97,delivered,TRUE
+606,922,DHL,bd873c5c-299f-4a40-8,2025-09-15,,Houston,"633 Pine Rd, San Antonio, TX 44034",14.81,3.48,in-transit,TRUE
+607,924,FedEx,ff942756-9174-4cd8-8,2025-09-01,2025-09-04,Houston,"904 Main St, Chicago, IL 36486",8.9,3.74,delivered,TRUE
+608,925,USPS,1fc419af-f195-473f-b,2025-08-29,2025-09-04,Houston,"984 Pine Rd, New York, NY 39389",24.39,8.19,delivered,TRUE
+609,928,DHL,cf02ea9b-3479-4183-b,2025-09-30,2025-10-01,Chicago,"247 Pine Rd, New York, NY 47056",27.8,4.85,delivered,TRUE
+610,930,FedEx,7465b3d2-1c66-4d83-a,2025-06-05,2025-06-12,San Jose,"268 Oak Ave, Houston, TX 65460",25.05,7.53,delivered,TRUE
+611,931,DHL,77a5b325-8ec7-4e3e-a,2025-10-27,2025-11-03,Los Angeles,"301 Main St, Los Angeles, CA 31012",39.36,0.95,delivered,TRUE
+612,932,FedEx,69185fa4-9ddd-4af3-8,2025-06-24,2025-06-28,Dallas,"183 Pine Rd, Phoenix, AZ 90769",44.65,3.59,delivered,TRUE
+613,933,FedEx,732bc046-459b-416f-8,2025-10-03,2025-10-08,Phoenix,"418 Pine Rd, Phoenix, AZ 67422",10.41,6.42,delivered,TRUE
+614,934,USPS,390d71d1-5060-4e16-8,2025-08-26,2025-09-01,San Diego,"127 Broadway, San Antonio, TX 39466",5.68,4.58,delivered,TRUE
+615,935,FedEx,309615cb-196b-49dd-8,2025-05-09,2025-05-16,San Diego,"399 Pine Rd, San Jose, CA 67700",32.45,1.68,delivered,TRUE
+616,936,USPS,5282aef5-3763-49e1-9,2025-08-24,,San Diego,"459 Broadway, San Diego, CA 78517",23.33,4.51,in-transit,TRUE
+617,937,DHL,cb9aad83-e6f3-4930-9,2025-08-16,2025-08-23,New York,"415 Pine Rd, New York, NY 40689",10.61,9.0,delivered,TRUE
+618,938,UPS,859d60fd-8601-49f4-a,2025-11-01,2025-11-03,Philadelphia,"898 Broadway, Philadelphia, PA 36077",8.88,0.57,delivered,TRUE
+619,941,FedEx,94a6127c-a8e8-47a6-8,2025-10-12,2025-10-15,Los Angeles,"205 Broadway, San Antonio, TX 76616",18.02,3.82,delivered,TRUE
+620,944,FedEx,54ddd293-3862-4e59-9,2025-10-20,,San Antonio,"110 Main St, San Antonio, TX 68153",19.01,2.66,in-transit,TRUE
+621,945,DHL,492d1cd9-6f01-4d81-b,2025-07-13,2025-07-20,Los Angeles,"501 Pine Rd, Philadelphia, PA 83464",7.16,8.35,delivered,TRUE
+622,946,UPS,65c16f89-255b-4cca-9,2025-06-13,,San Jose,"941 Random Rd, San Jose",18.69,3.39,in-transit,TRUE
+623,949,FedEx,e2809380-cd2a-43d1-8,2025-08-18,,Philadelphia,"523 Pine Rd, Houston, TX 18127",5.9,8.23,in-transit,TRUE
+624,950,DHL,640e6a9b-863f-432e-9,2025-06-02,,Phoenix,"226 Broadway, Houston, TX 72324",47.34,1.27,in-transit,TRUE
+625,951,USPS,ded07476-9e2f-4dc1-8,2025-07-25,,Los Angeles,"569 Broadway, San Jose, CA 35751",44.65,2.43,in-transit,TRUE
+626,952,UPS,4f8ffd53-361d-4f44-9,2025-06-01,2025-06-06,Phoenix,"904 Main St, Chicago, IL 36486",37.57,1.07,delivered,TRUE
+627,954,UPS,928d406f-2bcb-441a-8,2025-06-15,2025-06-19,Dallas,"621 Oak Ave, Phoenix, AZ 10946",5.7,0.26,delivered,TRUE
+628,955,USPS,a8ba70c6-1357-47fa-b,2025-08-22,2025-08-26,Los Angeles,"121 Broadway, New York, NY 66959",45.66,1.2,delivered,TRUE
+629,956,USPS,19271708-406f-497e-a,2025-07-04,,Phoenix,"933 Broadway, Chicago, IL 80685",19.71,7.79,in-transit,TRUE
+630,958,UPS,c89d3ebc-2d7a-4f27-8,2025-09-24,2025-09-26,San Antonio,"600 Main St, Phoenix, AZ 32962",48.01,4.78,delivered,TRUE
+631,959,UPS,515b12d1-fd3e-4966-8,2025-10-29,2025-11-04,Los Angeles,"795 Pine Rd, Phoenix, AZ 31992",29.08,2.56,delivered,TRUE
+632,963,USPS,fcc9efde-d278-4c21-8,2025-10-19,2025-10-20,San Antonio,"59 Market St, New York, NY 67438",28.83,8.6,delivered,TRUE
+633,964,UPS,3ac3a4ac-8377-4718-a,2025-09-05,2025-09-07,New York,"462 Main St, Dallas, TX 99167",25.51,0.37,delivered,TRUE
+634,966,USPS,e8e6f988-d051-49cc-9,2025-10-02,2025-10-06,Phoenix,"681 Market St, Houston, TX 61856",20.32,2.51,delivered,TRUE
+635,967,USPS,d9e04632-d62e-469f-9,2025-07-21,2025-07-27,New York,"123 Market St, Los Angeles, CA 88215",21.09,7.29,delivered,TRUE
+636,970,UPS,c45aeb31-9c3f-4cb6-8,2025-09-11,2025-09-12,Dallas,"533 Pine Rd, Houston, TX 97096",42.74,4.9,delivered,TRUE
+637,971,DHL,a47d8d76-dd63-41ee-b,2025-07-09,2025-07-11,San Diego,"706 Broadway, Houston, TX 20730",15.76,9.95,delivered,TRUE
+638,973,DHL,f2d0213d-3658-4994-9,2025-07-24,2025-07-26,Chicago,"221 Random Rd, Chicago",14.99,4.38,delivered,TRUE
+639,975,FedEx,d0d55b92-1584-40f9-a,2025-06-20,2025-06-23,Houston,"301 Main St, Los Angeles, CA 31012",46.26,3.98,delivered,FALSE
+640,976,USPS,2c4ee163-8f2d-49f0-8,2025-06-25,,New York,"663 Market St, Dallas, TX 98063",25.89,3.7,in-transit,TRUE
+641,978,USPS,be82e63d-620a-4753-9,2025-10-03,2025-10-05,San Antonio,"777 Oak Ave, San Jose, CA 41029",16.71,2.22,delivered,TRUE
+642,979,FedEx,de3ea487-c4f2-40c0-b,2025-07-16,2025-07-23,Philadelphia,"640 Market St, San Antonio, TX 38474",48.26,5.72,delivered,TRUE
+643,980,USPS,b12e3294-3b38-4058-b,2025-05-22,,Phoenix,"873 Random Rd, Phoenix",9.34,6.84,in-transit,TRUE
+644,982,USPS,1c65e3fc-8625-48a4-8,2025-10-26,,San Jose,"454 Random Rd, San Jose",11.53,0.78,in-transit,TRUE
+645,986,DHL,941ec1a3-5be0-4869-a,2025-10-28,2025-11-03,New York,"885 Oak Ave, Los Angeles, CA 23238",12.04,2.7,delivered,FALSE
+646,987,USPS,13d49e3b-e2b2-4324-a,2025-05-19,,Los Angeles,"482 Pine Rd, Houston, TX 70236",34.46,2.58,in-transit,TRUE
+647,990,UPS,708a0539-fea8-4801-8,2025-09-18,,Phoenix,"415 Pine Rd, New York, NY 40689",40.6,6.16,in-transit,TRUE
+648,991,DHL,561343f6-dc4b-41c0-9,2025-08-07,,Houston,"683 Market St, San Jose, CA 19120",21.52,3.24,in-transit,FALSE
+649,992,USPS,23d28ff2-9f7a-4a88-a,2025-06-22,2025-06-29,Chicago,"704 Market St, Dallas, TX 47243",46.59,8.88,delivered,TRUE
+650,993,FedEx,f52a5d94-3d7e-464a-9,2025-06-25,2025-06-26,San Antonio,"356 Main St, Los Angeles, CA 87110",29.3,6.53,delivered,TRUE
+651,994,USPS,2ce2c6e5-3a8f-4fce-a,2025-06-04,2025-06-06,Dallas,"394 Oak Ave, New York, NY 51405",14.16,8.54,delivered,TRUE
+652,998,USPS,ddf76364-970d-4fbb-9,2025-09-25,2025-09-27,Dallas,"194 Broadway, Los Angeles, CA 81618",46.57,3.15,delivered,TRUE
+653,999,FedEx,0a5e1d93-c3cd-4a6c-8,2025-10-31,,San Jose,"99 Pine Rd, San Antonio, TX 96772",12.0,0.83,in-transit,TRUE
+654,1000,FedEx,4d215623-a44a-4f27-8,2025-06-22,,San Diego,"339 Random Rd, San Diego",31.84,6.3,in-transit,TRUE
+655,1003,UPS,24359ac4-697e-4986-8,2025-07-31,2025-08-03,Philadelphia,"204 Main St, San Antonio, TX 22704",12.31,8.49,delivered,TRUE
+656,1005,USPS,4efbdf7f-7604-4d6b-b,2025-09-12,,San Jose,"137 Pine Rd, Phoenix, AZ 67272",49.79,2.18,in-transit,TRUE
+657,1006,USPS,2492b87e-9c36-449c-8,2025-08-08,2025-08-12,San Antonio,"236 Main St, San Jose, CA 93283",39.76,0.77,delivered,TRUE
+658,1008,FedEx,be62ab15-753d-49cd-9,2025-10-23,2025-10-24,Chicago,"975 Pine Rd, New York, NY 49139",33.23,2.6,delivered,TRUE
+659,1009,USPS,186dd163-b012-4cb4-8,2025-11-06,2025-11-12,Dallas,"514 Random Rd, Dallas",40.37,6.48,delivered,TRUE
+660,1012,USPS,9f90dccd-8e75-473a-9,2025-08-08,2025-08-10,Los Angeles,"392 Market St, Los Angeles, CA 70161",17.93,5.21,delivered,TRUE
+661,1013,DHL,07439c58-18ab-472d-9,2025-06-08,2025-06-11,Philadelphia,"189 Main St, Chicago, IL 89887",17.98,5.16,delivered,TRUE
+662,1014,FedEx,24f662c5-19a8-4a96-a,2025-07-26,2025-07-31,San Antonio,"237 Market St, Los Angeles, CA 47982",30.29,1.45,delivered,TRUE
+663,1015,UPS,069e358b-3986-4514-8,2025-09-22,2025-09-25,Houston,"899 Oak Ave, Chicago, IL 33444",33.05,2.08,delivered,TRUE
+664,1017,FedEx,f86b75e4-6aa9-4b39-9,2025-07-20,,Philadelphia,"418 Pine Rd, Phoenix, AZ 67422",48.4,3.65,in-transit,TRUE
+665,1020,DHL,a7055ebf-b148-4ae8-a,2025-05-24,2025-05-27,San Antonio,"451 Market St, Chicago, IL 83005",47.55,0.41,delivered,TRUE
+666,1025,FedEx,65d69a26-d78e-4b18-9,2025-08-15,2025-08-20,San Jose,"440 Market St, Houston, TX 98777",48.75,2.71,delivered,TRUE
+667,1026,USPS,cdca15ce-0fc2-454e-8,2025-06-28,,San Diego,"293 Oak Ave, New York, NY 27392",23.68,1.23,in-transit,TRUE
+668,1029,FedEx,12a651bb-67c4-4279-b,2025-07-23,,Los Angeles,"49 Random Rd, Los Angeles",41.87,1.79,in-transit,TRUE
+669,1030,FedEx,fae44c3d-bb8b-46b2-b,2025-07-15,,Chicago,"945 Market St, Houston, TX 73499",31.2,9.62,in-transit,TRUE
+670,1031,FedEx,580b00b8-5ab9-4cda-a,2025-06-01,2025-06-08,San Antonio,"572 Pine Rd, Los Angeles, CA 83284",11.14,1.7,delivered,TRUE
+671,1032,FedEx,c872f281-30b9-4527-b,2025-06-28,2025-06-29,Phoenix,"849 Main St, San Antonio, TX 66010",47.1,4.21,delivered,TRUE
+672,1033,UPS,9afb0be1-1eba-4ddd-b,2025-10-31,2025-11-04,Chicago,"749 Oak Ave, New York, NY 63736",18.27,3.33,delivered,TRUE
+673,1036,USPS,2249251e-3c8b-4ef2-9,2025-09-24,2025-09-27,New York,"854 Oak Ave, San Antonio, TX 74843",19.48,8.38,delivered,TRUE
+674,1037,DHL,0ca0287b-786a-4990-8,2025-05-23,2025-05-30,San Diego,"882 Pine Rd, New York, NY 57214",29.77,8.14,delivered,TRUE
+675,1040,UPS,6e5be60a-6810-4617-a,2025-05-13,,Los Angeles,"349 Main St, Philadelphia, PA 64596",33.75,7.66,in-transit,TRUE
+676,1041,USPS,7841e9b8-366e-4571-a,2025-07-21,2025-07-25,Dallas,"54 Market St, San Diego, CA 58929",13.38,9.08,delivered,TRUE
+677,1042,USPS,afbfd4a5-4daa-4c7c-9,2025-09-23,,Houston,"392 Oak Ave, Dallas, TX 60615",20.99,2.83,in-transit,TRUE
+678,1043,DHL,8c91e9b0-dbcf-45e6-b,2025-08-29,2025-08-31,Houston,"170 Broadway, San Diego, CA 38818",42.01,5.71,delivered,TRUE
+679,1044,DHL,c43d6287-0e7e-4425-a,2025-06-09,2025-06-16,Philadelphia,"885 Broadway, Phoenix, AZ 65517",8.73,4.66,delivered,TRUE
+680,1045,USPS,e2fd0117-7006-4a50-b,2025-09-23,2025-09-28,Los Angeles,"687 Pine Rd, San Antonio, TX 19038",18.2,3.52,delivered,TRUE
+681,1046,DHL,7ecfcd63-f7f6-4687-8,2025-10-06,2025-10-11,San Diego,"24 Pine Rd, Phoenix, AZ 24585",33.75,1.78,delivered,TRUE
+682,1047,FedEx,6cab8de9-1d89-4213-a,2025-09-05,,Chicago,"233 Broadway, New York, NY 69770",19.84,2.98,in-transit,TRUE
+683,1048,DHL,44f8427a-ca20-47cb-8,2025-10-17,2025-10-19,New York,"140 Broadway, New York, NY 87640",27.9,9.79,delivered,TRUE
+684,1050,DHL,a0688f6c-c1ef-42b6-a,2025-08-12,2025-08-13,San Diego,"860 Broadway, San Antonio, TX 68446",27.29,5.78,delivered,TRUE
+685,1054,FedEx,e3aa02b5-8d22-446c-a,2025-08-05,,San Jose,"967 Market St, Dallas, TX 86692",35.05,9.52,in-transit,TRUE
+686,1055,USPS,03b64f2c-593f-4a9b-8,2025-10-05,,Los Angeles,"123 Market St, Los Angeles, CA 88215",30.29,8.22,in-transit,TRUE
+687,1057,UPS,9d21bad1-94ae-4538-a,2025-11-03,,San Antonio,"116 Market St, Chicago, IL 87430",12.8,9.64,in-transit,TRUE
+688,1061,FedEx,00830442-8ab3-4c10-b,2025-06-21,2025-06-27,New York,"46 Random Rd, New York",18.01,3.75,delivered,TRUE
+689,1062,DHL,17c460d0-3714-437b-b,2025-07-16,2025-07-19,Dallas,"788 Random Rd, Dallas",45.77,9.01,delivered,TRUE
+690,1064,FedEx,17a90d4c-7391-420a-8,2025-07-30,,Philadelphia,"730 Oak Ave, Dallas, TX 75570",14.12,8.82,in-transit,FALSE
+691,1065,DHL,a3fec890-6ca9-43b6-a,2025-05-21,,San Jose,"694 Market St, Philadelphia, PA 31632",23.38,4.46,in-transit,TRUE
+692,1066,USPS,2a4e25a9-bc5e-499a-9,2025-09-06,2025-09-11,Philadelphia,"842 Broadway, New York, NY 85877",14.56,1.07,delivered,TRUE
+693,1067,DHL,de454c3b-c2d4-4f0d-a,2025-07-26,,New York,"739 Random Rd, New York",20.95,8.51,in-transit,TRUE
+694,1069,DHL,3050de0f-040a-4bb4-8,2025-09-04,2025-09-09,Phoenix,"854 Oak Ave, San Antonio, TX 74843",14.3,6.21,delivered,TRUE
+695,1071,FedEx,13fc9ffc-f07c-4a2e-b,2025-07-19,,Phoenix,"402 Market St, San Jose, CA 34347",8.52,3.53,in-transit,TRUE
+696,1072,FedEx,ceb232d9-f535-4c87-b,2025-09-06,,New York,"964 Random Rd, New York",35.61,9.98,in-transit,TRUE
+697,1073,DHL,719030e8-093c-4db6-a,2025-09-21,2025-09-24,San Jose,"14 Oak Ave, San Antonio, TX 36972",6.87,9.22,delivered,TRUE
+698,1074,DHL,6882590d-035e-4d90-9,2025-11-02,2025-11-09,Philadelphia,"904 Main St, Chicago, IL 36486",32.44,6.16,delivered,TRUE
+699,1078,FedEx,188d9587-6f91-44d5-a,2025-10-09,2025-10-14,Phoenix,"284 Market St, New York, NY 98299",16.51,1.78,delivered,TRUE
+700,1080,FedEx,d0fa22ce-2116-4eed-a,2025-05-10,2025-05-13,Philadelphia,"32 Pine Rd, Philadelphia, PA 82569",38.38,1.85,delivered,TRUE
+701,1081,UPS,94cf3341-14df-4a88-b,2025-10-11,2025-10-16,San Antonio,"585 Market St, Philadelphia, PA 86389",24.09,6.5,delivered,TRUE
+702,1083,UPS,1362d467-9044-4626-b,2025-09-05,2025-09-10,Dallas,"120 Random Rd, Dallas",35.7,0.67,delivered,TRUE
+703,1084,UPS,3ad5db32-8b36-4c40-9,2025-08-21,,San Jose,"86 Oak Ave, Houston, TX 27840",19.26,8.02,in-transit,TRUE
+704,1085,USPS,5befb7cc-e416-4f47-b,2025-07-04,2025-07-07,New York,"40 Pine Rd, Philadelphia, PA 69054",40.44,5.67,delivered,FALSE
+705,1088,USPS,9c311806-74cc-4431-b,2025-05-27,2025-06-02,Houston,"137 Pine Rd, Phoenix, AZ 67272",26.56,2.87,delivered,TRUE
+706,1089,FedEx,f7188155-e82e-47a5-a,2025-07-04,2025-07-10,San Antonio,"384 Pine Rd, Chicago, IL 35830",40.26,2.7,delivered,TRUE
+707,1090,USPS,9b961cbe-d90d-4bf6-b,2025-05-17,2025-05-24,San Antonio,"986 Market St, New York, NY 19034",25.35,3.34,delivered,TRUE
+708,1091,FedEx,3625755e-b763-4f92-8,2025-08-22,2025-08-28,San Jose,"221 Oak Ave, Chicago, IL 86156",17.84,2.28,delivered,TRUE
+709,1094,FedEx,73e61c33-ecd8-4d43-a,2025-08-13,2025-08-14,Phoenix,"126 Main St, Dallas, TX 72422",16.41,5.46,delivered,TRUE
+710,1096,USPS,9e26c91d-cb01-479d-8,2025-05-23,,Phoenix,"151 Random Rd, Phoenix",35.27,9.31,in-transit,TRUE
+711,1098,USPS,28b72557-6eb4-49a7-b,2025-10-18,2025-10-24,San Antonio,"76 Main St, Chicago, IL 49085",38.82,2.02,delivered,TRUE
+712,1099,FedEx,6bd07fcb-e76a-4763-b,2025-06-25,2025-06-29,Dallas,"886 Random Rd, Dallas",5.86,1.16,delivered,TRUE
+713,1102,USPS,ac6f17d4-a8b5-4ffb-a,2025-08-12,2025-08-14,Chicago,"214 Pine Rd, Houston, TX 30446",40.25,7.74,delivered,TRUE
+714,1104,UPS,621c3c43-d195-461c-a,2025-08-26,2025-08-29,Chicago,"808 Random Rd, Chicago",32.24,4.98,delivered,TRUE
+715,1106,UPS,04c7574e-336c-4da0-b,2025-10-28,,San Diego,"532 Oak Ave, Dallas, TX 55793",32.33,6.81,in-transit,TRUE
+716,1107,UPS,721a397f-1bb1-44b0-9,2025-08-24,2025-08-25,Philadelphia,"840 Pine Rd, Phoenix, AZ 22046",8.37,3.55,delivered,TRUE
+717,1109,FedEx,3fb14db5-0475-45fe-b,2025-07-11,2025-07-15,New York,"750 Main St, Phoenix, AZ 61897",35.18,3.63,delivered,TRUE
+718,1110,UPS,23e02e0c-9491-429b-9,2025-07-03,,San Jose,"495 Random Rd, San Jose",28.91,0.7,in-transit,TRUE
+719,1112,USPS,9da2b5f8-f00c-4b5d-9,2025-07-22,2025-07-26,San Diego,"953 Random Rd, San Diego",29.77,1.96,delivered,TRUE
+720,1114,FedEx,cf2263fd-9509-44fb-a,2025-10-15,2025-10-16,San Diego,"462 Market St, San Diego, CA 98555",6.6,1.33,delivered,TRUE
+721,1115,FedEx,26e4b7db-e34f-43af-9,2025-08-25,2025-08-26,New York,"204 Main St, San Antonio, TX 22704",46.62,2.03,delivered,TRUE
+722,1116,USPS,fa83c96b-11da-4515-a,2025-10-18,2025-10-25,San Antonio,"803 Pine Rd, Phoenix, AZ 68493",25.03,2.66,delivered,TRUE
+723,1117,UPS,cbdaa1af-53e9-470b-9,2025-09-24,2025-09-26,Los Angeles,"792 Oak Ave, New York, NY 85457",21.06,6.03,delivered,TRUE
+724,1118,USPS,d5543922-6f52-4e61-8,2025-11-05,,Phoenix,"968 Pine Rd, Phoenix, AZ 30789",12.1,4.24,in-transit,TRUE
+725,1119,FedEx,7778b6d7-a8cd-400f-9,2025-10-20,2025-10-23,Phoenix,"732 Pine Rd, Dallas, TX 64459",5.79,8.83,delivered,TRUE
+726,1120,UPS,8973c1b4-944a-4246-8,2025-09-05,2025-09-11,Phoenix,"585 Market St, New York, NY 64592",16.1,3.69,delivered,TRUE
+727,1121,DHL,16a9c29a-3ace-47f9-8,2025-08-03,,Houston,"730 Oak Ave, Dallas, TX 75570",24.44,1.06,in-transit,TRUE
+728,1123,USPS,bbae3f09-7f17-404a-b,2025-05-23,2025-05-29,Houston,"244 Main St, New York, NY 14117",8.76,9.29,delivered,TRUE
+729,1124,FedEx,cb8ba3dd-5415-4d46-9,2025-10-29,2025-11-03,Chicago,"394 Main St, San Antonio, TX 99486",11.26,3.39,delivered,TRUE
+730,1126,FedEx,0778447f-32f2-40ca-a,2025-06-11,2025-06-16,Philadelphia,"851 Oak Ave, Chicago, IL 14138",42.07,6.04,delivered,TRUE
+731,1129,DHL,e392937e-9c32-4631-b,2025-07-22,2025-07-24,Phoenix,"620 Random Rd, Phoenix",20.99,4.49,delivered,TRUE
+732,1130,USPS,d6842e74-c06a-49f5-b,2025-07-27,2025-08-02,Houston,"91 Oak Ave, Los Angeles, CA 55039",12.93,6.76,delivered,TRUE
+733,1132,UPS,f891d7ba-c330-4415-8,2025-10-15,2025-10-21,San Antonio,"311 Random Rd, San Antonio",47.96,3.03,delivered,TRUE
+734,1135,USPS,e1f105ab-4145-4b2b-8,2025-10-12,2025-10-18,Los Angeles,"705 Broadway, San Antonio, TX 53404",17.64,1.72,delivered,TRUE
+735,1136,FedEx,d52237e8-e622-4fc9-a,2025-09-02,,Dallas,"115 Market St, New York, NY 64046",5.38,9.48,in-transit,TRUE
+736,1137,DHL,54d96d76-6f4e-491c-a,2025-09-11,,Los Angeles,"273 Oak Ave, San Antonio, TX 10716",13.86,5.07,in-transit,FALSE
+737,1138,UPS,9b959e04-09fb-4886-8,2025-07-13,,Phoenix,"59 Market St, New York, NY 67438",16.37,8.68,in-transit,TRUE
+738,1139,DHL,e5ad5ad6-15d3-4be9-8,2025-10-03,2025-10-07,San Jose,"721 Pine Rd, Los Angeles, CA 53150",14.05,9.3,delivered,TRUE
+739,1141,UPS,95b9624b-0aff-40c5-b,2025-10-26,2025-10-30,Chicago,"953 Oak Ave, Dallas, TX 30365",13.44,8.76,delivered,TRUE
+740,1145,USPS,9dcdf48c-297e-4c9a-9,2025-05-23,,Philadelphia,"696 Oak Ave, Houston, TX 99837",14.12,4.97,in-transit,TRUE
+741,1148,DHL,7e8c52a1-df41-4942-8,2025-10-01,,San Diego,"70 Main St, Philadelphia, PA 29360",26.54,3.2,in-transit,TRUE
+742,1151,DHL,3750be96-5eda-4fdb-a,2025-09-27,2025-09-29,San Antonio,"655 Market St, San Diego, CA 66757",36.92,0.25,delivered,TRUE
+743,1152,FedEx,6d26c5a7-b75e-4cc7-9,2025-06-07,2025-06-09,Houston,"399 Pine Rd, San Jose, CA 67700",10.97,6.23,delivered,TRUE
+744,1153,FedEx,fd109e6d-09e5-4541-8,2025-07-09,2025-07-15,Dallas,"821 Pine Rd, Chicago, IL 87993",41.53,8.33,delivered,FALSE
+745,1154,DHL,48803c06-9044-4163-8,2025-05-14,2025-05-18,San Diego,"133 Random Rd, San Diego",8.17,8.6,delivered,TRUE
+746,1156,USPS,e5ffcb56-30d3-456f-b,2025-07-27,,Dallas,"681 Market St, Houston, TX 61856",10.38,7.4,in-transit,TRUE
+747,1157,UPS,d5c33bbe-6bef-4a28-b,2025-07-17,,Los Angeles,"435 Random Rd, Los Angeles",40.83,5.54,in-transit,TRUE
+748,1158,DHL,66c85aad-a12f-4c73-a,2025-11-03,,Chicago,"515 Oak Ave, New York, NY 54815",6.32,4.3,in-transit,TRUE
+749,1159,DHL,d4f7bd6a-1952-4543-a,2025-05-17,,Chicago,"951 Broadway, Dallas, TX 30635",30.48,7.16,in-transit,TRUE
+750,1160,UPS,c5b1c7d2-96f6-4e03-8,2025-10-25,,Los Angeles,"762 Pine Rd, San Antonio, TX 89129",30.45,3.93,in-transit,TRUE
+751,1161,FedEx,ca1e81eb-4805-4570-8,2025-09-09,2025-09-12,San Jose,"569 Broadway, San Jose, CA 35751",32.93,2.06,delivered,TRUE
+752,1162,UPS,68fc4f08-4175-4b9a-9,2025-05-19,,San Diego,"313 Oak Ave, Houston, TX 57301",46.0,5.15,in-transit,TRUE
+753,1163,UPS,078daed6-4c2a-4c3e-9,2025-05-24,2025-05-28,San Jose,"640 Broadway, Dallas, TX 42275",13.61,8.18,delivered,TRUE
+754,1165,UPS,a0f6376d-e17c-4dc9-8,2025-07-09,2025-07-12,San Diego,"738 Main St, Philadelphia, PA 59177",8.53,0.68,delivered,TRUE
+755,1166,FedEx,7a143b1d-e051-4bb6-b,2025-05-25,2025-06-01,Chicago,"515 Oak Ave, New York, NY 54815",44.3,6.33,delivered,TRUE
+756,1167,USPS,99e003c2-fe9a-4554-a,2025-08-16,,San Jose,"862 Random Rd, San Jose",36.6,8.24,in-transit,TRUE
+757,1170,UPS,86630f6f-3b40-459f-b,2025-07-03,2025-07-08,Chicago,"985 Random Rd, Chicago",25.91,1.64,delivered,FALSE
+758,1172,FedEx,6e68ebe4-5af7-4bb1-9,2025-06-25,2025-06-27,Philadelphia,"897 Broadway, San Diego, CA 74217",15.02,5.85,delivered,TRUE
+759,1173,UPS,e392b19f-abbd-4dcd-9,2025-05-17,2025-05-18,Los Angeles,"758 Market St, Los Angeles, CA 93209",48.08,6.34,delivered,TRUE
+760,1174,DHL,98ffdb44-cd36-4ded-b,2025-10-21,,San Diego,"791 Random Rd, San Diego",46.37,2.59,in-transit,TRUE
+761,1175,DHL,e8907d1e-806b-4a27-b,2025-05-28,2025-06-02,Chicago,"366 Pine Rd, Dallas, TX 71393",29.81,4.78,delivered,TRUE
+762,1176,FedEx,7c06523a-ae7b-4163-a,2025-08-16,,Dallas,"672 Oak Ave, Houston, TX 98826",16.06,0.28,in-transit,TRUE
+763,1178,DHL,66eaef5e-4f55-47de-a,2025-05-14,2025-05-16,Chicago,"328 Pine Rd, Phoenix, AZ 74437",41.44,7.63,delivered,TRUE
+764,1180,USPS,2253866e-dd21-469a-8,2025-10-31,2025-11-01,Phoenix,"306 Main St, San Antonio, TX 63088",35.88,8.0,delivered,TRUE
+765,1181,UPS,ced574eb-5ef6-4fbb-9,2025-09-15,2025-09-18,Houston,"408 Main St, Chicago, IL 21939",45.43,1.72,delivered,FALSE
+766,1182,USPS,c3a79eaa-6334-4a0d-b,2025-08-10,2025-08-11,Phoenix,"581 Market St, New York, NY 77649",41.43,6.22,delivered,TRUE
+767,1185,FedEx,1547b145-7646-4255-8,2025-10-09,2025-10-15,San Diego,"479 Market St, New York, NY 75358",7.27,8.46,delivered,TRUE
+768,1186,UPS,a6b1f545-286d-458f-a,2025-05-08,2025-05-10,New York,"231 Oak Ave, San Jose, CA 53064",28.3,2.53,delivered,TRUE
+769,1187,USPS,330f993e-8452-4acb-b,2025-10-24,,Los Angeles,"123 Pine Rd, San Antonio, TX 41147",45.43,5.88,in-transit,TRUE
+770,1188,DHL,2d42f952-d2bf-479d-8,2025-08-12,2025-08-13,San Diego,"567 Market St, San Diego, CA 55093",16.21,2.11,delivered,TRUE
+771,1189,USPS,24b04510-6979-4584-8,2025-08-19,2025-08-23,Phoenix,"833 Main St, Philadelphia, PA 71385",7.38,2.97,delivered,TRUE
+772,1191,UPS,dd2ddf6f-5f75-4355-9,2025-08-29,2025-08-31,San Diego,"438 Broadway, Dallas, TX 72236",42.16,5.99,delivered,TRUE
+773,1192,FedEx,d7452d0a-0701-417e-b,2025-06-24,2025-06-30,New York,"443 Market St, Phoenix, AZ 55706",36.78,2.95,delivered,TRUE
+774,1193,DHL,7c30dd6d-a8f7-40f5-9,2025-10-06,,Los Angeles,"825 Random Rd, Los Angeles",8.89,3.9,in-transit,TRUE
+775,1194,FedEx,d239b14c-5967-4061-9,2025-07-25,,San Antonio,"298 Market St, New York, NY 88317",17.29,0.77,in-transit,TRUE
+776,1198,DHL,9f7f5acd-2ebf-4899-9,2025-08-28,2025-08-31,Los Angeles,"435 Main St, San Antonio, TX 50966",15.47,2.56,delivered,TRUE
+777,1199,DHL,89175d66-a64f-4efa-8,2025-07-20,2025-07-21,Philadelphia,"116 Market St, Chicago, IL 87430",37.04,3.08,delivered,FALSE
+778,1201,FedEx,6330b631-616c-4bea-8,2025-08-16,,San Antonio,"539 Broadway, Houston, TX 99737",12.88,8.56,in-transit,TRUE
+779,1204,FedEx,734dd6ba-0561-4596-a,2025-09-07,2025-09-08,Philadelphia,"768 Main St, Houston, TX 62725",21.21,8.79,delivered,TRUE
+780,1206,DHL,616b800c-356c-4a82-8,2025-06-15,2025-06-18,Los Angeles,"379 Main St, Dallas, TX 78951",15.54,5.03,delivered,TRUE
+781,1207,USPS,20d44788-9c20-4f34-9,2025-09-19,,Los Angeles,"431 Random Rd, Los Angeles",40.43,2.92,in-transit,TRUE
+782,1210,USPS,7783f4f4-c034-48e1-9,2025-10-13,,Dallas,"803 Pine Rd, San Antonio, TX 98984",41.27,1.24,in-transit,TRUE
+783,1211,UPS,fc5915a5-8424-412f-b,2025-09-11,2025-09-16,New York,"183 Pine Rd, Phoenix, AZ 90769",39.92,8.9,delivered,TRUE
+784,1213,USPS,5238f1a5-b2cf-4aa7-a,2025-09-26,2025-09-27,Philadelphia,"669 Oak Ave, Phoenix, AZ 69867",35.83,8.42,delivered,TRUE
+785,1215,UPS,78729dec-3388-483b-a,2025-07-25,2025-07-26,Los Angeles,"856 Random Rd, Los Angeles",9.22,3.96,delivered,TRUE
+786,1216,FedEx,a66555cc-f455-4f54-8,2025-08-15,,Philadelphia,"183 Main St, San Jose, CA 57151",45.05,6.41,in-transit,TRUE
+787,1218,FedEx,677224a6-b8c2-4cd7-b,2025-09-07,,Dallas,"570 Broadway, Phoenix, AZ 59006",27.96,0.34,in-transit,TRUE
+788,1219,UPS,47bce679-a53f-411b-8,2025-06-04,2025-06-05,Dallas,"177 Market St, New York, NY 55443",43.21,6.99,delivered,TRUE
+789,1220,DHL,be976e22-8303-4e43-b,2025-05-15,2025-05-22,Los Angeles,"738 Broadway, Phoenix, AZ 17531",27.28,3.95,delivered,FALSE
+790,1221,FedEx,fcc8b439-c59f-48e3-9,2025-10-08,2025-10-09,San Antonio,"802 Pine Rd, San Diego, CA 45313",25.84,8.98,delivered,TRUE
+791,1222,DHL,1c3d5464-43d5-48e3-8,2025-08-26,2025-09-02,San Diego,"534 Random Rd, San Diego",48.12,5.54,delivered,TRUE
+792,1223,FedEx,fa200c06-aa91-428d-8,2025-09-24,2025-10-01,Dallas,"927 Market St, San Antonio, TX 55237",18.82,6.76,delivered,TRUE
+793,1225,USPS,86e6c5d7-f3b8-40ed-9,2025-06-05,2025-06-08,Los Angeles,"22 Random Rd, Los Angeles",26.34,9.92,delivered,TRUE
+794,1226,FedEx,98bd083c-bc18-40a7-b,2025-10-13,,New York,"355 Oak Ave, Dallas, TX 79979",49.9,1.81,in-transit,TRUE
+795,1227,USPS,688c6cd0-c41e-432a-b,2025-06-07,2025-06-13,Los Angeles,"977 Oak Ave, Los Angeles, CA 78089",42.74,1.89,delivered,TRUE
+796,1228,USPS,6238f6df-b67f-4883-a,2025-10-15,,Los Angeles,"437 Oak Ave, Chicago, IL 14763",38.21,0.4,in-transit,TRUE
+797,1229,DHL,e9b6fbf6-4529-42f1-a,2025-06-24,,San Antonio,"803 Pine Rd, San Antonio, TX 98984",28.96,5.97,in-transit,TRUE
+798,1230,USPS,30471ddd-56f0-4a82-8,2025-05-29,2025-06-03,San Antonio,"236 Random Rd, San Antonio",31.08,8.4,delivered,FALSE
+799,1231,DHL,4f10fc19-b3ae-494f-8,2025-10-18,,Los Angeles,"354 Broadway, San Jose, CA 76809",23.89,7.26,in-transit,TRUE
+800,1235,USPS,50c17e3d-25bf-4427-b,2025-08-12,,Phoenix,"920 Oak Ave, San Diego, CA 75598",5.33,2.73,in-transit,TRUE
+801,1237,FedEx,ef2dffac-a2b2-436f-8,2025-06-16,2025-06-22,Los Angeles,"919 Market St, Chicago, IL 31090",33.33,2.3,delivered,TRUE
+802,1238,UPS,f7e5d601-0861-45b0-b,2025-10-30,2025-11-06,San Antonio,"900 Oak Ave, San Diego, CA 19812",26.45,3.99,delivered,TRUE
+803,1242,USPS,ef0027c0-52fe-4894-8,2025-07-15,2025-07-21,San Antonio,"750 Main St, Phoenix, AZ 61897",43.47,3.25,delivered,TRUE
+804,1244,DHL,bf2a5faf-6553-46d1-a,2025-10-21,2025-10-23,New York,"171 Pine Rd, Philadelphia, PA 23487",10.69,3.23,delivered,TRUE
+805,1246,UPS,bca2ad89-4510-4b8d-b,2025-05-21,2025-05-22,Dallas,"775 Broadway, San Diego, CA 58971",29.05,5.83,delivered,TRUE
+806,1247,USPS,8dccf474-f80a-466f-a,2025-06-04,,Phoenix,"392 Oak Ave, Dallas, TX 60615",45.36,0.75,in-transit,TRUE
+807,1250,DHL,cf349a21-9bd2-401f-a,2025-07-28,2025-08-04,Phoenix,"520 Random Rd, Phoenix",12.7,7.95,delivered,TRUE
+808,1253,DHL,06f35c45-73c5-4a95-9,2025-06-25,2025-07-02,Houston,"471 Main St, New York, NY 55015",11.87,7.13,delivered,TRUE
+809,1254,USPS,c8d9c45f-6c31-495c-a,2025-10-13,2025-10-14,Phoenix,"516 Market St, San Antonio, TX 41979",47.85,4.88,delivered,TRUE
+810,1255,UPS,26b18273-75ce-43a7-8,2025-05-21,,Houston,"474 Pine Rd, San Antonio, TX 97881",45.24,0.48,in-transit,TRUE
+811,1256,DHL,9ed62759-7b5e-4337-9,2025-10-19,,San Antonio,"399 Market St, Phoenix, AZ 79946",49.49,5.36,in-transit,TRUE
+812,1258,USPS,86fee073-3b2e-43ec-8,2025-10-04,2025-10-08,Chicago,"112 Random Rd, Chicago",40.4,5.84,delivered,TRUE
+813,1259,UPS,afd5504e-1d37-4689-9,2025-07-04,,Phoenix,"65 Main St, Dallas, TX 42943",41.3,3.19,in-transit,FALSE
+814,1261,DHL,e19fcea5-cbfa-484b-9,2025-08-20,,Philadelphia,"720 Random Rd, Philadelphia",8.98,8.98,in-transit,TRUE
+815,1262,USPS,4b337c25-f8eb-4d1c-a,2025-10-01,2025-10-04,San Antonio,"60 Market St, Los Angeles, CA 84943",22.28,9.09,delivered,TRUE
+816,1263,DHL,3cb5d3ef-92de-49a3-b,2025-06-04,2025-06-08,Philadelphia,"812 Market St, San Jose, CA 88146",22.54,4.68,delivered,TRUE
+817,1265,UPS,e8abff3a-b886-4bc2-a,2025-05-15,2025-05-22,Los Angeles,"633 Oak Ave, Dallas, TX 30032",42.0,1.58,delivered,TRUE
+818,1266,UPS,fcbae9c9-a51c-447c-8,2025-09-29,2025-09-30,Dallas,"196 Oak Ave, Los Angeles, CA 47957",36.17,6.33,delivered,TRUE
+819,1267,DHL,2fb3511f-d8b7-41a0-8,2025-09-10,2025-09-17,Philadelphia,"500 Market St, New York, NY 65872",27.07,5.98,delivered,TRUE
+820,1268,FedEx,d5869791-89e2-4c4b-b,2025-06-25,,San Antonio,"410 Broadway, San Jose, CA 14244",21.27,8.74,in-transit,TRUE
+821,1269,USPS,918d09c7-079c-45c0-8,2025-07-20,2025-07-24,Los Angeles,"981 Oak Ave, Chicago, IL 37772",6.27,7.18,delivered,TRUE
+822,1271,FedEx,f3c2c214-41c0-4b19-9,2025-08-10,,Houston,"416 Broadway, San Jose, CA 23410",20.62,8.28,in-transit,TRUE
+823,1273,UPS,ead7b981-a335-4bda-b,2025-05-22,,Phoenix,"826 Pine Rd, San Diego, CA 19064",42.82,4.29,in-transit,TRUE
+824,1274,FedEx,2044f058-0cee-4527-8,2025-05-12,2025-05-19,Dallas,"16 Broadway, San Jose, CA 15539",38.83,8.23,delivered,TRUE
+825,1275,DHL,44eb25a1-4bb2-4834-b,2025-08-19,2025-08-21,Chicago,"34 Oak Ave, San Antonio, TX 80981",29.31,2.33,delivered,TRUE
+826,1279,UPS,bc372a91-8be2-44ab-8,2025-08-13,2025-08-19,New York,"395 Market St, Houston, TX 69460",37.04,2.35,delivered,TRUE
+827,1281,UPS,db4ac26a-0881-44fd-b,2025-10-04,2025-10-11,Houston,"956 Broadway, Chicago, IL 66774",30.43,2.95,delivered,FALSE
+828,1282,USPS,572a8efd-4c6f-41c5-9,2025-05-17,2025-05-24,San Antonio,"680 Main St, San Antonio, TX 74139",29.94,8.37,delivered,TRUE
+829,1283,UPS,bc0661e0-7d85-4fb2-9,2025-06-17,,San Jose,"194 Pine Rd, New York, NY 50499",9.77,3.18,in-transit,TRUE
+830,1284,USPS,edd8d7bf-b793-4bfe-b,2025-06-27,2025-06-30,New York,"161 Random Rd, New York",25.25,4.99,delivered,TRUE
+831,1289,UPS,2eac72ea-e781-4dba-9,2025-08-21,2025-08-28,San Jose,"539 Broadway, Houston, TX 99737",32.48,6.18,delivered,TRUE
+832,1291,UPS,ceb2defe-99ab-42ea-9,2025-08-04,,San Diego,"620 Market St, San Jose, CA 80405",17.21,2.09,in-transit,TRUE
+833,1293,UPS,84c87456-8fc0-4edc-9,2025-08-22,2025-08-29,San Jose,"171 Market St, New York, NY 64476",28.24,2.09,delivered,TRUE
+834,1294,FedEx,e78de334-0e0e-47c7-a,2025-08-10,2025-08-13,Dallas,"885 Broadway, Phoenix, AZ 65517",22.12,4.2,delivered,TRUE
+835,1295,DHL,fae2a5f9-d9a7-4fe2-a,2025-09-30,,Los Angeles,"770 Market St, San Jose, CA 82053",36.52,4.01,in-transit,TRUE
+836,1297,DHL,9c11651f-238c-43c5-a,2025-11-08,2025-11-12,Los Angeles,"443 Market St, Phoenix, AZ 55706",46.27,4.69,delivered,TRUE
+837,1298,USPS,1bfb92ae-c88a-4dad-a,2025-05-14,2025-05-20,San Jose,"189 Main St, Chicago, IL 89887",47.0,7.93,delivered,TRUE
+838,1299,USPS,fd33cb9a-2cf8-4d87-b,2025-10-27,,Los Angeles,"392 Market St, Los Angeles, CA 86810",43.46,7.13,in-transit,TRUE
+839,1300,UPS,befdd9d2-4291-4987-b,2025-07-31,2025-08-05,Dallas,"548 Broadway, San Diego, CA 87371",35.22,2.79,delivered,TRUE
+840,1302,DHL,0a09ff51-47d5-46c9-8,2025-05-24,2025-05-27,Chicago,"824 Random Rd, Chicago",38.85,4.83,delivered,TRUE
+841,1303,USPS,4c47b169-ca27-418d-9,2025-08-14,2025-08-19,San Diego,"198 Pine Rd, Los Angeles, CA 29073",46.94,0.6,delivered,TRUE
+842,1304,UPS,3dd8ebb0-e6f5-4e8c-a,2025-05-08,,Phoenix,"680 Main St, San Antonio, TX 74139",29.46,9.53,in-transit,TRUE
+843,1306,DHL,1bc03ce5-a587-476e-8,2025-05-19,2025-05-25,Dallas,"309 Main St, Houston, TX 46025",24.89,9.62,delivered,TRUE
+844,1307,FedEx,edff20b1-d2f0-46e1-b,2025-05-27,2025-05-28,Los Angeles,"379 Main St, Dallas, TX 78951",44.92,1.31,delivered,TRUE
+845,1308,UPS,40b6fc86-79b2-4326-9,2025-10-16,,San Diego,"515 Oak Ave, New York, NY 54815",24.72,2.93,in-transit,TRUE
+846,1313,UPS,1b3de490-5cd7-4136-b,2025-07-06,2025-07-08,New York,"467 Main St, Philadelphia, PA 44761",15.83,8.4,delivered,TRUE
+847,1314,FedEx,c67279a8-b6f6-4db8-9,2025-10-12,2025-10-17,Phoenix,"596 Pine Rd, Dallas, TX 71263",29.84,8.9,delivered,TRUE
+848,1315,USPS,f54834b7-f045-46c6-a,2025-09-24,2025-10-01,Los Angeles,"968 Random Rd, Los Angeles",5.75,4.03,delivered,TRUE
+849,1316,USPS,6eff9b03-e503-44b3-a,2025-06-07,2025-06-11,Houston,"553 Broadway, Philadelphia, PA 45720",42.83,9.28,delivered,TRUE
+850,1318,DHL,c81a3876-9071-498c-8,2025-08-01,,Chicago,"165 Pine Rd, Houston, TX 61491",46.21,2.48,in-transit,TRUE
+851,1320,FedEx,b2133450-966c-426a-a,2025-05-16,,New York,"379 Main St, Dallas, TX 78951",18.76,7.81,in-transit,TRUE
+852,1321,FedEx,2285d84c-1d95-45a8-8,2025-05-16,2025-05-21,Phoenix,"694 Pine Rd, Los Angeles, CA 68414",48.39,1.95,delivered,TRUE
+853,1325,USPS,3f6d8f01-8663-47df-8,2025-05-29,,New York,"224 Broadway, Houston, TX 55957",18.32,6.09,in-transit,TRUE
+854,1327,FedEx,7e686063-b3dd-45fd-9,2025-07-27,2025-07-31,San Diego,"640 Broadway, Dallas, TX 42275",7.58,9.05,delivered,TRUE
+855,1329,UPS,b9301156-efb8-43f7-8,2025-06-14,2025-06-19,San Jose,"348 Pine Rd, Houston, TX 98142",36.28,7.27,delivered,TRUE
+856,1332,USPS,f23a0090-51f4-4fba-a,2025-08-26,2025-09-01,Dallas,"861 Broadway, Phoenix, AZ 36433",22.86,4.31,delivered,TRUE
+857,1333,USPS,8715f03c-8d5d-4db8-a,2025-05-13,,San Jose,"720 Oak Ave, San Antonio, TX 38043",10.31,7.57,in-transit,TRUE
+858,1335,FedEx,042aaaa6-15f5-4cab-9,2025-08-06,2025-08-09,San Antonio,"882 Market St, Chicago, IL 74414",19.33,6.99,delivered,TRUE
+859,1337,UPS,f58e566d-1c46-4b2b-9,2025-06-20,2025-06-26,San Jose,"919 Oak Ave, San Antonio, TX 54922",11.41,0.45,delivered,TRUE
+860,1338,USPS,25e3c419-0df0-4314-8,2025-08-03,2025-08-10,San Jose,"585 Market St, New York, NY 64592",21.81,0.43,delivered,TRUE
+861,1339,UPS,7f8ce136-82bd-4218-a,2025-07-27,2025-07-30,Phoenix,"935 Pine Rd, Los Angeles, CA 73525",20.5,8.54,delivered,TRUE
+862,1340,USPS,8b479f52-b14b-4ed3-b,2025-09-14,2025-09-20,Houston,"52 Random Rd, Houston",37.72,8.98,delivered,TRUE
+863,1341,UPS,0be6d14d-0da0-4edf-b,2025-08-24,2025-08-26,Chicago,"851 Oak Ave, Chicago, IL 14138",12.37,4.62,delivered,TRUE
+864,1343,FedEx,7e9127a4-6a83-4629-8,2025-09-17,,Dallas,"450 Oak Ave, Chicago, IL 96013",30.4,0.41,in-transit,TRUE
+865,1344,DHL,cf373600-d403-47a9-9,2025-05-10,2025-05-11,Houston,"462 Main St, Dallas, TX 99167",36.9,7.08,delivered,FALSE
+866,1345,FedEx,d650ef9f-0078-431a-8,2025-09-19,2025-09-25,San Diego,"867 Main St, Houston, TX 42701",5.22,8.37,delivered,TRUE
+867,1346,FedEx,af68906b-1a44-433b-b,2025-07-20,2025-07-23,Dallas,"162 Oak Ave, Dallas, TX 35156",42.39,1.58,delivered,TRUE
+868,1348,DHL,78119970-e15b-422c-9,2025-10-24,2025-10-28,Philadelphia,"929 Oak Ave, San Jose, CA 73993",27.12,6.19,delivered,TRUE
+869,1349,USPS,eeebd9aa-5d25-42d3-8,2025-06-12,2025-06-16,Dallas,"293 Oak Ave, New York, NY 27392",14.2,2.03,delivered,TRUE
+870,1351,USPS,9f27c6ab-4836-4c4a-8,2025-07-19,2025-07-22,Dallas,"567 Market St, San Diego, CA 55093",12.03,6.57,delivered,TRUE
+871,1353,DHL,ea6d02f0-33a1-45dd-8,2025-05-21,2025-05-26,New York,"29 Market St, San Antonio, TX 20205",24.86,4.87,delivered,TRUE
+872,1354,USPS,891e46d6-4443-4346-8,2025-06-14,,San Antonio,"640 Broadway, Dallas, TX 42275",28.83,6.83,in-transit,TRUE
+873,1355,USPS,8916b60f-cb89-4b50-a,2025-10-21,,San Antonio,"443 Market St, Phoenix, AZ 55706",21.5,7.8,in-transit,TRUE
+874,1356,DHL,f7a5132a-a8a2-417c-8,2025-10-05,,Chicago,"123 Market St, Los Angeles, CA 88215",30.55,2.8,in-transit,TRUE
+875,1359,USPS,c6863a51-b873-4433-9,2025-07-21,2025-07-28,San Jose,"718 Market St, San Diego, CA 58148",9.1,3.59,delivered,TRUE
+876,1360,UPS,2700d172-704f-4670-b,2025-08-05,2025-08-09,Houston,"344 Random Rd, Houston",8.89,4.78,delivered,TRUE
+877,1362,USPS,e7cd9b0d-1576-464c-8,2025-05-24,2025-05-27,Los Angeles,"92 Oak Ave, Philadelphia, PA 17345",17.81,9.04,delivered,TRUE
+878,1363,DHL,8cdfd465-963f-48c9-8,2025-09-01,2025-09-04,San Diego,"630 Oak Ave, Houston, TX 69606",39.99,5.93,delivered,TRUE
+879,1365,FedEx,0677bd32-077a-411a-b,2025-08-19,,New York,"732 Pine Rd, Dallas, TX 64459",8.03,5.46,in-transit,TRUE
+880,1366,DHL,06731eda-2a70-47d1-9,2025-09-18,2025-09-25,Chicago,"519 Random Rd, Chicago",44.32,9.5,delivered,TRUE
+881,1367,DHL,2490e9a0-7070-4dc9-b,2025-07-16,,San Antonio,"140 Broadway, New York, NY 87640",24.71,7.2,in-transit,TRUE
+882,1369,USPS,ff580013-9f7f-43ba-9,2025-07-14,2025-07-16,New York,"231 Oak Ave, San Jose, CA 53064",35.87,0.5,delivered,TRUE
+883,1370,USPS,a0614e9b-643c-445c-b,2025-09-01,2025-09-05,Dallas,"127 Broadway, San Antonio, TX 39466",23.15,1.61,delivered,TRUE
+884,1371,USPS,24078399-9d6b-4465-b,2025-07-08,2025-07-11,San Antonio,"470 Market St, Los Angeles, CA 99143",9.17,7.27,delivered,TRUE
+885,1372,FedEx,921cbb03-f42b-4afc-a,2025-06-25,2025-06-26,Philadelphia,"183 Main St, San Jose, CA 57151",8.87,0.82,delivered,TRUE
+886,1375,FedEx,7c876e33-443b-4929-9,2025-07-10,,Houston,"905 Main St, Phoenix, AZ 68947",33.29,5.12,in-transit,TRUE
+887,1376,DHL,1d0eb581-60f3-4170-8,2025-06-05,2025-06-06,Dallas,"265 Oak Ave, San Antonio, TX 94671",34.74,4.39,delivered,TRUE
+888,1377,DHL,de713a4e-41e1-4fb7-a,2025-11-01,,Phoenix,"457 Random Rd, Phoenix",41.35,7.88,in-transit,TRUE
+889,1378,FedEx,a81fe40d-6334-4146-9,2025-08-19,2025-08-26,Philadelphia,"513 Oak Ave, San Jose, CA 52027",32.63,4.74,delivered,TRUE
+890,1379,USPS,fca6a5d9-5b18-48a1-a,2025-05-27,2025-06-03,Philadelphia,"773 Pine Rd, San Diego, CA 29917",36.14,1.82,delivered,TRUE
+891,1380,USPS,e08eb71b-84a5-43ad-b,2025-09-06,2025-09-12,Chicago,"553 Broadway, Philadelphia, PA 45720",49.77,9.58,delivered,TRUE
+892,1381,USPS,5c6578fa-86eb-4f8c-b,2025-08-14,2025-08-20,San Jose,"916 Pine Rd, San Jose, CA 85674",37.32,5.7,delivered,TRUE
+893,1383,USPS,97a88334-bee0-47f0-b,2025-05-23,,Houston,"685 Market St, San Jose, CA 69472",10.16,5.52,in-transit,TRUE
+894,1384,FedEx,e339c1fb-2aba-4ad1-8,2025-07-08,2025-07-15,Chicago,"196 Oak Ave, Los Angeles, CA 47957",40.91,4.74,delivered,TRUE
+895,1385,UPS,3dd8aa16-4248-44a8-a,2025-07-02,2025-07-08,Los Angeles,"653 Main St, Chicago, IL 92242",7.69,1.01,delivered,TRUE
+896,1387,USPS,ba667c5a-859a-4263-9,2025-10-01,2025-10-02,New York,"91 Oak Ave, Los Angeles, CA 55039",24.93,6.92,delivered,TRUE
+897,1388,DHL,7f7421fc-f51f-4436-a,2025-08-29,2025-09-01,San Diego,"515 Oak Ave, Dallas, TX 76088",16.1,6.93,delivered,TRUE
+898,1389,UPS,3af3545c-3962-4f98-b,2025-06-23,2025-06-25,Houston,"646 Oak Ave, New York, NY 41266",13.47,9.94,delivered,TRUE
+899,1390,DHL,959cc8be-f2b8-4e0c-a,2025-06-18,2025-06-23,Houston,"342 Broadway, Philadelphia, PA 73896",22.56,8.16,delivered,TRUE
+900,1392,FedEx,a43c8eca-5720-47bc-9,2025-06-19,,Dallas,"198 Pine Rd, Los Angeles, CA 29073",21.12,5.23,in-transit,FALSE
+901,1393,DHL,4cdf13ee-3972-47b0-8,2025-07-10,,San Antonio,"842 Broadway, New York, NY 85877",14.28,5.86,in-transit,TRUE
+902,1394,USPS,53ceaf80-a048-4cbf-8,2025-09-17,2025-09-20,Dallas,"435 Main St, San Antonio, TX 50966",39.06,4.38,delivered,TRUE
+903,1396,UPS,67851b5c-0b62-417a-a,2025-07-04,,Houston,"487 Random Rd, Houston",33.13,2.74,in-transit,TRUE
+904,1397,USPS,1ab37f93-5397-4552-8,2025-08-09,2025-08-14,Dallas,"293 Random Rd, Dallas",30.38,9.78,delivered,TRUE
+905,1398,DHL,39a6e729-c374-4d06-8,2025-10-02,,New York,"807 Pine Rd, Houston, TX 57467",22.97,8.17,in-transit,TRUE
+906,1399,UPS,12fcd04a-90a9-4a03-8,2025-06-05,2025-06-10,Houston,"867 Main St, Houston, TX 42701",41.74,1.64,delivered,TRUE
+907,1401,DHL,b042e80c-e04a-417f-a,2025-09-10,2025-09-14,Philadelphia,"284 Market St, New York, NY 98299",12.99,2.82,delivered,TRUE
+908,1402,FedEx,55742576-fe33-4cf8-b,2025-06-30,2025-07-02,Los Angeles,"663 Market St, Dallas, TX 98063",37.75,6.91,delivered,TRUE
+909,1403,FedEx,ceeba240-f31a-48a7-8,2025-10-09,2025-10-10,San Jose,"956 Broadway, Chicago, IL 66774",25.63,5.94,delivered,TRUE
+910,1405,UPS,17c0dc9a-546b-430a-b,2025-08-20,2025-08-21,San Jose,"974 Market St, Philadelphia, PA 78742",35.84,1.6,delivered,FALSE
+911,1406,USPS,a424b9bc-3f0e-4306-b,2025-10-14,2025-10-21,Los Angeles,"418 Pine Rd, Phoenix, AZ 67422",34.51,9.88,delivered,TRUE
+912,1407,FedEx,801234a6-b2ce-412d-8,2025-06-25,2025-06-28,Los Angeles,"112 Oak Ave, San Diego, CA 10679",22.25,2.93,delivered,TRUE
+913,1411,USPS,9cf06447-e27c-45c3-a,2025-08-13,2025-08-14,San Antonio,"399 Pine Rd, San Jose, CA 67700",12.43,2.45,delivered,FALSE
+914,1414,DHL,cacd924f-5be2-44e5-a,2025-09-09,2025-09-14,San Diego,"186 Pine Rd, San Jose, CA 90541",26.42,0.96,delivered,TRUE
+915,1415,FedEx,8b86ad57-e539-45f4-b,2025-07-15,,Houston,"979 Main St, Phoenix, AZ 38389",12.13,7.31,in-transit,FALSE
+916,1417,USPS,fb3bd8ed-baaa-4581-9,2025-10-28,2025-10-31,San Diego,"777 Oak Ave, San Jose, CA 41029",15.79,4.38,delivered,TRUE
+917,1420,USPS,189473fa-cdb0-4ca2-a,2025-05-18,2025-05-23,Phoenix,"442 Random Rd, Phoenix",49.84,2.35,delivered,TRUE
+918,1422,FedEx,a4322019-2f9b-4c14-9,2025-07-16,2025-07-23,Houston,"575 Main St, Chicago, IL 30517",14.82,2.47,delivered,TRUE
+919,1424,FedEx,ea8d71f2-248a-4549-a,2025-08-24,2025-08-27,Phoenix,"885 Oak Ave, Los Angeles, CA 23238",25.1,4.46,delivered,TRUE
+920,1425,USPS,86e9ef5d-376f-4c34-9,2025-10-13,2025-10-14,Philadelphia,"309 Main St, Houston, TX 46025",29.21,0.96,delivered,TRUE
+921,1426,DHL,9441d932-cfa3-41bb-b,2025-09-01,2025-09-04,Philadelphia,"946 Oak Ave, San Diego, CA 89220",29.55,1.56,delivered,TRUE
+922,1427,USPS,220ebe49-4aa4-4427-9,2025-09-24,2025-09-26,Los Angeles,"162 Random Rd, Los Angeles",47.87,3.78,delivered,TRUE
+923,1429,FedEx,802119bc-1795-4c66-b,2025-07-02,2025-07-07,Houston,"363 Market St, Los Angeles, CA 24534",36.02,0.41,delivered,TRUE
+924,1430,USPS,18fc3237-880a-488e-9,2025-09-27,2025-09-28,Chicago,"239 Main St, Dallas, TX 36342",26.03,6.7,delivered,TRUE
+925,1431,FedEx,cee72001-b6aa-45b1-b,2025-08-04,2025-08-08,San Diego,"451 Oak Ave, Los Angeles, CA 44664",42.87,3.14,delivered,TRUE
+926,1434,DHL,9cfce2d3-7dd4-4762-9,2025-08-11,,Philadelphia,"317 Random Rd, Philadelphia",19.66,6.1,in-transit,TRUE
+927,1436,DHL,8df4f557-291c-4e92-b,2025-06-17,2025-06-19,Los Angeles,"392 Random Rd, Los Angeles",41.02,8.37,delivered,TRUE
+928,1440,FedEx,4baa17db-4319-4760-8,2025-08-01,2025-08-02,Chicago,"315 Random Rd, Chicago",22.42,3.1,delivered,TRUE
+929,1441,USPS,344f8aa9-e21a-4ef2-9,2025-09-06,2025-09-10,Houston,"418 Pine Rd, Phoenix, AZ 67422",48.49,5.38,delivered,TRUE
+930,1444,UPS,13d31bac-6564-4f5d-a,2025-10-21,2025-10-27,Los Angeles,"70 Main St, Philadelphia, PA 29360",41.01,0.34,delivered,TRUE
+931,1446,DHL,7585bb35-2710-4f4c-b,2025-10-26,2025-11-01,Philadelphia,"927 Market St, San Antonio, TX 55237",11.09,2.07,delivered,TRUE
+932,1448,UPS,c6d7e7de-4c72-4ab9-a,2025-05-27,2025-05-31,Philadelphia,"575 Main St, Chicago, IL 30517",42.73,5.01,delivered,TRUE
+933,1449,FedEx,705c7e7b-61dc-4951-a,2025-08-22,2025-08-26,Phoenix,"811 Market St, Philadelphia, PA 97806",9.97,0.27,delivered,TRUE
+934,1450,UPS,e7ce9389-4737-4018-b,2025-06-07,2025-06-11,Chicago,"961 Random Rd, Chicago",26.99,4.46,delivered,TRUE
+935,1451,DHL,a46f96b8-5dc7-48ab-a,2025-08-04,2025-08-11,Phoenix,"214 Pine Rd, Houston, TX 30446",6.88,6.56,delivered,TRUE
+936,1452,UPS,968da09e-b34d-4abb-8,2025-08-07,2025-08-13,San Jose,"293 Oak Ave, New York, NY 27392",37.77,6.9,delivered,TRUE
+937,1453,FedEx,0d6934a9-b2ef-4fc9-b,2025-10-09,2025-10-13,Phoenix,"204 Main St, San Antonio, TX 22704",38.53,9.95,delivered,TRUE
+938,1454,USPS,282e1119-b040-4fc0-9,2025-05-25,2025-05-27,Houston,"395 Broadway, New York, NY 96969",40.47,1.89,delivered,TRUE
+939,1455,DHL,3a01c3e9-8ded-45af-a,2025-09-22,2025-09-23,Dallas,"762 Pine Rd, San Antonio, TX 89129",5.24,0.63,delivered,FALSE
+940,1456,FedEx,cdf411eb-425c-4c41-b,2025-09-12,,Chicago,"193 Random Rd, Chicago",49.47,3.72,in-transit,TRUE
+941,1458,FedEx,0d520bbd-9db2-400e-9,2025-05-29,,New York,"226 Broadway, Houston, TX 72324",30.91,3.72,in-transit,TRUE
+942,1459,UPS,50cf2500-4013-454f-b,2025-08-20,2025-08-25,San Jose,"91 Oak Ave, Los Angeles, CA 55039",18.12,3.95,delivered,TRUE
+943,1462,UPS,be204bad-c364-40be-9,2025-08-13,,New York,"811 Market St, Philadelphia, PA 97806",17.87,8.66,in-transit,TRUE
+944,1463,UPS,6accca1f-28a5-4ccd-9,2025-09-16,2025-09-20,Philadelphia,"487 Pine Rd, San Diego, CA 63282",39.6,9.06,delivered,TRUE
+945,1464,DHL,ba9b8a93-05d7-4590-b,2025-05-23,,San Antonio,"348 Main St, Houston, TX 68954",19.59,7.41,in-transit,TRUE
+946,1466,USPS,324c4452-cac7-4ff2-b,2025-08-17,2025-08-23,Dallas,"477 Main St, Dallas, TX 58354",25.79,4.41,delivered,FALSE
+947,1467,DHL,8c2a724f-31b3-49f3-9,2025-07-08,2025-07-10,Los Angeles,"308 Pine Rd, Houston, TX 51288",5.9,8.33,delivered,TRUE
+948,1468,USPS,87011ac9-cae9-41d5-a,2025-09-23,2025-09-29,Phoenix,"863 Main St, Dallas, TX 49829",5.7,8.26,delivered,TRUE
+949,1470,UPS,8eac1ffb-848f-422a-9,2025-10-06,2025-10-12,San Diego,"813 Random Rd, San Diego",46.99,7.01,delivered,TRUE
+950,1471,DHL,4bc4c6e1-e8a1-4cfc-8,2025-06-16,2025-06-19,Los Angeles,"686 Random Rd, Los Angeles",32.38,2.72,delivered,TRUE
+951,1472,DHL,6966d550-a377-4298-b,2025-06-03,,Philadelphia,"163 Oak Ave, Houston, TX 30625",45.38,3.94,in-transit,TRUE
+952,1475,DHL,b3d0ab54-dfa4-40f9-b,2025-08-17,2025-08-21,Phoenix,"640 Main St, San Diego, CA 20384",32.63,9.39,delivered,TRUE
+953,1476,UPS,5f0e5a17-45e8-4dd0-a,2025-07-27,2025-08-01,Phoenix,"69 Main St, San Jose, CA 84890",5.78,9.36,delivered,TRUE
+954,1479,FedEx,8897faf7-9d6e-4706-8,2025-06-27,,Los Angeles,"236 Main St, San Jose, CA 93283",39.2,9.64,in-transit,TRUE
+955,1480,DHL,fe40dd68-846a-489c-a,2025-07-31,2025-08-05,Phoenix,"153 Market St, Chicago, IL 52415",37.92,0.37,delivered,TRUE
+956,1481,FedEx,756ca21e-08e5-45ed-8,2025-10-16,,Chicago,"640 Broadway, Dallas, TX 42275",48.15,1.64,in-transit,TRUE
+957,1482,FedEx,eee2adb0-3222-4377-b,2025-10-04,,Dallas,"383 Main St, Phoenix, AZ 56898",15.04,4.39,in-transit,TRUE
+958,1485,FedEx,cd03f811-04b0-403c-8,2025-07-06,,Chicago,"105 Market St, New York, NY 59710",37.43,2.83,in-transit,FALSE
+959,1486,DHL,64f4cb76-b831-4e57-a,2025-08-14,2025-08-17,Los Angeles,"492 Random Rd, Los Angeles",23.22,4.73,delivered,TRUE
+960,1487,UPS,b0fd6efa-af87-4d77-9,2025-09-23,,San Antonio,"284 Market St, New York, NY 98299",6.9,6.58,in-transit,FALSE
+961,1489,UPS,73ab3c3c-5c13-4b37-b,2025-05-19,2025-05-22,San Jose,"516 Market St, San Antonio, TX 41979",43.36,1.4,delivered,TRUE
+962,1490,DHL,1a8349fd-c8ab-4f04-9,2025-06-22,2025-06-28,Phoenix,"573 Broadway, Los Angeles, CA 48058",32.38,2.54,delivered,TRUE
+963,1494,UPS,73f71cc5-ce2b-4ae7-9,2025-08-26,2025-08-28,Phoenix,"718 Market St, San Diego, CA 58148",17.83,1.46,delivered,TRUE
+964,1496,FedEx,26b04623-4bc6-4654-8,2025-07-12,2025-07-18,San Antonio,"996 Random Rd, San Antonio",8.88,3.34,delivered,TRUE
+965,1497,UPS,b54723b5-6238-4aa7-b,2025-09-27,2025-09-30,Dallas,"58 Random Rd, Dallas",27.65,3.83,delivered,TRUE
+966,1498,FedEx,6a44d3dc-37e7-40e7-a,2025-10-03,2025-10-06,Los Angeles,"127 Broadway, San Antonio, TX 39466",9.93,9.3,delivered,TRUE
+967,1499,FedEx,cd954bb5-958f-4242-a,2025-10-24,,Dallas,"674 Pine Rd, New York, NY 23529",47.2,5.01,in-transit,TRUE
+968,1500,USPS,8f649931-3d1d-4693-8,2025-11-02,2025-11-05,Phoenix,"837 Broadway, San Diego, CA 22833",22.47,9.34,delivered,TRUE

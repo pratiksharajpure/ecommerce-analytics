@@ -1,0 +1,351 @@
+product_id,sku,name,category,price,cost,description,image_url,stock_quantity,weight,dimensions,created_date
+1,SKU-46048,Eco Speaker,Beauty,115.49,80.22,Eco Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-46048.jpg,346,3.73,39x10x42 cm,2025-01-12
+2,SKU-22280,Premium Speaker,Beauty,free,77.01,Premium Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-22280.jpg,287,1.07,46x49x39 cm,2025-01-09
+3,SKU-44973,Compact Chair,Sports,405.67,163.32,Compact Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-87236.jpg,412,0.88,32x26x22 cm,2024-04-14
+4,SKU-54118,Compact Shoes,Home & Kitchen,50.91,22.33,,https://example.com/images/sku-54118.jpg,433,1.79,21x7x34 cm,2025-05-09
+5,SKU-20328,Eco Bag,Health,150.12,97.8,,https://example.com/images/sku-20328.jpg,453,4.32,41x17x50 cm,2024-01-17
+6,SKU-39871,Premium Headphones,Pet Supplies,148.25,64.03,Premium Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-39871.jpg,119,4.35,29x22x34 cm,2025-08-18
+7,SKU-58520,Stylish Shirt,Automotive,108.71,55.09,Stylish Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-58520.jpg,479,3.45,9x43x45 cm,2024-04-30
+8,SKU-42087,Wireless Pen,Clothing,233.82,118.78,Wireless Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-42087.jpg,473,3.24,40x19x48 cm,2024-10-04
+9,SKU-14207,Premium Lamp,,161.15,81.72,Premium Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-14207.jpg,108,4.57,41x50x25 cm,2024-06-11
+10,SKU-94259,Lightweight Bag,Books,75.72,34.52,Lightweight Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-94259.jpg,381,2.85,21x42x32 cm,2025-06-26
+11,SKU-38746,Durable Vacuum,Clothing,257.22,112.24,,https://example.com/images/sku-38746.jpg,24,4.32,14x45x15 cm,2025-10-03
+12,SKU-18326,Durable Camera,Toys,193.9,154.82,Durable Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-18326.jpg,270,1.33,40x5x48 cm,2024-03-03
+13,SKU-44973,Wireless Shoes,Pet Supplies,322.28,143.29,Wireless Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-44973.jpg,222,0.87,5x21x37 cm,2024-05-07
+14,SKU-91959,Wireless Mug,Sports,421.63,254.27,Wireless Mug - A high-quality mug designed for modern needs.,,101,0.85,15x39x38 cm,2023-11-07
+15,SKU-74042,Waterproof Vacuum,Electronics,60.37,32.91,,https://example.com/images/sku-74042.jpg,425,4.05,20x8x20 cm,2025-06-09
+16,SKU-73699,Eco Mug,Home & Kitchen,489.1,299.86,,https://example.com/images/sku-73699.jpg,64,0.73,35x40x15 cm,2024-08-04
+17,SKU-65461,Wireless Camera,Beauty,464.81,326.35,,https://example.com/images/sku-65461.jpg,353,1.09,24x30x47 cm,2025-09-02
+18,SKU-77839,Stylish Chair,Books,64.9,31.79,Stylish Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-77839.jpg,173,0.2,40x19x42 cm,2024-06-19
+19,SKU-78493,Premium Mug,Electronics,118.33,90.19,Premium Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-92719.jpg,440,1.72,37x20x22 cm,2025-09-22
+20,SKU-80678,Lightweight Lamp,Clothing,363.06,273.37,Lightweight Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-80678.jpg,295,2.42,35x31x17 cm,2024-02-11
+21,SKU-66498,Eco Headphones,,214.67,125.97,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-66498.jpg,373,0.37,46x46x11 cm,2024-01-08
+22,SKU-54473,Durable Pen,Pet Supplies,431.53,215.53,Durable Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-54473.jpg,97,2.73,13x32x16 cm,2024-08-18
+23,SKU-19880,Lightweight Lamp,Books,free,300.64,Lightweight Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-19880.jpg,50,0.35,39x5x10 cm,2024-07-06
+24,SKU-73653,Smart Bag,Books,free,62.09,Smart Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-73653.jpg,30,0.91,5x29x21 cm,2025-02-14
+25,SKU-82845,Portable Bag,Office,360.61,166.57,Portable Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-82845.jpg,151,1.17,8x42x39 cm,2024-01-08
+26,SKU-16572,Stylish Speaker,Jewelry,241.01,185.04,,https://example.com/images/sku-16572.jpg,271,0.87,37x10x16 cm,2024-01-16
+27,SKU-98501,Waterproof Mug,Beauty,204.87,159.11,Waterproof Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-98501.jpg,291,1.31,43x7x44 cm,2024-01-29
+28,SKU-86503,Durable Headphones,Jewelry,263.78,204.13,Durable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-86503.jpg,104,3.38,25x20x21 cm,2024-12-16
+29,SKU-94607,Smart Headphones,Sports,231.33,178.5,,https://example.com/images/sku-94607.jpg,479,0.46,34x44x41 cm,2024-02-17
+30,SKU-37938,Eco Bottle,Health,136.27,105.38,,https://example.com/images/sku-37938.jpg,451,0.44,20x28x23 cm,2024-04-16
+31,SKU-49651,Lightweight Bottle,Jewelry,,355.64,Lightweight Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-49651.jpg,270,0.14,40x24x47 cm,2024-02-21
+32,SKU-25129,Smart Watch,Home & Kitchen,372.5,172.16,Smart Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-25129.jpg,144,3.06,50x26x18 cm,2025-10-10
+33,SKU-74032,Portable Bottle,Sports,453.14,334.62,,https://example.com/images/sku-74032.jpg,47,3.21,22x7x5 cm,2024-10-13
+34,SKU-44335,Smart Headphones,Clothing,371.91,230.83,,https://example.com/images/sku-44335.jpg,218,2.85,12x9x49 cm,2024-04-07
+35,SKU-58393,Wireless Speaker,Jewelry,N/A,159.28,Wireless Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-58393.jpg,21,1.61,7x27x18 cm,2025-10-05
+36,SKU-23473,Compact Headphones,Automotive,391.16,294.8,Compact Headphones - A high-quality headphones designed for modern needs.,,208,4.87,14x20x15 cm,2024-05-06
+37,SKU-33509,Durable Speaker,Garden,462.62,329.83,Durable Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-33509.jpg,210,4.03,20x22x15 cm,2025-10-25
+38,SKU-15075,Eco Bag,Books,115.1,83.64,Eco Bag - A high-quality bag designed for modern needs.,,235,1.81,19x19x6 cm,2025-09-12
+39,SKU-53025,Compact Bag,Sports,432.85,340.55,Compact Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-53025.jpg,142,1.82,37x30x48 cm,2025-05-09
+40,SKU-25118,Stylish Speaker,Sports,93.39,73.31,Stylish Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-25118.jpg,135,0.29,43x32x27 cm,2024-09-23
+41,SKU-77033,Durable Camera,Home & Kitchen,195.67,123.4,Durable Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-77033.jpg,130,0.32,32x5x38 cm,2025-05-11
+42,SKU-66531,Compact Vacuum,Home & Kitchen,474.69,364.71,Compact Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-66531.jpg,319,1.64,12x24x37 cm,2024-09-18
+43,SKU-62743,Durable Vacuum,Garden,151.35,68.25,Durable Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-62743.jpg,215,3.36,29x48x16 cm,2025-07-29
+44,SKU-63225,Waterproof Watch,Health,417.69,217.85,Waterproof Watch - A high-quality watch designed for modern needs.,,107,2.21,42x43x46 cm,2024-10-01
+45,SKU-11330,Lightweight Chair,Office,110.78,65.28,Lightweight Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-67954.jpg,461,4.8,15x47x10 cm,2024-08-23
+46,SKU-92960,Wireless Headphones,Jewelry,170.92,124.32,Wireless Headphones - A high-quality headphones designed for modern needs.,,384,1.25,24x19x17 cm,2024-04-05
+47,SKU-42092,Premium Speaker,Books,307.58,217.58,,https://example.com/images/sku-42092.jpg,233,2.13,45x41x17 cm,2025-10-20
+48,SKU-62383,Durable Chair,,78.05,52.69,Durable Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-62383.jpg,457,3.78,11x32x19 cm,2024-05-05
+49,SKU-16582,Wireless Chair,Health,128.35,94.89,Wireless Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-16582.jpg,233,0.75,34x47x38 cm,2025-06-01
+50,SKU-68008,Waterproof Vacuum,Jewelry,408.43,309.1,Waterproof Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-68008.jpg,218,4.17,40x33x15 cm,2025-03-07
+51,SKU-42406,Lightweight Watch,,142.27,101.16,Lightweight Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-42406.jpg,248,3.17,22x33x9 cm,2025-11-06
+52,SKU-45614,Portable Lamp,Automotive,NaN,100.58,Portable Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-45614.jpg,70,0.84,29x49x14 cm,2025-10-30
+53,SKU-64377,Compact Mug,Toys,168.79,98.97,,https://example.com/images/sku-64377.jpg,31,1.11,31x29x42 cm,2025-10-19
+54,SKU-85456,Premium Shoes,Toys,241.1,187.36,Premium Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-85456.jpg,152,3.79,31x39x39 cm,2025-07-16
+55,SKU-38760,Compact Chair,Sports,220.74,90.86,Compact Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-38760.jpg,172,3.38,30x15x34 cm,2024-03-16
+56,SKU-13534,Waterproof Bottle,Toys,297.99,198.22,,https://example.com/images/sku-13534.jpg,42,3.25,13x34x16 cm,2023-12-28
+57,SKU-52906,Portable Bag,Beauty,230.08,123.09,Portable Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-52906.jpg,450,1.96,31x21x10 cm,2025-03-02
+58,SKU-80702,Premium Pen,Electronics,499.95,269.97,Premium Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-80702.jpg,332,0.44,46x7x6 cm,2024-07-17
+59,SKU-91439,Compact Speaker,Clothing,free,72.55,Compact Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-91439.jpg,58,2.86,18x34x49 cm,2024-07-26
+60,SKU-89415,Stylish Shirt,Jewelry,,331.33,Stylish Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-89415.jpg,398,4.11,24x11x42 cm,2023-12-03
+61,SKU-98781,Portable Camera,Toys,201.34,138.12,Portable Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-98781.jpg,38,3.0,45x20x11 cm,2025-10-20
+62,SKU-88697,Portable Headphones,Pet Supplies,64.92,51.52,Portable Headphones - A high-quality headphones designed for modern needs.,,400,0.3,39x32x47 cm,2024-11-20
+63,SKU-94874,Eco Bottle,,11.26,6.4,Eco Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-94874.jpg,250,0.62,28x45x34 cm,2025-10-31
+64,SKU-33086,Smart Bag,Garden,263.26,173.8,,https://example.com/images/sku-33086.jpg,315,4.06,39x35x34 cm,2025-01-26
+65,SKU-52245,Waterproof Watch,Beauty,,180.91,Waterproof Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-52245.jpg,451,2.31,34x41x44 cm,2025-09-21
+66,SKU-13761,Durable Vacuum,Books,426.22,201.49,Durable Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-13761.jpg,108,1.84,21x26x22 cm,2025-07-09
+67,SKU-11330,Portable Bottle,Health,474.29,205.96,Portable Bottle - A high-quality bottle designed for modern needs.,,368,2.09,40x20x49 cm,2025-03-08
+68,SKU-12260,Lightweight Chair,Home & Kitchen,150.65,84.63,,https://example.com/images/sku-12260.jpg,124,1.6,42x28x35 cm,2025-05-26
+69,SKU-65771,Wireless Vacuum,Garden,277.44,150.02,Wireless Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-65771.jpg,232,1.43,21x19x12 cm,2024-05-22
+70,SKU-80236,Stylish Mug,Pet Supplies,346.63,165.21,,https://example.com/images/sku-80236.jpg,378,2.47,42x38x43 cm,2024-08-22
+71,SKU-48829,Eco Lamp,Beauty,183.64,95.66,Eco Lamp - A high-quality lamp designed for modern needs.,,362,2.72,22x7x8 cm,2025-05-26
+72,SKU-26551,Portable Pen,Office,434.89,259.35,Portable Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-26551.jpg,446,0.16,23x35x35 cm,2025-01-31
+73,SKU-81228,Stylish Shirt,Sports,470.83,278.3,Stylish Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-16734.jpg,420,0.42,36x9x41 cm,2025-08-12
+74,SKU-29555,Premium Shirt,Pet Supplies,283.61,147.91,Premium Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-29555.jpg,127,0.68,31x43x43 cm,2025-08-01
+75,SKU-78494,Compact Shoes,Toys,228.0,131.58,Compact Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-78494.jpg,440,2.98,32x24x41 cm,2025-08-03
+76,SKU-23006,Premium Camera,Pet Supplies,N/A,52.25,Premium Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-23006.jpg,338,0.5,20x16x40 cm,2024-01-22
+77,SKU-63545,Smart Speaker,Books,error,203.58,Smart Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-63545.jpg,16,1.23,50x23x49 cm,2025-02-13
+78,SKU-40595,Eco Headphones,Sports,394.97,256.74,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-40595.jpg,338,4.04,17x32x12 cm,2025-05-17
+79,SKU-29528,Compact Headphones,,414.18,177.5,Compact Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-29528.jpg,84,3.98,43x41x23 cm,2025-01-29
+80,SKU-49857,Eco Chair,Garden,204.24,103.94,Eco Chair - A high-quality chair designed for modern needs.,,276,2.52,10x43x7 cm,2025-01-22
+81,SKU-42816,Stylish Camera,Electronics,50.21,39.4,Stylish Camera - A high-quality camera designed for modern needs.,,428,4.32,42x6x48 cm,2024-08-08
+82,SKU-32962,Waterproof Speaker,Books,261.89,151.08,,https://example.com/images/sku-32962.jpg,142,0.99,42x32x45 cm,2025-03-24
+83,SKU-55607,Eco Chair,Toys,169.99,113.56,Eco Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-55607.jpg,439,0.89,31x49x36 cm,2024-08-28
+84,SKU-82102,Durable Shoes,Electronics,230.14,121.01,,https://example.com/images/sku-82102.jpg,165,0.67,30x37x5 cm,2025-09-10
+85,SKU-64165,Wireless Chair,Electronics,N/A,53.3,Wireless Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-64165.jpg,387,2.54,33x8x18 cm,2024-08-06
+86,SKU-47752,Wireless Shirt,,441.02,261.92,Wireless Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-47752.jpg,14,4.87,43x20x50 cm,2024-04-17
+87,SKU-11792,Portable Bottle,Health,206.96,101.39,Portable Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-11792.jpg,430,4.57,34x12x46 cm,2024-04-12
+88,SKU-48254,Lightweight Pen,Health,NaN,200.54,Lightweight Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-48254.jpg,247,4.9,20x34x40 cm,2024-04-03
+89,SKU-88561,Durable Lamp,Health,374.41,170.21,,https://example.com/images/sku-88561.jpg,35,1.45,31x26x37 cm,2024-08-06
+90,SKU-49132,Premium Watch,Jewelry,292.06,193.92,Premium Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-49132.jpg,443,0.83,39x35x27 cm,2024-10-12
+91,SKU-81228,Wireless Shoes,Toys,230.4,121.82,,https://example.com/images/sku-81228.jpg,96,4.91,20x41x29 cm,2024-07-03
+92,SKU-98501,Durable Speaker,Garden,239.12,183.02,Durable Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-51704.jpg,195,1.99,47x46x14 cm,2025-03-28
+93,SKU-75836,Premium Shirt,Jewelry,169.34,74.53,Premium Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-75836.jpg,432,2.26,38x34x5 cm,2024-04-02
+94,SKU-30232,Durable Headphones,Home & Kitchen,237.4,187.0,Durable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-30232.jpg,173,3.15,30x46x10 cm,2024-10-08
+95,SKU-51505,Wireless Bag,Office,360.77,253.9,Wireless Bag - A high-quality bag designed for modern needs.,,446,2.75,44x9x20 cm,2025-08-14
+96,SKU-18326,Portable Lamp,Toys,489.28,344.53,Portable Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-21846.jpg,360,4.38,33x15x49 cm,2024-09-08
+97,SKU-52516,Premium Speaker,Pet Supplies,32.78,17.81,,https://example.com/images/sku-52516.jpg,220,0.81,38x31x41 cm,2025-10-05
+98,SKU-32946,Smart Shirt,,306.7,169.61,Smart Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-32946.jpg,349,1.28,42x14x19 cm,2025-02-21
+99,SKU-43466,Portable Chair,Office,9.65,6.97,,https://example.com/images/sku-43466.jpg,461,1.51,39x15x9 cm,2025-02-01
+100,SKU-49210,Stylish Camera,,481.2,325.35,Stylish Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-49210.jpg,233,4.24,17x29x35 cm,2024-02-24
+101,SKU-84963,Compact Bag,Automotive,289.53,230.78,Compact Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-84963.jpg,151,0.21,47x30x22 cm,2023-11-15
+102,SKU-16428,Waterproof Headphones,Jewelry,373.86,274.09,,https://example.com/images/sku-16428.jpg,462,1.5,19x43x27 cm,2024-06-18
+103,SKU-42850,Compact Camera,Office,379.01,267.96,,https://example.com/images/sku-42850.jpg,348,4.21,45x11x45 cm,2025-08-29
+104,SKU-67779,Premium Watch,Electronics,291.89,202.26,Premium Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-67779.jpg,46,4.56,25x31x16 cm,2024-05-30
+105,SKU-80701,Smart Shoes,Automotive,267.77,204.95,Smart Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-80701.jpg,425,0.91,35x23x26 cm,2024-03-03
+106,SKU-28449,Lightweight Mug,Pet Supplies,483.42,359.69,,https://example.com/images/sku-28449.jpg,370,3.4,30x40x28 cm,2024-02-07
+107,SKU-44663,Durable Speaker,Health,66.18,36.23,Durable Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-44663.jpg,383,3.39,42x29x45 cm,2024-11-21
+108,SKU-40647,Eco Headphones,,17.39,13.11,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-40647.jpg,287,1.71,44x19x46 cm,2024-01-10
+109,SKU-49608,Lightweight Pen,Office,207.11,94.42,,https://example.com/images/sku-49608.jpg,484,0.28,36x12x11 cm,2024-07-04
+110,SKU-60940,Wireless Shirt,Books,188.65,147.1,,https://example.com/images/sku-60940.jpg,356,4.74,31x42x14 cm,2025-01-04
+111,SKU-90694,Eco Chair,Toys,469.83,240.5,Eco Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-90694.jpg,353,1.92,33x33x20 cm,2024-11-12
+112,SKU-58147,Eco Headphones,Health,451.34,296.95,,https://example.com/images/sku-58147.jpg,31,2.05,17x12x34 cm,2024-02-08
+113,SKU-93819,Compact Headphones,Jewelry,485.69,204.1,Compact Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-93819.jpg,170,1.29,13x41x18 cm,2024-01-16
+114,SKU-86858,Wireless Lamp,Beauty,407.46,200.96,,https://example.com/images/sku-86858.jpg,396,0.82,43x5x22 cm,2024-04-03
+115,SKU-42853,Smart Bottle,Pet Supplies,91.38,60.71,,https://example.com/images/sku-42853.jpg,13,0.75,27x20x42 cm,2024-10-03
+116,SKU-44782,Premium Shirt,Electronics,67.75,38.51,,https://example.com/images/sku-44782.jpg,58,3.75,35x33x28 cm,2025-04-15
+117,SKU-69245,Waterproof Mug,Health,114.67,74.08,Waterproof Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-69245.jpg,372,3.94,47x38x24 cm,2025-02-18
+118,SKU-72781,Premium Speaker,Toys,216.01,95.73,Premium Speaker - A high-quality speaker designed for modern needs.,,364,4.56,9x10x25 cm,2025-07-21
+119,SKU-26540,Smart Mug,Sports,314.04,199.15,Smart Mug - A high-quality mug designed for modern needs.,,364,1.69,43x38x23 cm,2025-02-13
+120,SKU-98501,Wireless Camera,Home & Kitchen,397.58,177.23,Wireless Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-66387.jpg,335,3.29,40x18x32 cm,2025-02-11
+121,SKU-54424,Compact Bag,Books,202.37,140.01,Compact Bag - A high-quality bag designed for modern needs.,,160,2.19,47x21x28 cm,2024-04-11
+122,SKU-21957,Lightweight Mug,Home & Kitchen,51.15,22.44,Lightweight Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-21957.jpg,378,1.93,13x40x8 cm,2025-06-29
+123,SKU-23124,Wireless Bottle,Office,65.5,35.46,Wireless Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-53207.jpg,340,4.71,32x8x23 cm,2025-07-13
+124,SKU-23579,Portable Vacuum,Jewelry,256.17,118.32,,https://example.com/images/sku-23579.jpg,246,1.2,11x27x40 cm,2024-11-17
+125,SKU-46512,Eco Shoes,Jewelry,116.95,66.85,Eco Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-46512.jpg,287,4.88,44x44x48 cm,2025-08-26
+126,SKU-89822,Wireless Speaker,Office,415.58,210.69,Wireless Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-89822.jpg,92,1.44,24x26x27 cm,2023-11-13
+127,SKU-84228,Smart Shirt,Office,203.39,92.9,Smart Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-84228.jpg,324,4.86,10x38x18 cm,2024-11-26
+128,SKU-54681,Durable Chair,Clothing,188.18,129.59,,https://example.com/images/sku-54681.jpg,397,4.71,43x10x8 cm,2024-04-14
+129,SKU-90981,Smart Shoes,Electronics,338.61,172.3,Smart Shoes - A high-quality shoes designed for modern needs.,,338,2.18,43x33x31 cm,2024-08-12
+130,SKU-77154,Compact Shoes,Home & Kitchen,175.86,78.14,,https://example.com/images/sku-77154.jpg,347,3.42,36x38x47 cm,2024-09-17
+131,SKU-61807,Premium Lamp,Jewelry,32.12,15.47,Premium Lamp - A high-quality lamp designed for modern needs.,,484,1.14,13x21x23 cm,2024-10-07
+132,SKU-75193,Eco Speaker,Garden,218.17,98.54,Eco Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-75193.jpg,272,3.55,37x40x47 cm,2024-11-03
+133,SKU-15544,Eco Bag,Toys,14.28,10.97,,https://example.com/images/sku-15544.jpg,441,1.63,32x41x30 cm,2025-11-02
+134,SKU-25096,Durable Watch,Toys,15.32,8.12,Durable Watch - A high-quality watch designed for modern needs.,,410,4.74,34x49x28 cm,2024-02-05
+135,SKU-41891,Durable Mug,Toys,296.49,180.74,Durable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-41891.jpg,202,4.37,26x19x26 cm,2024-04-27
+136,SKU-92998,Eco Bottle,Home & Kitchen,267.65,127.82,Eco Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-92998.jpg,397,1.81,46x14x20 cm,2024-02-20
+137,SKU-35856,Smart Watch,Clothing,303.19,213.47,Smart Watch - A high-quality watch designed for modern needs.,,335,0.47,45x36x34 cm,2025-06-06
+138,SKU-99277,Waterproof Chair,Jewelry,323.28,256.88,,https://example.com/images/sku-99277.jpg,165,4.33,45x25x14 cm,2025-01-30
+139,SKU-67961,Eco Chair,Office,154.9,78.98,Eco Chair - A high-quality chair designed for modern needs.,,28,1.82,9x24x34 cm,2025-02-11
+140,SKU-58331,Premium Speaker,Sports,42.98,32.05,Premium Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-58331.jpg,437,0.54,43x37x29 cm,2025-02-22
+141,SKU-15376,Waterproof Bottle,Books,454.98,286.03,,https://example.com/images/sku-15376.jpg,96,1.68,35x37x14 cm,2024-01-09
+142,SKU-55015,Lightweight Mug,,46.74,30.78,Lightweight Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-55015.jpg,20,1.31,33x33x38 cm,2025-04-25
+143,SKU-57696,Waterproof Shirt,Automotive,459.38,254.94,Waterproof Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-57696.jpg,396,1.76,43x8x45 cm,2025-08-30
+144,SKU-53213,Stylish Mug,Home & Kitchen,281.19,155.96,Stylish Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-53213.jpg,129,3.65,47x43x14 cm,2024-10-13
+145,SKU-96980,Eco Camera,Clothing,458.79,240.45,,https://example.com/images/sku-96980.jpg,335,3.52,30x13x43 cm,2025-11-01
+146,SKU-83259,Eco Watch,Toys,323.53,171.92,,https://example.com/images/sku-83259.jpg,65,3.38,48x38x10 cm,2025-08-29
+147,SKU-57425,Durable Bottle,Electronics,184.49,87.1,Durable Bottle - A high-quality bottle designed for modern needs.,,109,1.77,36x17x19 cm,2024-03-26
+148,SKU-48770,Smart Mug,,55.06,39.0,Smart Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-48770.jpg,427,3.72,38x7x47 cm,2024-10-16
+149,SKU-88282,Waterproof Shirt,Toys,,38.43,Waterproof Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-88282.jpg,354,3.88,15x33x7 cm,2024-12-31
+150,SKU-41133,Stylish Headphones,Books,307.24,215.36,Stylish Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-41133.jpg,401,2.3,39x20x24 cm,2025-03-01
+151,SKU-98907,Compact Vacuum,Jewelry,492.3,287.83,Compact Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-98907.jpg,144,3.91,37x38x31 cm,2024-04-20
+152,SKU-89254,Compact Shoes,Clothing,437.14,183.98,Compact Shoes - A high-quality shoes designed for modern needs.,,246,4.38,40x11x50 cm,2025-04-18
+153,SKU-20993,Eco Watch,Pet Supplies,84.35,48.9,,https://example.com/images/sku-20993.jpg,262,0.82,32x10x19 cm,2025-02-10
+154,SKU-64381,Stylish Speaker,Electronics,201.24,110.6,Stylish Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-64381.jpg,197,4.97,28x19x6 cm,2024-09-28
+155,SKU-95191,Eco Pen,Automotive,396.73,180.53,,https://example.com/images/sku-95191.jpg,146,4.6,35x49x13 cm,2025-10-29
+156,SKU-90654,Lightweight Chair,Electronics,,184.81,Lightweight Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-90654.jpg,110,4.19,40x43x38 cm,2025-01-13
+157,SKU-47762,Eco Shoes,Beauty,154.07,64.57,,https://example.com/images/sku-47762.jpg,214,3.23,44x34x9 cm,2024-02-28
+158,SKU-80261,Lightweight Camera,Electronics,317.82,200.23,Lightweight Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-80261.jpg,367,0.8,32x5x44 cm,2024-11-02
+159,SKU-64600,Compact Camera,Clothing,333.86,144.98,Compact Camera - A high-quality camera designed for modern needs.,,499,1.87,38x39x37 cm,2025-04-09
+160,SKU-61177,Wireless Speaker,Books,26.55,14.73,,https://example.com/images/sku-61177.jpg,191,1.34,6x27x9 cm,2024-10-25
+161,SKU-96127,Compact Pen,Office,56.31,35.63,Compact Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-96127.jpg,387,1.73,7x27x39 cm,2024-10-18
+162,SKU-99742,Smart Shoes,Books,490.51,290.09,Smart Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-99742.jpg,93,4.08,9x50x34 cm,2023-12-14
+163,SKU-15741,Portable Lamp,Pet Supplies,103.74,43.23,Portable Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-15741.jpg,477,1.62,30x39x35 cm,2024-07-23
+164,SKU-94790,Premium Shoes,Beauty,146.62,109.21,Premium Shoes - A high-quality shoes designed for modern needs.,,24,4.34,26x22x12 cm,2024-11-17
+165,SKU-67637,Durable Bag,Toys,,82.04,Durable Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-67637.jpg,354,2.54,38x22x10 cm,2025-01-14
+166,SKU-17992,Eco Bag,Clothing,275.01,145.34,Eco Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-88964.jpg,40,1.71,23x24x33 cm,2025-07-16
+167,SKU-68183,Durable Shirt,Automotive,NaN,156.33,Durable Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-68183.jpg,466,1.83,32x22x45 cm,2024-01-04
+168,SKU-93560,Eco Headphones,Toys,184.84,133.17,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-93560.jpg,347,0.88,6x14x43 cm,2025-10-01
+169,SKU-26545,Lightweight Speaker,Home & Kitchen,121.82,80.17,Lightweight Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-26545.jpg,185,1.98,41x7x43 cm,2024-04-12
+170,SKU-58760,Lightweight Vacuum,Books,382.73,240.95,Lightweight Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-58760.jpg,271,1.9,25x46x22 cm,2024-07-19
+171,SKU-34385,Eco Speaker,Books,261.28,199.99,Eco Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-34385.jpg,60,1.38,21x50x33 cm,2024-06-13
+172,SKU-74382,Waterproof Watch,,65.71,48.7,Waterproof Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-74382.jpg,231,0.95,50x33x10 cm,2025-10-05
+173,SKU-55537,Stylish Headphones,Garden,37.14,22.91,Stylish Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-55537.jpg,456,1.57,15x50x50 cm,2025-10-24
+174,SKU-57381,Smart Shoes,Health,116.0,92.11,Smart Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-57381.jpg,405,0.78,36x6x28 cm,2025-05-27
+175,SKU-71263,Waterproof Vacuum,Pet Supplies,491.59,222.15,Waterproof Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-71263.jpg,452,0.52,24x30x50 cm,2025-03-11
+176,SKU-63665,Wireless Bag,Jewelry,41.51,32.75,Wireless Bag - A high-quality bag designed for modern needs.,,328,0.46,34x48x38 cm,2024-10-24
+177,SKU-82260,Smart Shoes,Office,295.95,209.27,,https://example.com/images/sku-82260.jpg,66,2.22,8x12x38 cm,2024-04-11
+178,SKU-31229,Portable Shirt,,467.7,229.26,Portable Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-31229.jpg,485,4.71,23x10x21 cm,2024-05-26
+179,SKU-26406,Wireless Watch,Office,154.9,95.01,,https://example.com/images/sku-26406.jpg,257,3.24,42x42x14 cm,2024-04-30
+180,SKU-89316,Waterproof Pen,Automotive,422.05,263.97,,https://example.com/images/sku-89316.jpg,422,4.33,10x7x46 cm,2025-06-19
+181,SKU-37631,Portable Headphones,Pet Supplies,288.21,186.54,Portable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-37631.jpg,15,2.54,45x39x23 cm,2025-08-25
+182,SKU-42096,Portable Chair,Pet Supplies,404.64,227.58,Portable Chair - A high-quality chair designed for modern needs.,,232,0.46,8x15x33 cm,2025-01-05
+183,SKU-36741,Lightweight Chair,Automotive,305.3,160.29,Lightweight Chair - A high-quality chair designed for modern needs.,,367,1.66,27x30x13 cm,2024-11-20
+184,SKU-23917,Wireless Bottle,Automotive,124.66,55.97,Wireless Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-23917.jpg,230,1.31,11x8x23 cm,2024-12-04
+185,SKU-42541,Waterproof Bag,Clothing,407.67,315.33,,https://example.com/images/sku-42541.jpg,369,1.63,15x36x37 cm,2025-02-27
+186,SKU-75191,Lightweight Watch,Electronics,-10,27.63,Lightweight Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-75191.jpg,234,4.84,18x42x27 cm,2023-12-26
+187,SKU-74866,Premium Watch,Jewelry,441.76,292.31,Premium Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-74866.jpg,240,1.5,5x11x32 cm,2024-03-23
+188,SKU-57943,Portable Pen,Pet Supplies,204.61,85.55,Portable Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-57943.jpg,26,2.89,17x28x40 cm,2024-08-28
+189,SKU-76093,Eco Bag,Books,383.38,196.25,,https://example.com/images/sku-76093.jpg,319,3.43,12x13x11 cm,2024-12-14
+190,SKU-54444,Stylish Shoes,Health,469.78,329.78,Stylish Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-54444.jpg,101,3.05,30x37x7 cm,2023-12-23
+191,SKU-53652,Premium Shirt,Pet Supplies,239.5,139.58,,https://example.com/images/sku-53652.jpg,310,4.48,13x25x44 cm,2024-09-28
+192,SKU-90805,Smart Bag,Garden,422.09,269.08,,https://example.com/images/sku-90805.jpg,259,4.16,39x36x50 cm,2025-06-05
+193,SKU-12180,Portable Chair,Automotive,168.96,74.99,,https://example.com/images/sku-12180.jpg,213,2.96,49x45x6 cm,2025-07-10
+194,SKU-95929,Lightweight Watch,,486.17,306.96,Lightweight Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-95929.jpg,116,3.63,42x35x15 cm,2025-04-26
+195,SKU-59832,Waterproof Shoes,Clothing,411.72,204.57,Waterproof Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-59832.jpg,293,4.75,12x17x6 cm,2025-01-31
+196,SKU-29848,Stylish Bag,Toys,346.8,195.65,Stylish Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-29848.jpg,396,3.1,35x8x50 cm,2024-03-27
+197,SKU-83516,Wireless Lamp,Automotive,499.07,295.12,Wireless Lamp - A high-quality lamp designed for modern needs.,,192,1.64,16x34x39 cm,2024-10-22
+198,SKU-98587,Wireless Vacuum,Pet Supplies,434.49,292.11,,https://example.com/images/sku-98587.jpg,411,3.5,44x35x17 cm,2024-07-16
+199,SKU-49124,Portable Bottle,Beauty,471.04,373.49,Portable Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-49124.jpg,394,1.52,18x49x50 cm,2025-03-21
+200,SKU-55718,Stylish Chair,Health,N/A,335.51,Stylish Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-55718.jpg,140,1.51,41x48x39 cm,2024-11-29
+201,SKU-29198,Durable Vacuum,Sports,0,20.19,Durable Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-29198.jpg,40,1.8,33x46x21 cm,2025-03-11
+202,SKU-80592,Compact Lamp,Sports,466.85,316.74,Compact Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-80592.jpg,70,0.64,42x20x20 cm,2023-12-28
+203,SKU-93616,Wireless Lamp,Beauty,30.98,17.51,Wireless Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-93616.jpg,367,2.41,48x13x5 cm,2025-05-23
+204,SKU-95575,Smart Bag,Books,241.34,115.79,,https://example.com/images/sku-95575.jpg,493,1.51,23x46x8 cm,2024-02-06
+205,SKU-80143,Waterproof Lamp,Garden,362.94,281.16,Waterproof Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-80143.jpg,467,4.62,31x16x7 cm,2024-12-17
+206,SKU-47941,Lightweight Shirt,Electronics,9.59,6.01,Lightweight Shirt - A high-quality shirt designed for modern needs.,,54,4.65,26x23x34 cm,2025-08-24
+207,SKU-74738,Wireless Bottle,Clothing,426.27,250.31,,https://example.com/images/sku-74738.jpg,98,4.06,26x15x34 cm,2025-08-31
+208,SKU-34405,Portable Pen,Electronics,369.63,264.77,Portable Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-34405.jpg,290,3.4,17x16x44 cm,2025-08-22
+209,SKU-77538,Durable Bag,Automotive,47.94,32.01,,https://example.com/images/sku-77538.jpg,94,4.91,35x25x20 cm,2023-11-13
+210,SKU-40870,Portable Bag,Books,378.11,295.54,,https://example.com/images/sku-40870.jpg,154,2.95,41x5x21 cm,2025-09-06
+211,SKU-40972,Stylish Pen,,335.55,196.69,Stylish Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-40972.jpg,81,2.09,37x50x24 cm,2025-10-13
+212,SKU-48671,Eco Headphones,Automotive,309.24,150.8,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-48671.jpg,68,2.44,34x43x28 cm,2025-01-05
+213,SKU-80453,Wireless Chair,Pet Supplies,333.73,162.65,Wireless Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-80453.jpg,126,3.43,43x10x38 cm,2025-02-06
+214,SKU-57419,Wireless Pen,Home & Kitchen,459.04,204.22,Wireless Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-57419.jpg,424,2.78,37x17x41 cm,2025-05-09
+215,SKU-53007,Smart Shirt,Health,223.71,150.36,Smart Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-53007.jpg,367,2.96,10x37x33 cm,2024-01-02
+216,SKU-77272,Lightweight Shirt,Toys,231.12,97.79,Lightweight Shirt - A high-quality shirt designed for modern needs.,,236,3.4,24x6x30 cm,2024-07-24
+217,SKU-38560,Premium Pen,Jewelry,41.15,23.43,,https://example.com/images/sku-38560.jpg,358,0.41,8x9x35 cm,2023-12-09
+218,SKU-33590,Portable Bag,Pet Supplies,72.04,47.3,Portable Bag - A high-quality bag designed for modern needs.,,373,3.26,31x28x29 cm,2025-02-08
+219,SKU-20518,Durable Bag,Office,482.25,361.6,Durable Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-20518.jpg,68,3.3,27x12x16 cm,2025-05-10
+220,SKU-83516,Durable Bottle,Garden,489.47,359.24,Durable Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-26691.jpg,387,0.21,24x34x48 cm,2025-05-17
+221,SKU-59712,Durable Bottle,Beauty,127.52,68.66,Durable Bottle - A high-quality bottle designed for modern needs.,,141,1.02,12x7x47 cm,2025-01-09
+222,SKU-12050,Waterproof Shoes,Beauty,107.01,47.12,Waterproof Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-12050.jpg,17,2.29,48x50x8 cm,2024-07-14
+223,SKU-67535,Premium Bag,Beauty,free,191.0,Premium Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-67535.jpg,397,0.38,37x23x19 cm,2025-06-18
+224,SKU-88370,Stylish Camera,Pet Supplies,337.9,178.5,Stylish Camera - A high-quality camera designed for modern needs.,,154,4.39,47x38x19 cm,2025-01-03
+225,SKU-17989,Portable Watch,,474.52,356.78,Portable Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-17989.jpg,466,0.96,48x32x40 cm,2025-03-28
+226,SKU-94320,Premium Vacuum,,193.67,118.1,Premium Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-94320.jpg,356,2.14,14x24x29 cm,2024-05-13
+227,SKU-41584,Wireless Chair,Beauty,153.86,105.09,,https://example.com/images/sku-41584.jpg,412,2.37,8x40x31 cm,2025-01-06
+228,SKU-27575,Wireless Bottle,Toys,125.21,60.27,Wireless Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-27575.jpg,331,0.49,33x28x10 cm,2025-05-08
+229,SKU-45187,Compact Speaker,Toys,338.47,217.02,,https://example.com/images/sku-45187.jpg,447,0.46,42x47x40 cm,2024-06-16
+230,SKU-53642,Lightweight Lamp,,478.72,194.42,Lightweight Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-53642.jpg,479,1.03,12x35x20 cm,2025-10-19
+231,SKU-76248,Waterproof Pen,Toys,457.99,284.33,Waterproof Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-36805.jpg,397,1.49,34x39x46 cm,2024-11-08
+232,SKU-57139,Portable Watch,Health,,259.18,Portable Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-57139.jpg,411,4.91,35x25x18 cm,2024-11-20
+233,SKU-15992,Stylish Bag,,432.72,301.39,Stylish Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-15992.jpg,8,1.38,42x42x31 cm,2024-09-04
+234,SKU-53236,Smart Lamp,Beauty,193.02,141.55,,https://example.com/images/sku-53236.jpg,255,2.8,48x26x21 cm,2025-03-21
+235,SKU-32050,Lightweight Chair,Garden,398.51,186.39,Lightweight Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-32050.jpg,368,2.78,16x39x46 cm,2024-01-06
+236,SKU-19742,Wireless Speaker,Office,29.01,11.68,,https://example.com/images/sku-19742.jpg,70,4.23,19x9x50 cm,2024-04-09
+237,SKU-76287,Premium Lamp,,189.73,122.78,Premium Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-76287.jpg,341,4.68,35x47x36 cm,2023-11-23
+238,SKU-82305,Premium Bottle,Toys,10.87,6.65,,https://example.com/images/sku-82305.jpg,140,2.73,23x6x37 cm,2025-10-21
+239,SKU-33496,Durable Shoes,Home & Kitchen,459.43,280.14,,https://example.com/images/sku-33496.jpg,123,1.04,38x21x27 cm,2024-08-06
+240,SKU-58896,Durable Mug,Toys,232.2,115.47,Durable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-58896.jpg,356,1.21,48x10x46 cm,2025-09-02
+241,SKU-63120,Premium Mug,Toys,191.7,113.18,Premium Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-63120.jpg,326,0.15,15x10x36 cm,2025-01-24
+242,SKU-22499,Stylish Camera,Health,,226.27,Stylish Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-22499.jpg,461,4.35,41x35x22 cm,2023-12-24
+243,SKU-46749,Eco Headphones,Health,283.94,117.31,,https://example.com/images/sku-46749.jpg,475,4.27,6x18x42 cm,2024-04-02
+244,SKU-49226,Durable Mug,Clothing,284.16,178.08,Durable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-49226.jpg,434,2.01,39x26x29 cm,2024-03-29
+245,SKU-67961,Eco Bottle,Electronics,53.35,26.29,Eco Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-55332.jpg,38,1.77,44x43x30 cm,2024-10-06
+246,SKU-45825,Premium Headphones,Pet Supplies,496.33,295.93,Premium Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-45825.jpg,182,2.81,29x32x16 cm,2025-10-03
+247,SKU-59816,Waterproof Headphones,Home & Kitchen,387.22,200.64,,https://example.com/images/sku-59816.jpg,126,3.59,10x22x14 cm,2024-11-30
+248,SKU-61068,Smart Pen,Automotive,NaN,80.14,Smart Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-61068.jpg,482,1.61,28x22x11 cm,2024-03-21
+249,SKU-66489,Eco Shirt,Books,280.71,169.82,,https://example.com/images/sku-66489.jpg,52,0.23,27x40x10 cm,2025-07-10
+250,SKU-52523,Waterproof Shoes,,11.11,6.28,Waterproof Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-52523.jpg,398,0.52,40x20x41 cm,2025-04-23
+251,SKU-59903,Smart Headphones,Clothing,73.73,38.37,,https://example.com/images/sku-59903.jpg,252,0.82,15x32x22 cm,2025-01-11
+252,SKU-20082,Portable Chair,Automotive,129.59,64.62,Portable Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-20082.jpg,320,2.53,44x17x34 cm,2024-02-24
+253,SKU-10887,Smart Watch,,169.45,109.82,Smart Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-10887.jpg,411,4.32,33x26x32 cm,2025-09-03
+254,SKU-49378,Waterproof Shirt,Automotive,303.59,205.87,Waterproof Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-49378.jpg,245,1.64,30x25x23 cm,2025-10-18
+255,SKU-41775,Lightweight Camera,Automotive,191.15,138.89,Lightweight Camera - A high-quality camera designed for modern needs.,,201,1.89,41x17x42 cm,2025-05-18
+256,SKU-82102,Smart Headphones,Electronics,476.74,278.73,Smart Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-82102.jpg,362,1.13,23x49x9 cm,2024-12-29
+257,SKU-93012,Lightweight Shirt,Sports,124.8,82.8,Lightweight Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-93012.jpg,366,2.17,29x9x33 cm,2025-07-11
+258,SKU-42853,Lightweight Camera,Health,255.77,196.47,Lightweight Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-62534.jpg,354,2.15,7x28x49 cm,2025-05-09
+259,SKU-21138,Waterproof Headphones,Home & Kitchen,385.63,255.69,,https://example.com/images/sku-21138.jpg,181,0.92,44x7x41 cm,2025-08-28
+260,SKU-53463,Durable Shoes,Pet Supplies,218.08,88.15,,https://example.com/images/sku-53463.jpg,132,1.19,38x40x42 cm,2025-10-11
+261,SKU-68429,Waterproof Lamp,Automotive,198.61,140.8,Waterproof Lamp - A high-quality lamp designed for modern needs.,,301,3.48,14x27x6 cm,2025-03-15
+262,SKU-64522,Eco Watch,Home & Kitchen,62.45,48.48,,https://example.com/images/sku-64522.jpg,72,1.81,26x34x18 cm,2025-04-23
+263,SKU-72411,Lightweight Vacuum,Home & Kitchen,221.89,150.6,,https://example.com/images/sku-72411.jpg,163,0.43,7x50x12 cm,2023-11-30
+264,SKU-24334,Stylish Headphones,Office,401.02,309.57,,https://example.com/images/sku-24334.jpg,379,1.3,16x40x15 cm,2024-10-10
+265,SKU-70562,Wireless Bag,Beauty,399.89,260.69,,https://example.com/images/sku-70562.jpg,95,3.24,32x30x6 cm,2025-07-27
+266,SKU-87621,Compact Chair,Toys,197.47,134.65,Compact Chair - A high-quality chair designed for modern needs.,,105,1.46,50x9x41 cm,2024-02-19
+267,SKU-57945,Wireless Shirt,Automotive,102.55,45.69,,https://example.com/images/sku-57945.jpg,343,4.33,38x45x25 cm,2025-07-10
+268,SKU-61451,Durable Camera,Jewelry,61.54,33.28,Durable Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-61451.jpg,234,3.13,48x50x24 cm,2025-07-28
+269,SKU-98094,Waterproof Mug,Clothing,160.03,79.28,,https://example.com/images/sku-98094.jpg,59,1.0,49x14x37 cm,2024-12-08
+270,SKU-28070,Durable Camera,Jewelry,N/A,92.46,Durable Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-28070.jpg,325,2.73,46x16x40 cm,2024-04-25
+271,SKU-28388,Lightweight Watch,Clothing,160.72,93.28,Lightweight Watch - A high-quality watch designed for modern needs.,,27,4.34,5x36x13 cm,2024-05-24
+272,SKU-76248,Durable Bottle,,250.01,168.48,Durable Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-76248.jpg,212,3.58,33x36x15 cm,2024-01-30
+273,SKU-54473,Waterproof Speaker,Sports,21.18,10.38,Waterproof Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-38905.jpg,147,0.92,34x41x36 cm,2025-05-22
+274,SKU-85066,Wireless Mug,Home & Kitchen,137.61,84.94,Wireless Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-85066.jpg,187,2.76,7x33x39 cm,2024-06-17
+275,SKU-95678,Durable Mug,Pet Supplies,127.53,95.64,Durable Mug - A high-quality mug designed for modern needs.,,16,2.3,27x10x33 cm,2024-03-06
+276,SKU-87060,Compact Lamp,Garden,178.56,122.19,Compact Lamp - A high-quality lamp designed for modern needs.,,323,2.2,44x13x18 cm,2024-06-05
+277,SKU-55982,Premium Camera,Health,144.14,88.72,Premium Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-55982.jpg,165,4.9,23x23x41 cm,2024-08-06
+278,SKU-22481,Wireless Headphones,Clothing,481.57,343.97,Wireless Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-22481.jpg,470,0.39,22x46x13 cm,2025-10-25
+279,SKU-96585,Smart Lamp,Garden,164.44,82.06,Smart Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-29168.jpg,431,3.41,36x14x41 cm,2025-08-15
+280,SKU-64293,Portable Headphones,Toys,228.74,149.47,Portable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-64293.jpg,450,3.87,30x37x22 cm,2025-10-18
+281,SKU-73968,Stylish Chair,Automotive,293.07,219.09,,https://example.com/images/sku-73968.jpg,433,3.69,34x45x47 cm,2025-10-21
+282,SKU-80048,Stylish Mug,Toys,112.83,64.52,Stylish Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-80048.jpg,108,2.52,25x23x26 cm,2025-05-20
+283,SKU-84205,Waterproof Shirt,Books,395.21,299.44,,https://example.com/images/sku-84205.jpg,390,0.34,11x45x34 cm,2023-11-23
+284,SKU-67840,Eco Shirt,,5.33,4.17,Eco Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-67840.jpg,103,4.98,13x46x24 cm,2024-04-17
+285,SKU-95798,Portable Mug,,128.94,70.75,Portable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-95798.jpg,462,3.28,8x30x45 cm,2024-09-14
+286,SKU-95915,Compact Bag,,353.33,141.49,Compact Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-95915.jpg,244,0.48,42x19x38 cm,2025-10-03
+287,SKU-11056,Lightweight Speaker,Garden,175.07,78.47,,https://example.com/images/sku-11056.jpg,440,2.17,13x35x9 cm,2024-06-28
+288,SKU-23425,Durable Mug,Home & Kitchen,160.11,120.47,Durable Mug - A high-quality mug designed for modern needs.,,70,1.98,13x46x48 cm,2024-04-01
+289,SKU-83831,Eco Bottle,Electronics,307.11,143.0,Eco Bottle - A high-quality bottle designed for modern needs.,,179,3.64,45x14x31 cm,2025-07-29
+290,SKU-21362,Lightweight Lamp,Home & Kitchen,74.31,33.38,Lightweight Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-21362.jpg,373,1.98,32x25x13 cm,2024-07-17
+291,SKU-21042,Portable Headphones,Beauty,278.93,178.52,Portable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-21042.jpg,311,1.5,49x6x47 cm,2024-09-10
+292,SKU-89551,Compact Bottle,Health,98.38,54.77,,https://example.com/images/sku-89551.jpg,330,0.37,20x36x29 cm,2024-03-01
+293,SKU-93634,Compact Chair,Jewelry,40.15,30.33,,https://example.com/images/sku-93634.jpg,6,4.94,25x13x29 cm,2025-06-11
+294,SKU-81612,Durable Vacuum,Office,90.52,53.26,Durable Vacuum - A high-quality vacuum designed for modern needs.,,394,0.46,42x9x5 cm,2024-08-01
+295,SKU-17925,Compact Speaker,Pet Supplies,-10,103.95,Compact Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-17925.jpg,364,2.56,31x32x49 cm,2024-12-22
+296,SKU-80328,Eco Headphones,Health,309.94,158.38,Eco Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-80328.jpg,158,0.49,18x14x39 cm,2024-10-06
+297,SKU-93138,Durable Camera,Pet Supplies,418.09,281.13,Durable Camera - A high-quality camera designed for modern needs.,,33,1.62,32x20x8 cm,2024-07-14
+298,SKU-25202,Eco Bag,Books,308.09,130.02,Eco Bag - A high-quality bag designed for modern needs.,,341,3.73,16x12x5 cm,2025-10-31
+299,SKU-11487,Smart Pen,Clothing,250.72,135.06,Smart Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-11487.jpg,264,3.94,21x15x28 cm,2024-03-15
+300,SKU-25473,Portable Pen,Pet Supplies,0,240.54,Portable Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-25473.jpg,219,1.43,9x21x50 cm,2025-06-19
+301,SKU-69663,Eco Chair,Health,183.26,109.93,,https://example.com/images/sku-69663.jpg,290,0.92,15x21x11 cm,2025-06-16
+302,SKU-76692,Eco Lamp,,26.8,19.97,Eco Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-76692.jpg,125,0.33,28x29x14 cm,2024-05-08
+303,SKU-95944,Premium Bottle,Toys,116.14,57.99,Premium Bottle - A high-quality bottle designed for modern needs.,,468,3.63,22x9x41 cm,2024-11-22
+304,SKU-98254,Eco Bottle,Electronics,93.78,67.68,,https://example.com/images/sku-98254.jpg,23,4.77,9x34x23 cm,2024-09-20
+305,SKU-82494,Stylish Mug,Books,8.94,4.29,,https://example.com/images/sku-82494.jpg,288,3.94,44x20x34 cm,2024-11-18
+306,SKU-35614,Waterproof Chair,Garden,,317.39,Waterproof Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-35614.jpg,125,0.84,31x6x19 cm,2025-05-14
+307,SKU-80592,Stylish Headphones,Automotive,5.72,3.79,Stylish Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-11257.jpg,434,3.72,24x11x18 cm,2025-05-02
+308,SKU-74491,Compact Bag,Electronics,486.42,222.27,Compact Bag - A high-quality bag designed for modern needs.,,143,0.56,19x38x31 cm,2025-10-24
+309,SKU-21128,Stylish Chair,Jewelry,52.31,23.72,,https://example.com/images/sku-21128.jpg,419,2.03,42x41x8 cm,2025-01-25
+310,SKU-48230,Smart Lamp,Sports,426.2,328.35,Smart Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-48230.jpg,201,3.53,25x25x33 cm,2024-08-11
+311,SKU-36569,Compact Mug,Clothing,391.07,247.89,Compact Mug - A high-quality mug designed for modern needs.,,79,0.62,33x34x25 cm,2024-12-27
+312,SKU-56961,Eco Bottle,Pet Supplies,107.78,56.4,Eco Bottle - A high-quality bottle designed for modern needs.,,135,4.28,10x15x48 cm,2024-09-13
+313,SKU-38183,Waterproof Speaker,Automotive,78.42,53.68,Waterproof Speaker - A high-quality speaker designed for modern needs.,https://example.com/images/sku-38183.jpg,495,1.84,37x8x48 cm,2024-09-08
+314,SKU-14073,Portable Shirt,,428.03,266.4,Portable Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-14073.jpg,281,1.32,34x11x13 cm,2024-03-10
+315,SKU-39135,Premium Speaker,Clothing,103.08,57.75,Premium Speaker - A high-quality speaker designed for modern needs.,,351,3.19,46x10x42 cm,2025-06-29
+316,SKU-12857,Portable Mug,,102.89,67.74,Portable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-12857.jpg,414,0.73,26x12x7 cm,2025-02-21
+317,SKU-91439,Premium Shirt,Toys,411.73,229.75,Premium Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-85220.jpg,15,1.98,32x16x27 cm,2024-06-13
+318,SKU-46681,Smart Watch,Books,442.29,183.05,,https://example.com/images/sku-46681.jpg,317,3.12,46x23x36 cm,2025-01-01
+319,SKU-17992,Wireless Chair,Home & Kitchen,143.49,65.27,Wireless Chair - A high-quality chair designed for modern needs.,https://example.com/images/sku-17992.jpg,102,3.25,38x20x45 cm,2025-05-16
+320,SKU-57069,Premium Bag,Books,274.54,163.04,Premium Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-57069.jpg,467,2.87,25x29x22 cm,2024-05-09
+321,SKU-88265,Premium Vacuum,Beauty,19.51,14.13,Premium Vacuum - A high-quality vacuum designed for modern needs.,https://example.com/images/sku-88265.jpg,143,0.39,35x38x27 cm,2025-06-27
+322,SKU-23124,Compact Shirt,Beauty,330.15,167.26,,https://example.com/images/sku-23124.jpg,417,3.98,8x19x41 cm,2024-12-08
+323,SKU-33081,Stylish Shirt,Beauty,298.3,215.52,Stylish Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-33081.jpg,357,1.86,42x6x50 cm,2025-10-24
+324,SKU-83873,Stylish Camera,Clothing,error,134.86,Stylish Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-83873.jpg,414,4.42,36x39x24 cm,2024-05-04
+325,SKU-21830,Lightweight Speaker,Electronics,120.15,58.58,,https://example.com/images/sku-21830.jpg,269,2.44,26x44x17 cm,2024-03-19
+326,SKU-33260,Stylish Pen,Pet Supplies,422.92,223.91,Stylish Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-33260.jpg,11,0.82,50x14x12 cm,2025-04-28
+327,SKU-58967,Stylish Mug,Garden,471.25,263.07,Stylish Mug - A high-quality mug designed for modern needs.,,51,1.75,25x13x15 cm,2025-01-27
+328,SKU-51586,Lightweight Headphones,Clothing,355.06,221.84,Lightweight Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-51586.jpg,455,4.65,27x19x47 cm,2025-07-02
+329,SKU-50215,Smart Bag,Garden,345.81,155.94,Smart Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-50215.jpg,373,0.11,49x41x30 cm,2025-06-10
+330,SKU-88956,Premium Shirt,Automotive,460.91,362.74,Premium Shirt - A high-quality shirt designed for modern needs.,,113,3.23,11x36x14 cm,2024-10-11
+331,SKU-55457,Eco Lamp,Automotive,NaN,66.44,Eco Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-55457.jpg,45,4.13,47x45x26 cm,2025-02-06
+332,SKU-37483,Premium Watch,Beauty,348.12,188.05,,https://example.com/images/sku-37483.jpg,402,0.63,5x8x29 cm,2025-01-28
+333,SKU-64266,Durable Shirt,Books,441.48,238.62,,https://example.com/images/sku-64266.jpg,192,0.6,35x41x46 cm,2025-10-10
+334,SKU-69151,Compact Shirt,,400.6,165.59,Compact Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-69151.jpg,10,1.66,11x9x26 cm,2024-04-29
+335,SKU-19830,Durable Shirt,Health,471.21,372.83,Durable Shirt - A high-quality shirt designed for modern needs.,,173,3.01,44x35x50 cm,2023-12-08
+336,SKU-31626,Durable Headphones,Jewelry,445.43,206.16,Durable Headphones - A high-quality headphones designed for modern needs.,https://example.com/images/sku-31626.jpg,51,1.72,17x31x49 cm,2025-05-27
+337,SKU-96585,Wireless Watch,Sports,152.21,66.72,Wireless Watch - A high-quality watch designed for modern needs.,https://example.com/images/sku-96585.jpg,201,2.9,36x14x8 cm,2024-11-10
+338,SKU-21485,Premium Bag,Sports,412.83,268.35,Premium Bag - A high-quality bag designed for modern needs.,https://example.com/images/sku-21485.jpg,245,1.08,6x18x15 cm,2025-08-21
+339,SKU-83831,Portable Mug,Home & Kitchen,157.63,88.11,Portable Mug - A high-quality mug designed for modern needs.,https://example.com/images/sku-72071.jpg,250,4.48,21x10x46 cm,2025-05-17
+340,SKU-58630,Durable Shirt,Toys,187.85,108.64,Durable Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-58630.jpg,134,2.25,21x19x22 cm,2025-06-06
+341,SKU-97486,Premium Shirt,Home & Kitchen,47.43,25.49,Premium Shirt - A high-quality shirt designed for modern needs.,,277,2.13,42x19x40 cm,2024-01-08
+342,SKU-64870,Durable Bottle,Health,,267.3,Durable Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-64870.jpg,293,4.42,35x24x10 cm,2024-12-15
+343,SKU-84870,Premium Bottle,Health,401.22,269.22,Premium Bottle - A high-quality bottle designed for modern needs.,https://example.com/images/sku-84870.jpg,317,0.82,33x16x15 cm,2024-06-10
+344,SKU-15593,Compact Shirt,Toys,43.79,29.48,,https://example.com/images/sku-15593.jpg,103,4.99,45x14x43 cm,2024-07-28
+345,SKU-18783,Stylish Pen,,197.11,110.17,Stylish Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-18783.jpg,166,4.3,38x34x5 cm,2025-10-24
+346,SKU-78493,Waterproof Camera,,212.7,120.34,Waterproof Camera - A high-quality camera designed for modern needs.,https://example.com/images/sku-78493.jpg,75,2.88,42x11x11 cm,2025-06-05
+347,SKU-47498,Eco Shoes,Health,440.67,331.01,Eco Shoes - A high-quality shoes designed for modern needs.,https://example.com/images/sku-47498.jpg,135,1.98,36x41x43 cm,2025-03-05
+348,SKU-46099,Premium Shirt,,76.21,49.04,Premium Shirt - A high-quality shirt designed for modern needs.,https://example.com/images/sku-46099.jpg,355,2.07,30x26x49 cm,2024-07-07
+349,SKU-72287,Premium Pen,,449.03,183.25,Premium Pen - A high-quality pen designed for modern needs.,https://example.com/images/sku-72287.jpg,418,3.99,24x22x36 cm,2025-10-19
+350,SKU-27614,Eco Lamp,Sports,0,281.26,Eco Lamp - A high-quality lamp designed for modern needs.,https://example.com/images/sku-27614.jpg,422,1.67,31x43x46 cm,2024-02-06

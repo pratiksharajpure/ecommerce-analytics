@@ -1,0 +1,121 @@
+refund_id,return_id,order_id,refund_amount,refund_method,initiated_date,completed_date,processing_days,status
+1,1,878,288.69,PayPal,2025-11-02,2025-11-08,6,completed
+2,2,1060,204.28,PayPal,2025-10-03,,2,processing
+3,3,1171,117.81,Bank Transfer,2025-05-19,,2,processing
+4,4,228,101.63,Store Credit,2025-08-26,2025-08-30,4,completed
+5,5,1481,257.64,PayPal,2025-07-12,,5,processing
+6,6,1505,138.51,Credit Card,2025-10-03,,10,processing
+7,7,847,83.68,Store Credit,2025-06-11,,9,processing
+8,8,62,84.47,Bank Transfer,2025-06-22,2025-06-28,6,completed
+9,9,1194,184.32,Store Credit,2025-07-31,,9,processing
+10,10,439,21.98,PayPal,2025-06-12,,7,processing
+11,11,181,158.71,Credit Card,2025-07-21,2025-07-26,5,completed
+12,12,392,271.83,Store Credit,2025-07-29,2025-08-05,7,completed
+13,13,27,68.88,Credit Card,2025-06-13,,6,processing
+14,14,1465,44.1,Credit Card,2025-06-05,2025-06-08,3,completed
+15,15,696,229.85,PayPal,2025-07-10,2025-07-11,1,processing
+16,16,1433,90.46,Bank Transfer,2025-06-12,2025-06-15,3,completed
+17,17,1144,38.6,Credit Card,2025-09-08,2025-09-16,8,completed
+18,18,502,143.48,Bank Transfer,2025-08-11,2025-08-18,7,completed
+19,19,639,152.6,Bank Transfer,2025-09-01,2025-09-03,2,completed
+20,20,131,133.27,Credit Card,2025-10-21,2025-10-30,9,completed
+21,21,277,19.94,Bank Transfer,2025-09-17,2025-09-27,10,completed
+22,22,1537,46.57,PayPal,2025-06-27,,5,processing
+23,23,679,106.58,Credit Card,2025-05-23,2025-05-30,7,completed
+24,24,555,124.87,PayPal,2025-05-24,2025-05-28,4,completed
+25,25,968,58.97,Store Credit,2025-07-25,2025-07-28,3,completed
+26,26,214,66.31,PayPal,2025-08-20,2025-08-25,5,completed
+27,27,121,285.4,Credit Card,2025-05-16,2025-05-17,1,completed
+28,28,343,285.41,Credit Card,2025-05-27,2025-05-29,2,completed
+29,29,1488,152.13,Store Credit,2025-05-18,,2,processing
+30,30,571,152.44,Credit Card,2025-05-21,2025-05-28,7,completed
+31,31,1294,298.41,Store Credit,2025-08-09,2025-08-17,8,completed
+32,32,515,76.84,Credit Card,2025-05-31,2025-06-03,3,completed
+33,33,1417,176.13,Store Credit,2025-05-16,2025-05-25,9,completed
+34,34,1395,237.91,Bank Transfer,2025-10-28,2025-11-03,6,completed
+35,35,391,107.81,Credit Card,2025-07-28,,9,processing
+36,36,723,184.52,Store Credit,2025-09-12,2025-09-19,7,completed
+37,37,353,291.95,Store Credit,2025-07-09,2025-07-10,1,completed
+38,38,429,182.92,Bank Transfer,2025-09-29,,2,processing
+39,39,1148,234.62,Bank Transfer,2025-11-08,2025-11-13,5,completed
+40,40,271,112.19,Store Credit,2025-09-20,,8,processing
+41,41,594,88.9,Store Credit,2025-08-14,2025-08-21,7,completed
+42,42,1421,108.6,Store Credit,2025-07-05,2025-07-11,6,completed
+43,43,1417,15.89,Bank Transfer,2025-10-15,,1,processing
+44,44,921,93.19,Credit Card,2025-10-23,,6,processing
+45,45,180,100.47,Bank Transfer,2025-06-09,2025-06-11,2,completed
+46,46,856,119.18,PayPal,2025-08-29,,5,processing
+47,47,133,150.47,Store Credit,2025-06-06,2025-06-15,9,completed
+48,48,1466,84.43,PayPal,2025-11-02,,5,processing
+49,49,1262,167.76,PayPal,2025-09-10,2025-09-20,10,completed
+50,50,425,299.52,Bank Transfer,2025-07-04,2025-07-14,10,completed
+51,51,730,16.36,PayPal,2025-06-15,2025-06-24,9,completed
+52,52,621,22.47,Bank Transfer,2025-10-10,2025-10-15,5,completed
+53,53,1257,162.43,PayPal,2025-08-05,2025-08-07,2,completed
+54,54,294,154.65,Credit Card,2025-07-05,2025-07-09,4,completed
+55,55,76,273.25,Store Credit,2025-06-14,2025-06-23,9,completed
+56,56,1448,288.8,Bank Transfer,2025-06-26,2025-07-05,9,completed
+57,57,600,136.92,Credit Card,2025-10-29,2025-11-03,5,completed
+58,58,1298,35.95,Credit Card,2025-08-06,2025-08-12,6,completed
+59,59,98,181.84,Credit Card,2025-06-15,,2,processing
+60,60,413,172.41,PayPal,2025-07-10,,1,processing
+61,61,257,107.33,PayPal,2025-08-10,2025-08-19,9,completed
+62,62,99,95.91,Bank Transfer,2025-10-27,2025-11-06,10,completed
+63,63,845,142.4,PayPal,2025-05-28,2025-05-29,1,completed
+64,64,96,294.21,Store Credit,2025-11-03,2025-11-11,8,completed
+65,65,168,236.16,Store Credit,2025-06-19,2025-06-21,2,completed
+66,66,446,34.86,PayPal,2025-05-27,2025-05-30,3,completed
+67,67,1135,208.04,Bank Transfer,2025-05-19,2025-05-24,5,completed
+68,68,241,149.77,Store Credit,2025-08-13,2025-08-23,10,completed
+69,69,888,253.35,PayPal,2025-07-18,2025-07-22,4,completed
+70,70,1241,200.64,PayPal,2025-06-28,2025-06-29,1,completed
+71,71,901,-52.46,Store Credit,2025-09-24,2025-10-04,10,completed
+72,72,1302,203.35,Store Credit,2025-08-24,,2,processing
+73,73,187,289.67,Store Credit,2025-09-03,2025-09-12,9,completed
+74,74,907,235.1,PayPal,2025-08-12,2025-08-13,1,completed
+75,75,1274,98.69,Store Credit,2025-08-21,2025-08-24,3,completed
+76,76,141,296.71,PayPal,2025-07-10,2025-07-19,9,completed
+77,77,818,224.7,Credit Card,2025-10-08,2025-10-13,5,completed
+78,78,814,17.16,PayPal,2025-10-29,,3,processing
+79,79,580,143.64,Bank Transfer,2025-11-06,2025-11-16,10,processing
+80,80,1098,139.06,Credit Card,2025-08-05,2025-08-06,1,completed
+81,81,307,40.1,Store Credit,2025-09-20,2025-09-27,7,completed
+82,82,34,150.62,PayPal,2025-07-10,2025-07-13,3,completed
+83,83,1084,37.75,PayPal,2025-07-14,2025-07-16,2,completed
+84,84,92,186.23,Bank Transfer,2025-10-20,2025-10-21,1,completed
+85,85,559,148.8,Credit Card,2025-07-03,2025-07-13,10,completed
+86,86,888,51.24,PayPal,2025-08-23,2025-08-29,6,completed
+87,87,182,84.78,Store Credit,2025-10-30,2025-11-09,10,completed
+88,88,210,36.66,Store Credit,2025-09-05,2025-09-11,6,completed
+89,89,683,31.99,Store Credit,2025-09-25,2025-10-03,8,completed
+90,90,466,19.36,PayPal,2025-10-06,,2,processing
+91,91,420,170.54,Store Credit,2025-05-31,2025-06-02,2,completed
+92,92,409,145.82,Credit Card,2025-10-10,2025-10-19,9,completed
+93,93,157,189.7,Bank Transfer,2025-07-28,2025-07-31,3,completed
+94,94,795,126.2,PayPal,2025-10-24,2025-11-01,8,completed
+95,95,820,202.71,Bank Transfer,2025-09-04,2025-09-08,4,completed
+96,96,500,106.63,Bank Transfer,2025-06-22,,8,processing
+97,97,325,166.7,PayPal,2025-06-05,,3,processing
+98,98,1152,296.64,Credit Card,2025-07-24,2025-08-03,10,completed
+99,99,483,134.7,PayPal,2025-08-29,,3,processing
+100,100,899,110.84,Credit Card,2025-10-30,2025-10-31,1,completed
+101,101,322,89.88,Bank Transfer,2025-09-13,2025-09-15,2,completed
+102,102,1138,24.74,Credit Card,2025-08-13,,6,completed
+103,103,743,192.54,PayPal,2025-05-28,2025-06-07,10,completed
+104,104,986,62.85,Bank Transfer,2025-09-18,2025-09-19,1,completed
+105,105,978,44.74,Credit Card,2025-11-04,2025-11-13,9,completed
+106,106,1283,139.79,Bank Transfer,2025-06-16,,3,processing
+107,107,1240,241.69,Bank Transfer,2025-09-04,2025-09-12,8,completed
+108,108,954,76.98,PayPal,2025-09-15,2025-09-25,10,completed
+109,109,699,227.45,Bank Transfer,2025-07-24,2025-07-26,2,completed
+110,110,657,227.24,Bank Transfer,2025-08-30,2025-09-03,4,completed
+111,111,1061,110.57,PayPal,2025-06-14,2025-06-23,9,completed
+112,112,1542,47.99,Bank Transfer,2025-05-31,2025-06-02,2,completed
+113,113,42,272.1,PayPal,2025-10-25,2025-10-27,2,completed
+114,114,1429,224.86,Bank Transfer,2025-06-13,2025-06-20,7,completed
+115,115,955,245.24,Bank Transfer,2025-06-03,2025-06-10,7,completed
+116,116,261,274.02,PayPal,2025-06-18,,9,processing
+117,117,513,260.3,Store Credit,2025-08-19,2025-08-26,7,completed
+118,118,354,233.33,Bank Transfer,2025-10-16,2025-10-26,10,completed
+119,119,1518,275.17,PayPal,2025-09-05,2025-09-06,1,completed
+120,120,287,215.77,Store Credit,2025-08-21,2025-08-23,2,completed

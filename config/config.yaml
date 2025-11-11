@@ -1,0 +1,22 @@
+app:
+  name: "E-commerce Revenue Analytics"
+  version: "1.0.0"
+  description: "Data Quality & Analytics Dashboard"
+
+database:
+  type: "mysql"
+  host: "localhost"
+  port: 3307
+  name: "ecommerce_analytics"
+  charset: "utf8mb4"
+
+paths:
+  sql: "sql"
+  sample_data: "sample_data"
+  logs: "logs"
+
+data_quality:
+  thresholds:
+    error_rate: 0.05
+    completeness: 0.95
+    accuracy: 0.98

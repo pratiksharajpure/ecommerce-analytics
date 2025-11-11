@@ -1,0 +1,1501 @@
+payment_id,order_id,payment_method,payment_processor,amount,transaction_id,payment_date,status,failure_reason,attempts
+1,1,Credit Card,Square,2070.17,txn_0a4a90808f39,,failed,network_error,2
+2,2,PayPal,PayPal,6438.15,txn_2e81f96d7ed7,2025-10-15 06:54:47,paid,,3
+3,3,Bank Transfer,Manual,3744.17,txn_49a763cb6128,2025-09-10 14:46:02,paid,,3
+4,4,Digital Wallet,Stripe,835.05,txn_160b475c94c0,2025-05-27 08:15:14,paid,,3
+5,5,Credit Card,Square,2332.23,txn_3f3ba3936c66,2025-09-28 04:20:06,paid,,1
+6,6,Credit Card,PayPal,2703.38,txn_d85d32783719,2025-06-08 12:47:41,paid,,1
+7,7,Credit Card,Stripe,688.98,txn_9adfc1c82ffd,2025-08-16 23:30:00,paid,,2
+8,8,Credit Card,Square,4083.17,txn_b72e04e71547,2025-06-11 20:41:13,paid,,2
+9,9,Bank Transfer,Square,2742.3,txn_44ba4bf89e78,,unpaid,,2
+10,10,Credit Card,Square,212.82,txn_e98f27d7c193,2025-10-10 07:02:44,paid,,3
+11,11,Credit Card,Square,2522.88,txn_7d7de0c391b4,2025-05-28 02:53:15,paid,,3
+12,12,PayPal,Square,3104.46,txn_cca81f538db6,2025-06-29 19:48:19,paid,,1
+13,13,Credit Card,Stripe,2553.33,txn_e855bc4c331b,2025-09-14 10:29:47,paid,,1
+14,14,PayPal,Manual,713.19,txn_d766b23c0c2a,2025-09-13 11:37:35,paid,,3
+15,15,Credit Card,Stripe,3037.35,txn_255e8c31d5e8,2025-10-07 19:59:33,paid,,3
+16,16,Digital Wallet,Stripe,205.8,txn_6d7586b33e9e,2025-08-09 04:34:48,paid,,3
+17,17,Credit Card,Square,5560.16,txn_2ee1d903d561,2025-09-16 00:41:52,paid,,3
+18,18,Credit Card,Manual,3167.58,txn_07150661a12f,,unpaid,,2
+19,19,Digital Wallet,Manual,5594.14,txn_3a121ab9874d,,unpaid,,3
+20,20,Digital Wallet,Manual,751.44,txn_0e8230ce7d45,2025-05-10 17:40:46,paid,,1
+21,21,Bank Transfer,PayPal,1271.91,txn_18aa17c04c5f,2025-07-16 10:00:27,paid,,3
+22,22,Digital Wallet,Stripe,3625.13,txn_e005a58bff03,2025-07-25 19:18:34,paid,,1
+23,23,Bank Transfer,Square,1903.92,txn_34d57b259d2d,2025-05-08 18:30:10,paid,,3
+24,24,Bank Transfer,Stripe,827.14,txn_0943f8a3f69f,2025-09-14 12:22:48,paid,,3
+25,25,Digital Wallet,Manual,1906.17,txn_6ba88d1d43f2,,unpaid,,2
+26,26,Bank Transfer,Manual,3269.74,txn_2d04511156d1,2025-09-26 20:58:56,paid,,3
+27,27,Credit Card,Stripe,1542.96,txn_42055c93ebd6,2025-10-23 09:32:47,paid,,1
+28,28,PayPal,Stripe,1252.74,txn_5b5e6ea4bc57,2025-10-07 08:27:14,paid,,1
+29,29,Digital Wallet,Stripe,84.46,txn_dd47a33eca57,2025-06-07 07:10:58,paid,,2
+30,30,Bank Transfer,Manual,2068.56,txn_0c70252741be,,unpaid,,2
+31,31,Bank Transfer,Square,1765.71,txn_e17326285fde,2025-07-29 07:45:00,paid,,1
+32,32,Digital Wallet,Manual,1421.41,txn_302857145574,,unpaid,,3
+33,33,Credit Card,Square,511.14,txn_2c1b97a5a6f1,2025-08-07 16:43:46,paid,,2
+34,34,PayPal,PayPal,3115.53,txn_ce60a21a1045,2025-09-24 06:40:34,paid,,3
+35,35,Credit Card,Stripe,2079.74,txn_53061332a0d4,2025-10-01 11:23:27,paid,,2
+36,36,Digital Wallet,PayPal,3527.86,txn_57451f0896d1,2025-09-09 19:29:11,paid,,1
+37,37,PayPal,PayPal,2807.44,txn_8ee681417f2e,2025-06-25 11:27:55,paid,,1
+38,38,Digital Wallet,Manual,2818.33,txn_de4fbe672136,2025-06-13 00:52:20,paid,,2
+39,39,Bank Transfer,Square,1662.27,txn_c26331782268,2025-07-19 17:50:15,paid,,1
+40,40,Digital Wallet,PayPal,2298.96,txn_25cf24df8b4f,,failed,insufficient_funds,3
+41,41,Bank Transfer,Square,895.08,txn_2e738c63ea13,2025-10-08 19:15:48,paid,,1
+42,42,PayPal,Square,0.0,txn_8431a3a7f75f,,unpaid,,2
+43,43,PayPal,Stripe,911.5,txn_01e174d90699,2025-10-16 11:42:44,paid,,2
+44,44,Credit Card,Stripe,5038.3,txn_b194839d3075,,failed,card_declined,1
+45,45,Bank Transfer,Manual,2414.55,txn_a8fe2f716778,2025-08-12 18:15:04,paid,,2
+46,46,Bank Transfer,Stripe,1214.97,txn_9c4cc1bd19aa,2025-08-11 04:59:10,paid,,2
+47,47,Bank Transfer,Stripe,4520.28,txn_15e2514c9a55,,unpaid,,3
+48,48,Bank Transfer,Square,4797.48,txn_233cb3dacb84,2025-11-02 09:13:38,paid,,1
+49,49,PayPal,PayPal,0.0,txn_8ca6f0ba8a24,,unpaid,,1
+50,50,Credit Card,PayPal,2585.24,txn_4182f2aa336d,2025-07-21 15:10:59,paid,,2
+51,51,PayPal,Stripe,3769.54,txn_cdf8b977fb7e,2025-07-21 17:29:10,paid,,3
+52,52,PayPal,Square,7372.55,txn_cfe6ec22f007,2025-09-19 11:24:11,paid,,2
+53,53,PayPal,PayPal,2839.24,txn_888996c433c1,2025-10-22 10:10:43,paid,,1
+54,54,Bank Transfer,PayPal,676.16,txn_352a8f55be59,2025-08-26 04:44:54,paid,,2
+55,55,PayPal,Square,6124.18,txn_f444fdf207bc,2025-06-17 04:34:55,paid,,1
+56,56,Digital Wallet,Square,713.68,txn_aa6b73f1d9bb,2025-07-16 02:05:40,paid,,3
+57,57,Credit Card,Manual,4517.31,txn_7322862506ce,,failed,insufficient_funds,2
+58,58,Bank Transfer,Stripe,323.79,txn_4240b9038462,2025-07-14 03:08:27,paid,,1
+59,59,Bank Transfer,Square,3288.68,txn_f4129386a915,2025-09-09 19:40:31,paid,,1
+60,60,Credit Card,Square,4088.37,txn_06e2ad42e5df,2025-06-23 23:47:14,paid,,2
+61,61,PayPal,Square,5043.05,txn_ad3072c55f46,,unpaid,,3
+62,62,PayPal,Manual,4705.94,txn_780bb8ca1c44,2025-10-21 16:42:23,paid,,1
+63,63,Bank Transfer,Square,3200.54,txn_8ac988ef0ebc,,unpaid,,1
+64,64,PayPal,PayPal,0.0,txn_4093ec696465,2025-10-30 01:48:59,paid,,3
+65,65,Digital Wallet,Stripe,4036.48,txn_4e1375e17b52,2025-08-08 13:37:27,paid,,3
+66,66,PayPal,Square,1464.7,txn_7534ce2a3725,2025-07-21 01:22:57,paid,,2
+67,67,PayPal,Manual,4091.99,txn_1c853ffabf99,2025-05-26 00:25:47,paid,,3
+68,68,Credit Card,Square,302.1,txn_d12ee11de26f,2025-06-11 18:38:56,paid,,1
+69,69,PayPal,Manual,1815.38,txn_902b8519ceef,,failed,insufficient_funds,2
+70,70,PayPal,Stripe,975.69,txn_1795ccea8ad9,2025-09-23 02:18:43,paid,,1
+71,71,Bank Transfer,Stripe,3273.31,txn_d5082ee8020f,2025-06-10 18:57:21,paid,,2
+72,72,Bank Transfer,PayPal,1928.69,txn_1158bf2c9a88,2025-05-29 14:25:57,paid,,1
+73,73,Digital Wallet,Stripe,200.24,txn_b169ea3a9b64,2025-08-24 09:25:20,paid,,1
+74,74,Credit Card,Square,1160.37,txn_86ae5a68267b,2025-08-12 13:49:19,paid,,1
+75,75,Bank Transfer,Manual,3476.91,txn_fa9925a90920,2025-05-06 18:23:55,paid,,2
+76,76,Digital Wallet,PayPal,1039.16,txn_5a1f809a74e5,2025-09-11 21:53:49,paid,,3
+77,77,Credit Card,PayPal,4376.76,txn_3c887c5a2c66,2025-08-16 06:48:04,paid,,3
+78,78,Digital Wallet,Stripe,6573.02,txn_a83881f7324f,2025-09-12 17:01:08,paid,,2
+79,79,Bank Transfer,PayPal,375.95,txn_5ae904305f35,2025-05-31 14:27:16,paid,,3
+80,80,Credit Card,PayPal,963.93,txn_3c43bb2705bb,2025-09-24 12:52:22,paid,,3
+81,81,PayPal,PayPal,2338.38,txn_7d92fa6fa612,,unpaid,,3
+82,82,Digital Wallet,Square,657.3,txn_3f38b6202202,2025-07-28 17:14:37,paid,,3
+83,83,Bank Transfer,PayPal,2423.52,txn_952514b8d0e9,2025-09-07 06:33:08,paid,,2
+84,84,Digital Wallet,Square,3665.03,txn_6b7b4697f34e,2025-10-13 02:50:43,paid,,3
+85,85,Bank Transfer,Stripe,5270.58,txn_e7c9182e189a,,unpaid,,2
+86,86,Bank Transfer,Manual,3430.07,txn_328043ec54f1,2025-05-31 08:46:37,paid,,1
+87,87,PayPal,Stripe,760.84,txn_753ea5e92585,2025-09-07 05:26:36,paid,,1
+88,88,PayPal,Square,1253.45,txn_03f673e159a5,2025-10-22 23:09:34,paid,,3
+89,89,Bank Transfer,PayPal,3388.35,txn_132ba281a459,2025-07-18 16:33:16,paid,,2
+90,90,Digital Wallet,Stripe,3251.41,txn_80e41747eae7,2025-08-29 08:07:58,paid,,3
+91,91,Credit Card,Manual,2086.27,txn_13cf7758a5d4,2025-08-21 23:22:23,paid,,1
+92,92,Digital Wallet,Stripe,4284.46,txn_ee6a7fdc056f,2025-06-11 00:59:41,paid,,1
+93,93,Digital Wallet,PayPal,4283.08,txn_c588f487921b,,unpaid,,3
+94,94,Bank Transfer,Square,1308.04,txn_83785b607903,2025-06-26 09:18:42,paid,,3
+95,95,Digital Wallet,PayPal,4816.64,txn_06acad586917,2025-07-18 03:20:20,paid,,1
+96,96,PayPal,PayPal,3836.06,txn_eb579edefb35,2025-07-18 07:01:38,paid,,3
+97,97,PayPal,Manual,907.21,txn_310a4b9abee6,2025-06-11 01:19:44,paid,,1
+98,98,PayPal,Manual,4689.55,txn_d55f46cad975,2025-07-28 08:31:47,paid,,1
+99,99,Digital Wallet,Stripe,3649.82,txn_a5857615493b,2025-07-04 19:29:09,paid,,3
+100,100,Digital Wallet,PayPal,2221.9,txn_0769030660ea,2025-09-24 20:49:39,paid,,1
+101,101,Bank Transfer,Manual,4100.44,txn_099ab944bf53,,failed,card_declined,3
+102,102,Bank Transfer,Manual,7691.27,txn_b9cb5303d14f,,unpaid,,3
+103,103,Credit Card,Manual,3139.96,txn_b69a9427ae4c,2025-09-16 08:53:57,paid,,1
+104,104,Credit Card,PayPal,3157.82,txn_526dc44602a7,2025-06-12 05:19:18,paid,,3
+105,105,PayPal,Stripe,4432.61,txn_d1ff59536c74,2025-09-28 21:42:21,paid,,1
+106,106,Digital Wallet,Stripe,0.0,txn_436da98a5f7d,2025-09-16 19:02:06,paid,,3
+107,107,Credit Card,Stripe,3779.32,txn_6b7b900ae6a5,2025-09-13 15:30:04,paid,,3
+108,108,Bank Transfer,PayPal,597.09,txn_023007b13224,,failed,card_declined,2
+109,109,Digital Wallet,Stripe,2394.98,txn_16962afc6621,2025-06-09 11:30:46,paid,,1
+110,110,Credit Card,Square,1249.34,txn_1e89a1dec3f9,2025-10-15 02:07:33,paid,,1
+111,111,Bank Transfer,Square,0.0,txn_4f783c95e5bd,,unpaid,,3
+112,112,Digital Wallet,PayPal,803.34,txn_8148e6c4a085,2025-11-01 06:45:16,paid,,2
+113,113,PayPal,Manual,2161.78,txn_d23e019384f8,2025-08-03 22:00:06,paid,,1
+114,114,Digital Wallet,Manual,2825.44,txn_729b410a0b45,2025-08-04 18:24:16,paid,,3
+115,115,PayPal,Stripe,789.13,txn_7d9326c02b20,,failed,insufficient_funds,2
+116,116,Credit Card,Stripe,5074.88,txn_8f35132a48a3,2025-07-29 16:41:28,paid,,3
+117,117,Bank Transfer,PayPal,1708.93,txn_7c3112ef22d1,2025-07-24 20:05:22,paid,,2
+118,118,Digital Wallet,Manual,2430.28,txn_9ba3e48932ab,2025-06-24 14:42:44,paid,,1
+119,119,Bank Transfer,PayPal,0.0,txn_df9458970639,2025-10-26 17:55:21,paid,,2
+120,120,Credit Card,Stripe,1843.3,txn_9ac63b00331f,2025-09-11 09:29:05,paid,,1
+121,121,Digital Wallet,Square,2260.52,txn_0b86432a4a6d,2025-07-15 15:09:52,paid,,1
+122,122,Credit Card,PayPal,2767.42,txn_5add504f77e1,2025-07-21 12:43:03,paid,,2
+123,123,PayPal,Manual,1736.37,txn_cc3f3ffae513,2025-08-06 20:40:35,paid,,1
+124,124,Digital Wallet,Square,1404.78,txn_f631fe1ea435,2025-08-11 08:30:44,paid,,2
+125,125,Credit Card,PayPal,1059.46,txn_4df912198634,,unpaid,,2
+126,126,PayPal,Stripe,3666.13,txn_a2648e46573a,2025-10-06 18:18:36,paid,,1
+127,127,Credit Card,Manual,3465.53,txn_b70e3c5918a9,,unpaid,,1
+128,128,Digital Wallet,Stripe,0.0,txn_22efa1f834e4,2025-07-29 03:07:03,paid,,3
+129,129,PayPal,PayPal,1200.25,txn_bd92a0d52e14,2025-06-23 01:35:09,paid,,2
+130,130,Credit Card,Stripe,1767.62,txn_b4bd77c5391b,2025-10-02 05:12:34,paid,,2
+131,131,PayPal,Stripe,2181.44,txn_7ad74252fd29,2025-06-13 20:40:08,paid,,3
+132,132,Credit Card,Square,3122.43,txn_d0a24e2b0b47,2025-09-01 16:56:04,paid,,2
+133,133,Bank Transfer,PayPal,4500.68,txn_18f632bf635c,2025-06-20 01:00:28,paid,,1
+134,134,Digital Wallet,Stripe,2733.04,txn_c1bba0c7b28c,2025-06-03 07:23:02,paid,,2
+135,135,Credit Card,Stripe,3127.39,txn_6be6fd38256f,2025-07-19 20:34:18,paid,,3
+136,136,Bank Transfer,PayPal,0.0,txn_4f14ff936d99,,unpaid,,3
+137,137,Credit Card,Stripe,5038.73,txn_b9d6a288cbaa,2025-07-03 16:05:38,paid,,1
+138,138,Bank Transfer,Stripe,1977.98,txn_88a1d344dab7,,failed,insufficient_funds,2
+139,139,Digital Wallet,PayPal,1604.88,txn_e83b1bfab11f,,unpaid,,1
+140,140,Credit Card,Stripe,2522.11,txn_c493d19082f7,2025-05-25 13:35:00,paid,,1
+141,141,Digital Wallet,Stripe,5306.4,txn_6f6b3c98c171,2025-05-28 21:45:39,paid,,1
+142,142,Credit Card,Square,1971.68,txn_c9010c3b6024,2025-07-08 20:33:30,paid,,1
+143,143,Bank Transfer,Manual,2626.43,txn_62090bd5cd22,2025-08-16 08:40:33,paid,,1
+144,144,Credit Card,PayPal,26.67,txn_7b496247cad4,2025-07-20 01:47:59,paid,,3
+145,145,Digital Wallet,Manual,4448.62,txn_466716a6d4b7,2025-05-28 22:53:30,paid,,2
+146,146,PayPal,Stripe,2975.47,txn_6e42c230b0fe,2025-09-20 14:57:13,paid,,1
+147,147,Bank Transfer,Square,3506.9,txn_ba952b390737,2025-07-13 01:01:13,paid,,3
+148,148,Credit Card,Manual,1063.78,txn_2e31967d9ae0,2025-05-15 20:10:28,paid,,1
+149,149,PayPal,Square,2256.33,txn_cde8b3c03367,,unpaid,,3
+150,150,PayPal,PayPal,809.19,txn_c2649c0f7b8b,,unpaid,,1
+151,151,Credit Card,Manual,678.13,txn_cce624176209,2025-08-29 21:15:30,paid,,2
+152,152,PayPal,Manual,3830.37,txn_07ff958fcd92,,unpaid,,3
+153,153,Bank Transfer,Stripe,4532.04,txn_ae5806276012,,unpaid,,1
+154,154,Bank Transfer,Manual,2888.71,txn_a8a7504cfbe6,2025-07-19 21:16:14,paid,,1
+155,155,PayPal,Stripe,2053.54,txn_c68aa410245c,2025-06-11 12:48:40,paid,,1
+156,156,Credit Card,Square,0.0,txn_47eede734273,2025-10-24 23:09:33,paid,,2
+157,157,PayPal,PayPal,689.49,txn_eeeed9700c2f,2025-07-02 14:09:17,paid,,1
+158,158,Digital Wallet,Manual,189.0,txn_024903bf0311,2025-08-18 15:35:48,paid,,1
+159,159,PayPal,Square,957.72,txn_3974e1d47fa2,2025-05-31 10:41:29,paid,,1
+160,160,Bank Transfer,Stripe,141.66,txn_0a590a0de647,,failed,expired_card,1
+161,161,Bank Transfer,Manual,1806.23,txn_e1d609a1dc10,2025-08-31 12:14:52,paid,,3
+162,162,PayPal,PayPal,3558.4,txn_7064d07f9166,2025-07-24 16:00:56,paid,,2
+163,163,PayPal,Manual,2935.76,txn_f3a2a601ce1d,2025-10-12 14:48:01,paid,,3
+164,164,Bank Transfer,Manual,4256.25,txn_28062a4c8f37,2025-08-19 14:24:46,paid,,1
+165,165,PayPal,Stripe,5729.41,txn_d362d101d290,2025-09-09 23:02:38,paid,,2
+166,166,Credit Card,Stripe,1034.01,txn_8f2eba9416ae,2025-10-11 22:46:59,paid,,3
+167,167,Bank Transfer,Stripe,1896.17,txn_cc6f91cbc962,2025-10-10 19:18:30,paid,,1
+168,168,Digital Wallet,Manual,1910.86,txn_c83c18933259,,failed,insufficient_funds,2
+169,169,Credit Card,Square,3045.09,txn_b25a6ac8f3eb,2025-06-10 12:17:35,paid,,2
+170,170,PayPal,Stripe,7433.64,txn_910861a68fc6,2025-09-09 14:52:05,paid,,2
+171,171,Bank Transfer,Stripe,1948.38,txn_ed37141541f9,2025-10-12 06:49:20,paid,,2
+172,172,Bank Transfer,Square,1652.13,txn_42d320a57ff0,2025-07-27 21:08:41,paid,,1
+173,173,Bank Transfer,Manual,1441.05,txn_9a423494be85,2025-09-24 11:30:53,paid,,2
+174,174,Bank Transfer,PayPal,3668.92,txn_b072e7ad603f,,unpaid,,3
+175,175,Credit Card,Stripe,4164.08,txn_8d77ebacc87d,2025-05-14 05:50:36,paid,,1
+176,176,PayPal,Stripe,2419.42,txn_893b841bdafe,2025-08-30 11:30:42,paid,,1
+177,177,Bank Transfer,Stripe,331.94,txn_84f0900fb45e,2025-08-19 19:37:41,paid,,1
+178,178,Credit Card,Manual,2228.24,txn_9133911dd4fa,,unpaid,,3
+179,179,Credit Card,Stripe,3595.89,txn_c97bbba0a780,,unpaid,,3
+180,180,Credit Card,Manual,0.0,txn_d8c44f57b85d,2025-08-19 23:25:11,paid,,2
+181,181,PayPal,Manual,5783.21,txn_712b34da2aee,2025-07-02 09:54:05,paid,,2
+182,182,Bank Transfer,Stripe,4310.55,txn_a22d1a712a53,2025-05-11 09:51:07,paid,,2
+183,183,Credit Card,Manual,1339.47,txn_04fe699be3ab,2025-06-19 09:41:51,paid,,2
+184,184,PayPal,Square,0.0,txn_1f44079304ab,2025-06-18 12:21:01,paid,,3
+185,185,Digital Wallet,Square,3459.08,txn_734accba96e0,,unpaid,,1
+186,186,Digital Wallet,PayPal,2911.96,txn_5cc5b1f42487,2025-06-05 06:11:27,paid,,2
+187,187,Credit Card,Square,4226.64,txn_6673b0eb695c,2025-07-27 10:46:59,paid,,1
+188,188,Credit Card,Stripe,138.42,txn_848b1eee0ca0,2025-07-13 10:35:41,paid,,3
+189,189,Bank Transfer,PayPal,3224.24,txn_8e5be519dbbc,2025-10-10 22:13:34,paid,,1
+190,190,Digital Wallet,Square,3523.98,txn_df2805d7bd5c,2025-10-04 19:44:10,paid,,2
+191,191,Bank Transfer,PayPal,5416.93,txn_d6d6c1ef675e,2025-10-11 08:32:35,paid,,1
+192,192,Digital Wallet,Stripe,3002.53,txn_59590c6e7c93,2025-06-04 11:12:03,paid,,3
+193,193,Digital Wallet,Square,2858.34,txn_e568b925ebf0,2025-07-14 12:16:33,paid,,3
+194,194,Credit Card,Square,2501.17,txn_2c5366255363,2025-08-30 21:19:34,paid,,2
+195,195,Bank Transfer,Square,936.76,txn_2acb5ffe99b6,,unpaid,,2
+196,196,Credit Card,Stripe,1607.6,txn_172157d251a7,2025-10-13 11:01:15,paid,,1
+197,197,Credit Card,Manual,365.01,txn_cbd8cf96d296,2025-08-27 09:05:57,paid,,1
+198,198,Bank Transfer,Square,364.32,txn_578b9656e2a8,2025-07-16 06:41:17,paid,,3
+199,199,Bank Transfer,Manual,1143.84,txn_46a4d8d240e6,2025-05-31 22:35:13,paid,,2
+200,200,Digital Wallet,PayPal,0.0,txn_dd9cd181ee35,,failed,insufficient_funds,2
+201,201,PayPal,Manual,0.0,txn_96cf9ec3de93,2025-06-22 06:07:11,paid,,3
+202,202,Credit Card,Stripe,5690.69,txn_c61ddc9af5e8,2025-09-17 19:34:23,paid,,3
+203,203,PayPal,Square,840.94,txn_1c2e007dcde4,2025-07-18 01:10:26,paid,,3
+204,204,Credit Card,Square,1840.16,txn_01e3c28c7886,,failed,card_declined,2
+205,205,Bank Transfer,Manual,6748.34,txn_c349446b93de,2025-05-21 23:08:07,paid,,3
+206,206,PayPal,Manual,4009.14,txn_48d16ea234d7,2025-06-03 22:43:58,paid,,1
+207,207,Bank Transfer,Stripe,2531.1,txn_fec9a8316706,2025-08-05 23:13:06,paid,,1
+208,208,Credit Card,Manual,1255.76,txn_9f855c8cc023,,unpaid,,2
+209,209,PayPal,Square,4341.66,txn_0f3819cc5ef5,2025-08-11 15:31:36,paid,,1
+210,210,Bank Transfer,PayPal,4804.66,txn_f73b79eed6c1,2025-10-23 11:20:47,paid,,1
+211,211,Credit Card,PayPal,2831.08,txn_cf9c0c85095c,2025-07-05 16:13:17,paid,,3
+212,212,Credit Card,Manual,1683.64,txn_5ee3789da68a,2025-08-16 17:22:15,paid,,2
+213,213,PayPal,Stripe,3912.62,txn_70e43aa0d034,,failed,insufficient_funds,2
+214,214,Bank Transfer,Stripe,2402.83,txn_f6afc9ee3e3a,2025-08-31 21:53:34,paid,,3
+215,215,Bank Transfer,Stripe,2881.51,txn_13ca5e50a4ee,2025-09-08 02:25:41,paid,,2
+216,216,Digital Wallet,PayPal,1471.65,txn_9554da4ff382,,unpaid,,1
+217,217,Credit Card,Square,1264.14,txn_da209e95cac6,2025-09-01 06:04:11,paid,,2
+218,218,PayPal,Stripe,849.71,txn_5c9a3e4d7d50,2025-08-19 08:53:21,paid,,3
+219,219,PayPal,PayPal,648.0,txn_6f6433e1e93e,2025-06-11 10:56:58,paid,,2
+220,220,Digital Wallet,Stripe,1751.42,txn_29eb3ab31215,2025-08-26 03:57:52,paid,,3
+221,221,PayPal,Manual,1993.77,txn_74728dd2c756,2025-05-16 08:53:13,paid,,1
+222,222,Bank Transfer,Manual,992.04,txn_ca5bc48618c1,2025-07-15 12:06:19,paid,,3
+223,223,Credit Card,Manual,1981.07,txn_e076a1d4ffc4,,failed,insufficient_funds,1
+224,224,Bank Transfer,Manual,5090.06,txn_447a25e94ec2,2025-07-09 20:03:16,paid,,2
+225,225,Bank Transfer,Manual,139.07,txn_513b96a00bc2,2025-05-11 02:22:53,paid,,2
+226,226,Digital Wallet,PayPal,401.08,txn_d3be056625ab,2025-07-01 18:03:15,paid,,3
+227,227,Bank Transfer,Square,1314.6,txn_d6575baee649,2025-05-23 17:46:00,paid,,2
+228,228,Credit Card,Square,1702.9,txn_0f73aad754d7,2025-06-03 19:28:02,paid,,1
+229,229,PayPal,Square,1635.5,txn_96f3ea913ff1,2025-09-10 11:43:13,paid,,1
+230,230,PayPal,Manual,684.64,txn_2dfe8eebfacb,2025-07-10 07:57:03,paid,,2
+231,231,Credit Card,PayPal,0.0,txn_2af605e8c7d7,,unpaid,,1
+232,232,Bank Transfer,Stripe,1393.47,txn_9f5d53d3b9c4,2025-08-24 11:56:58,paid,,3
+233,233,PayPal,Square,0.0,txn_40886fa87695,2025-10-01 22:17:51,paid,,2
+234,234,PayPal,Stripe,1707.65,txn_cf502e45c044,2025-07-06 07:02:06,paid,,3
+235,235,Digital Wallet,Square,2930.85,txn_d8dfa13b7755,,failed,insufficient_funds,1
+236,236,Credit Card,Stripe,2464.94,txn_3f0052238f7a,2025-06-24 21:06:23,paid,,3
+237,237,PayPal,Stripe,1035.8,txn_d1024abde7bb,2025-05-30 00:43:28,paid,,2
+238,238,Credit Card,Manual,2610.35,txn_05a7b8fe164a,2025-07-24 10:13:58,paid,,2
+239,239,Credit Card,PayPal,1812.61,txn_c625c4fd85a8,2025-10-17 03:13:10,paid,,2
+240,240,Bank Transfer,Stripe,481.06,txn_dd87f2d358da,2025-08-12 07:51:45,paid,,1
+241,241,Digital Wallet,Manual,1090.28,txn_5c99b115dc88,,unpaid,,1
+242,242,PayPal,Stripe,2944.42,txn_8e9d4d52a940,2025-10-19 04:32:48,paid,,2
+243,243,Credit Card,Stripe,3487.97,txn_3d25fb5645bc,2025-06-19 12:29:39,paid,,3
+244,244,Digital Wallet,Stripe,4248.79,txn_8c7b98c66f36,2025-08-04 11:18:56,paid,,2
+245,245,Credit Card,Square,1318.98,txn_d2e316607539,2025-09-25 19:19:59,paid,,3
+246,246,Bank Transfer,Square,2137.72,txn_ed2516c25398,2025-07-23 05:13:15,paid,,2
+247,247,Credit Card,Manual,2295.67,txn_ab99d38e40cd,2025-08-08 15:17:56,paid,,3
+248,248,Bank Transfer,PayPal,2997.55,txn_79460eddb3de,2025-05-13 05:24:31,paid,,3
+249,249,Digital Wallet,Manual,5596.51,txn_0d4b9429b284,2025-07-07 21:10:40,paid,,3
+250,250,Bank Transfer,PayPal,1120.59,txn_812868649d14,2025-05-19 01:48:22,paid,,1
+251,251,Bank Transfer,Square,834.15,txn_e243140268fd,2025-10-22 21:16:09,paid,,1
+252,252,Digital Wallet,Square,663.88,txn_f96e65df7332,2025-06-09 23:42:42,paid,,2
+253,253,PayPal,Manual,2188.08,txn_7ec47725fa13,2025-10-23 09:05:26,paid,,3
+254,254,Digital Wallet,PayPal,1428.84,txn_06c672b437a2,2025-10-27 21:01:25,paid,,1
+255,255,Digital Wallet,PayPal,1228.84,txn_d95089ad5b33,2025-07-12 18:55:29,paid,,1
+256,256,PayPal,Manual,2956.88,txn_0039064ff6b2,2025-08-07 16:32:10,paid,,1
+257,257,Credit Card,Stripe,5588.43,txn_71fa6d85f54f,2025-07-13 20:59:10,paid,,1
+258,258,Digital Wallet,Square,329.36,txn_14190c10f820,2025-06-14 03:21:23,paid,,2
+259,259,Bank Transfer,Stripe,0.0,txn_7bb9c428a093,2025-09-11 16:45:27,paid,,3
+260,260,Bank Transfer,PayPal,3422.98,txn_8106cc29c5c7,2025-10-27 03:59:52,paid,,3
+261,261,Digital Wallet,PayPal,4031.76,txn_6384110cce5e,,failed,expired_card,1
+262,262,Digital Wallet,Manual,1418.85,txn_13e5b6858127,2025-10-15 15:46:53,paid,,1
+263,263,Credit Card,Manual,0.0,txn_296d7320f542,2025-05-14 01:02:13,paid,,3
+264,264,Credit Card,Stripe,2638.95,txn_50c8155008dd,2025-10-03 18:53:34,paid,,1
+265,265,PayPal,Square,3002.46,txn_d841b6bac9ca,2025-09-14 11:17:49,paid,,2
+266,266,PayPal,Manual,3270.34,txn_6cafe1e57130,,unpaid,,1
+267,267,Digital Wallet,Square,3161.65,txn_c7a7a4ce8dd8,,failed,insufficient_funds,3
+268,268,PayPal,Manual,4818.68,txn_69cfabd3456a,2025-08-16 20:08:53,paid,,3
+269,269,Credit Card,PayPal,1116.03,txn_2aab7779b3d8,,failed,card_declined,1
+270,270,Bank Transfer,PayPal,2742.93,txn_9fc68f5daf6b,2025-10-17 23:24:44,paid,,1
+271,271,PayPal,Square,0.0,txn_869ae8908448,2025-11-01 07:26:39,paid,,2
+272,272,Credit Card,Manual,5417.08,txn_46ce66f0c892,2025-09-03 09:58:53,paid,,3
+273,273,PayPal,Manual,2189.57,txn_a159c25462dd,2025-09-06 23:26:28,paid,,3
+274,274,Credit Card,Stripe,854.88,txn_b436d6958b4e,,unpaid,,1
+275,275,Digital Wallet,Manual,1461.74,txn_ec22b6c1df6e,2025-10-19 12:50:45,paid,,3
+276,276,Digital Wallet,PayPal,4864.84,txn_186c3292a4a7,2025-07-24 17:24:55,paid,,1
+277,277,Digital Wallet,PayPal,3994.94,txn_c735aa11c470,2025-07-18 10:57:59,paid,,2
+278,278,Bank Transfer,Stripe,1635.6,txn_479d6b0b779e,2025-07-05 02:34:20,paid,,3
+279,279,Bank Transfer,Manual,2480.29,txn_c342776985c6,2025-05-12 16:16:29,paid,,2
+280,280,PayPal,Stripe,2487.75,txn_f185a41a6741,2025-10-12 21:38:14,paid,,2
+281,281,Digital Wallet,Square,2780.5,txn_147cf00c6b33,2025-07-28 06:02:13,paid,,3
+282,282,Digital Wallet,Manual,0.0,txn_06461633334d,2025-07-21 07:59:36,paid,,3
+283,283,Credit Card,Stripe,2511.87,txn_b4f6b43ea4a3,2025-07-21 13:27:01,paid,,1
+284,284,Bank Transfer,PayPal,1908.24,txn_a6598b02abfc,2025-06-21 01:23:45,paid,,3
+285,285,Credit Card,Stripe,5168.86,txn_dc3a9a448948,2025-08-26 00:42:22,paid,,3
+286,286,Bank Transfer,Manual,0.0,txn_7ecbfed4aa90,2025-06-06 20:14:29,paid,,2
+287,287,Credit Card,Manual,3455.92,txn_2a6a8fef8665,2025-09-06 13:51:32,paid,,3
+288,288,Credit Card,Stripe,2006.99,txn_341e213aaa10,2025-11-01 09:16:50,paid,,2
+289,289,Credit Card,Stripe,2684.99,txn_1e3e7dadf666,2025-08-02 06:25:27,paid,,3
+290,290,Bank Transfer,Square,5728.43,txn_d4d6c875808a,2025-10-27 04:33:37,paid,,3
+291,291,PayPal,PayPal,2951.81,txn_4fd711ecbe65,,unpaid,,2
+292,292,Digital Wallet,PayPal,2660.38,txn_0e7f1683376a,2025-09-04 12:04:23,paid,,2
+293,293,Digital Wallet,Stripe,3733.35,txn_0926c9ffe85a,2025-08-04 11:41:24,paid,,2
+294,294,PayPal,Manual,786.26,txn_247ff7620344,2025-05-24 17:22:22,paid,,3
+295,295,Credit Card,Square,6662.2,txn_d6c00b8c35fe,,unpaid,,1
+296,296,Credit Card,Stripe,3125.9,txn_a5bc409b1a0b,,failed,insufficient_funds,3
+297,297,PayPal,PayPal,5174.19,txn_1902d8ab7348,2025-09-06 16:33:55,paid,,1
+298,298,PayPal,Stripe,4942.17,txn_00f9507cac90,2025-09-12 13:16:05,paid,,3
+299,299,Credit Card,PayPal,71.55,txn_ace478a3ffae,2025-07-12 17:07:45,paid,,2
+300,300,PayPal,Square,0.0,txn_d76d53a5a553,2025-08-16 12:31:28,paid,,1
+301,301,Credit Card,Manual,2423.52,txn_db167aca0635,2025-08-17 20:43:39,paid,,3
+302,302,Digital Wallet,Square,1674.1,txn_9f4bd637e9d5,2025-05-29 01:57:10,paid,,2
+303,303,Digital Wallet,PayPal,780.3,txn_0f54e15a1777,2025-09-24 06:31:56,paid,,3
+304,304,Digital Wallet,Stripe,2924.05,txn_f99707faab70,2025-05-25 04:36:37,paid,,3
+305,305,Digital Wallet,PayPal,3192.88,txn_4fd1e03955e3,2025-07-29 18:11:46,paid,,1
+306,306,Digital Wallet,Stripe,2461.38,txn_431c32025023,2025-09-16 07:55:11,paid,,3
+307,307,Bank Transfer,Square,1806.21,txn_5777f4ba4f29,,failed,card_declined,3
+308,308,PayPal,Square,0.0,txn_15eb1fa6d3e9,2025-07-28 12:45:32,paid,,1
+309,309,Credit Card,PayPal,2986.01,txn_c716a6cb8bfc,,failed,insufficient_funds,3
+310,310,Digital Wallet,Manual,1964.2,txn_9d7190611dea,2025-10-12 02:24:32,paid,,1
+311,311,Digital Wallet,Stripe,882.6,txn_f1cb4bddf5a6,,unpaid,,1
+312,312,PayPal,Square,560.12,txn_6dead934c34a,2025-07-13 12:37:10,paid,,3
+313,313,Digital Wallet,Manual,2416.57,txn_9000258a38ab,2025-07-29 19:05:15,paid,,1
+314,314,PayPal,Manual,2444.77,txn_c1f4d1f433c8,2025-07-16 17:28:45,paid,,2
+315,315,Credit Card,Manual,314.08,txn_e2447e9b161c,,unpaid,,2
+316,316,Bank Transfer,Stripe,7984.41,txn_4042660fcdd7,2025-10-28 02:27:01,paid,,1
+317,317,Credit Card,PayPal,1357.66,txn_f4b7aecedd4b,2025-08-16 18:13:14,paid,,1
+318,318,Digital Wallet,Manual,1309.24,txn_fdc4cc64bdcb,2025-05-20 05:42:21,paid,,3
+319,319,PayPal,PayPal,2375.55,txn_092ad8be77a1,2025-07-06 08:58:38,paid,,3
+320,320,PayPal,Square,4231.03,txn_413aebc9fc85,2025-05-16 05:03:56,paid,,2
+321,321,PayPal,Stripe,2549.3,txn_e0cce63f758b,2025-07-09 11:20:48,paid,,3
+322,322,PayPal,Manual,3196.38,txn_91e146407638,2025-05-09 08:07:23,paid,,3
+323,323,Bank Transfer,Manual,4328.09,txn_711fd7810bd2,,failed,card_declined,3
+324,324,PayPal,Square,313.0,txn_42b56f22ff76,2025-10-31 16:21:02,paid,,3
+325,325,PayPal,PayPal,353.92,txn_7888a026b6f7,2025-08-05 19:51:42,paid,,1
+326,326,Digital Wallet,PayPal,1594.04,txn_7ab6943f5b3e,2025-07-06 04:12:39,paid,,1
+327,327,Digital Wallet,Stripe,3562.82,txn_32174be6085d,2025-08-10 04:21:41,paid,,3
+328,328,Bank Transfer,Manual,2390.2,txn_cc503996161b,2025-08-09 12:06:55,paid,,3
+329,329,PayPal,PayPal,1837.42,txn_676f26c572bb,2025-05-27 10:49:11,paid,,3
+330,330,Digital Wallet,Manual,5705.97,txn_8ff3f022539b,,unpaid,,1
+331,331,Credit Card,Stripe,1125.52,txn_5a273b47505b,,unpaid,,3
+332,332,Bank Transfer,Manual,325.5,txn_8f0b77c17107,2025-06-26 10:13:56,paid,,3
+333,333,Credit Card,Square,174.6,txn_a01a820b5331,,failed,card_declined,2
+334,334,PayPal,Stripe,224.73,txn_28ac2b400bb1,,failed,card_declined,3
+335,335,Digital Wallet,Stripe,1057.27,txn_ba4d46ccecde,2025-09-29 11:23:47,paid,,2
+336,336,PayPal,Manual,0.0,txn_b135a20e0105,2025-05-29 08:18:03,paid,,1
+337,337,Digital Wallet,Square,231.58,txn_ce8ce951481c,2025-06-29 17:25:07,paid,,1
+338,338,Digital Wallet,PayPal,1333.04,txn_c23f16f3cef1,2025-10-02 03:45:36,paid,,3
+339,339,Digital Wallet,Stripe,0.0,txn_1fae6430dd9b,2025-09-11 17:24:11,paid,,1
+340,340,PayPal,Manual,1577.23,txn_c1a7105a8eb6,2025-08-10 03:01:47,paid,,2
+341,341,Credit Card,Manual,771.48,txn_faeb81447033,2025-06-12 01:45:31,paid,,2
+342,342,Bank Transfer,Stripe,3234.45,txn_98bed998ea12,2025-08-14 22:04:29,paid,,1
+343,343,Digital Wallet,Stripe,879.5,txn_9bfd97d5fe3c,2025-06-05 00:41:13,paid,,3
+344,344,Digital Wallet,Square,4614.89,txn_a12ada486d52,2025-07-20 07:54:47,paid,,2
+345,345,Digital Wallet,Square,721.26,txn_b44ef19311af,2025-06-12 19:55:36,paid,,1
+346,346,Digital Wallet,Manual,1095.97,txn_1362740c60f9,2025-09-08 23:41:01,paid,,3
+347,347,PayPal,Manual,657.56,txn_6460781d89ce,2025-05-09 08:18:19,paid,,3
+348,348,Digital Wallet,Stripe,2094.06,txn_1b28d2a498e3,2025-08-02 08:27:34,paid,,3
+349,349,Bank Transfer,PayPal,749.92,txn_d9f6cdd834ac,2025-06-16 09:17:57,paid,,3
+350,350,Digital Wallet,Manual,1659.9,txn_bae771c72a82,2025-07-31 10:47:46,paid,,2
+351,351,Bank Transfer,PayPal,778.65,txn_55490439dca1,2025-06-13 10:47:12,paid,,3
+352,352,Bank Transfer,PayPal,1132.64,txn_d842f9b47121,,failed,network_error,3
+353,353,Credit Card,PayPal,4415.59,txn_a2939655f06f,,unpaid,,2
+354,354,Bank Transfer,PayPal,1122.75,txn_5daedd59bded,2025-06-26 22:28:49,paid,,2
+355,355,Digital Wallet,Stripe,3940.83,txn_bab30e1e6971,,unpaid,,1
+356,356,PayPal,Square,3647.09,txn_32d4287b5d81,,unpaid,,2
+357,357,Credit Card,PayPal,591.78,txn_04dcc029528e,2025-10-05 21:45:22,paid,,2
+358,358,Digital Wallet,Stripe,1825.98,txn_3491e2474ce3,2025-09-26 00:08:21,paid,,2
+359,359,Digital Wallet,PayPal,5973.67,txn_189aa92cd48d,2025-08-06 08:51:17,paid,,1
+360,360,Credit Card,Manual,703.88,txn_e11f048433d5,2025-05-19 20:40:55,paid,,3
+361,361,Credit Card,PayPal,1241.4,txn_527a3fc14ea0,2025-09-13 17:55:52,paid,,1
+362,362,Digital Wallet,PayPal,1259.67,txn_8b5e450799c6,2025-10-25 12:57:27,paid,,2
+363,363,Bank Transfer,Stripe,2597.67,txn_07c49f140e4b,,unpaid,,1
+364,364,Credit Card,Square,1004.45,txn_6a64f4d925f5,,unpaid,,1
+365,365,Bank Transfer,Stripe,2200.62,txn_1f7f6d0c1ebe,2025-08-12 11:49:57,paid,,1
+366,366,Digital Wallet,Stripe,1521.68,txn_5aff414fe5dc,2025-08-01 19:20:42,paid,,3
+367,367,Digital Wallet,Square,6710.46,txn_a6160011877f,2025-06-25 15:34:02,paid,,3
+368,368,Credit Card,Manual,2803.27,txn_6197564e9570,2025-10-25 21:05:47,paid,,2
+369,369,Digital Wallet,Stripe,834.28,txn_9c22d89f1d2d,2025-09-17 06:59:08,paid,,1
+370,370,PayPal,PayPal,5630.88,txn_f2207325f416,,unpaid,,2
+371,371,PayPal,PayPal,3864.38,txn_0c8c3527f86d,2025-06-22 03:50:11,paid,,3
+372,372,Credit Card,PayPal,270.71,txn_aa67c4abfebd,2025-06-12 22:22:10,paid,,3
+373,373,Bank Transfer,Square,1052.24,txn_5e55e9945e98,2025-08-20 13:29:40,paid,,3
+374,374,Credit Card,Stripe,2295.52,txn_43455ba6eac4,2025-07-13 03:44:08,paid,,1
+375,375,Digital Wallet,Square,3688.41,txn_e01934865713,2025-07-05 12:33:03,paid,,2
+376,376,Bank Transfer,Manual,2541.2,txn_9f6b99ed4cbc,,unpaid,,2
+377,377,Digital Wallet,PayPal,2953.26,txn_e07909a8da80,2025-07-01 21:04:52,paid,,2
+378,378,Credit Card,Stripe,2928.66,txn_99a1cb16c92b,2025-08-04 10:11:48,paid,,3
+379,379,Digital Wallet,Stripe,4347.62,txn_07f6c37656a5,2025-06-07 19:48:09,paid,,3
+380,380,Credit Card,Square,1785.96,txn_b8b0191674fc,2025-08-02 16:07:56,paid,,2
+381,381,Digital Wallet,PayPal,1021.68,txn_54632f2fe12f,,unpaid,,2
+382,382,Bank Transfer,Stripe,2012.51,txn_1d606a1a7ae8,2025-06-25 04:45:53,paid,,3
+383,383,Digital Wallet,Stripe,1915.67,txn_39c486ae68a1,2025-09-13 04:38:37,paid,,1
+384,384,Digital Wallet,Stripe,5843.98,txn_0e27e1aa6858,,failed,expired_card,1
+385,385,Credit Card,Square,589.17,txn_21ce36cfddd0,2025-08-07 04:10:05,paid,,2
+386,386,Credit Card,Manual,-591.72,txn_41c4c5944472,,unpaid,,1
+387,387,Credit Card,PayPal,1641.47,txn_b3523bb3f811,2025-08-24 00:59:59,paid,,2
+388,388,Bank Transfer,Square,275.78,txn_900b26bd2f68,,unpaid,,2
+389,389,Digital Wallet,Stripe,6995.93,txn_708019c69787,,unpaid,,2
+390,390,Credit Card,Square,3197.94,txn_59c7dea184be,,unpaid,,3
+391,391,Digital Wallet,Manual,2277.61,txn_668c19eb1e09,2025-07-30 21:24:34,paid,,1
+392,392,Bank Transfer,Square,73.16,txn_620cca8c3c52,,failed,expired_card,2
+393,393,Digital Wallet,Stripe,91.45,txn_99402b8d05fd,,unpaid,,2
+394,394,PayPal,Square,95.67,txn_0e48161357f5,2025-10-06 16:58:16,paid,,2
+395,395,Credit Card,Square,2960.52,txn_6768569b7a02,,failed,expired_card,1
+396,396,PayPal,Square,0.87,txn_94ab91fd3eaf,2025-05-30 13:54:12,paid,,1
+397,397,Digital Wallet,Manual,3432.14,txn_8b0dfacc21eb,2025-08-04 17:47:02,paid,,3
+398,398,Credit Card,Stripe,2818.06,txn_19bed6d27f2d,2025-05-28 04:53:02,paid,,2
+399,399,Bank Transfer,Stripe,5096.99,txn_3821fbd9dbf0,2025-10-21 12:59:44,paid,,3
+400,400,Bank Transfer,Stripe,2255.7,txn_7b05bd2998db,2025-09-18 23:33:56,paid,,2
+401,401,PayPal,Square,0.0,txn_696a980215dc,2025-06-02 01:40:58,paid,,1
+402,402,Digital Wallet,Square,5869.41,txn_b17db8945de2,,unpaid,,3
+403,403,PayPal,Manual,3941.17,txn_1e0e6356606f,2025-09-16 07:15:44,paid,,2
+404,404,PayPal,Manual,253.68,txn_959ab5a52fc4,2025-08-15 22:32:55,paid,,1
+405,405,Credit Card,PayPal,2082.86,txn_be9e6419d474,,unpaid,,3
+406,406,Credit Card,Square,3117.24,txn_1588f0efbc7c,,failed,insufficient_funds,1
+407,407,Credit Card,PayPal,675.38,txn_99f2108471ae,2025-09-15 08:11:00,paid,,2
+408,408,Bank Transfer,Square,332.93,txn_3de22cba4f40,2025-09-06 12:53:37,paid,,1
+409,409,Credit Card,Stripe,0.0,txn_45932b83706d,2025-09-27 16:24:29,paid,,2
+410,410,PayPal,Square,1284.98,txn_c17c5e8e7582,,unpaid,,2
+411,411,Digital Wallet,PayPal,1976.49,txn_09e61c9441e0,2025-07-21 11:04:26,paid,,2
+412,412,Digital Wallet,PayPal,1168.01,txn_f0df5ef1259a,2025-06-03 09:30:21,paid,,1
+413,413,Digital Wallet,PayPal,861.56,txn_018f8f7e1c16,2025-08-27 03:30:12,paid,,2
+414,414,Credit Card,Square,1780.56,txn_0546d2bd5125,,unpaid,,2
+415,415,Bank Transfer,Stripe,2558.3,txn_6bf83b961242,2025-08-04 11:36:18,paid,,1
+416,416,Digital Wallet,Manual,1583.92,txn_3a72cafdac3c,2025-08-11 18:08:38,paid,,1
+417,417,Digital Wallet,Square,89.44,txn_5451475fa99d,2025-06-09 09:12:51,paid,,2
+418,418,PayPal,PayPal,3784.45,txn_1ef62ff51a6a,2025-08-04 11:20:24,paid,,3
+419,419,Bank Transfer,Manual,2211.38,txn_32857688b11d,2025-07-03 15:45:20,paid,,3
+420,420,PayPal,Manual,4083.29,txn_eab0056d062d,,unpaid,,2
+421,421,Digital Wallet,Manual,689.8,txn_e3bbf4a54a61,2025-10-04 14:36:59,paid,,1
+422,422,Digital Wallet,Stripe,594.06,txn_e11082ff17b2,2025-08-27 03:22:24,paid,,2
+423,423,Bank Transfer,Square,4763.72,txn_bd68791be4a5,2025-10-17 23:45:11,paid,,1
+424,424,Credit Card,PayPal,612.55,txn_69889e9089a4,2025-09-16 03:52:16,paid,,2
+425,425,Bank Transfer,PayPal,2356.36,txn_918a351fb8f7,,failed,network_error,3
+426,426,PayPal,Manual,1838.22,txn_2d83d93839dd,2025-11-02 13:34:58,paid,,3
+427,427,Digital Wallet,Square,1542.72,txn_20c1773453f5,2025-10-18 02:22:57,paid,,3
+428,428,Digital Wallet,Manual,1930.28,txn_b23ed1ff0fb6,2025-11-01 11:03:32,paid,,1
+429,429,Digital Wallet,Manual,4336.42,txn_dcf08242f568,2025-08-25 15:00:25,paid,,2
+430,430,Digital Wallet,Manual,907.68,txn_d81c7e00fe23,2025-06-30 01:16:22,paid,,3
+431,431,Credit Card,Square,1961.6,txn_e5c28685ff00,,unpaid,,1
+432,432,PayPal,Square,389.73,txn_e63128d802b3,2025-05-25 14:21:10,paid,,1
+433,433,Bank Transfer,Stripe,2936.66,txn_76922964eb7c,,failed,card_declined,3
+434,434,Bank Transfer,Square,0.0,txn_810d737e764e,2025-06-11 05:34:51,paid,,3
+435,435,PayPal,Manual,1589.79,txn_ad0e696bd11e,2025-10-14 20:16:43,paid,,2
+436,436,PayPal,Square,3558.56,txn_73b260e66b6d,2025-09-03 18:19:13,paid,,1
+437,437,Bank Transfer,Square,0.0,txn_f6c19ee65a16,,unpaid,,2
+438,438,PayPal,Manual,1559.28,txn_9e3a4d52056c,,unpaid,,3
+439,439,Credit Card,Stripe,3394.86,txn_a99f0144f7a8,2025-05-10 23:03:20,paid,,3
+440,440,Bank Transfer,Manual,1230.82,txn_9338574ae075,2025-07-21 04:31:08,paid,,3
+441,441,Digital Wallet,Square,2615.65,txn_729e6e63cfb2,2025-08-17 16:35:43,paid,,3
+442,442,Bank Transfer,Stripe,254.64,txn_0b6552cd1c69,2025-07-06 08:08:26,paid,,1
+443,443,Credit Card,Square,196.44,txn_03cc6f3aa893,2025-08-27 06:55:00,paid,,3
+444,444,PayPal,Manual,5422.64,txn_6cac7bb27bbf,2025-07-10 03:24:18,paid,,2
+445,445,PayPal,Stripe,28.62,txn_3134894e7e05,,unpaid,,3
+446,446,Digital Wallet,Stripe,2742.07,txn_1701b03e73fc,2025-10-30 11:43:01,paid,,1
+447,447,Bank Transfer,Manual,1678.95,txn_4a4b1d16ac6d,2025-10-28 03:27:16,paid,,3
+448,448,Credit Card,Manual,324.78,txn_71ea7187cb77,2025-07-26 12:49:11,paid,,2
+449,449,Credit Card,PayPal,0.0,txn_1af182cccc8a,2025-05-30 16:20:55,paid,,2
+450,450,PayPal,PayPal,0.0,txn_ad6e705e4c84,,unpaid,,3
+451,451,Digital Wallet,Manual,2471.31,txn_3979b4e9bbe3,,unpaid,,2
+452,452,Bank Transfer,Manual,2484.23,txn_9fecad322103,2025-08-18 11:29:11,paid,,3
+453,453,Digital Wallet,Manual,1632.72,txn_cccea9b48cf4,2025-08-20 23:49:04,paid,,1
+454,454,Digital Wallet,PayPal,179.45,txn_ce44f57f6468,,unpaid,,1
+455,455,Digital Wallet,Manual,5046.88,txn_24e323e478dd,2025-10-27 19:00:24,paid,,2
+456,456,PayPal,PayPal,6256.98,txn_e15ec88584b1,2025-07-30 07:21:11,paid,,1
+457,457,Digital Wallet,PayPal,2191.25,txn_ce7d85150876,,unpaid,,3
+458,458,PayPal,Stripe,2537.18,txn_d4ccf764c643,2025-10-22 08:40:01,paid,,3
+459,459,Digital Wallet,PayPal,1008.51,txn_6d5359174ce4,2025-07-30 00:49:06,paid,,1
+460,460,Bank Transfer,Stripe,2172.42,txn_4024fc577d69,,failed,expired_card,2
+461,461,Digital Wallet,Manual,0.0,txn_cd2e678c51d6,2025-09-10 20:33:29,paid,,3
+462,462,Digital Wallet,Manual,2019.57,txn_3e20bad8474b,2025-06-15 04:22:53,paid,,2
+463,463,PayPal,Manual,1157.79,txn_3f6c6c48dc31,2025-07-31 11:03:17,paid,,1
+464,464,PayPal,Square,573.3,txn_7828280a5b28,2025-10-21 22:41:53,paid,,2
+465,465,Bank Transfer,Square,456.52,txn_85bc9deb91e4,2025-08-12 23:13:32,paid,,3
+466,466,Credit Card,Manual,0.0,txn_4808a1da6e45,,failed,insufficient_funds,1
+467,467,Credit Card,Stripe,3578.18,txn_18818473362b,2025-06-19 16:22:31,paid,,2
+468,468,PayPal,PayPal,177.41,txn_0a91320394bb,2025-05-14 07:09:19,paid,,1
+469,469,PayPal,Stripe,1309.56,txn_bf4522639640,2025-05-10 23:13:01,paid,,2
+470,470,PayPal,Stripe,1629.96,txn_71075c5d5eef,2025-07-04 15:01:31,paid,,1
+471,471,PayPal,Manual,3386.31,txn_2cc2d6a06fd5,,unpaid,,2
+472,472,Bank Transfer,Square,1759.01,txn_5c96e8ba0834,2025-06-14 11:46:18,paid,,2
+473,473,Digital Wallet,Manual,8213.47,txn_75679a38da64,2025-07-05 03:05:35,paid,,2
+474,474,Credit Card,Stripe,1623.48,txn_d0d7f17e1037,,unpaid,,3
+475,475,PayPal,PayPal,3405.67,txn_70d5ff518dfd,2025-06-18 03:10:07,paid,,1
+476,476,Bank Transfer,PayPal,1369.18,txn_5a25536f21ce,2025-07-28 23:56:26,paid,,1
+477,477,Bank Transfer,Stripe,2367.81,txn_b6d0c0ad7b79,2025-07-19 20:43:34,paid,,2
+478,478,Digital Wallet,Square,2191.38,txn_24f83e11c055,2025-08-05 04:04:42,paid,,2
+479,479,Bank Transfer,PayPal,2361.83,txn_dc2620ef1f9f,2025-06-07 21:31:57,paid,,3
+480,480,Digital Wallet,Stripe,1432.12,txn_3ee704ef3698,2025-06-30 03:09:26,paid,,2
+481,481,Digital Wallet,Manual,2244.66,txn_eb2d3086eb7b,2025-07-02 09:38:38,paid,,3
+482,482,PayPal,PayPal,221.49,txn_5d7ff99c0808,,failed,insufficient_funds,3
+483,483,Digital Wallet,Square,300.36,txn_598cc3fbb3c3,2025-05-08 18:30:16,paid,,1
+484,484,Credit Card,Square,2285.6,txn_d0224fc2b4c6,2025-10-17 03:04:05,paid,,1
+485,485,Bank Transfer,Manual,3903.07,txn_271a9866d514,,unpaid,,2
+486,486,Credit Card,Manual,2711.82,txn_12076902d107,,failed,expired_card,2
+487,487,PayPal,Square,711.3,txn_496a48206d2b,2025-07-31 18:35:48,paid,,3
+488,488,Digital Wallet,Square,2619.44,txn_6191442ad069,,unpaid,,1
+489,489,PayPal,Stripe,3129.81,txn_55beb4e5bcb6,2025-05-15 03:03:28,paid,,1
+490,490,Credit Card,Manual,583.82,txn_1681494e3d54,2025-10-20 09:32:53,paid,,3
+491,491,PayPal,Manual,4138.14,txn_6fc546f53736,2025-05-19 01:24:30,paid,,1
+492,492,PayPal,Square,4018.96,txn_4d6fc53d585d,2025-10-16 21:39:48,paid,,2
+493,493,Bank Transfer,Square,235.29,txn_256ccd8c2cb7,2025-05-27 19:44:19,paid,,3
+494,494,Digital Wallet,Stripe,276.22,txn_7a35c5091770,,unpaid,,2
+495,495,Credit Card,PayPal,0.0,txn_f7db1c58ac70,2025-07-29 01:31:08,paid,,1
+496,496,Bank Transfer,Manual,7102.62,txn_f531f127bd40,,unpaid,,3
+497,497,PayPal,Manual,2148.28,txn_6ede6ce24239,2025-09-05 01:20:25,paid,,2
+498,498,Credit Card,Stripe,707.84,txn_2458292bcd31,2025-10-30 08:38:04,paid,,2
+499,499,PayPal,Stripe,6603.24,txn_04a4c007e9c9,2025-08-14 16:28:57,paid,,3
+500,500,PayPal,Square,2620.95,txn_2b0cc4d1578d,2025-06-18 00:21:38,paid,,2
+501,501,Bank Transfer,PayPal,534.1,txn_6a78a6e66bac,2025-07-19 09:00:23,paid,,1
+502,502,PayPal,Manual,226.85,txn_263de021bc20,,failed,expired_card,2
+503,503,Credit Card,Manual,878.46,txn_2b21e25041ab,2025-08-19 20:46:12,paid,,3
+504,504,Credit Card,PayPal,1104.01,txn_b1ea77c3e692,,unpaid,,3
+505,505,Digital Wallet,Square,1761.66,txn_e5e73d8243b4,2025-10-15 14:05:02,paid,,3
+506,506,Bank Transfer,Stripe,4719.78,txn_281d893fb4c9,2025-06-19 23:01:43,paid,,1
+507,507,Bank Transfer,Stripe,598.65,txn_920d27840efb,2025-09-26 14:05:15,paid,,2
+508,508,Bank Transfer,Stripe,445.95,txn_6be2198bf28c,2025-11-01 01:30:37,paid,,3
+509,509,Bank Transfer,Stripe,816.69,txn_5717f0b48715,,failed,insufficient_funds,2
+510,510,Bank Transfer,Square,5739.45,txn_5ba102ef66c5,2025-10-05 00:30:40,paid,,2
+511,511,Bank Transfer,Stripe,3676.43,txn_5633318036fe,2025-10-08 21:57:27,paid,,2
+512,512,Digital Wallet,Stripe,653.24,txn_323eaa552e8c,2025-08-11 16:35:29,paid,,1
+513,513,Digital Wallet,Stripe,1450.75,txn_29cf0ab0e395,,unpaid,,3
+514,514,Bank Transfer,Manual,270.44,txn_7cfb8ba670f8,2025-06-27 06:25:18,paid,,1
+515,515,Digital Wallet,PayPal,1247.68,txn_066588c1ef2d,,unpaid,,1
+516,516,Credit Card,PayPal,0.0,txn_1fdc07a713b8,2025-05-31 19:55:30,paid,,2
+517,517,Bank Transfer,Square,946.38,txn_406553dc86a7,,unpaid,,1
+518,518,PayPal,Square,0.0,txn_f4b85c3401a1,2025-07-10 16:38:25,paid,,2
+519,519,PayPal,Stripe,0.0,txn_9e547b600344,2025-05-21 19:42:42,paid,,2
+520,520,Bank Transfer,Stripe,1682.0,txn_40a1458c9df5,2025-08-01 16:00:15,paid,,3
+521,521,PayPal,PayPal,2601.9,txn_67619d0123dc,2025-09-26 11:05:33,paid,,1
+522,522,Credit Card,Manual,1566.12,txn_584b34202e1b,,failed,network_error,1
+523,523,PayPal,Stripe,3748.5,txn_f6f74787d99b,2025-09-09 21:26:43,paid,,3
+524,524,PayPal,Stripe,5395.41,txn_042e647b43ab,2025-06-30 12:37:49,paid,,2
+525,525,Bank Transfer,PayPal,973.35,txn_ac0bf2ee2252,2025-08-23 16:02:33,paid,,1
+526,526,PayPal,Manual,3673.15,txn_34da2b5dfdf7,2025-07-01 20:23:41,paid,,1
+527,527,Bank Transfer,Square,0.0,txn_ff22157b1384,2025-10-10 14:27:18,paid,,1
+528,528,Bank Transfer,Manual,0.0,txn_874ad5541752,2025-08-26 03:20:11,paid,,3
+529,529,Bank Transfer,Manual,2824.09,txn_e2857d817b5e,2025-07-01 17:26:46,paid,,1
+530,530,Bank Transfer,Manual,3179.55,txn_062620d4a376,2025-10-31 16:45:34,paid,,2
+531,531,PayPal,PayPal,2362.25,txn_5566b679a107,2025-06-30 10:30:14,paid,,3
+532,532,Bank Transfer,PayPal,4097.16,txn_83b005760eca,2025-05-11 10:27:38,paid,,3
+533,533,Bank Transfer,Stripe,612.05,txn_f6d7bb96a77e,2025-05-06 20:03:41,paid,,1
+534,534,Bank Transfer,Manual,1134.6,txn_192734481f71,,unpaid,,3
+535,535,PayPal,Stripe,2387.93,txn_10d5b7115783,2025-07-02 22:31:38,paid,,3
+536,536,Bank Transfer,Manual,0.0,txn_9172179652c1,2025-08-10 18:44:14,paid,,3
+537,537,PayPal,Manual,269.75,txn_c6e3ba90de3a,2025-05-30 00:45:18,paid,,1
+538,538,Credit Card,Stripe,1585.12,txn_5380c8d87b58,,failed,insufficient_funds,3
+539,539,Digital Wallet,Square,182.34,txn_a20bf7a51d45,2025-09-14 14:07:36,paid,,3
+540,540,Bank Transfer,Manual,2193.14,txn_b9d2258122e9,2025-07-30 08:41:10,paid,,3
+541,541,Credit Card,Manual,2587.34,txn_f8f8794a48cb,2025-09-12 17:05:27,paid,,3
+542,542,Digital Wallet,PayPal,3772.87,txn_567b7db0a84f,2025-06-23 03:02:27,paid,,2
+543,543,Digital Wallet,Manual,4926.29,txn_3b1cf95272a2,2025-08-05 14:53:47,paid,,3
+544,544,PayPal,Manual,0.0,txn_fab4492dace2,2025-05-31 15:11:41,paid,,1
+545,545,Digital Wallet,Square,4449.43,txn_be6b0940d332,2025-05-07 12:54:08,paid,,1
+546,546,Bank Transfer,Stripe,4803.82,txn_f71092b48e5a,2025-09-21 12:47:44,paid,,3
+547,547,Credit Card,PayPal,4466.22,txn_91e0dd80d6b5,2025-07-19 19:16:51,paid,,3
+548,548,Bank Transfer,PayPal,165.8,txn_6dd3112b18e8,2025-09-11 08:34:00,paid,,1
+549,549,Digital Wallet,Stripe,6783.59,txn_7402b4bdb11a,2025-08-08 08:32:35,paid,,1
+550,550,Bank Transfer,PayPal,3311.02,txn_5df7b1c681cc,,unpaid,,2
+551,551,Digital Wallet,Square,2820.51,txn_11b52e757451,2025-07-26 00:26:59,paid,,3
+552,552,Digital Wallet,Manual,4918.08,txn_75a0a9c341e8,2025-08-04 09:49:35,paid,,3
+553,553,PayPal,Stripe,1241.5,txn_a0df9b7bdf63,2025-10-04 08:37:06,paid,,1
+554,554,Bank Transfer,Square,2628.52,txn_3003812c8cab,2025-05-11 21:58:30,paid,,1
+555,555,Digital Wallet,PayPal,4019.06,txn_254324ff3158,2025-05-19 02:21:49,paid,,1
+556,556,Digital Wallet,Stripe,0.0,txn_23ff1cc09703,2025-07-20 17:57:19,paid,,3
+557,557,Credit Card,Stripe,2251.01,txn_e66cf29faa3d,2025-08-09 11:37:08,paid,,3
+558,558,PayPal,Stripe,1509.24,txn_1f92756a1b30,,unpaid,,1
+559,559,Digital Wallet,Manual,2020.87,txn_709dc55b4e3d,,unpaid,,1
+560,560,Credit Card,Manual,1657.7,txn_04baf2214b56,2025-09-24 08:49:47,paid,,1
+561,561,Bank Transfer,PayPal,3727.24,txn_a77b89339132,2025-10-31 07:17:35,paid,,3
+562,562,Digital Wallet,Manual,17.91,txn_58dc1d867d78,2025-08-14 10:04:46,paid,,2
+563,563,Bank Transfer,Manual,0.0,txn_63492c7eb6be,2025-07-22 09:17:09,paid,,3
+564,564,Digital Wallet,PayPal,0.0,txn_533f78e41447,2025-07-24 19:33:41,paid,,1
+565,565,Digital Wallet,Square,1749.42,txn_e69871d4c9d5,2025-10-17 03:13:53,paid,,2
+566,566,PayPal,Stripe,822.93,txn_cbf3494ca838,2025-10-07 02:55:40,paid,,2
+567,567,Credit Card,PayPal,3419.58,txn_25b56777f8ac,2025-06-19 18:54:07,paid,,3
+568,568,Credit Card,Stripe,2412.84,txn_1fcfae6701d4,2025-10-12 01:50:06,paid,,1
+569,569,Credit Card,PayPal,2143.16,txn_1874ce95aa64,2025-10-20 21:08:06,paid,,3
+570,570,Bank Transfer,PayPal,681.46,txn_10dc47725403,,failed,card_declined,1
+571,571,Credit Card,Manual,6108.97,txn_962a7f0edab7,2025-05-24 03:19:34,paid,,3
+572,572,Digital Wallet,Manual,4529.36,txn_1a5f4c570bcb,2025-10-19 12:38:33,paid,,2
+573,573,Bank Transfer,PayPal,4048.29,txn_9fdc402178f6,2025-07-05 00:08:22,paid,,3
+574,574,Digital Wallet,Stripe,332.93,txn_a84b183fa012,2025-08-26 20:17:31,paid,,1
+575,575,PayPal,Stripe,1178.64,txn_7d5fb5d667df,2025-08-22 19:25:55,paid,,2
+576,576,PayPal,PayPal,261.02,txn_f35594f1a648,2025-05-10 03:12:58,paid,,2
+577,577,Digital Wallet,Square,4155.32,txn_23d30354e3c0,2025-08-02 02:43:57,paid,,1
+578,578,Credit Card,Stripe,1655.5,txn_66bc34b063a8,2025-08-01 13:34:06,paid,,2
+579,579,Credit Card,Manual,0.0,txn_6929e984c1df,,unpaid,,2
+580,580,Digital Wallet,PayPal,4351.64,txn_0f8daaedf865,2025-10-21 13:23:21,paid,,1
+581,581,PayPal,Stripe,2267.12,txn_67b24c50f9b8,2025-10-16 10:41:28,paid,,2
+582,582,Credit Card,Stripe,0.0,txn_7138b6c8721a,2025-10-01 19:22:57,paid,,2
+583,583,PayPal,Stripe,2551.02,txn_d5a56f53b022,,failed,expired_card,1
+584,584,Bank Transfer,Manual,6882.73,txn_1ea3ede1179b,2025-06-28 07:38:44,paid,,3
+585,585,Credit Card,Stripe,3209.75,txn_a8510ee4a9b8,2025-08-11 23:18:32,paid,,3
+586,586,Credit Card,Manual,945.76,txn_f99373eeda5e,,unpaid,,3
+587,587,Bank Transfer,Manual,0.0,txn_053309b6bc9e,2025-09-20 05:46:01,paid,,1
+588,588,Digital Wallet,Manual,4487.42,txn_92f679f5241e,,unpaid,,2
+589,589,Bank Transfer,Manual,585.77,txn_850977923567,2025-08-10 12:43:37,paid,,3
+590,590,Credit Card,PayPal,3390.19,txn_1edcf4dd7034,2025-07-26 20:42:28,paid,,2
+591,591,Digital Wallet,Manual,0.0,txn_7dd46ab99414,2025-09-22 21:10:39,paid,,3
+592,592,Bank Transfer,Manual,71.78,txn_7dd35358dc8c,2025-08-23 19:32:48,paid,,3
+593,593,Credit Card,PayPal,782.31,txn_91bf04916f95,2025-10-08 14:22:59,paid,,3
+594,594,Bank Transfer,Manual,537.38,txn_51d0fc1d0000,2025-08-06 10:11:32,paid,,3
+595,595,PayPal,Stripe,1047.73,txn_f49e434c07c2,2025-06-06 19:24:19,paid,,2
+596,596,Bank Transfer,Square,0.0,txn_1194ae823aa4,2025-07-25 08:06:44,paid,,3
+597,597,Bank Transfer,PayPal,993.6,txn_7b6ca97fd62b,2025-07-05 13:16:55,paid,,1
+598,598,PayPal,Stripe,3561.97,txn_c2c690156325,2025-05-24 13:24:06,paid,,1
+599,599,Credit Card,Stripe,1155.17,txn_656b13b418ff,2025-09-06 03:34:32,paid,,2
+600,600,Digital Wallet,Square,2760.73,txn_8496b1a1f8e7,2025-06-28 20:38:18,paid,,1
+601,601,Digital Wallet,Square,5039.99,txn_24f2f473418c,2025-07-16 11:37:28,paid,,2
+602,602,Digital Wallet,Square,2046.75,txn_7ff94391b588,2025-09-12 09:52:32,paid,,1
+603,603,Credit Card,Manual,1874.26,txn_d38941702bf9,,unpaid,,3
+604,604,PayPal,Square,1766.76,txn_35a6b5331fa7,2025-08-28 22:05:45,paid,,1
+605,605,Digital Wallet,PayPal,1961.26,txn_0d2b88b3ff88,2025-08-31 04:27:24,paid,,1
+606,606,Credit Card,PayPal,1989.38,txn_d85a51ab0b9e,2025-06-15 15:26:23,paid,,3
+607,607,PayPal,Stripe,354.7,txn_24bc0cae8b97,2025-05-24 13:40:01,paid,,2
+608,608,Digital Wallet,PayPal,167.01,txn_c5339767b8e7,2025-07-07 17:51:49,paid,,2
+609,609,Credit Card,Stripe,1820.28,txn_88e501ab2a7a,2025-07-27 17:32:03,paid,,3
+610,610,Credit Card,Manual,1650.98,txn_7baa4faec70e,2025-06-21 22:04:58,paid,,3
+611,611,Credit Card,PayPal,967.92,txn_e08885ba9a12,2025-07-05 05:54:55,paid,,3
+612,612,Credit Card,Square,3919.21,txn_d063c45b69ec,2025-06-08 02:09:29,paid,,2
+613,613,PayPal,Stripe,2382.43,txn_26f7a6238fda,2025-08-01 02:13:24,paid,,2
+614,614,Digital Wallet,Manual,721.62,txn_613424009eb7,2025-10-28 01:11:43,paid,,2
+615,615,Credit Card,PayPal,7553.08,txn_b30a89e1cc38,2025-10-18 19:19:26,paid,,1
+616,616,Digital Wallet,Stripe,3183.72,txn_b7848730a673,2025-09-02 13:18:29,paid,,2
+617,617,Credit Card,Manual,1671.28,txn_f2db499d5997,2025-09-29 04:12:04,paid,,1
+618,618,PayPal,Square,93.38,txn_4bf1e36fe853,2025-08-28 10:50:09,paid,,2
+619,619,Bank Transfer,PayPal,785.06,txn_78835de8e9f6,2025-10-31 15:47:57,paid,,1
+620,620,Digital Wallet,PayPal,1339.47,txn_f787dc556f2d,,unpaid,,2
+621,621,Credit Card,Stripe,3201.59,txn_096fff053c1c,2025-06-28 21:44:33,paid,,3
+622,622,Digital Wallet,Stripe,0.0,txn_b2236b2ceec7,,unpaid,,1
+623,623,Digital Wallet,Manual,1605.27,txn_be9d8278373c,2025-06-09 15:49:53,paid,,2
+624,624,Bank Transfer,Stripe,6525.52,txn_98073fdd5124,2025-05-13 23:59:42,paid,,2
+625,625,Digital Wallet,PayPal,4720.95,txn_eb2ac891130e,,unpaid,,2
+626,626,Bank Transfer,Manual,1534.07,txn_c44c0684f104,2025-05-17 23:12:09,paid,,2
+627,627,Bank Transfer,PayPal,85.86,txn_43b17d9b262e,2025-06-29 21:08:31,paid,,3
+628,628,Digital Wallet,Square,1595.4,txn_4375ea1d8b0b,,unpaid,,3
+629,629,Bank Transfer,PayPal,2345.76,txn_d5f62721dc68,,unpaid,,1
+630,630,Digital Wallet,Manual,3458.73,txn_1d3137e255cf,2025-09-13 17:45:14,paid,,2
+631,631,Digital Wallet,Manual,3359.8,txn_df4b3e5b28c4,2025-06-04 16:27:53,paid,,3
+632,632,Bank Transfer,Stripe,3492.89,txn_c52efb617946,2025-09-02 10:57:02,paid,,1
+633,633,Digital Wallet,Stripe,1907.45,txn_9ba9ed44e3a4,2025-07-06 14:07:54,paid,,2
+634,634,PayPal,PayPal,3074.81,txn_eac4b92ebdcc,2025-10-16 18:32:04,paid,,1
+635,635,Credit Card,Stripe,6101.75,txn_50fefe843cdb,2025-06-11 04:30:58,paid,,3
+636,636,Credit Card,Square,789.16,txn_aaeab1864037,2025-10-03 04:11:10,paid,,2
+637,637,Credit Card,Manual,3431.66,txn_6c0c5c558235,2025-05-22 23:46:07,paid,,3
+638,638,Bank Transfer,Stripe,2780.64,txn_811915f83cef,2025-10-27 17:11:51,paid,,3
+639,639,Digital Wallet,PayPal,823.24,txn_4291afd069d8,2025-09-21 04:47:51,paid,,3
+640,640,Credit Card,Square,2888.1,txn_1554c9226060,2025-06-18 23:03:06,paid,,1
+641,641,PayPal,Square,0.0,txn_372c6db03081,2025-06-26 03:40:39,paid,,2
+642,642,Digital Wallet,Stripe,2531.13,txn_c3e806edd223,2025-07-16 15:33:37,paid,,3
+643,643,Bank Transfer,Square,2492.74,txn_3962e0c7062e,2025-09-16 02:50:16,paid,,3
+644,644,PayPal,PayPal,4816.75,txn_2525aad8c65d,2025-06-06 12:38:03,paid,,3
+645,645,Credit Card,Manual,2193.02,txn_a3697d898de7,2025-10-07 20:53:37,paid,,3
+646,646,Credit Card,Manual,0.0,txn_f59ef446490d,2025-05-25 02:57:38,paid,,1
+647,647,Credit Card,Square,506.04,txn_bde5a118e43e,,unpaid,,1
+648,648,Digital Wallet,Manual,2812.1,txn_a8a6f17fa60e,,unpaid,,3
+649,649,Credit Card,Stripe,884.03,txn_33565c8ed06f,,failed,insufficient_funds,1
+650,650,PayPal,Square,743.69,txn_0dce056c013f,2025-06-05 12:49:51,paid,,2
+651,651,PayPal,Manual,2168.67,txn_e621979d4fed,2025-06-11 13:00:10,paid,,1
+652,652,Digital Wallet,Stripe,2595.48,txn_e22ba6dd2050,2025-07-30 13:55:43,paid,,1
+653,653,Digital Wallet,Manual,1965.74,txn_3d4574f8de26,2025-08-06 20:00:20,paid,,3
+654,654,PayPal,Square,2166.53,txn_150c11af98bd,2025-09-15 22:17:57,paid,,3
+655,655,Bank Transfer,Square,0.0,txn_f1fa8dc4db6a,2025-05-26 19:38:31,paid,,2
+656,656,Digital Wallet,Manual,571.9,txn_c3888207b5c1,2025-08-30 12:56:05,paid,,1
+657,657,Credit Card,Manual,3622.23,txn_690f97619065,2025-09-18 08:11:54,paid,,2
+658,658,PayPal,Stripe,963.93,txn_e5734a52be05,2025-09-12 01:41:52,paid,,3
+659,659,Bank Transfer,Manual,158.2,txn_924b90c7a9ef,2025-10-07 13:00:41,paid,,3
+660,660,PayPal,PayPal,489.38,txn_a9ed2e0db19e,2025-08-03 06:29:39,paid,,2
+661,661,PayPal,Square,2278.77,txn_6953eef25a8e,2025-07-05 14:10:42,paid,,2
+662,662,Credit Card,PayPal,2249.35,txn_eba567f4da19,,failed,expired_card,3
+663,663,Credit Card,Manual,0.0,txn_29058f6ad696,2025-06-06 07:31:50,paid,,3
+664,664,Credit Card,Square,1569.2,txn_fabd16d2cda0,2025-10-30 04:06:37,paid,,3
+665,665,PayPal,Manual,3591.66,txn_c9c88c2d9992,2025-07-20 10:13:31,paid,,2
+666,666,Digital Wallet,PayPal,450.78,txn_90d7b7ce9515,2025-10-28 01:04:57,paid,,1
+667,667,PayPal,Square,1090.8,txn_ebe49489f399,2025-05-19 15:56:41,paid,,1
+668,668,PayPal,Manual,1576.86,txn_2d3791e92c36,2025-06-09 08:17:09,paid,,3
+669,669,PayPal,Square,3421.9,txn_f201be243577,2025-09-02 02:26:46,paid,,2
+670,670,Credit Card,Manual,340.75,txn_688d73d8b620,2025-08-11 05:56:03,paid,,1
+671,671,Bank Transfer,Manual,2785.62,txn_1aa39d69e593,2025-07-11 02:35:18,paid,,3
+672,672,PayPal,PayPal,2507.99,txn_cef38bbe1652,2025-07-20 11:41:27,paid,,2
+673,673,Digital Wallet,Square,1773.28,txn_f33ef40b33cf,2025-06-10 09:36:51,paid,,2
+674,674,PayPal,Stripe,2025.68,txn_822e70035254,2025-10-10 03:17:57,paid,,1
+675,675,Credit Card,Manual,2189.74,txn_0bd373d53ac1,2025-10-09 11:48:56,paid,,2
+676,676,Bank Transfer,PayPal,243.12,txn_85b309acb006,2025-09-16 09:23:00,paid,,1
+677,677,Bank Transfer,Square,2722.94,txn_7c90a553deef,2025-07-23 23:04:24,paid,,3
+678,678,Digital Wallet,Stripe,4298.27,txn_567157a2c522,2025-05-29 17:24:19,paid,,2
+679,679,Bank Transfer,Stripe,2880.4,txn_ecb98c797664,2025-09-22 10:16:11,paid,,3
+680,680,Bank Transfer,Manual,763.35,txn_3b4568ae38e9,2025-07-26 21:17:12,paid,,3
+681,681,Bank Transfer,Stripe,1633.89,txn_85d212ab6696,2025-07-11 18:04:22,paid,,2
+682,682,Digital Wallet,Square,0.0,txn_53e62b0de6fc,2025-09-24 20:59:44,paid,,2
+683,683,Bank Transfer,Stripe,2192.98,txn_2304822ab6e6,2025-10-22 05:41:30,paid,,3
+684,684,PayPal,Stripe,7754.16,txn_cdf8c5ed6ac6,2025-06-24 21:55:41,paid,,1
+685,685,Digital Wallet,Stripe,4657.76,txn_c66ad9dc80cb,2025-08-20 02:23:28,paid,,1
+686,686,PayPal,PayPal,0.0,txn_0ddd4def1d6b,2025-07-08 22:53:50,paid,,2
+687,687,Bank Transfer,PayPal,2970.13,txn_68d9b10b28fe,2025-08-18 05:53:26,paid,,2
+688,688,PayPal,Square,754.74,txn_5ccf3e591044,,unpaid,,3
+689,689,Bank Transfer,Stripe,744.84,txn_eeac4901f9c9,,failed,insufficient_funds,2
+690,690,PayPal,Square,5427.35,txn_5189b9e9c15f,2025-08-24 00:03:01,paid,,2
+691,691,Credit Card,Manual,2934.62,txn_e8b45e50eaa5,2025-06-03 18:54:23,paid,,1
+692,692,Bank Transfer,Square,5849.02,txn_658c5c23ff51,2025-07-20 11:50:36,paid,,2
+693,693,Bank Transfer,Stripe,78.43,txn_6bb2ad9b07c6,2025-09-28 05:50:14,paid,,2
+694,694,Credit Card,Stripe,0.0,txn_225847b639db,2025-09-24 07:52:17,paid,,1
+695,695,Bank Transfer,Manual,0.0,txn_3b414fcc09eb,2025-05-28 08:34:54,paid,,3
+696,696,Credit Card,PayPal,3657.32,txn_792ce59dca12,2025-10-19 21:03:50,paid,,1
+697,697,PayPal,Square,1826.13,txn_b46b46dda833,2025-06-17 14:56:52,paid,,3
+698,698,Bank Transfer,Stripe,2801.85,txn_6d410363c5ea,2025-06-28 22:13:56,paid,,3
+699,699,PayPal,Manual,3786.87,txn_39902ce59e9d,2025-09-14 10:40:46,paid,,3
+700,700,PayPal,Manual,5860.2,txn_be2b7a8bf8f9,2025-09-10 06:50:00,paid,,2
+701,701,Bank Transfer,Manual,0.0,txn_37a3ee91874b,,failed,card_declined,2
+702,702,Bank Transfer,PayPal,2381.4,txn_470463454fa4,,unpaid,,3
+703,703,Credit Card,Manual,1860.05,txn_606de5603418,2025-07-26 04:54:21,paid,,3
+704,704,Bank Transfer,Manual,1328.28,txn_5bf35cb61328,,unpaid,,2
+705,705,Credit Card,Stripe,2555.46,txn_a9b9eeaf2e66,2025-08-03 20:49:53,paid,,3
+706,706,Credit Card,PayPal,3005.23,txn_32d73a580f23,2025-07-20 17:49:01,paid,,3
+707,707,Credit Card,Manual,0.0,txn_386bab1f6bae,2025-09-06 14:27:46,paid,,1
+708,708,Digital Wallet,Square,1436.58,txn_c653305f00be,2025-07-16 10:33:24,paid,,2
+709,709,Bank Transfer,Stripe,1683.18,txn_a94585c2aaf7,2025-05-13 04:46:51,paid,,3
+710,710,Digital Wallet,Manual,1445.13,txn_b8b1283fada5,,failed,insufficient_funds,1
+711,711,PayPal,Manual,1295.72,txn_b1f675402f0f,2025-08-22 09:11:45,paid,,2
+712,712,Digital Wallet,PayPal,463.18,txn_c67a4a1ffddd,2025-05-31 21:45:15,paid,,3
+713,713,PayPal,PayPal,3224.22,txn_c1a8e454d714,2025-06-15 12:45:12,paid,,3
+714,714,Bank Transfer,Manual,771.56,txn_a11ce8359046,2025-08-21 07:30:49,paid,,3
+715,715,Credit Card,Stripe,4922.7,txn_56557b2ec1e2,2025-06-29 17:40:25,paid,,1
+716,716,Bank Transfer,Stripe,1770.61,txn_ac529901e46c,2025-09-30 10:01:36,paid,,3
+717,717,Credit Card,Stripe,1565.56,txn_8d17dd7d9ac3,2025-10-19 14:29:37,paid,,3
+718,718,Credit Card,Stripe,5373.87,txn_244b50e37038,2025-06-05 14:31:22,paid,,3
+719,719,PayPal,Manual,1315.81,txn_bb119af781e2,,unpaid,,2
+720,720,Digital Wallet,Manual,798.57,txn_8be0372273da,2025-08-26 12:43:53,paid,,3
+721,721,PayPal,Stripe,0.0,txn_bc5b12cb2c6f,,failed,insufficient_funds,3
+722,722,Digital Wallet,Stripe,1577.3,txn_1f04f8ec3a97,2025-08-29 22:11:24,paid,,1
+723,723,Credit Card,Manual,1380.87,txn_d25ed3d2b3f0,2025-06-08 05:45:16,paid,,1
+724,724,PayPal,PayPal,1425.25,txn_9fab191630cf,,failed,insufficient_funds,3
+725,725,Digital Wallet,Manual,2808.71,txn_a2e6cc2a911b,,failed,expired_card,3
+726,726,Bank Transfer,Square,0.0,txn_b2b41a67ae65,2025-06-08 19:32:32,paid,,1
+727,727,Credit Card,Stripe,1554.18,txn_6d6d1c4e633e,2025-05-19 00:02:58,paid,,1
+728,728,PayPal,Manual,1927.86,txn_99de49c315d1,2025-07-30 15:34:25,paid,,2
+729,729,PayPal,Square,178.88,txn_72ec2b4fb609,2025-10-08 21:27:09,paid,,3
+730,730,Digital Wallet,PayPal,2791.41,txn_2784f021baab,,unpaid,,1
+731,731,PayPal,Square,372.1,txn_094e2b948dae,,unpaid,,2
+732,732,Digital Wallet,PayPal,4629.2,txn_aabdf34e40f7,2025-05-29 09:49:00,paid,,3
+733,733,Digital Wallet,Square,1666.53,txn_7a7ad45ef11e,2025-07-31 04:39:23,paid,,3
+734,734,Bank Transfer,Stripe,682.62,txn_5cd558de4ea4,2025-10-14 04:11:37,paid,,3
+735,735,PayPal,PayPal,2448.62,txn_acd27c8dab65,2025-09-06 07:36:08,paid,,1
+736,736,Bank Transfer,Square,5194.21,txn_b6537e38f674,,failed,network_error,1
+737,737,PayPal,Square,1352.34,txn_9749f785e811,2025-07-25 01:13:15,paid,,2
+738,738,PayPal,Stripe,2816.98,txn_9f0be0f49717,2025-06-27 13:41:42,paid,,2
+739,739,Credit Card,Square,1955.92,txn_049f809c0368,2025-09-28 19:54:56,paid,,2
+740,740,Digital Wallet,Square,654.61,txn_e0d35323dba1,2025-07-10 03:59:34,paid,,2
+741,741,PayPal,Manual,1175.0,txn_1e55f1180830,2025-09-30 09:01:16,paid,,1
+742,742,Credit Card,Square,647.86,txn_cbe917e33c74,2025-08-23 15:17:02,paid,,1
+743,743,Digital Wallet,Square,428.29,txn_2176166cbbd2,2025-08-24 20:23:37,paid,,1
+744,744,PayPal,Stripe,398.07,txn_16599b6838e2,2025-09-28 16:02:51,paid,,3
+745,745,Credit Card,Square,4184.26,txn_317336298452,2025-06-25 16:07:54,paid,,1
+746,746,Credit Card,Stripe,603.92,txn_f5df505758c8,2025-08-27 14:43:53,paid,,2
+747,747,Credit Card,Manual,2517.65,txn_ecbe8e2c870a,,unpaid,,3
+748,748,Bank Transfer,Square,1041.51,txn_308cdc5ee226,2025-06-05 04:26:19,paid,,3
+749,749,Digital Wallet,Square,2238.45,txn_693a4f6b6238,2025-10-21 08:05:48,paid,,3
+750,750,Credit Card,Stripe,2645.85,txn_ce88dd5171b6,2025-10-27 08:56:44,paid,,3
+751,751,PayPal,Manual,1465.46,txn_735e00dccff0,,unpaid,,3
+752,752,Digital Wallet,Square,962.84,txn_e638cf207258,2025-09-10 04:12:14,paid,,1
+753,753,Credit Card,Manual,3240.48,txn_6da138733344,2025-10-29 21:40:24,paid,,3
+754,754,Credit Card,Stripe,854.42,txn_f5af3c72a7d3,2025-07-15 13:18:50,paid,,3
+755,755,Credit Card,Square,1295.37,txn_ee3165f21a43,,unpaid,,3
+756,756,Credit Card,Stripe,0.0,txn_15719b51287c,,unpaid,,2
+757,757,Bank Transfer,PayPal,2459.16,txn_6bd28f4cb2fe,2025-06-23 22:37:58,paid,,3
+758,758,Digital Wallet,Square,2850.91,txn_8db0a1b16a6e,,failed,network_error,3
+759,759,PayPal,Square,191.66,txn_d882eb165e39,2025-06-26 11:32:48,paid,,3
+760,760,Bank Transfer,Manual,1069.26,txn_70789c770641,2025-10-30 06:55:22,paid,,2
+761,761,Bank Transfer,Manual,218.16,txn_7211b42605ee,2025-08-27 06:27:16,paid,,3
+762,762,Credit Card,Stripe,1425.66,txn_cdf24c93a8c5,2025-07-08 07:59:15,paid,,3
+763,763,Credit Card,PayPal,4185.1,txn_5ddd0f1fed3c,2025-08-06 19:29:15,paid,,1
+764,764,PayPal,Square,1036.97,txn_1df54eaa6ca8,2025-07-03 17:55:09,paid,,1
+765,765,Bank Transfer,Square,2279.92,txn_236e726ba42f,,failed,insufficient_funds,3
+766,766,Credit Card,PayPal,2352.7,txn_a552237bd89f,,failed,card_declined,2
+767,767,Credit Card,Stripe,1049.49,txn_5e78df798e46,,unpaid,,2
+768,768,Digital Wallet,PayPal,2237.55,txn_d1ccf060ab6f,2025-08-15 01:20:48,paid,,2
+769,769,Bank Transfer,Manual,4905.19,txn_41a50a7472e4,2025-06-24 16:31:35,paid,,2
+770,770,Bank Transfer,Manual,2144.45,txn_4ea6049dc7f5,2025-07-31 13:45:09,paid,,1
+771,771,PayPal,Square,3560.99,txn_87d98562a914,2025-10-27 06:23:34,paid,,3
+772,772,Digital Wallet,Square,1948.76,txn_8fe0f599b481,2025-09-14 10:17:46,paid,,3
+773,773,PayPal,Stripe,1404.0,txn_487c450d9b45,2025-10-13 05:23:47,paid,,2
+774,774,PayPal,Square,4024.58,txn_4a6008eb4e6c,2025-07-05 13:39:26,paid,,3
+775,775,Credit Card,Stripe,1261.41,txn_5f76a1aa6a60,2025-09-01 04:36:00,paid,,2
+776,776,Credit Card,Manual,835.16,txn_daa79c5aed7f,2025-10-01 10:40:14,paid,,3
+777,777,Digital Wallet,Square,634.25,txn_3c469021cd56,2025-07-08 10:47:04,paid,,1
+778,778,Credit Card,Stripe,653.01,txn_faf3faa36934,2025-10-05 16:55:16,paid,,3
+779,779,Credit Card,PayPal,2734.03,txn_720a5618b3e5,2025-07-16 20:00:42,paid,,2
+780,780,PayPal,Stripe,638.16,txn_cb7348626caa,,unpaid,,1
+781,781,Bank Transfer,Manual,2554.15,txn_4e29a08dbc84,,failed,expired_card,2
+782,782,Digital Wallet,PayPal,1794.89,txn_d5a8c38a3df3,2025-10-09 10:17:59,paid,,1
+783,783,Digital Wallet,Square,3243.84,txn_4f6ce8b602c4,2025-09-20 12:27:26,paid,,3
+784,784,Bank Transfer,Square,2123.77,txn_0cbd1b25dd26,,unpaid,,2
+785,785,Bank Transfer,Manual,2188.99,txn_89d59ab693ff,2025-09-26 08:04:07,paid,,2
+786,786,Digital Wallet,Square,2283.37,txn_c02348eebec2,2025-05-27 01:53:06,paid,,3
+787,787,Digital Wallet,Manual,0.0,txn_612681cfde49,2025-08-06 15:45:39,paid,,1
+788,788,Digital Wallet,PayPal,3330.41,txn_a1bcbed1b88e,2025-06-24 08:22:02,paid,,2
+789,789,Bank Transfer,Manual,1004.56,txn_fdad315f56ea,2025-05-17 10:30:46,paid,,3
+790,790,Credit Card,Stripe,3806.97,txn_4b4648a8600e,2025-05-27 15:26:27,paid,,1
+791,791,Bank Transfer,Square,790.45,txn_65887062438c,2025-10-13 00:33:58,paid,,1
+792,792,Bank Transfer,Square,2662.79,txn_378d78131144,2025-08-23 15:20:50,paid,,2
+793,793,Bank Transfer,Manual,2831.9,txn_fb3584dbb6b6,,failed,insufficient_funds,1
+794,794,Bank Transfer,PayPal,2604.98,txn_218834f1731d,2025-10-03 18:15:00,paid,,3
+795,795,Bank Transfer,Square,5131.08,txn_824fd20ebde9,2025-10-18 21:17:15,paid,,3
+796,796,Bank Transfer,Stripe,1423.68,txn_13489e313b3d,2025-06-10 06:09:17,paid,,2
+797,797,Bank Transfer,Square,1254.73,txn_db6dd05e463b,2025-09-15 22:09:55,paid,,3
+798,798,Digital Wallet,PayPal,1284.96,txn_6ec8865e5a6a,,failed,network_error,1
+799,799,Credit Card,Manual,853.55,txn_629a22cf2e3f,2025-10-08 17:24:05,paid,,1
+800,800,Credit Card,Stripe,3852.35,txn_ab74ef591335,2025-07-17 21:31:00,paid,,3
+801,801,Digital Wallet,Stripe,2819.66,txn_bcd6af68eb56,2025-10-06 04:18:27,paid,,3
+802,802,Digital Wallet,Square,634.77,txn_e50219d42f42,,unpaid,,1
+803,803,Bank Transfer,Square,982.3,txn_0c08f4d000d6,2025-06-06 20:22:36,paid,,3
+804,804,Bank Transfer,PayPal,2007.86,txn_5e25bc7990d3,,unpaid,,3
+805,805,Credit Card,PayPal,550.38,txn_bdc896abdb7f,2025-10-12 19:01:05,paid,,1
+806,806,PayPal,Square,1786.89,txn_545c7c03a908,2025-06-11 11:39:40,paid,,1
+807,807,Digital Wallet,Manual,680.76,txn_99f15dc6c9e3,2025-10-26 19:53:25,paid,,1
+808,808,Credit Card,Stripe,6332.4,txn_26a5a6b590db,2025-10-13 12:47:50,paid,,3
+809,809,Digital Wallet,Manual,4776.2,txn_d119894f3805,2025-06-05 14:21:25,paid,,1
+810,810,Bank Transfer,PayPal,2433.92,txn_1b861ab6c348,2025-08-18 01:59:50,paid,,3
+811,811,Bank Transfer,Stripe,1431.81,txn_d4a84f4c607c,2025-11-01 07:28:26,paid,,2
+812,812,Bank Transfer,PayPal,8789.39,txn_6e18f762eaa9,,unpaid,,3
+813,813,Bank Transfer,PayPal,1332.05,txn_67360db2e259,2025-10-04 02:33:42,paid,,2
+814,814,Bank Transfer,Manual,0.0,txn_7056931fa95d,2025-06-20 06:21:42,paid,,3
+815,815,PayPal,Square,3739.82,txn_36542b6f759b,2025-06-21 07:45:36,paid,,2
+816,816,PayPal,Manual,4397.23,txn_df79d4b9b59e,2025-05-30 09:44:04,paid,,2
+817,817,Credit Card,Manual,5308.14,txn_f315ed056640,2025-07-19 09:52:10,paid,,1
+818,818,Bank Transfer,Square,4188.95,txn_89e62d4f4cf8,2025-08-29 02:36:41,paid,,2
+819,819,Credit Card,Square,1582.85,txn_23ccb553da09,2025-09-24 23:30:00,paid,,3
+820,820,Digital Wallet,Square,2512.51,txn_82190a75c3b0,2025-09-26 12:38:30,paid,,1
+821,821,Credit Card,Manual,4929.9,txn_abdf6130b4b4,2025-05-25 01:06:59,paid,,1
+822,822,Credit Card,Stripe,4549.85,txn_e57a088f2e51,2025-05-10 14:14:35,paid,,3
+823,823,Credit Card,PayPal,2326.04,txn_f328683dd030,2025-07-13 20:56:01,paid,,2
+824,824,Credit Card,Square,1999.86,txn_f25c76769ea6,,unpaid,,2
+825,825,Bank Transfer,Stripe,2175.12,txn_a5a9bbc8cf81,,failed,expired_card,2
+826,826,Bank Transfer,Square,2737.26,txn_e0835b7760fe,,failed,network_error,1
+827,827,Digital Wallet,Manual,2734.31,txn_c3fec3d8e74c,2025-08-25 03:07:48,paid,,3
+828,828,Bank Transfer,Stripe,1855.22,txn_4260d745a835,2025-10-01 08:31:07,paid,,3
+829,829,Digital Wallet,Stripe,1164.0,txn_18aa84378335,2025-07-01 19:52:23,paid,,3
+830,830,Digital Wallet,PayPal,2307.85,txn_4a4b9d7ce592,2025-08-14 06:50:58,paid,,1
+831,831,PayPal,Stripe,1300.0,txn_4d9464f817f9,,unpaid,,2
+832,832,PayPal,Square,2921.78,txn_1d8adb3b7328,2025-09-05 18:10:02,paid,,3
+833,833,Credit Card,PayPal,5116.84,txn_332bc73c48af,,failed,network_error,3
+834,834,Bank Transfer,Square,2505.18,txn_e11099cb338c,2025-10-30 12:34:37,paid,,3
+835,835,PayPal,PayPal,8126.66,txn_165de7eb781c,2025-09-24 16:11:59,paid,,3
+836,836,Credit Card,PayPal,0.0,txn_c696f3443a14,2025-10-27 16:12:08,paid,,1
+837,837,Bank Transfer,Manual,4816.34,txn_eaf7c3190363,2025-08-04 14:24:58,paid,,2
+838,838,Digital Wallet,PayPal,2967.78,txn_66eae0fdb53f,2025-10-09 22:11:40,paid,,1
+839,839,Digital Wallet,Square,1208.65,txn_c5d0130b4920,,unpaid,,3
+840,840,Credit Card,Square,417.01,txn_d26fa466c44a,2025-09-22 11:16:16,paid,,1
+841,841,Digital Wallet,PayPal,0.0,txn_4f9cbae62f79,2025-08-13 18:50:04,paid,,3
+842,842,Credit Card,PayPal,2217.27,txn_b2128b6b2bb7,2025-09-28 02:29:39,paid,,1
+843,843,Digital Wallet,Square,394.44,txn_ec8726630481,2025-06-23 06:03:12,paid,,1
+844,844,PayPal,Stripe,4525.48,txn_70d5bbbc3040,2025-09-12 08:45:59,paid,,3
+845,845,Credit Card,Manual,759.78,txn_f6add1656030,2025-10-01 01:21:39,paid,,1
+846,846,Bank Transfer,Square,0.0,txn_aeb9e63ec754,2025-09-26 01:55:15,paid,,2
+847,847,Bank Transfer,Manual,1789.05,txn_5f2c6bab7d93,,failed,insufficient_funds,1
+848,848,Digital Wallet,PayPal,0.0,txn_1413d6d126d8,2025-06-06 09:26:23,paid,,1
+849,849,Bank Transfer,Manual,3952.01,txn_023666e76b7b,2025-06-12 20:58:13,paid,,1
+850,850,Digital Wallet,PayPal,1688.45,txn_bdf9d580ba3e,2025-08-01 16:02:06,paid,,2
+851,851,Digital Wallet,Stripe,4167.99,txn_16c2c94ca904,2025-09-11 05:40:02,paid,,3
+852,852,PayPal,Stripe,3881.87,txn_b21cbe70f20d,2025-06-24 22:42:41,paid,,1
+853,853,Credit Card,Square,3460.93,txn_258a88f45d66,2025-09-13 04:57:36,paid,,2
+854,854,PayPal,Square,1479.78,txn_9e42f601d6b2,2025-05-19 10:09:00,paid,,3
+855,855,PayPal,PayPal,348.14,txn_34482432dc8e,2025-05-25 02:47:28,paid,,1
+856,856,Bank Transfer,Stripe,3219.23,txn_537b9de5cfb3,2025-05-31 00:35:49,paid,,3
+857,857,Bank Transfer,Square,665.19,txn_de2a0daef0b0,2025-10-22 18:21:40,paid,,2
+858,858,Credit Card,PayPal,772.53,txn_678510044910,2025-06-18 13:55:44,paid,,1
+859,859,PayPal,Square,4271.18,txn_8fbc7133327d,,unpaid,,3
+860,860,Digital Wallet,PayPal,3597.98,txn_a088220fbf6b,2025-05-16 08:00:48,paid,,2
+861,861,Credit Card,Square,2404.94,txn_08c6f20be5af,2025-06-07 13:07:38,paid,,1
+862,862,PayPal,Stripe,1006.32,txn_e75dca9ec06a,2025-10-20 05:57:15,paid,,3
+863,863,Credit Card,PayPal,142.26,txn_deea373ae848,,failed,card_declined,2
+864,864,Credit Card,Square,3488.11,txn_65ed046c83b9,2025-07-26 08:13:59,paid,,3
+865,865,PayPal,Manual,3491.15,txn_0669f93d93d7,2025-05-07 06:38:52,paid,,2
+866,866,PayPal,PayPal,2739.39,txn_c18aa3c234e6,2025-11-02 09:44:05,paid,,2
+867,867,Digital Wallet,Stripe,82.32,txn_59d1a360a803,2025-06-01 20:51:38,paid,,2
+868,868,PayPal,PayPal,2454.15,txn_298926e9c5cb,2025-07-21 13:18:08,paid,,2
+869,869,Bank Transfer,Manual,3114.43,txn_4ed91d826307,2025-10-15 11:15:18,paid,,2
+870,870,Bank Transfer,Stripe,1755.06,txn_2897571e8403,2025-05-30 19:25:06,paid,,1
+871,871,PayPal,Square,3950.63,txn_0c2bfb1fffa2,,unpaid,,3
+872,872,Digital Wallet,Square,2871.99,txn_3e23402323a8,2025-05-29 21:37:13,paid,,1
+873,873,Credit Card,Stripe,4587.29,txn_608e60852a19,2025-08-05 23:31:43,paid,,3
+874,874,Bank Transfer,Manual,1246.99,txn_5105d2240920,2025-09-28 15:13:10,paid,,2
+875,875,PayPal,Stripe,2016.1,txn_082416b24e28,2025-10-22 23:53:34,paid,,3
+876,876,PayPal,Manual,1175.22,txn_b6492e6874d2,2025-05-29 00:51:40,paid,,2
+877,877,Credit Card,Square,4465.73,txn_e7bc1ff7509f,2025-09-30 18:40:39,paid,,3
+878,878,Bank Transfer,Square,1574.13,txn_9887ee716bff,,unpaid,,1
+879,879,Credit Card,Stripe,352.74,txn_f0b2edacdaa5,2025-07-27 08:08:37,paid,,2
+880,880,Credit Card,Square,767.88,txn_9643328dbc42,2025-10-29 00:21:13,paid,,2
+881,881,Bank Transfer,Square,6616.69,txn_6f66ca9fefa5,,failed,expired_card,2
+882,882,Credit Card,Manual,2114.29,txn_8a1981554f5b,2025-06-23 05:16:12,paid,,3
+883,883,Digital Wallet,Manual,0.0,txn_90b54bc89b5c,2025-05-27 02:30:50,paid,,2
+884,884,PayPal,PayPal,1066.25,txn_3350976e48b3,2025-07-19 08:27:32,paid,,3
+885,885,Bank Transfer,PayPal,3655.72,txn_0a4373bcc24b,2025-05-26 20:22:24,paid,,1
+886,886,Bank Transfer,PayPal,1989.38,txn_a7641288e2c4,,unpaid,,1
+887,887,Digital Wallet,PayPal,2056.4,txn_2a6ea2013458,2025-09-20 08:36:08,paid,,1
+888,888,Credit Card,Stripe,2222.24,txn_1bf0fe5e9f6b,2025-07-12 02:33:21,paid,,3
+889,889,Digital Wallet,Stripe,2418.11,txn_eb8572d359c4,2025-05-14 05:43:11,paid,,2
+890,890,Digital Wallet,PayPal,36.1,txn_1412d1fcb4dd,,failed,insufficient_funds,3
+891,891,Credit Card,Stripe,4705.17,txn_2d31e4019de2,2025-05-26 05:27:39,paid,,2
+892,892,PayPal,Stripe,4432.73,txn_bbb9a2461bed,2025-07-16 00:08:43,paid,,2
+893,893,Digital Wallet,Stripe,2183.66,txn_8c82c7bea17e,,unpaid,,1
+894,894,PayPal,PayPal,2569.91,txn_041a7c01e744,2025-06-15 12:47:10,paid,,1
+895,895,Digital Wallet,Stripe,2856.3,txn_209309830e07,,unpaid,,3
+896,896,Credit Card,PayPal,1122.39,txn_78e6a2f5c48e,,unpaid,,2
+897,897,Bank Transfer,Square,1421.69,txn_072d507c170e,2025-05-25 22:05:01,paid,,3
+898,898,Bank Transfer,PayPal,0.0,txn_3d0f2caef53a,2025-09-07 01:10:10,paid,,1
+899,899,PayPal,Stripe,251.58,txn_8e466f6f30c6,2025-07-13 07:53:09,paid,,1
+900,900,PayPal,Stripe,0.0,txn_a1497d5a75f0,2025-07-07 18:10:10,paid,,1
+901,901,Credit Card,PayPal,1108.65,txn_039e618a20cb,2025-09-18 12:18:01,paid,,1
+902,902,PayPal,PayPal,0.0,txn_d4174318e701,2025-09-03 18:17:01,paid,,1
+903,903,PayPal,Square,3784.06,txn_d4248590dfe6,,unpaid,,2
+904,904,Digital Wallet,Stripe,4551.66,txn_51d3134d1937,2025-08-18 16:09:26,paid,,1
+905,905,Bank Transfer,PayPal,1086.2,txn_8d5dad178bb5,,failed,insufficient_funds,3
+906,906,Bank Transfer,Manual,2689.36,txn_0226d905bd45,,unpaid,,1
+907,907,Digital Wallet,Manual,2021.48,txn_4ee4f947ae07,2025-05-12 06:50:33,paid,,1
+908,908,Bank Transfer,Square,4714.9,txn_1770813f7219,2025-07-31 13:12:26,paid,,1
+909,909,Digital Wallet,Manual,754.34,txn_e3112c82264c,2025-06-23 18:37:55,paid,,2
+910,910,Digital Wallet,Manual,2175.06,txn_23419cdab19f,2025-08-21 15:39:00,paid,,2
+911,911,PayPal,Manual,583.14,txn_e9629cbdf577,2025-08-27 06:10:11,paid,,3
+912,912,Credit Card,PayPal,2538.77,txn_4aae595b2c90,2025-10-09 05:14:12,paid,,1
+913,913,Digital Wallet,Stripe,0.0,txn_be4644001b41,2025-07-08 09:01:44,paid,,1
+914,914,Credit Card,Manual,11.94,txn_f6e0cd93b403,,unpaid,,3
+915,915,Digital Wallet,Stripe,5708.7,txn_dd0d58784379,2025-09-20 16:10:06,paid,,1
+916,916,PayPal,Stripe,1320.58,txn_728110c3ca51,,failed,expired_card,1
+917,917,Digital Wallet,Manual,126.05,txn_8d62154d4c3f,2025-08-04 17:23:31,paid,,3
+918,918,Digital Wallet,Stripe,225.17,txn_9aae23b4b53a,2025-08-10 10:48:26,paid,,3
+919,919,PayPal,Manual,2795.72,txn_5f99d760eb42,2025-08-02 13:00:49,paid,,2
+920,920,PayPal,Square,1026.46,txn_203d26fe5d33,2025-05-19 10:13:17,paid,,1
+921,921,Digital Wallet,Manual,3940.95,txn_78d554fae29c,2025-09-22 15:40:25,paid,,2
+922,922,PayPal,Square,1900.44,txn_ba1db803fb35,2025-09-11 12:12:55,paid,,2
+923,923,PayPal,Stripe,1962.65,txn_38cff4cbdb0b,,unpaid,,1
+924,924,PayPal,PayPal,3038.84,txn_3c76245e8190,2025-08-28 14:01:26,paid,,2
+925,925,PayPal,PayPal,0.0,txn_071c23e49c06,2025-08-28 00:42:16,paid,,1
+926,926,Credit Card,PayPal,3404.49,txn_dc7a6065ee36,2025-07-26 05:02:06,paid,,1
+927,927,PayPal,PayPal,426.8,txn_0adef01c7ee4,2025-10-03 13:51:45,paid,,3
+928,928,Credit Card,Manual,951.54,txn_12dd3a0427fc,2025-09-24 20:50:05,paid,,1
+929,929,Digital Wallet,Stripe,50.66,txn_a7502aea4362,,unpaid,,1
+930,930,Bank Transfer,Stripe,35.82,txn_00fb1f174710,2025-06-03 06:30:03,paid,,3
+931,931,Credit Card,Square,2071.08,txn_46cd3ffd8e20,2025-10-24 23:44:15,paid,,3
+932,932,PayPal,Square,680.06,txn_63f5147f5129,2025-06-18 16:13:11,paid,,2
+933,933,PayPal,PayPal,0.0,txn_d6e92b86f0ee,2025-09-28 21:42:49,paid,,2
+934,934,Digital Wallet,Manual,1566.96,txn_edc65345c937,2025-08-22 15:24:23,paid,,2
+935,935,PayPal,PayPal,1017.63,txn_a8a2508dbd78,2025-05-07 23:37:11,paid,,3
+936,936,Bank Transfer,Stripe,967.25,txn_6f33cf228bc6,2025-08-24 14:28:11,paid,,3
+937,937,PayPal,PayPal,109.14,txn_2537ea38e45f,2025-08-11 07:47:11,paid,,2
+938,938,Digital Wallet,Square,218.19,txn_716f682c418b,,unpaid,,1
+939,939,PayPal,Square,4444.75,txn_d554c51b474a,2025-09-20 13:54:41,paid,,1
+940,940,PayPal,PayPal,-201.05,txn_bfbb55ae9e41,2025-05-13 07:24:08,paid,,3
+941,941,Digital Wallet,Square,212.82,txn_f0d131b20e75,2025-10-10 14:50:49,paid,,3
+942,942,Credit Card,Square,3348.34,txn_d4c9d3356b31,2025-08-28 07:05:41,paid,,3
+943,943,Credit Card,Square,5502.16,txn_e6d6e3a24261,2025-06-06 15:31:46,paid,,1
+944,944,Digital Wallet,Square,834.02,txn_8906e2e178c8,2025-10-15 11:19:47,paid,,2
+945,945,Credit Card,PayPal,7598.27,txn_2f198073e336,2025-07-11 02:47:49,paid,,3
+946,946,PayPal,PayPal,3070.74,txn_30e062de21a9,2025-06-12 07:43:43,paid,,2
+947,947,PayPal,Stripe,3415.44,txn_bd566a5a9bff,2025-10-11 22:06:07,paid,,1
+948,948,Credit Card,Manual,950.12,txn_ceff6dc7e4e5,2025-05-24 09:52:26,paid,,1
+949,949,Digital Wallet,Square,569.92,txn_f74418279abf,2025-08-16 06:10:17,paid,,1
+950,950,Digital Wallet,Manual,1389.76,txn_53ed34a36269,2025-06-01 14:21:44,paid,,3
+951,951,Bank Transfer,PayPal,4441.62,txn_2032b74106ae,2025-07-24 04:53:09,paid,,2
+952,952,Credit Card,Square,0.0,txn_9ffc289c4751,2025-05-27 09:09:34,paid,,3
+953,953,Bank Transfer,Manual,694.74,txn_8cd85b746343,2025-10-05 19:42:10,paid,,3
+954,954,Digital Wallet,PayPal,1350.7,txn_34f3ab113231,2025-06-11 02:30:40,paid,,2
+955,955,PayPal,Manual,801.71,txn_f54edc877ab1,,unpaid,,3
+956,956,PayPal,Square,73.16,txn_68291142c433,2025-07-03 07:49:49,paid,,3
+957,957,Bank Transfer,Square,1010.88,txn_66c61e26b2c8,2025-09-27 16:50:46,paid,,1
+958,958,Credit Card,Stripe,1873.54,txn_477d6223ada4,2025-09-18 12:25:46,paid,,3
+959,959,Digital Wallet,PayPal,3580.86,txn_71ace8a83b7d,2025-10-26 16:40:50,paid,,2
+960,960,Credit Card,PayPal,4027.96,txn_475b9f2c802c,2025-06-15 10:27:50,paid,,3
+961,961,Digital Wallet,Manual,0.0,txn_6d497d434c1c,,failed,expired_card,2
+962,962,Credit Card,Square,543.75,txn_1cb7cce6403c,2025-06-22 12:17:11,paid,,3
+963,963,Bank Transfer,Manual,3170.11,txn_56b06780d499,2025-10-14 23:06:20,paid,,1
+964,964,Credit Card,PayPal,0.0,txn_c7b5825f826a,2025-08-31 00:23:05,paid,,2
+965,965,Digital Wallet,Square,676.23,txn_b12cbef20847,,unpaid,,1
+966,966,Bank Transfer,PayPal,1306.28,txn_224e2cb816d7,2025-09-26 06:57:40,paid,,1
+967,967,Credit Card,Manual,0.0,txn_b52ad48c7ac1,2025-07-18 02:33:41,paid,,3
+968,968,PayPal,PayPal,981.45,txn_39a779538e6f,2025-06-24 10:02:54,paid,,2
+969,969,Credit Card,Square,1479.45,txn_6753829a77f6,2025-09-19 07:36:11,paid,,2
+970,970,Credit Card,PayPal,2464.75,txn_4154104230f5,2025-09-07 02:25:03,paid,,1
+971,971,Credit Card,Square,2848.03,txn_61dc7b2a9b3f,,unpaid,,2
+972,972,PayPal,Stripe,1588.76,txn_f1aff54e9cc4,,failed,network_error,1
+973,973,Bank Transfer,Manual,1007.22,txn_683e391313f3,,failed,card_declined,1
+974,974,Credit Card,Square,5518.98,txn_56d0c66c0a65,2025-05-30 19:23:56,paid,,3
+975,975,Credit Card,PayPal,1544.8,txn_194b890c4e53,2025-06-20 19:33:47,paid,,1
+976,976,PayPal,Manual,573.3,txn_f449c1f16bb4,2025-06-22 09:38:42,paid,,1
+977,977,Digital Wallet,Square,2745.94,txn_627b12581f59,2025-08-30 23:13:42,paid,,2
+978,978,Digital Wallet,Stripe,4241.37,txn_d265e791fc71,2025-10-03 04:41:56,paid,,2
+979,979,Digital Wallet,Manual,1020.28,txn_f2503e821404,,unpaid,,2
+980,980,PayPal,Manual,984.56,txn_d194494cde8b,2025-05-17 04:58:27,paid,,2
+981,981,Credit Card,Manual,2674.7,txn_0f6101cc4cf7,2025-06-10 19:19:49,paid,,3
+982,982,Credit Card,Manual,2350.55,txn_b738988cd049,2025-10-23 15:43:34,paid,,3
+983,983,Credit Card,Stripe,4078.26,txn_adc15b30b379,2025-06-30 14:16:32,paid,,3
+984,984,Credit Card,PayPal,4835.72,txn_2cb99c78420f,2025-05-27 05:00:08,paid,,3
+985,985,Credit Card,Square,3253.27,txn_05486c07ae96,2025-09-03 08:49:14,paid,,2
+986,986,Bank Transfer,PayPal,3467.01,txn_944c77db01a4,,unpaid,,2
+987,987,Credit Card,Manual,499.12,txn_2946a0a7802d,,unpaid,,1
+988,988,Credit Card,Stripe,3604.52,txn_cf29a18802b1,2025-05-14 05:01:17,paid,,2
+989,989,Credit Card,Stripe,413.58,txn_5bd604e8d8b5,2025-08-25 03:20:42,paid,,2
+990,990,Digital Wallet,PayPal,2090.01,txn_ab1e628360da,,failed,card_declined,3
+991,991,Credit Card,Square,5393.13,txn_9350e50b9a72,2025-08-02 08:22:49,paid,,3
+992,992,Credit Card,Square,475.22,txn_1372c2bb2ee0,2025-06-18 10:10:09,paid,,3
+993,993,PayPal,Stripe,7692.01,txn_625c3891d373,2025-06-26 00:41:23,paid,,3
+994,994,Bank Transfer,Stripe,3431.74,txn_ac5f79ab8a0a,2025-06-03 13:00:46,paid,,3
+995,995,PayPal,Stripe,3840.98,txn_a7a50eba2575,2025-05-29 23:39:18,paid,,2
+996,996,Credit Card,Square,1351.36,txn_266ffb3bebda,2025-08-04 03:27:55,paid,,1
+997,997,PayPal,Stripe,752.64,txn_677b123b9534,,unpaid,,3
+998,998,Bank Transfer,Stripe,594.06,txn_2debd6b8bfef,2025-09-21 18:54:34,paid,,1
+999,999,Bank Transfer,Manual,1074.96,txn_60598a054f4d,2025-10-27 12:57:19,paid,,1
+1000,1000,Credit Card,Manual,3436.46,txn_ab2e0b78a04a,2025-06-16 19:02:45,paid,,3
+1001,1001,Digital Wallet,Manual,133.65,txn_d6c768c52eb8,,failed,card_declined,2
+1002,1002,Bank Transfer,Stripe,3502.15,txn_e5340c5e4851,,failed,card_declined,2
+1003,1003,PayPal,Square,947.13,txn_25b8fb32cd85,2025-07-29 17:15:30,paid,,2
+1004,1004,Digital Wallet,Stripe,1832.85,txn_d2a8142345ad,2025-08-24 13:14:33,paid,,1
+1005,1005,Credit Card,Square,2833.91,txn_dfaf9d351756,2025-09-07 22:23:10,paid,,3
+1006,1006,Digital Wallet,Manual,0.0,txn_e7fc51c83256,2025-08-04 19:44:23,paid,,3
+1007,1007,PayPal,Stripe,3562.86,txn_fc610085541e,2025-07-07 16:40:00,paid,,1
+1008,1008,Digital Wallet,Stripe,3332.35,txn_44562d13dfb9,2025-10-23 04:04:01,paid,,2
+1009,1009,Credit Card,Stripe,281.82,txn_a859f9257343,2025-11-01 01:18:40,paid,,1
+1010,1010,Digital Wallet,PayPal,4294.45,txn_0ce10198fc94,,unpaid,,1
+1011,1011,Credit Card,Square,5673.53,txn_425f89bc02d1,2025-07-16 05:25:23,paid,,3
+1012,1012,PayPal,Square,2445.3,txn_ba361b5e7002,,failed,network_error,1
+1013,1013,Digital Wallet,Stripe,1038.2,txn_dea3545f6741,2025-06-05 14:46:47,paid,,1
+1014,1014,Bank Transfer,Stripe,2515.22,txn_ea9fb49e63e8,2025-07-25 03:14:48,paid,,3
+1015,1015,Bank Transfer,Manual,1121.57,txn_b21a7be40555,,unpaid,,3
+1016,1016,Bank Transfer,PayPal,2152.33,txn_09eb2828e614,2025-05-25 04:22:26,paid,,1
+1017,1017,Digital Wallet,PayPal,4021.65,txn_5db090ff5ce0,,failed,card_declined,1
+1018,1018,PayPal,PayPal,1455.16,txn_a31a0fb8a295,2025-07-30 06:54:47,paid,,2
+1019,1019,Digital Wallet,PayPal,401.43,txn_cbe28197a08e,,unpaid,,1
+1020,1020,Credit Card,Square,1760.12,txn_ddc292066ee5,2025-05-20 19:03:02,paid,,2
+1021,1021,PayPal,Square,2899.62,txn_78905d4943f7,2025-05-28 23:09:58,paid,,2
+1022,1022,Credit Card,Manual,7067.49,txn_f7cec865d118,,failed,expired_card,1
+1023,1023,PayPal,Square,2061.45,txn_46fd0ac66b02,2025-10-27 01:34:59,paid,,3
+1024,1024,Digital Wallet,Stripe,1468.65,txn_31cefa5e5609,,failed,insufficient_funds,1
+1025,1025,Credit Card,PayPal,3162.34,txn_8803d49d11a8,2025-08-10 08:44:36,paid,,1
+1026,1026,Credit Card,Square,273.32,txn_7a71fc086f68,2025-06-27 03:11:50,paid,,1
+1027,1027,Credit Card,PayPal,4104.13,txn_1164a7b80b55,2025-08-02 11:50:33,paid,,1
+1028,1028,Digital Wallet,Stripe,1567.7,txn_85d66f4bbb47,2025-05-09 04:45:45,paid,,3
+1029,1029,PayPal,Manual,3284.05,txn_1dbc00d06dd1,2025-07-18 15:00:26,paid,,3
+1030,1030,Credit Card,Square,0.0,txn_4b28d04b0cf6,2025-07-11 14:10:19,paid,,2
+1031,1031,PayPal,Square,3424.13,txn_88194111a0a5,,failed,network_error,3
+1032,1032,PayPal,Square,3071.4,txn_62e4591b97bd,2025-06-27 22:47:02,paid,,2
+1033,1033,Credit Card,PayPal,41.16,txn_fd3d196ae55a,,failed,network_error,3
+1034,1034,Bank Transfer,PayPal,5266.87,txn_d9fe9e37a02e,2025-05-31 13:58:25,paid,,2
+1035,1035,Digital Wallet,Manual,0.0,txn_90932d9bb8f5,2025-06-05 00:43:14,paid,,2
+1036,1036,Credit Card,Stripe,1947.65,txn_b3bcd2020501,,failed,network_error,2
+1037,1037,Credit Card,PayPal,648.9,txn_af4e0db107ff,2025-05-20 01:00:27,paid,,1
+1038,1038,PayPal,Manual,989.18,txn_d4c9ff95d095,2025-10-06 19:38:20,paid,,3
+1039,1039,PayPal,Stripe,1066.5,txn_fc63784dc6dd,2025-06-13 22:50:12,paid,,1
+1040,1040,Digital Wallet,Manual,1415.28,txn_04f0d465ddbf,2025-05-07 08:54:03,paid,,3
+1041,1041,PayPal,Manual,4185.39,txn_3471da41362a,2025-07-21 06:05:20,paid,,2
+1042,1042,Credit Card,Stripe,4305.06,txn_80f90013f4ad,,failed,expired_card,2
+1043,1043,PayPal,Square,3008.13,txn_f5eb208c2281,2025-08-28 10:02:38,paid,,2
+1044,1044,PayPal,Square,1820.28,txn_240d773935d9,2025-06-09 23:31:28,paid,,1
+1045,1045,PayPal,PayPal,2734.08,txn_b88cc715cc44,2025-09-20 07:04:57,paid,,1
+1046,1046,Credit Card,Square,1759.2,txn_a924433c52ec,2025-10-01 08:32:57,paid,,3
+1047,1047,Credit Card,PayPal,1523.01,txn_7e6895a6780c,,failed,insufficient_funds,2
+1048,1048,Digital Wallet,Manual,1578.18,txn_26e0e6ad6d64,2025-10-13 05:18:07,paid,,3
+1049,1049,Digital Wallet,PayPal,3081.57,txn_de353dbc0a07,,unpaid,,1
+1050,1050,Digital Wallet,PayPal,95.54,txn_191d8243c150,2025-08-09 14:50:53,paid,,1
+1051,1051,Credit Card,PayPal,180.16,txn_008b90137c94,2025-05-21 20:36:05,paid,,3
+1052,1052,Digital Wallet,Stripe,2448.09,txn_3092cdbc0892,2025-09-28 17:32:36,paid,,2
+1053,1053,Digital Wallet,Manual,1022.7,txn_7298909627d5,2025-09-19 12:16:11,paid,,3
+1054,1054,Credit Card,Square,70.24,txn_62cd7b804c53,2025-08-01 05:49:10,paid,,1
+1055,1055,PayPal,Stripe,0.0,txn_96c4e772f7b0,2025-10-02 12:45:36,paid,,1
+1056,1056,PayPal,Manual,2569.74,txn_b716a0d0e70b,,unpaid,,3
+1057,1057,PayPal,Manual,1632.72,txn_f4633f5cbf45,2025-11-02 01:34:13,paid,,2
+1058,1058,Digital Wallet,PayPal,105.8,txn_7348df20d5b3,2025-09-27 03:40:23,paid,,1
+1059,1059,Bank Transfer,Stripe,3129.8,txn_44132fee77d8,2025-07-19 02:43:12,paid,,1
+1060,1060,Digital Wallet,Manual,543.85,txn_8bf01f2d4131,2025-10-07 05:04:31,paid,,2
+1061,1061,Bank Transfer,Square,1498.89,txn_7d4704e81015,2025-06-16 15:15:51,paid,,2
+1062,1062,Credit Card,Stripe,910.14,txn_83981c32e4e4,2025-07-11 09:00:10,paid,,1
+1063,1063,Credit Card,PayPal,4031.75,txn_84d7c9671e6a,,failed,card_declined,2
+1064,1064,PayPal,Square,226.74,txn_5577da689654,2025-07-29 15:15:22,paid,,1
+1065,1065,Credit Card,Square,3279.16,txn_811c30e4c3c0,2025-05-18 22:30:13,paid,,1
+1066,1066,Bank Transfer,Square,1844.2,txn_e1fedd8bea83,2025-09-01 15:38:08,paid,,2
+1067,1067,Bank Transfer,Stripe,109.74,txn_556e815c7211,2025-07-26 21:18:36,paid,,1
+1068,1068,PayPal,Manual,1752.74,txn_83ff00355e9d,2025-07-10 21:53:58,paid,,1
+1069,1069,Credit Card,Square,1932.98,txn_ec5f8ef546d5,2025-08-30 21:04:55,paid,,1
+1070,1070,Credit Card,Manual,2442.17,txn_26195eb4b3fe,,failed,insufficient_funds,1
+1071,1071,Credit Card,Stripe,2275.28,txn_24e3049f3eaa,2025-07-16 13:21:52,paid,,2
+1072,1072,PayPal,Manual,5036.71,txn_3d64da6e926e,2025-09-06 09:03:17,paid,,3
+1073,1073,Bank Transfer,Stripe,4038.39,txn_ea8053251c96,2025-09-19 11:27:05,paid,,2
+1074,1074,Credit Card,Manual,973.35,txn_1babf63ebe8c,2025-10-29 19:20:33,paid,,1
+1075,1075,Credit Card,Stripe,3280.94,txn_f59c95e9a764,2025-08-09 01:59:05,paid,,2
+1076,1076,Digital Wallet,Square,0.0,txn_324c16ab98d2,2025-07-20 05:14:15,paid,,2
+1077,1077,Credit Card,Square,1979.9,txn_5a0ba2f8533b,2025-08-03 09:17:17,paid,,2
+1078,1078,Bank Transfer,PayPal,0.0,txn_0f9fa123f0d5,2025-10-04 18:06:05,paid,,1
+1079,1079,Bank Transfer,Manual,3159.06,txn_b397f3ef0489,2025-10-17 08:54:27,paid,,3
+1080,1080,PayPal,Square,2554.51,txn_b43dde78045d,,failed,insufficient_funds,2
+1081,1081,PayPal,Manual,1327.81,txn_57805182c110,2025-10-06 13:14:00,paid,,1
+1082,1082,Credit Card,PayPal,0.0,txn_fd30b973a6e0,2025-10-24 12:04:23,paid,,1
+1083,1083,Bank Transfer,Manual,5493.47,txn_10ba5d5ea550,2025-09-01 06:53:01,paid,,2
+1084,1084,Digital Wallet,Manual,4883.82,txn_f693e3f17f08,2025-08-16 02:41:49,paid,,2
+1085,1085,Bank Transfer,Stripe,2603.08,txn_6736164d588f,2025-07-02 22:36:20,paid,,2
+1086,1086,Bank Transfer,Manual,1927.26,txn_85b676f15c77,,failed,insufficient_funds,2
+1087,1087,PayPal,Manual,5276.22,txn_a9ee08ba4f47,,failed,insufficient_funds,2
+1088,1088,Credit Card,PayPal,2094.57,txn_ccc1da3c443c,,unpaid,,1
+1089,1089,Credit Card,Stripe,4415.52,txn_1e6ef4d9fbd0,2025-07-01 00:05:26,paid,,1
+1090,1090,Credit Card,Stripe,879.07,txn_6f0f7e758bc4,2025-05-16 23:18:40,paid,,1
+1091,1091,Credit Card,PayPal,3031.64,txn_b83ed96b1c63,,unpaid,,1
+1092,1092,Credit Card,PayPal,4437.96,txn_65aa007f972d,2025-07-08 07:06:54,paid,,3
+1093,1093,Credit Card,Manual,1749.12,txn_11b7df719845,2025-08-23 23:57:56,paid,,1
+1094,1094,Credit Card,Manual,4233.04,txn_5766c98ac7bc,2025-08-11 12:40:50,paid,,1
+1095,1095,Bank Transfer,Stripe,1451.31,txn_ab87b05605df,2025-06-07 12:24:50,paid,,2
+1096,1096,Credit Card,Stripe,36.58,txn_1dc6de3a5ccb,2025-05-22 07:13:37,paid,,2
+1097,1097,Bank Transfer,Square,652.84,txn_b252c8141fde,2025-05-18 14:38:31,paid,,2
+1098,1098,Credit Card,Square,2563.26,txn_3ebf71db7ea2,2025-10-13 20:44:24,paid,,2
+1099,1099,Bank Transfer,Manual,3675.77,txn_f1aac8c4d567,2025-06-20 04:44:34,paid,,1
+1100,1100,Digital Wallet,PayPal,1485.84,txn_f543e1f9a922,2025-05-15 20:35:20,paid,,3
+1101,1101,PayPal,Manual,2476.92,txn_058f1e252986,2025-06-18 20:37:05,paid,,1
+1102,1102,PayPal,Manual,337.69,txn_3f8b53dd7e4b,2025-08-11 20:53:23,paid,,3
+1103,1103,Bank Transfer,Square,2706.52,txn_148801910371,2025-08-12 14:55:23,paid,,1
+1104,1104,PayPal,Manual,1363.64,txn_da8c2756ae86,2025-08-20 09:19:50,paid,,3
+1105,1105,PayPal,Square,1893.91,txn_656c1b4acfac,2025-06-21 00:34:31,paid,,1
+1106,1106,Bank Transfer,PayPal,2460.1,txn_96babc3d5cf3,2025-10-24 14:46:21,paid,,2
+1107,1107,Bank Transfer,Manual,2446.26,txn_a45302bb7cce,2025-08-19 12:00:46,paid,,1
+1108,1108,Bank Transfer,PayPal,242.77,txn_73af2aa130cf,,failed,expired_card,3
+1109,1109,Digital Wallet,Square,2298.16,txn_540116eecc63,2025-07-11 04:48:59,paid,,1
+1110,1110,Credit Card,Stripe,3377.29,txn_42465da5f6c4,2025-06-30 09:58:30,paid,,2
+1111,1111,Bank Transfer,Manual,551.26,txn_d673c24d0fa2,2025-09-13 13:01:51,paid,,1
+1112,1112,Credit Card,Square,1371.04,txn_410ce49dfadc,,unpaid,,2
+1113,1113,PayPal,PayPal,616.58,txn_502d928cab9c,2025-09-26 00:37:20,paid,,2
+1114,1114,Digital Wallet,PayPal,3698.96,txn_f1e72f648f0f,2025-10-13 02:30:18,paid,,3
+1115,1115,Credit Card,Stripe,1775.4,txn_df01bc611440,2025-08-25 06:41:47,paid,,2
+1116,1116,Bank Transfer,Manual,3634.84,txn_d5ac4a85cbb0,,unpaid,,3
+1117,1117,Digital Wallet,Square,4721.67,txn_bf74894ca3b7,2025-09-22 21:18:00,paid,,2
+1118,1118,PayPal,Stripe,5293.8,txn_19505ac1206a,,failed,expired_card,2
+1119,1119,PayPal,Square,2530.83,txn_843939e63dd0,2025-10-20 20:34:57,paid,,3
+1120,1120,Credit Card,PayPal,1754.07,txn_688e2717368d,,failed,card_declined,1
+1121,1121,PayPal,Manual,4459.12,txn_563d8751f327,2025-08-01 11:07:58,paid,,2
+1122,1122,PayPal,PayPal,580.3,txn_8c81ef18abd1,2025-06-17 04:24:39,paid,,3
+1123,1123,Credit Card,Square,250.31,txn_f89433db95a3,2025-05-21 07:38:57,paid,,2
+1124,1124,Credit Card,Manual,563.4,txn_7672acb57423,2025-10-27 09:24:52,paid,,1
+1125,1125,Credit Card,Manual,2782.02,txn_3023d9a134b3,2025-05-29 21:45:18,paid,,2
+1126,1126,Credit Card,Stripe,250.3,txn_915c8021dd0f,,unpaid,,1
+1127,1127,Bank Transfer,Manual,4400.51,txn_fbd102c8c200,2025-09-18 13:33:19,paid,,2
+1128,1128,PayPal,Square,1531.28,txn_da2665db964d,2025-05-19 13:55:26,paid,,3
+1129,1129,Bank Transfer,Manual,3667.4,txn_a4574f721cac,2025-07-19 17:55:41,paid,,1
+1130,1130,PayPal,PayPal,0.0,txn_011fddcdf064,2025-07-26 01:02:10,paid,,2
+1131,1131,Bank Transfer,Stripe,1314.29,txn_aabc155d0f77,2025-05-18 14:38:56,paid,,3
+1132,1132,Bank Transfer,Square,1575.74,txn_0617b3db3f5e,2025-10-09 23:18:57,paid,,3
+1133,1133,Credit Card,PayPal,4108.24,txn_6a1ba135d907,2025-06-20 23:20:00,paid,,3
+1134,1134,Digital Wallet,PayPal,4965.85,txn_97833dba31d0,,unpaid,,3
+1135,1135,Bank Transfer,Manual,3552.32,txn_9e08f0300868,2025-10-06 18:49:07,paid,,3
+1136,1136,Credit Card,Stripe,603.92,txn_946e28897988,2025-08-31 05:06:38,paid,,2
+1137,1137,Digital Wallet,Stripe,365.01,txn_9d1dc56eb200,2025-09-11 03:18:16,paid,,2
+1138,1138,Digital Wallet,Square,3233.75,txn_6dfc688151c2,2025-07-13 10:08:52,paid,,1
+1139,1139,PayPal,Stripe,3108.35,txn_a56fa063d7ba,2025-10-01 22:56:20,paid,,1
+1140,1140,PayPal,Stripe,1040.79,txn_c393ea948d7f,2025-09-15 11:02:24,paid,,2
+1141,1141,Digital Wallet,Stripe,2395.04,txn_b2c580dc3d62,2025-10-24 08:20:16,paid,,2
+1142,1142,Bank Transfer,Manual,1771.47,txn_2a6620b68132,2025-09-28 22:30:43,paid,,3
+1143,1143,Digital Wallet,Stripe,764.15,txn_51da764eb25f,,unpaid,,3
+1144,1144,Bank Transfer,Stripe,932.65,txn_a5a378886eed,,unpaid,,1
+1145,1145,PayPal,PayPal,1057.28,txn_419cf66e9206,2025-05-23 05:57:06,paid,,3
+1146,1146,Credit Card,PayPal,2745.29,txn_c59bc6bc5d69,2025-05-26 11:48:51,paid,,2
+1147,1147,PayPal,Square,2575.06,txn_0dfb0b083df6,2025-06-07 20:33:59,paid,,3
+1148,1148,Credit Card,PayPal,2075.03,txn_6c43437b5ee1,2025-09-25 07:41:24,paid,,2
+1149,1149,Credit Card,Square,3497.12,txn_65b547529bcf,,failed,expired_card,1
+1150,1150,Bank Transfer,PayPal,3944.36,txn_b8df6d3f9fa8,2025-06-19 15:22:23,paid,,3
+1151,1151,Credit Card,Manual,2397.13,txn_4d259003275a,,unpaid,,2
+1152,1152,PayPal,PayPal,1396.88,txn_da321151af01,,unpaid,,2
+1153,1153,Bank Transfer,Stripe,1121.02,txn_4c7a94d73675,2025-07-03 19:25:07,paid,,1
+1154,1154,Credit Card,Manual,2319.27,txn_53ded2770126,2025-05-11 22:32:38,paid,,3
+1155,1155,Digital Wallet,Manual,2263.86,txn_b755bf947e49,2025-10-14 08:09:33,paid,,3
+1156,1156,Credit Card,Stripe,0.0,txn_1d56554448ef,2025-07-27 07:16:41,paid,,2
+1157,1157,Bank Transfer,Manual,7482.57,txn_48638bc3dae6,2025-07-11 15:17:10,paid,,2
+1158,1158,Digital Wallet,Stripe,234.85,txn_17b3b568c19f,,unpaid,,3
+1159,1159,Digital Wallet,Manual,5740.16,txn_ce77d37f5bfa,2025-05-12 04:53:04,paid,,3
+1160,1160,Digital Wallet,Stripe,2346.6,txn_31bd37a51916,2025-10-20 06:21:56,paid,,1
+1161,1161,Bank Transfer,Manual,0.0,txn_83312c1e0ccb,2025-09-03 09:29:21,paid,,2
+1162,1162,Bank Transfer,Stripe,1833.27,txn_846a3b573e97,2025-05-13 05:13:21,paid,,2
+1163,1163,PayPal,PayPal,1746.9,txn_a2fc29aa3d02,2025-05-25 07:58:43,paid,,2
+1164,1164,Bank Transfer,Manual,463.16,txn_7ec442ce7daa,,unpaid,,3
+1165,1165,Credit Card,Square,1017.06,txn_96357126822f,2025-07-09 01:41:41,paid,,2
+1166,1166,Bank Transfer,PayPal,2574.82,txn_5e508092811d,,failed,insufficient_funds,3
+1167,1167,Bank Transfer,Stripe,825.09,txn_6cba83bbccba,2025-08-12 14:30:12,paid,,2
+1168,1168,PayPal,Manual,514.32,txn_ca63968bc885,2025-09-19 05:51:58,paid,,2
+1169,1169,Digital Wallet,Manual,0.0,txn_7100c0a5d5b6,2025-06-24 15:01:03,paid,,3
+1170,1170,Digital Wallet,Stripe,2061.03,txn_0bae5e9b4f31,2025-07-01 14:17:38,paid,,1
+1171,1171,Credit Card,Stripe,1065.84,txn_c6801144c021,2025-05-27 20:07:13,paid,,2
+1172,1172,Bank Transfer,Stripe,3314.61,txn_c4cec2bedd3f,2025-06-24 14:37:22,paid,,2
+1173,1173,Bank Transfer,Stripe,2884.63,txn_ef84ae5e9b6b,2025-05-15 00:28:14,paid,,3
+1174,1174,Credit Card,PayPal,0.73,txn_8464d561cd80,2025-10-16 19:29:40,paid,,3
+1175,1175,PayPal,Square,1519.56,txn_5a473501aa39,2025-05-26 07:12:00,paid,,2
+1176,1176,Digital Wallet,PayPal,82.53,txn_88beb624d320,2025-08-11 13:12:22,paid,,3
+1177,1177,PayPal,Manual,5343.31,txn_b41d1a213128,2025-08-16 20:29:38,paid,,2
+1178,1178,Digital Wallet,Square,4529.07,txn_d5487b73ef24,2025-05-13 06:17:35,paid,,2
+1179,1179,Credit Card,PayPal,3362.69,txn_cb7510ffbd7a,,unpaid,,2
+1180,1180,Digital Wallet,Stripe,1420.08,txn_658b7bf06c4b,2025-10-29 08:08:16,paid,,1
+1181,1181,Credit Card,PayPal,2751.11,txn_b00d843bfede,2025-09-12 11:27:04,paid,,2
+1182,1182,Credit Card,PayPal,411.27,txn_218a593bd0bc,2025-08-07 00:04:51,paid,,2
+1183,1183,Digital Wallet,Square,1140.7,txn_f6c55e9f4fe4,,failed,insufficient_funds,3
+1184,1184,Bank Transfer,PayPal,594.17,txn_c2f43e2e80e7,2025-06-01 11:49:33,paid,,3
+1185,1185,Digital Wallet,Manual,5926.89,txn_3cb3cec2681d,2025-10-06 02:45:07,paid,,3
+1186,1186,Digital Wallet,PayPal,306.76,txn_bb264b60de1c,,unpaid,,2
+1187,1187,Bank Transfer,Square,4272.54,txn_15d9113e0132,2025-10-20 13:37:11,paid,,2
+1188,1188,Credit Card,PayPal,320.2,txn_0860fd01ba71,2025-08-07 03:03:49,paid,,3
+1189,1189,PayPal,Manual,781.92,txn_3a7a0aedc187,2025-08-20 04:07:12,paid,,2
+1190,1190,Bank Transfer,Square,1929.27,txn_e33363956026,2025-10-21 08:24:54,paid,,2
+1191,1191,Bank Transfer,PayPal,402.12,txn_5b8a80001662,2025-08-24 11:29:05,paid,,1
+1192,1192,Credit Card,Square,2329.74,txn_35df11f637b2,2025-06-20 01:10:12,paid,,1
+1193,1193,Bank Transfer,Square,0.0,txn_c066ee3c08cc,2025-10-04 04:00:31,paid,,2
+1194,1194,Digital Wallet,Square,593.86,txn_b009f26c4841,2025-07-21 16:08:57,paid,,2
+1195,1195,PayPal,Stripe,385.81,txn_a6914b59d12a,2025-08-08 11:00:23,paid,,3
+1196,1196,Digital Wallet,Manual,1123.44,txn_656c8016ca99,2025-10-23 06:12:51,paid,,1
+1197,1197,PayPal,Manual,1280.08,txn_8f4067818014,2025-08-11 14:48:35,paid,,3
+1198,1198,PayPal,Square,865.76,txn_b2107cfda8eb,,failed,network_error,1
+1199,1199,Digital Wallet,Stripe,1802.48,txn_2b8f1b8b022e,2025-07-16 15:05:35,paid,,3
+1200,1200,Bank Transfer,Square,5818.6,txn_ac9846736e07,,failed,insufficient_funds,2
+1201,1201,Credit Card,PayPal,1969.93,txn_e0b4ffa8456c,,unpaid,,1
+1202,1202,Digital Wallet,PayPal,341.64,txn_e8aa393b376f,2025-09-01 15:27:31,paid,,3
+1203,1203,Bank Transfer,Square,475.46,txn_0d775697aec4,2025-05-24 00:02:00,paid,,3
+1204,1204,Credit Card,PayPal,2735.54,txn_308cdebf485e,2025-09-05 19:22:41,paid,,1
+1205,1205,Credit Card,Square,5410.65,txn_558b7e8618e2,2025-08-29 14:15:44,paid,,3
+1206,1206,Digital Wallet,Stripe,4015.49,txn_f399c4319c68,2025-06-12 18:22:00,paid,,3
+1207,1207,Digital Wallet,Manual,779.37,txn_9012fe9da62a,2025-09-15 15:51:17,paid,,3
+1208,1208,PayPal,Manual,351.2,txn_9978efbda5c1,2025-06-11 17:47:15,paid,,1
+1209,1209,Digital Wallet,Manual,7335.79,txn_f41831734722,2025-06-12 04:18:21,paid,,1
+1210,1210,Bank Transfer,Manual,5207.46,txn_7683a1c034d8,2025-10-07 18:05:32,paid,,1
+1211,1211,PayPal,Manual,2464.46,txn_349acc348cd7,2025-09-07 17:04:12,paid,,3
+1212,1212,Bank Transfer,Manual,4121.29,txn_d36dcf7ad63c,2025-10-24 23:59:35,paid,,3
+1213,1213,PayPal,Stripe,2230.76,txn_da7a38200919,,failed,expired_card,1
+1214,1214,PayPal,Manual,6102.53,txn_cdf81aa88e15,2025-06-25 06:06:28,paid,,3
+1215,1215,PayPal,Manual,761.58,txn_09f9bde60bd3,,failed,card_declined,2
+1216,1216,Credit Card,Square,2603.28,txn_37cf3fcf062e,,unpaid,,1
+1217,1217,PayPal,Stripe,3564.6,txn_e7cc2a32a469,2025-08-14 13:59:03,paid,,1
+1218,1218,Digital Wallet,Manual,2268.49,txn_d12242aa9fb1,,failed,card_declined,3
+1219,1219,Credit Card,Manual,2802.02,txn_6efa0809e045,2025-05-30 13:39:10,paid,,2
+1220,1220,Digital Wallet,Manual,132.64,txn_cc56c11e95f4,2025-05-14 06:14:06,paid,,1
+1221,1221,PayPal,Stripe,0.0,txn_cb0099ea5476,2025-10-05 18:06:07,paid,,2
+1222,1222,PayPal,Square,905.64,txn_60c74a4b32a0,2025-08-23 20:23:42,paid,,3
+1223,1223,PayPal,PayPal,1489.68,txn_415bb7c43f45,,unpaid,,2
+1224,1224,Digital Wallet,Manual,0.0,txn_073eb44fba42,2025-09-01 00:15:55,paid,,2
+1225,1225,Digital Wallet,Stripe,3917.66,txn_e5ca146d9fe7,2025-06-04 00:59:12,paid,,2
+1226,1226,Credit Card,Square,3436.05,txn_09dcadb4d4b7,2025-10-10 02:52:55,paid,,2
+1227,1227,Digital Wallet,PayPal,3658.1,txn_b138d69de425,,failed,network_error,3
+1228,1228,Digital Wallet,Square,461.01,txn_f1461f156b56,,unpaid,,2
+1229,1229,PayPal,Square,2267.2,txn_c897c8039944,2025-06-21 22:54:57,paid,,3
+1230,1230,Credit Card,Stripe,2850.91,txn_e4fe2c1bfd63,2025-05-27 22:27:33,paid,,1
+1231,1231,Bank Transfer,Stripe,1676.24,txn_907891ac5bd0,2025-10-17 23:22:27,paid,,3
+1232,1232,PayPal,Square,1941.83,txn_a2387bd9a01f,2025-07-24 23:54:33,paid,,1
+1233,1233,PayPal,Square,569.92,txn_54629497f2f4,2025-10-18 09:01:11,paid,,2
+1234,1234,Credit Card,Stripe,1412.56,txn_be6c0aedf310,2025-06-16 07:58:09,paid,,2
+1235,1235,PayPal,PayPal,3585.68,txn_d6472f4b8036,,failed,network_error,2
+1236,1236,Credit Card,Square,4044.8,txn_6dbd9cc90fae,2025-06-04 00:29:31,paid,,1
+1237,1237,Credit Card,Stripe,2334.49,txn_bd406dd5542e,2025-06-15 21:18:00,paid,,1
+1238,1238,Digital Wallet,Manual,963.63,txn_c0b823f29dea,2025-10-27 00:05:33,paid,,2
+1239,1239,Digital Wallet,PayPal,187.2,txn_066dd8a3146d,2025-06-23 14:27:43,paid,,2
+1240,1240,Credit Card,Manual,1286.68,txn_f39c08697d6d,2025-07-20 13:15:53,paid,,1
+1241,1241,Bank Transfer,PayPal,1335.96,txn_78225cf4f517,,unpaid,,2
+1242,1242,PayPal,Manual,0.0,txn_f2d6450dc15a,2025-07-12 14:52:10,paid,,3
+1243,1243,Bank Transfer,Square,3158.38,txn_8880d8e4fa8f,2025-06-17 11:15:04,paid,,2
+1244,1244,Bank Transfer,PayPal,1582.7,txn_f8f5acaa055d,2025-10-17 08:11:29,paid,,1
+1245,1245,PayPal,Stripe,1775.84,txn_f293e6ebaf93,2025-05-24 19:18:08,paid,,1
+1246,1246,PayPal,Square,1691.07,txn_1f30e687a860,,failed,card_declined,1
+1247,1247,Digital Wallet,Manual,3493.86,txn_76cfed3e71b3,2025-06-03 20:03:44,paid,,2
+1248,1248,Credit Card,Square,764.97,txn_532cde4dfd23,,unpaid,,2
+1249,1249,Bank Transfer,Manual,2674.06,txn_0bfeb5882f87,2025-05-17 04:01:13,paid,,3
+1250,1250,PayPal,Stripe,427.17,txn_fb6a16cbe0ca,2025-07-26 18:33:11,paid,,2
+1251,1251,Credit Card,Square,1503.76,txn_8adc7d08139e,2025-05-19 20:01:24,paid,,3
+1252,1252,PayPal,Square,1108.14,txn_f1eaf59c6721,2025-08-22 09:12:39,paid,,2
+1253,1253,PayPal,Stripe,722.81,txn_7aa7a202187c,2025-06-22 16:47:45,paid,,3
+1254,1254,PayPal,Square,1503.02,txn_4977c281fa04,2025-10-11 03:16:46,paid,,1
+1255,1255,Digital Wallet,PayPal,1285.83,txn_3e81cbccc499,2025-05-15 20:18:05,paid,,2
+1256,1256,PayPal,Manual,856.56,txn_6c8d9ef67f0d,2025-10-15 18:01:34,paid,,2
+1257,1257,PayPal,Manual,1744.37,txn_e30891b1ed2e,2025-06-09 15:14:05,paid,,3
+1258,1258,Bank Transfer,Square,3381.84,txn_ec6c34538de0,2025-09-29 19:17:17,paid,,3
+1259,1259,Credit Card,Stripe,2549.64,txn_40eeb348a1e9,2025-07-01 14:27:38,paid,,3
+1260,1260,PayPal,PayPal,912.92,txn_7c7cac8c9f5e,2025-08-21 09:39:26,paid,,3
+1261,1261,PayPal,PayPal,3198.84,txn_74e4597b4c8f,2025-08-15 13:46:23,paid,,2
+1262,1262,Digital Wallet,Stripe,0.0,txn_5b9f1187c4ab,2025-09-28 11:51:20,paid,,3
+1263,1263,Bank Transfer,PayPal,1094.7,txn_bd374bf2dd55,2025-05-30 08:19:13,paid,,2
+1264,1264,PayPal,Stripe,2435.8,txn_78c76723a9aa,2025-05-29 13:26:15,paid,,3
+1265,1265,PayPal,Square,1123.05,txn_135125abfd7c,2025-05-11 18:16:10,paid,,1
+1266,1266,PayPal,Square,1300.3,txn_880fcce1d349,2025-09-28 20:52:22,paid,,2
+1267,1267,Digital Wallet,PayPal,2174.49,txn_af2b1a453f92,2025-09-09 15:53:29,paid,,1
+1268,1268,PayPal,Manual,799.62,txn_ad741ef0b745,2025-06-20 02:13:47,paid,,1
+1269,1269,Credit Card,PayPal,2730.42,txn_8d955b88d3b4,2025-07-16 22:37:41,paid,,1
+1270,1270,PayPal,PayPal,926.72,txn_25f94f6f2bb6,2025-06-03 07:15:13,paid,,1
+1271,1271,Credit Card,Stripe,1939.03,txn_971efa95420b,2025-08-05 19:28:25,paid,,3
+1272,1272,Bank Transfer,Square,1020.9,txn_4f2975318699,2025-07-13 09:22:06,paid,,2
+1273,1273,Digital Wallet,Stripe,2835.02,txn_e39341300dfb,2025-05-19 22:45:51,paid,,2
+1274,1274,Credit Card,Manual,2246.65,txn_0646a7cd6359,2025-05-09 02:31:31,paid,,2
+1275,1275,PayPal,Stripe,7437.0,txn_87d430696a2b,,failed,card_declined,3
+1276,1276,Credit Card,Stripe,1470.79,txn_56993d1f8fcb,2025-07-11 06:44:36,paid,,2
+1277,1277,Bank Transfer,Manual,1766.18,txn_7ba41883d5aa,2025-05-17 04:17:14,paid,,2
+1278,1278,Credit Card,PayPal,1998.55,txn_68bb9a64112b,2025-09-30 19:49:07,paid,,3
+1279,1279,PayPal,PayPal,1105.78,txn_d9af7da815c3,2025-08-12 10:53:14,paid,,1
+1280,1280,Bank Transfer,Manual,0.0,txn_dba547c555d2,2025-07-08 14:37:12,paid,,2
+1281,1281,PayPal,Stripe,2136.41,txn_eb0ed7f56fe4,2025-09-30 23:41:03,paid,,2
+1282,1282,Credit Card,Square,2121.71,txn_e9eae7d8a390,2025-05-13 21:13:45,paid,,3
+1283,1283,Bank Transfer,PayPal,2830.79,txn_156777d61b6d,2025-06-13 14:32:27,paid,,2
+1284,1284,Digital Wallet,Stripe,386.2,txn_2c8c09bc0316,2025-06-24 06:04:31,paid,,3
+1285,1285,Credit Card,Stripe,1367.75,txn_527835f04cbe,2025-06-27 01:21:19,paid,,3
+1286,1286,Bank Transfer,Stripe,4970.45,txn_ad005416cde9,2025-11-02 01:58:54,paid,,1
+1287,1287,Digital Wallet,Square,1275.97,txn_664578531a3e,2025-09-03 23:29:19,paid,,2
+1288,1288,Credit Card,Square,940.0,txn_cdb2ba99706a,,failed,insufficient_funds,3
+1289,1289,PayPal,Manual,5482.93,txn_2eec69d2eed7,2025-08-16 13:38:33,paid,,3
+1290,1290,Credit Card,Stripe,738.05,txn_0c492d69d479,2025-10-10 13:06:46,paid,,1
+1291,1291,Credit Card,Stripe,300.36,txn_7a99b0674e6f,2025-07-30 02:59:47,paid,,2
+1292,1292,PayPal,Manual,0.0,txn_6734babe75b1,2025-05-16 08:00:45,paid,,1
+1293,1293,Digital Wallet,Square,1968.95,txn_64aa62ed5bca,2025-08-22 21:33:11,paid,,1
+1294,1294,Bank Transfer,Square,4105.56,txn_088131f5922a,2025-08-05 06:00:59,paid,,1
+1295,1295,Bank Transfer,Manual,535.24,txn_4ea23c6fdfd3,2025-09-27 04:24:38,paid,,3
+1296,1296,Credit Card,Stripe,576.28,txn_7ddbe05c109d,2025-06-06 09:03:02,paid,,1
+1297,1297,Credit Card,Stripe,2404.74,txn_7d0b4f4fdad6,2025-11-02 10:03:10,paid,,3
+1298,1298,Bank Transfer,PayPal,507.72,txn_8d4dabfed59c,2025-05-11 22:35:07,paid,,2
+1299,1299,Credit Card,Square,987.74,txn_92196a18a505,,unpaid,,3
+1300,1300,Bank Transfer,Manual,2084.64,txn_0ca93086efd8,2025-07-28 11:26:15,paid,,1
+1301,1301,Bank Transfer,Stripe,6543.01,txn_0004ea8a8ee2,2025-06-05 20:53:18,paid,,3
+1302,1302,Digital Wallet,Stripe,3926.6,txn_a6265c69a1d5,2025-05-23 00:35:23,paid,,2
+1303,1303,Bank Transfer,Square,4009.72,txn_7f96471e9c48,2025-08-10 05:54:29,paid,,2
+1304,1304,Credit Card,Manual,1978.25,txn_0befe6cea72e,2025-05-06 19:43:38,paid,,2
+1305,1305,PayPal,PayPal,2460.36,txn_135ad0df7cbe,2025-09-16 05:09:22,paid,,3
+1306,1306,Credit Card,Square,3604.5,txn_8f7882a473ad,2025-05-14 02:25:00,paid,,3
+1307,1307,Bank Transfer,Stripe,4762.51,txn_3319d0140534,2025-05-22 15:45:33,paid,,3
+1308,1308,Bank Transfer,PayPal,755.24,txn_a750f6dc7939,,failed,insufficient_funds,1
+1309,1309,Credit Card,PayPal,3158.4,txn_610da0ed4696,2025-05-19 16:04:06,paid,,3
+1310,1310,Credit Card,Manual,1681.16,txn_ec0db41d2323,2025-06-06 18:30:33,paid,,3
+1311,1311,Digital Wallet,Stripe,2171.75,txn_31c26a8200b2,2025-06-19 05:56:45,paid,,2
+1312,1312,Bank Transfer,PayPal,475.22,txn_db515b0dc122,2025-06-07 21:44:00,paid,,3
+1313,1313,Bank Transfer,Manual,2545.9,txn_a95e7658c70f,2025-07-05 07:55:18,paid,,1
+1314,1314,Credit Card,Square,3697.85,txn_db9a50413ae6,2025-10-08 14:30:29,paid,,3
+1315,1315,Bank Transfer,PayPal,2985.05,txn_64487981c2ca,,failed,insufficient_funds,3
+1316,1316,Credit Card,PayPal,432.83,txn_96766aae20fb,2025-06-03 04:14:18,paid,,3
+1317,1317,Bank Transfer,Manual,1910.85,txn_fe98f9a7fe33,2025-06-30 18:25:48,paid,,2
+1318,1318,Credit Card,PayPal,709.32,txn_0382de5f6ccd,2025-07-29 12:48:26,paid,,3
+1319,1319,PayPal,Manual,1568.06,txn_f1a90db63d49,2025-08-20 18:04:00,paid,,2
+1320,1320,Credit Card,PayPal,1328.94,txn_a2ad976c7a9b,2025-05-12 14:41:16,paid,,2
+1321,1321,Digital Wallet,Square,2730.46,txn_98b5f6dcd5f9,2025-05-12 13:14:20,paid,,1
+1322,1322,PayPal,Stripe,1931.0,txn_3e285cb6b34e,2025-10-05 14:25:19,paid,,3
+1323,1323,Digital Wallet,Stripe,126.93,txn_3fd69da8879c,,failed,network_error,2
+1324,1324,Credit Card,Square,4713.83,txn_62c319a43c02,2025-10-21 17:47:49,paid,,1
+1325,1325,Credit Card,Square,0.0,txn_0a7999fe7794,2025-05-25 07:25:10,paid,,3
+1326,1326,Bank Transfer,Stripe,4541.88,txn_2c4cfadb61bc,,unpaid,,1
+1327,1327,Credit Card,PayPal,5609.0,txn_f7e428a8a073,2025-07-25 19:24:58,paid,,3
+1328,1328,Digital Wallet,Stripe,5384.53,txn_799513742df4,2025-10-09 18:14:32,paid,,3
+1329,1329,Credit Card,Stripe,2264.22,txn_148354992f31,,unpaid,,2
+1330,1330,Bank Transfer,Square,25.69,txn_36ffe6a5dd8b,2025-06-28 07:21:03,paid,,1
+1331,1331,Credit Card,PayPal,0.0,txn_29ceebdcff3e,2025-11-03 04:10:03,paid,,3
+1332,1332,Bank Transfer,Stripe,0.0,txn_4a3b16cbfadb,2025-08-20 05:46:43,paid,,3
+1333,1333,Bank Transfer,PayPal,5227.73,txn_18f413984324,,failed,network_error,1
+1334,1334,PayPal,Manual,1951.38,txn_f55d7c89d066,2025-08-04 08:16:02,paid,,2
+1335,1335,Bank Transfer,Manual,4058.59,txn_da6e4abebf59,2025-08-01 13:45:22,paid,,1
+1336,1336,Bank Transfer,Stripe,34.94,txn_b4a4e8a4ab3d,,failed,network_error,1
+1337,1337,Digital Wallet,Stripe,1452.76,txn_ba411803bded,2025-06-20 18:14:47,paid,,1
+1338,1338,PayPal,PayPal,444.84,txn_08e52e76f992,2025-07-28 02:59:43,paid,,1
+1339,1339,PayPal,Square,-20.86,txn_c158c00a12fb,2025-07-26 07:13:09,paid,,1
+1340,1340,Digital Wallet,Stripe,4774.92,txn_c806b5a710a0,2025-09-12 14:16:05,paid,,1
+1341,1341,Bank Transfer,PayPal,1578.36,txn_cdc28fce86cc,2025-08-21 00:10:50,paid,,1
+1342,1342,Credit Card,Manual,1493.45,txn_1f420a6e4190,2025-08-23 01:18:22,paid,,1
+1343,1343,Bank Transfer,PayPal,0.0,txn_70a7b24c70be,,unpaid,,3
+1344,1344,Credit Card,PayPal,2638.5,txn_35c1c7e3e60b,2025-05-10 14:25:35,paid,,3
+1345,1345,Digital Wallet,Square,2385.99,txn_ee31a6e094b7,2025-09-13 22:51:56,paid,,1
+1346,1346,Credit Card,Stripe,2005.98,txn_55c10f86b4cd,2025-07-14 21:23:02,paid,,3
+1347,1347,PayPal,PayPal,1186.24,txn_2dc3305999c2,2025-09-16 22:53:29,paid,,1
+1348,1348,Credit Card,Stripe,710.73,txn_cecc920ebf93,2025-10-19 23:24:33,paid,,1
+1349,1349,Digital Wallet,Square,2735.32,txn_9fd01093c48e,2025-06-10 11:03:46,paid,,2
+1350,1350,Digital Wallet,Manual,1005.48,txn_46feed13ab41,2025-08-05 12:26:32,paid,,2
+1351,1351,PayPal,PayPal,1341.8,txn_654a58712ca8,2025-07-14 03:17:15,paid,,1
+1352,1352,Bank Transfer,Stripe,52.68,txn_6da5194537a9,2025-06-24 10:22:13,paid,,2
+1353,1353,PayPal,Square,2086.06,txn_cee2c000c18a,,unpaid,,2
+1354,1354,PayPal,PayPal,3062.95,txn_f542ea31c28e,,failed,expired_card,2
+1355,1355,Credit Card,Manual,2476.59,txn_ba57583293f3,,unpaid,,3
+1356,1356,Credit Card,Square,2863.37,txn_613942abf522,2025-10-04 21:46:47,paid,,2
+1357,1357,Credit Card,Square,109.74,txn_dedef9cccef1,2025-10-04 00:36:02,paid,,1
+1358,1358,Bank Transfer,Stripe,396.57,txn_af8b5f96b39c,2025-10-16 04:06:14,paid,,3
+1359,1359,Bank Transfer,PayPal,759.0,txn_1f40a0a9c0be,2025-07-21 16:50:06,paid,,3
+1360,1360,Credit Card,Manual,356.84,txn_610b8178d971,,unpaid,,3
+1361,1361,Digital Wallet,PayPal,2288.69,txn_535a9a39f399,2025-07-17 10:09:00,paid,,3
+1362,1362,Digital Wallet,PayPal,855.56,txn_98ec672c0451,2025-05-23 05:10:42,paid,,2
+1363,1363,Digital Wallet,PayPal,1003.06,txn_b717773f9722,2025-08-28 16:02:48,paid,,1
+1364,1364,Credit Card,Stripe,3534.57,txn_2b07de803723,2025-05-29 12:05:22,paid,,2
+1365,1365,Bank Transfer,Manual,44.54,txn_72c82d8c2f84,,failed,card_declined,2
+1366,1366,Credit Card,Square,1425.69,txn_c64a9db501b7,2025-09-12 22:18:10,paid,,3
+1367,1367,Credit Card,Square,2434.44,txn_ddde520807e5,,failed,network_error,2
+1368,1368,Bank Transfer,PayPal,1623.33,txn_8a2e9ab0b798,2025-07-05 07:10:43,paid,,3
+1369,1369,Digital Wallet,Square,2670.49,txn_0bac7437cdba,,unpaid,,3
+1370,1370,Bank Transfer,PayPal,1211.42,txn_b6965527c57e,,unpaid,,1
+1371,1371,Digital Wallet,PayPal,182.4,txn_b9d5cda74d79,,failed,card_declined,1
+1372,1372,Bank Transfer,PayPal,2435.95,txn_334d95c2a8cf,2025-06-20 21:57:30,paid,,1
+1373,1373,Digital Wallet,PayPal,2500.99,txn_424ac5ffa920,2025-10-11 11:13:24,paid,,2
+1374,1374,Credit Card,PayPal,1556.85,txn_a404ce8953b9,,unpaid,,3
+1375,1375,Credit Card,Manual,1376.49,txn_1d1fe591a778,2025-07-05 10:31:22,paid,,1
+1376,1376,Bank Transfer,Stripe,0.0,txn_a82ba70fd1f9,2025-06-02 01:57:40,paid,,1
+1377,1377,PayPal,Square,2823.95,txn_ead6231a2983,2025-10-27 07:14:10,paid,,3
+1378,1378,Bank Transfer,Square,663.2,txn_3493d5f60961,2025-08-18 19:44:14,paid,,1
+1379,1379,Credit Card,PayPal,958.38,txn_10ef6f9c3852,2025-05-22 19:11:20,paid,,2
+1380,1380,Bank Transfer,Manual,2309.84,txn_dc2ed677bf79,2025-09-05 17:55:20,paid,,1
+1381,1381,Bank Transfer,PayPal,1501.62,txn_451399535ef8,2025-08-14 09:18:06,paid,,1
+1382,1382,Credit Card,PayPal,790.2,txn_e23a0ed17ba0,2025-08-26 00:34:25,paid,,1
+1383,1383,PayPal,Stripe,378.0,txn_75ad235826da,2025-05-17 04:41:31,paid,,2
+1384,1384,Credit Card,PayPal,735.22,txn_dd851c7106f0,,failed,card_declined,1
+1385,1385,Digital Wallet,Square,2009.23,txn_ab7f3d973c95,,failed,network_error,1
+1386,1386,Credit Card,Square,3769.02,txn_e11cbea62c9b,2025-09-08 20:28:20,paid,,2
+1387,1387,Digital Wallet,Stripe,498.9,txn_3674f2da46b5,2025-09-28 17:16:23,paid,,1
+1388,1388,PayPal,PayPal,1018.98,txn_3755db7e1d25,,failed,network_error,2
+1389,1389,Credit Card,PayPal,1187.49,txn_1f6162f57f70,2025-06-20 13:51:55,paid,,2
+1390,1390,Bank Transfer,Manual,593.12,txn_6ba7c1f39383,2025-06-16 23:35:09,paid,,2
+1391,1391,Digital Wallet,Manual,1731.59,txn_e5c542dfd68b,2025-06-16 22:37:34,paid,,2
+1392,1392,Bank Transfer,Manual,3782.15,txn_aba3a1845024,2025-06-15 00:35:00,paid,,3
+1393,1393,Digital Wallet,Square,1109.38,txn_a4c4cb44a169,,unpaid,,3
+1394,1394,PayPal,Square,385.73,txn_5370eb582a83,2025-09-11 10:21:43,paid,,1
+1395,1395,Digital Wallet,Square,1769.14,txn_a7391985dd3a,2025-06-12 04:08:48,paid,,1
+1396,1396,Digital Wallet,Manual,1655.37,txn_6a71f4cdda31,2025-06-29 07:27:16,paid,,3
+1397,1397,Digital Wallet,Manual,2255.17,txn_90ead073cbf5,2025-08-05 08:27:03,paid,,1
+1398,1398,PayPal,Manual,0.0,txn_e4bcea458de1,,unpaid,,1
+1399,1399,Credit Card,Manual,4092.77,txn_c5fd25a99387,2025-06-01 20:41:58,paid,,3
+1400,1400,Bank Transfer,Manual,1029.5,txn_3b5bb7dbbc45,2025-10-05 07:36:18,paid,,1
+1401,1401,Bank Transfer,PayPal,0.0,txn_17329a8985d5,2025-09-07 17:25:21,paid,,2
+1402,1402,Credit Card,Stripe,9057.75,txn_38e293925c8d,2025-06-26 22:36:40,paid,,1
+1403,1403,Credit Card,Square,2058.99,txn_8767eb6c3641,2025-10-05 09:45:36,paid,,1
+1404,1404,PayPal,Square,2677.52,txn_08838d4508f2,,unpaid,,1
+1405,1405,PayPal,PayPal,4826.63,txn_9a901e59a55c,2025-08-16 18:49:40,paid,,3
+1406,1406,PayPal,PayPal,2409.01,txn_0ed97dc25197,2025-10-09 14:45:35,paid,,3
+1407,1407,Bank Transfer,PayPal,2481.53,txn_33fded93607d,,failed,card_declined,3
+1408,1408,Digital Wallet,Stripe,709.54,txn_b819e16dd8aa,2025-08-21 17:57:11,paid,,1
+1409,1409,Digital Wallet,Manual,1183.44,txn_01913c77c82a,,unpaid,,2
+1410,1410,Bank Transfer,Manual,1456.55,txn_6b71ad9e80d2,2025-10-03 12:26:15,paid,,2
+1411,1411,Credit Card,Manual,0.0,txn_f0fc3cde2021,2025-08-08 04:42:43,paid,,3
+1412,1412,Credit Card,Square,0.0,txn_6d571417907b,,unpaid,,1
+1413,1413,Credit Card,Square,1314.67,txn_f9edb00e9541,2025-09-12 20:39:47,paid,,1
+1414,1414,Digital Wallet,PayPal,5384.03,txn_37b3460476c6,2025-09-05 04:56:11,paid,,2
+1415,1415,Credit Card,PayPal,902.68,txn_b2b3c66198d3,2025-07-15 08:11:03,paid,,1
+1416,1416,Bank Transfer,Square,9153.91,txn_19097178fb14,2025-07-28 10:46:53,paid,,2
+1417,1417,Credit Card,PayPal,0.0,txn_56ad22ffaf82,,failed,expired_card,3
+1418,1418,PayPal,PayPal,0.0,txn_6cfe17ee191c,2025-08-18 04:11:26,paid,,2
+1419,1419,Bank Transfer,Square,0.0,txn_c060138e69cc,2025-07-30 15:31:09,paid,,2
+1420,1420,Bank Transfer,Manual,3452.14,txn_f2a95cfbc6a1,2025-05-14 00:38:32,paid,,3
+1421,1421,PayPal,Manual,2031.89,txn_b9c2b1aaf7ac,2025-06-30 11:48:34,paid,,3
+1422,1422,Digital Wallet,Manual,1319.65,txn_88e3d60ee0e5,,failed,network_error,1
+1423,1423,Credit Card,Square,4566.06,txn_c5d0a2da1801,,failed,card_declined,2
+1424,1424,Digital Wallet,Stripe,1957.92,txn_b10afaf0fcbc,2025-08-20 09:35:34,paid,,3
+1425,1425,Bank Transfer,Square,7793.35,txn_5183ce42857f,2025-10-12 10:48:02,paid,,1
+1426,1426,Credit Card,PayPal,1730.3,txn_1d17dae130cd,2025-08-26 19:24:50,paid,,2
+1427,1427,Bank Transfer,Square,3410.0,txn_632089c80a29,2025-09-19 00:21:42,paid,,3
+1428,1428,Bank Transfer,PayPal,928.54,txn_63fa315f8899,2025-05-11 10:21:36,paid,,1
+1429,1429,PayPal,Manual,0.0,txn_c03ee930e172,2025-06-29 12:47:41,paid,,2
+1430,1430,Credit Card,Square,1067.0,txn_ecd8c10a899a,2025-09-25 20:25:07,paid,,2
+1431,1431,Digital Wallet,Manual,903.76,txn_39ceb5f3886b,2025-08-04 09:44:25,paid,,2
+1432,1432,Credit Card,Manual,2241.93,txn_7dba9f69402b,2025-05-28 16:20:34,paid,,1
+1433,1433,PayPal,Manual,566.77,txn_a57c443d2159,2025-10-15 23:12:00,paid,,1
+1434,1434,PayPal,Square,1853.79,txn_5b76ee9f7c91,2025-08-06 15:44:31,paid,,3
+1435,1435,Bank Transfer,Manual,2360.48,txn_0b4a3bc998c9,2025-06-09 17:00:19,paid,,2
+1436,1436,Bank Transfer,Square,1542.96,txn_c7f789c40beb,2025-06-16 23:59:25,paid,,2
+1437,1437,Digital Wallet,PayPal,1814.43,txn_305500bb58ce,2025-06-26 12:18:09,paid,,3
+1438,1438,Credit Card,Stripe,1833.35,txn_8a5f2301f1be,2025-10-28 01:33:46,paid,,3
+1439,1439,Digital Wallet,Square,4948.95,txn_7a20b2c4ba54,2025-06-06 03:31:26,paid,,2
+1440,1440,PayPal,Square,68.55,txn_c02f3c94d7e9,2025-07-27 07:06:49,paid,,2
+1441,1441,Bank Transfer,Square,975.81,txn_c8844711700a,2025-09-01 21:28:32,paid,,2
+1442,1442,Digital Wallet,Stripe,2587.52,txn_0a1f2863495e,2025-07-18 14:04:42,paid,,3
+1443,1443,Credit Card,Manual,2345.28,txn_de509fe98ed8,2025-10-08 09:26:00,paid,,3
+1444,1444,Credit Card,Square,2867.05,txn_a26240d4473e,2025-10-20 15:43:43,paid,,2
+1445,1445,Bank Transfer,Square,594.4,txn_c3b5925c7e59,2025-09-22 12:15:10,paid,,3
+1446,1446,Credit Card,Stripe,3788.05,txn_91a9321a05e1,2025-10-22 14:31:10,paid,,1
+1447,1447,Credit Card,Square,7094.66,txn_13af887494ac,2025-10-19 15:58:57,paid,,2
+1448,1448,Digital Wallet,PayPal,338.5,txn_99e7d70e56a1,2025-05-22 02:27:16,paid,,1
+1449,1449,PayPal,Stripe,1216.52,txn_94566810a0cb,2025-08-21 15:05:38,paid,,2
+1450,1450,PayPal,Square,3339.51,txn_9f1529e1a4c1,,unpaid,,3
+1451,1451,PayPal,Square,3914.76,txn_ba9b8fc5b5e9,2025-07-31 13:29:22,paid,,2
+1452,1452,Bank Transfer,Square,3932.94,txn_04e1f89bdfaa,,unpaid,,1
+1453,1453,PayPal,Square,925.65,txn_e29b5ae80874,2025-10-05 16:17:06,paid,,2
+1454,1454,Digital Wallet,Square,1196.46,txn_8608bf7deea1,2025-05-23 00:45:42,paid,,1
+1455,1455,Bank Transfer,Manual,0.0,txn_9a04060bd255,2025-09-17 12:06:33,paid,,3
+1456,1456,Digital Wallet,Square,1336.19,txn_a3e2a0c4c091,2025-09-08 14:47:27,paid,,2
+1457,1457,Bank Transfer,PayPal,142.26,txn_6ee17bbdd57e,2025-05-12 12:25:44,paid,,1
+1458,1458,PayPal,PayPal,288.14,txn_7e8a5163cad8,2025-05-28 15:40:23,paid,,2
+1459,1459,PayPal,PayPal,1154.25,txn_71fae8307dca,2025-08-19 12:29:48,paid,,1
+1460,1460,Bank Transfer,Stripe,1565.32,txn_d0d2c9a0cb82,,unpaid,,1
+1461,1461,Bank Transfer,Manual,19.63,txn_ae89277dfedd,2025-08-11 22:45:54,paid,,1
+1462,1462,PayPal,Manual,1187.94,txn_a392098b0b2a,2025-08-13 04:27:39,paid,,1
+1463,1463,PayPal,Stripe,2382.41,txn_e42b3903e6e0,,unpaid,,2
+1464,1464,Bank Transfer,Manual,2892.6,txn_06b20feedb70,2025-05-22 23:19:07,paid,,3
+1465,1465,Digital Wallet,Manual,0.0,txn_1ecb87f1cd2b,2025-07-17 23:18:29,paid,,2
+1466,1466,PayPal,Square,2787.36,txn_a427b6603ada,,failed,expired_card,1
+1467,1467,Credit Card,PayPal,522.25,txn_ccf3c726cc50,,unpaid,,1
+1468,1468,Bank Transfer,Manual,2299.86,txn_2d4e495ca9e6,2025-09-21 11:49:25,paid,,1
+1469,1469,PayPal,PayPal,4418.23,txn_93347eace1f5,2025-07-25 18:35:36,paid,,3
+1470,1470,Credit Card,Manual,6595.22,txn_1cd7856253f7,2025-10-06 04:27:49,paid,,1
+1471,1471,Credit Card,Manual,1385.31,txn_8eb0f0474515,2025-06-11 07:04:26,paid,,3
+1472,1472,Credit Card,Square,2440.2,txn_2f4806beedcc,2025-05-30 06:28:26,paid,,3
+1473,1473,Bank Transfer,Square,3096.73,txn_6f8f8ded0c8f,2025-10-31 14:18:14,paid,,3
+1474,1474,PayPal,PayPal,519.1,txn_487b1f60e0bb,2025-10-19 19:39:24,paid,,3
+1475,1475,Bank Transfer,Stripe,1267.72,txn_5eaa07e1e9f6,2025-08-14 07:09:55,paid,,2
+1476,1476,Credit Card,Stripe,2876.9,txn_eab87ffcc7ea,2025-07-24 01:46:39,paid,,1
+1477,1477,Credit Card,Manual,653.24,txn_8ef234a7ae05,2025-09-03 03:05:49,paid,,3
+1478,1478,Credit Card,Square,1411.02,txn_8b129c4b7812,2025-09-13 13:04:25,paid,,2
+1479,1479,PayPal,PayPal,3478.5,txn_b92b0c985395,2025-06-22 17:08:22,paid,,1
+1480,1480,Bank Transfer,Stripe,4016.06,txn_b67327164114,2025-07-28 10:05:18,paid,,1
+1481,1481,Bank Transfer,Stripe,3600.28,txn_c85479613b0f,2025-10-13 07:58:10,paid,,3
+1482,1482,Digital Wallet,PayPal,982.12,txn_76dfae4b6ded,2025-09-29 04:37:07,paid,,3
+1483,1483,Credit Card,Square,1198.33,txn_8c88b6610644,2025-09-23 14:40:55,paid,,3
+1484,1484,Digital Wallet,Square,1675.4,txn_ccbb59312307,,unpaid,,3
+1485,1485,Bank Transfer,PayPal,3243.52,txn_1f2bdd4abab7,2025-07-04 11:07:23,paid,,1
+1486,1486,PayPal,Stripe,2050.56,txn_33a9d88dced5,2025-08-12 01:28:43,paid,,2
+1487,1487,Bank Transfer,PayPal,2601.61,txn_5c088a347471,2025-09-18 00:08:53,paid,,2
+1488,1488,Credit Card,Manual,2275.35,txn_226021f56f46,2025-08-05 17:14:19,paid,,1
+1489,1489,PayPal,PayPal,3082.82,txn_be5db8b58d95,2025-05-13 04:57:13,paid,,2
+1490,1490,Digital Wallet,Square,3272.15,txn_01b68981b824,,unpaid,,3
+1491,1491,Bank Transfer,PayPal,1233.44,txn_d26b42be8d00,2025-06-13 19:38:18,paid,,3
+1492,1492,Digital Wallet,Manual,855.56,txn_9e300c6fe65a,,unpaid,,3
+1493,1493,Digital Wallet,Stripe,4603.78,txn_b5a04b550e64,2025-05-24 06:45:03,paid,,2
+1494,1494,Digital Wallet,Manual,654.57,txn_f20443b7e230,,failed,expired_card,1
+1495,1495,Digital Wallet,PayPal,4630.2,txn_d68ab63c858c,2025-09-06 09:05:02,paid,,3
+1496,1496,Credit Card,Stripe,3025.6,txn_68b5deec1d7a,2025-07-09 05:22:59,paid,,3
+1497,1497,PayPal,Stripe,1099.11,txn_1cd667ab3563,2025-09-23 03:06:20,paid,,1
+1498,1498,Bank Transfer,PayPal,7239.44,txn_3ec4739f065e,,unpaid,,3
+1499,1499,PayPal,PayPal,634.77,txn_ba44032d1a6e,2025-10-20 17:20:00,paid,,3
+1500,1500,Bank Transfer,PayPal,428.89,txn_be7f40d7331e,2025-10-30 01:56:55,paid,,3
