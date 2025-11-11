@@ -61,6 +61,13 @@ def get_pymysql_connection():
         print(f"PyMySQL connection failed: {str(e)}")
         return None
 
+def get_db_connection():
+    """
+    Alias for get_pymysql_connection() - for backward compatibility
+    Returns a raw PyMySQL connection that can be used with pandas.read_sql()
+    """
+    return get_pymysql_connection()
+
 def test_connection():
     """Test database connection"""
     try:
